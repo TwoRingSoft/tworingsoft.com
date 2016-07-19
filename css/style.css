@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300');
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	margin: 50px;
+}
+
+/* common to all pages */
+
+#page-name {
+	color: #828282; 
+	font-weight: 100;
+	font-family: 'Raleway', sans-serif; 
+	font-size:24pt;
+}
+
+.text-content {
+	color: #828282; 
+	font-family: sans-serif; 
+	font-size: 12pt;
+}
+
+/* index.html */
+
+#front-name {
+	color: #828282; 
+	font-weight: 100;
+	font-family: 'Raleway', sans-serif; 
+	font-size: 30pt;
+}
+
+#front-menu-link {
+	color: #828282; 
+	font-family: sans-serif; 
+	font-size: 13pt;
+	font-weight: 100;
+}
+
+/* products.html */
+
+.list-item {
+	color: #828282; 
+	font-weight: 300;
+	font-family: 'Raleway', sans-serif; 
+	font-size: 18pt;
+}
+
+.list-item-link {
+	color: #cacaca; 
+	font-weight: 100;
+	font-family: sans-serif; 
+	font-size: 14pt;
+}
