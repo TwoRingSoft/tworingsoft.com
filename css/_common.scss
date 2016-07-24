@@ -7,13 +7,24 @@ $tr-light-grey: #cacaca;
 $tr-grey: #828282;
 
 a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
+	color: $tr-grey;
 }
 
 body {
 	margin: 50px;
+}
+
+.text {
+	color: $tr-grey; 
+	font: 12pt $tr-font;
+}
+
+.caption {
+	color: $tr-grey; 
+	font: italic 10pt $tr-font;
+}
+
+.footnote {
+	color: $tr-grey; 
+	font: 100 10pt $tr-font;
 }

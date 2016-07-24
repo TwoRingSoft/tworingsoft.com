@@ -1,19 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300");
 a {
-  text-decoration: none; }
-
-a:hover {
-  text-decoration: underline; }
+  color: #828282; }
 
 body {
   margin: 50px; }
+
+.text, body {
+  color: #828282;
+  font: 12pt sans-serif; }
+
+.caption {
+  color: #828282;
+  font: italic 10pt sans-serif; }
+
+.footnote {
+  color: #828282;
+  font: 100 10pt sans-serif; }
 
 #front-name {
   color: #828282;
   font: 100 30pt "Raleway", sans-serif; }
 
-#front-menu-link {
-  color: #828282;
+a {
   font: 100 13pt sans-serif; }
 
 /*# sourceMappingURL=index.css.map */

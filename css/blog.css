@@ -5,7 +5,7 @@ a {
 body {
   margin: 50px; }
 
-.text, .content-item-detail, .list-item p {
+.text, .content-item-detail, .entry {
   color: #828282;
   font: 12pt sans-serif; }
 
@@ -25,18 +25,15 @@ body {
   /* div containing everything after the header */
   margin: 100px; }
 
-.content-item-heading, .list-item span {
+.content-item-heading, .title {
   color: #828282;
   font: 300 18pt "Raleway", sans-serif; }
 
-.content-item-subheading, .list-item a {
+.content-item-subheading, .date {
   color: #cacaca;
   font: 100 14pt sans-serif; }
 
-.list-item span {
-  /* product name */ }
+/* product name */
+/* link to product's home page */
 
-.list-item a {
-  /* link to product's home page */ }
-
-/*# sourceMappingURL=products.css.map */
+/*# sourceMappingURL=blog.css.map */

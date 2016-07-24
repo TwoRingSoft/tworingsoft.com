@@ -5,7 +5,10 @@
 	font: 100 30pt $tr-fancy-font;
 }
 
-#front-menu-link {
-	color: $tr-grey;
+a {
 	font: 100 13pt $tr-font;
+}
+
+body {
+	@extend .text;
 }
