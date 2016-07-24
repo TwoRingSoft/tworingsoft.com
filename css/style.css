@@ -12,21 +12,6 @@ body {
 	margin: 50px;
 }
 
-/* common to all pages */
-
-#page-name {
-	color: #828282; 
-	font-weight: 100;
-	font-family: 'Raleway', sans-serif; 
-	font-size:24pt;
-}
-
-.text-content {
-	color: #828282; 
-	font-family: sans-serif; 
-	font-size: 12pt;
-}
-
 /* index.html */
 
 #front-name {
@@ -43,18 +28,39 @@ body {
 	font-weight: 100;
 }
 
+/* sub-pages */
+
+#page-name {
+	color: #828282; 
+	font-weight: 100;
+	font-family: 'Raleway', sans-serif; 
+	font-size:24pt;
+}
+
+#page-content { /* div containing everything after the header */
+	margin: 100px;
+}
+
 /* products.html */
 
-.list-item {
+.list-item span { /* product name */
 	color: #828282; 
 	font-weight: 300;
 	font-family: 'Raleway', sans-serif; 
 	font-size: 18pt;
 }
 
-.list-item-link {
+.list-item a { /* link to product's home page */
 	color: #cacaca; 
 	font-weight: 100;
 	font-family: sans-serif; 
 	font-size: 14pt;
 }
+
+.list-item p { /* description of product */
+	color: #828282; 
+	font-family: sans-serif; 
+	font-size: 12pt;
+}
+
+
