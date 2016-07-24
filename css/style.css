@@ -1,66 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,300');
-
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300");
 a {
-	text-decoration: none;
-}
+  text-decoration: none; }
 
 a:hover {
-	text-decoration: underline;
-}
+  text-decoration: underline; }
 
 body {
-	margin: 50px;
-}
+  margin: 50px; }
 
 /* index.html */
-
 #front-name {
-	color: #828282; 
-	font-weight: 100;
-	font-family: 'Raleway', sans-serif; 
-	font-size: 30pt;
-}
+  color: #828282;
+  font: 100 30pt "Raleway", sans-serif; }
 
 #front-menu-link {
-	color: #828282; 
-	font-family: sans-serif; 
-	font-size: 13pt;
-	font-weight: 100;
-}
+  color: #828282;
+  font: 100 13pt sans-serif; }
 
 /* sub-pages */
-
 #page-name {
-	color: #828282; 
-	font-weight: 100;
-	font-family: 'Raleway', sans-serif; 
-	font-size:24pt;
-}
+  color: #828282;
+  font: 100 24pt "Raleway", sans-serif; }
 
-#page-content { /* div containing everything after the header */
-	margin: 100px;
-}
+#page-content {
+  /* div containing everything after the header */
+  margin: 100px; }
 
 /* products.html */
+.list-item span {
+  /* product name */
+  color: #828282;
+  font: 300 18pt "Raleway", sans-serif; }
 
-.list-item span { /* product name */
-	color: #828282; 
-	font-weight: 300;
-	font-family: 'Raleway', sans-serif; 
-	font-size: 18pt;
-}
+.list-item a {
+  /* link to product's home page */
+  color: #cacaca;
+  font: 100 14pt sans-serif; }
 
-.list-item a { /* link to product's home page */
-	color: #cacaca; 
-	font-weight: 100;
-	font-family: sans-serif; 
-	font-size: 14pt;
-}
+.list-item p {
+  /* description of product */
+  color: #828282;
+  font: 12pt sans-serif; }
 
-.list-item p { /* description of product */
-	color: #828282; 
-	font-family: sans-serif; 
-	font-size: 12pt;
-}
-
-
+/*# sourceMappingURL=style.css.map */
