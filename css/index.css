@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300");
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+body {
+  margin: 50px; }
+
+#front-name {
+  color: #828282;
+  font: 100 30pt "Raleway", sans-serif; }
+
+#front-menu-link {
+  color: #828282;
+  font: 100 13pt sans-serif; }
+
+/*# sourceMappingURL=index.css.map */

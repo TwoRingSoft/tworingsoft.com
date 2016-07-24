@@ -8,16 +8,6 @@ a:hover {
 body {
   margin: 50px; }
 
-/* index.html */
-#front-name {
-  color: #828282;
-  font: 100 30pt "Raleway", sans-serif; }
-
-#front-menu-link {
-  color: #828282;
-  font: 100 13pt sans-serif; }
-
-/* sub-pages */
 #page-name {
   color: #828282;
   font: 100 24pt "Raleway", sans-serif; }
@@ -26,7 +16,6 @@ body {
   /* div containing everything after the header */
   margin: 100px; }
 
-/* products.html */
 .list-item span {
   /* product name */
   color: #828282;
@@ -42,4 +31,4 @@ body {
   color: #828282;
   font: 12pt sans-serif; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=products.css.map */

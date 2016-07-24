@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300');
+
+$tr-fancy-font: 'Raleway', sans-serif;
+$tr-font: sans-serif;
+
+$tr-light-grey: #cacaca;
+$tr-grey: #828282;
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	margin: 50px;
+}

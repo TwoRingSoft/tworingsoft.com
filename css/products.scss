@@ -1,0 +1,16 @@
+@import 'subpage';
+
+.list-item span { /* product name */
+	color: $tr-grey; 
+	font: 300 18pt $tr-fancy-font;
+}
+
+.list-item a { /* link to product's home page */
+	color: $tr-light-grey; 
+	font: 100 14pt $tr-font;
+}
+
+.list-item p { /* description of product */
+	color: $tr-grey; 
+	font: 12pt $tr-font;
+}

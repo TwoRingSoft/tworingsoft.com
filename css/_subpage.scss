@@ -1,0 +1,10 @@
+@import 'common';
+
+#page-name {
+	color: $tr-grey;
+	font: 100 24pt $tr-fancy-font;
+}
+
+#page-content { /* div containing everything after the header */
+	margin: 100px;
+}
