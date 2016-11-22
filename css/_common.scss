@@ -19,6 +19,12 @@ body {
 	font: 12pt $tr-font;
 }
 
+.code {
+	color: $tr-grey;
+	font: 12pt monospace;
+	background-color: #eeeeee;
+}
+
 .caption {
 	color: $tr-grey; 
 	font: italic 10pt $tr-font;
