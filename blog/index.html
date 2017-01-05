@@ -8,63 +8,22 @@
 		<meta name="author" content="Andrew McKnight"/>
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2016"/>
 		<link href='../css/blog.css' rel='stylesheet' type='text/css'>
+		<script src='../js/csi.js'></script>
 	</head>
 	<body>
 		<a href="../"><img src="../img/logo-small.jpg" width="35px" /></a> <span id="page-name">Blog</span>
 		<div id="page-content">
 			<div class="blog-entry">
+				<span class="title">Passwords</span> <span class="date">4 January 2017</span>
+				<div class="entry" data-include="posts/html/2017-01-04-passwords.html"></div>
+			</div>
+			<div class="blog-entry">
 				<span class="title">Going Back to the Future to test with git-rebase</span> <span class="date">22 November 2016</span>
-				<div class="entry">
-					<p>
-						I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.
-					</p>
-					<p>
-						So, I set out to test the code in the past, before I wrote the new code. How could this be? While building an actual time machine would make quite the pleasing pun of "all-time yak shave", luckily for me git already has a facility to do what I want: git-rebase.
-					</p>
-					<p>
-						First things first, I gotta go back and write a new test. I left my current feature branch (let's call it "topic") and went back to my main branch ("master"). Then I created a new branch "tests", and made some commits writing a test to get that rogue codepath covered. I placed as many constraints as possible on it, capturing the buggy output in test assertions. This way, when I fix the bugs, the tests should break, and I'll update them to pass again later.
-					</p>
-					<p>
-						OK, great, now we have two diverging branches. This is the first thing git-rebase can help with. I can have it remove my original feature branch from its base in "master" and re-base it onto the head of "tests", so it will look like I wrote that test before doing any feature work. Here's that incantation: <span class="code">git rebase --onto tests master topic</span>. The git docs have some diagrams (see the link below) as well as this <a href="https://blog.pivotal.io/labs/labs/git-rebase-onto">blog post from Pivotal Labs</a>.
-					</p>
-					<p>
-						Now all the commits are in a single history again, whew. But, I had a ton of commits on my original branch, "topic", and some of them modified that buggy codepath, and I can't remember which commits are now breaking that test. (Generally, I like each commit in my history to both be able to build and pass tests–otherwise there should be squashing going on (another use for git-rebase!).) Luckily, git-rebase can help me find the commit. I can have it run my test suite for each commit in my history since branching from master: <span class="code">git rebase --exec "run-tests.sh"</span>. Because run-tests.sh exits with a non-zero status if a test fails, the rebase will plop me right into edit mode on the commit that broke the bad tests, so I can make the world right again.
-					</p>
-					<p>
-						Check out the <a href="https://git-scm.com/docs/git-rebase">git-rebase</a> documentation to find out more about --onto and --exec.
-					</p>
-				</div>
+				<div class="entry" data-include="posts/html/2016-11-22-going-back-to-the-future-to-test-with-git-rebase.html"></div>
 			</div>
 			<div class="blog-entry">
 				<span class="title">Making the site a little more SASSy</span> <span class="date">24 July 2016</span>
-				<div class="entry">
-					<p>
-						I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I've written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn't need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I'm very glad I did!
-					</p>
-					<p>
-						I learned CSS just after version 2 was released, and in all the time since have become well acquainted with the mess it can turn into if you aren't careful. Even with care, though, CSS lacks some basic constructs that would make code much easier to maintain. Before turning to SASS, I even Googled a few things I wanted just to make sure CSS couldn't do them on its own in some dark corner I didn't know about:
-						<ul>
-							<li>Value storage/retrieval, e.g. variables</li>
-							<li>Reference of previous definitions</li>
-							<li>Modular organization and importing of stylesheets*</li>
-						</ul>
-						<span class="footnote">*CSS has importing, but it generates additional network requests. The SASS preprocessor composes everything for you to commit and serve as one file.</span>
-					</p>
-					<p>
-					SASS supports all of these things, making me a happy coder again in web-land :) Now I have a stylesheet per page or page type, which inherit from various base layers. Those base layers have definitions for abstract element types that are extended by classes with specific names appropriate for the related web page.
-					</p>
-					<p>
-						One cool thing I learned about is the mapping file generation, which helps browser web inspectors to find the original .scss or .sass file line that generated the CSS ultimately used to render the page. I even found a little trick on my own, playing in Safari's Web Inspector: if you ⌘-hover over the inspector's file/line .scss/.sass hyperlink, it will toggle to the SASS-compiled .css file/line instead:
-					</p>
-					<center>
-						<img src="sass-vs-css-web-inspector-link.png" />
-						<br>
-						<span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>
-					</center>
-					<p>
-					Overall, I'm happy with my decision to switch the site's stylesheets to SASS, and I'm happy I was able to get up and running with it so quickly. I'm sure it will make it super easy to tweak the styles for different screen sizes on phones and tablets, the piece of work I'm taking on next for the site, and also something I haven't done before.	
-					</p>
-				</div>
+				<div class="entry" data-include="posts/html/2016-07-24-making-the-site-a-little-more-sassy.html"></div>
 			</div>
 		</div>
 	</body>

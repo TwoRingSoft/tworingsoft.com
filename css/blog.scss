@@ -13,3 +13,7 @@
 .entry {
 	@extend .content-item-detail;
 }
+
+p {
+	@extend .text;
+}

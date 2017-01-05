@@ -5,7 +5,7 @@ a {
 body {
   margin: 50px; }
 
-.text, .content-item-detail, .entry {
+.text, .content-item-detail, .entry, p, ul {
   color: #828282;
   font: 12pt sans-serif; }
 
