@@ -1,3 +1,6 @@
+---
+
+---
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
@@ -7,24 +10,20 @@
 		<meta name="description" content="Two Ring Software."/>
 		<meta name="author" content="Andrew McKnight"/>
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2016"/>
-		<link href='../css/blog.css' rel='stylesheet' type='text/css'>
-		<script src='../js/csi.js'></script>
+		<link href='../../css/blog.css' rel='stylesheet' type='text/css'>
+		<script src='../../js/csi.js'></script>
 	</head>
 	<body>
-		<a href="../"><img src="../img/logo-small.jpg" width="35px" /></a> <span id="page-name">Blog</span>
+		<a href="../../"><img src="../../img/logo-small.jpg" width="35px" /></a> <span id="page-name">Blog</span>
 		<div id="page-content">
-			<div class="blog-entry">
-				<span class="title">Passwords</span> <span class="date">4 January 2017</span>
-				<div class="entry" data-include="posts/html/2017-01-04-passwords.html"></div>
-			</div>
-			<div class="blog-entry">
-				<span class="title">Going Back to the Future to test with git-rebase</span> <span class="date">22 November 2016</span>
-				<div class="entry" data-include="posts/html/2016-11-22-going-back-to-the-future-to-test-with-git-rebase.html"></div>
-			</div>
-			<div class="blog-entry">
-				<span class="title">Making the site a little more SASSy</span> <span class="date">24 July 2016</span>
-				<div class="entry" data-include="posts/html/2016-07-24-making-the-site-a-little-more-sassy.html"></div>
-			</div>
+			<ul>
+			  {% for post in site.posts %}
+			    <li>
+			      <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+			      {{ post.excerpt }}
+			    </li>
+			  {% endfor %}
+			</ul>
 		</div>
 	</body>
 </html>

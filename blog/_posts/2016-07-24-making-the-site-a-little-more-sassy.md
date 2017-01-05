@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Making the site a little more SASSy
 date: 2016-07-24
 ---

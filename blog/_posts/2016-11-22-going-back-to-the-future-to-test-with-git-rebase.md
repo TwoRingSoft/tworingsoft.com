@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Going Back to the Future to test with git-rebase
 date: 2016-11-22
 ---

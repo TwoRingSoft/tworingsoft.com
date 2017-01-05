@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Passwords
 date: 2017-01-04
 ---

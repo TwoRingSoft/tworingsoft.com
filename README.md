@@ -7,4 +7,4 @@ Uses SASS for style sheets. From the root directory:
 	
 The blog is built from markdown documents for individual posts into HTML using Jekyll. Then, posts are composed into index.html. From the root directory:
 
-	jekyll build --watch --source blog/posts/markdown --destination blog/posts/html
+	jekyll build --watch blog/
