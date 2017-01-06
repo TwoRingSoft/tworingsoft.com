@@ -1,6 +1,7 @@
 ---
 title: Going Back to the Future to test with git-rebase
 date: 2016-11-22
+layout: post
 ---
 
 I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.

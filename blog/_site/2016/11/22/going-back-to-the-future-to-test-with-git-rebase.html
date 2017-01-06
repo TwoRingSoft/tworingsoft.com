@@ -1,3 +1,19 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Two Ring Software % Blog</title>
+		<meta name="description" content="Two Ring Software."/>
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2016"/>
+		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<script src='/js/csi.js'></script>
+	</head>
+	<body>
+		<a href="../../"><img src="../../img/logo-small.jpg" width="35px" /></a> <span id="page-name">Blog</span>
+		<div id="page-content">
+			<ul>
 <p>I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.</p>
 
 <p>So, I set out to test the code in the past, before I wrote the new code. How could this be? While building an actual time machine would make quite the pleasing pun of “all-time yak shave”, luckily for me git already has a facility to do what I want: git-rebase.</p>
@@ -9,3 +25,8 @@
 <p>Now all the commits are in a single history again, whew. But, I had a ton of commits on my original branch, “topic”, and some of them modified that buggy codepath, and I can’t remember which commits are now breaking that test. (Generally, I like each commit in my history to both be able to build and pass tests–otherwise there should be squashing going on (another use for git-rebase!).) Luckily, git-rebase can help me find the commit. I can have it run my test suite for each commit in my history since branching from master: <span class="code">git rebase –exec “run-tests.sh”</span>. Because run-tests.sh exits with a non-zero status if a test fails, the rebase will plop me right into edit mode on the commit that broke the bad tests, so I can make the world right again.</p>
 
 <p>Check out the <a href="https://git-scm.com/docs/git-rebase">git-rebase</a> documentation to find out more about –onto and –exec.</p>
+
+			</ul>
+		</div>
+	</body>
+</html>
