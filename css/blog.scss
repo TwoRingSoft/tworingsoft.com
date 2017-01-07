@@ -1,5 +1,9 @@
 @import 'subpage';
 
+body {
+	margin: 0px;
+}
+
 .title {
 	@extend .content-item-heading;
 }
