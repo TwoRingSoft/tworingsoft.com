@@ -22,10 +22,9 @@ body {
   color: #828282;
   font: 100 10pt sans-serif; }
 
-#page-name a {
+#page-name {
   color: #828282;
-  font: 100 24pt "Raleway", sans-serif;
-  text-decoration: none; }
+  font: 100 24pt "Raleway", sans-serif; }
 
 #page-content {
   /* div containing everything after the header */
