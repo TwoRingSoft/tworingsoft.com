@@ -9,11 +9,11 @@ h1, .title {
   color: #828282;
   font: 300 24pt "Raleway", sans-serif; }
 
-h2, .date {
+h2 {
   color: #828282;
   font: 300 20pt "Raleway", sans-serif; }
 
-h3 {
+h3, .date {
   color: #cacaca;
   font: 300 18pt "Raleway", sans-serif; }
 
