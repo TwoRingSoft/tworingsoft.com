@@ -24,7 +24,8 @@ body {
 
 #page-name {
   color: #828282;
-  font: 100 24pt "Raleway", sans-serif; }
+  font: 100 24pt "Raleway", sans-serif;
+  text-decoration: none; }
 
 #page-content {
   /* div containing everything after the header */

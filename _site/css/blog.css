@@ -24,7 +24,8 @@ body {
 
 #page-name {
   color: #828282;
-  font: 100 24pt "Raleway", sans-serif; }
+  font: 100 24pt "Raleway", sans-serif;
+  text-decoration: none; }
 
 #page-content {
   /* div containing everything after the header */
@@ -37,8 +38,5 @@ body {
 .content-item-subheading, .date {
   color: #cacaca;
   font: 100 14pt sans-serif; }
-
-/* product name */
-/* link to product's home page */
 
 /*# sourceMappingURL=blog.css.map */
