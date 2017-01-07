@@ -11,5 +11,13 @@
 		<script src='{{ site.url }}/js/csi.js'></script>
 	</head>
 	<body>
-		<a href="{{ site.url }}"><img src="{{ site.url }}/img/logo-small.jpg" width="35px" /></a> <a href="{{ site.url }}/blog/"><span id="page-name">> Blog ></span></a> <span class="title">{{ page.title }}</span> <span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
+		
+		<a href="{{ site.url }}"><img src="{{ site.url }}/img/logo-small.jpg" width="35px" /></a>
+		&nbsp;
+		<a href="{{ site.url }}/blog/" class="page-name"><span id="page-name">Blog</span></a>
+		
+		<p>
+			<span class="title">{{ page.title }}</span> <span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
+		</p>
+		
 		<div id="page-content">
