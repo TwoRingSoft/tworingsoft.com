@@ -1,9 +1,5 @@
 @import 'subpage';
 
-body {
-	margin: 0px;
-}
-
 .title {
 	@extend .content-item-heading;
 }
@@ -18,4 +14,9 @@ body {
 
 p {
 	@extend .text;
+}
+
+#page-content { /* override from _subpage */
+	margin: 0px;
+	width: 300px;
 }
