@@ -1,0 +1,19 @@
+@import 'subpage';
+
+/* product name */
+.title {
+	@extend .content-item-heading;
+}
+
+/* link to product's home page */
+.date { 
+	@extend .content-item-subheading;
+}
+
+.entry {
+	@extend .content-item-detail;
+}
+
+p {
+	@extend .text;
+}

@@ -1,0 +1,13 @@
+@import 'subpage';
+
+.list-item span { /* product name */
+	@extend .content-item-heading;
+}
+
+.list-item a { /* link to product's home page */
+	@extend .content-item-subheading;
+}
+
+.list-item p {
+	@extend .content-item-detail;
+}

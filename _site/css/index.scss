@@ -1,0 +1,14 @@
+@import 'common';
+
+#front-name {
+	color: $tr-grey;
+	font: 100 30pt $tr-fancy-font;
+}
+
+a {
+	font: 100 13pt $tr-font;
+}
+
+body {
+	@extend .text;
+}
