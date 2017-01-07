@@ -5,6 +5,18 @@ a {
 body {
   margin: 50px; }
 
+h1 {
+  color: #828282;
+  font: 300 24pt "Raleway", sans-serif; }
+
+h2 {
+  color: #828282;
+  font: 300 20pt "Raleway", sans-serif; }
+
+h3 {
+  color: #cacaca;
+  font: 300 18pt "Raleway", sans-serif; }
+
 .text, body, ul {
   color: #828282;
   font: 12pt sans-serif; }

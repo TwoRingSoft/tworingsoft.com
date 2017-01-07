@@ -5,7 +5,19 @@ a {
 body {
   margin: 50px; }
 
-.text, .content-item-detail, .list-item p, ul {
+h1, .list-item span {
+  color: #828282;
+  font: 300 24pt "Raleway", sans-serif; }
+
+h2, .list-item a {
+  color: #828282;
+  font: 300 20pt "Raleway", sans-serif; }
+
+h3 {
+  color: #cacaca;
+  font: 300 18pt "Raleway", sans-serif; }
+
+.text, .list-item p, ul {
   color: #828282;
   font: 12pt sans-serif; }
 
@@ -30,14 +42,6 @@ body {
 #page-content {
   /* div containing everything after the header */
   margin: 100px; }
-
-.content-item-heading, .list-item span {
-  color: #828282;
-  font: 300 18pt "Raleway", sans-serif; }
-
-.content-item-subheading, .list-item a {
-  color: #cacaca;
-  font: 100 14pt sans-serif; }
 
 .list-item span {
   /* product name */ }

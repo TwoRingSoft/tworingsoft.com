@@ -9,17 +9,3 @@
 #page-content { /* div containing everything after the header */
 	margin: 100px;
 }
-
-.content-item-heading {
-	color: $tr-grey; 
-	font: 300 18pt $tr-fancy-font;
-}
-
-.content-item-subheading {
-	color: $tr-light-grey; 
-	font: 100 14pt $tr-font;
-}
-
-.content-item-detail {
-	@extend .text;
-}

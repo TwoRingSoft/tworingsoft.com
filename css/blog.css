@@ -5,7 +5,19 @@ a {
 body {
   margin: 50px; }
 
-.text, .content-item-detail, .entry, p, ul {
+h1, .title {
+  color: #828282;
+  font: 300 24pt "Raleway", sans-serif; }
+
+h2, .date {
+  color: #828282;
+  font: 300 20pt "Raleway", sans-serif; }
+
+h3 {
+  color: #cacaca;
+  font: 300 18pt "Raleway", sans-serif; }
+
+.text, .entry, p, ul {
   color: #828282;
   font: 12pt sans-serif; }
 
@@ -30,14 +42,6 @@ body {
 #page-content {
   /* div containing everything after the header */
   margin: 100px; }
-
-.content-item-heading, .title {
-  color: #828282;
-  font: 300 18pt "Raleway", sans-serif; }
-
-.content-item-subheading, .date {
-  color: #cacaca;
-  font: 100 14pt sans-serif; }
 
 #page-content {
   /* override from _subpage */

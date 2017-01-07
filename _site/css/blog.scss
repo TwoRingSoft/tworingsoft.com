@@ -1,15 +1,15 @@
 @import 'subpage';
 
 .title {
-	@extend .content-item-heading;
+	@extend h1;
 }
 
 .date { 
-	@extend .content-item-subheading;
+	@extend h2;
 }
 
 .entry {
-	@extend .content-item-detail;
+	@extend .text;
 }
 
 p {
