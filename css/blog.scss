@@ -19,3 +19,19 @@ p {
 #page-content { /* override from _subpage */
 	margin: 0px 100px 0px 100px;
 }
+
+/* divs containing code blocks */
+.code {
+	background-color: $tr-light-grey;
+	font-family: $tr-monospace-font;
+	color: $tr-dark-grey;
+}
+
+div > .highlighter-rouge {
+	@extend .code;
+	padding: 5px 20px 5px 20px;
+}
+
+code > .highlighter-rouge {
+	@extend .code;
+}

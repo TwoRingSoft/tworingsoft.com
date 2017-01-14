@@ -21,7 +21,7 @@ h3, .date {
   color: #828282;
   font: 12pt sans-serif; }
 
-.code {
+.code, div > .highlighter-rouge, code > .highlighter-rouge {
   color: #828282;
   font: 12pt monospace;
   background-color: #eeeeee; }
@@ -46,5 +46,14 @@ h3, .date {
 #page-content {
   /* override from _subpage */
   margin: 0px 100px 0px 100px; }
+
+/* divs containing code blocks */
+.code, div > .highlighter-rouge, code > .highlighter-rouge {
+  background-color: #cacaca;
+  font-family: "Courier New", monospace;
+  color: #424242; }
+
+div > .highlighter-rouge {
+  padding: 5px 20px 5px 20px; }
 
 /*# sourceMappingURL=blog.css.map */
