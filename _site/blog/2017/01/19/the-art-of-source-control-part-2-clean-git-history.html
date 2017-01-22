@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Two Ring Software % Blog % The Art of Source Control, Part 2: Clean Git History % 19 January 2017</title>
+		<meta name="description" content="Two Ring Software."/>
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2016"/>
+		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
+		&nbsp;
+		<a href="/blog/" class="page-name">Blog</a>
+		
+		<p>
+			<span class="title">The Art of Source Control, Part 2: Clean Git History</span>
+		</p>
+		<p>
+			<span class="date">19 January 2017</span>
+		</p>
+		
+		<div id="page-content">
+<p>Just like <a href="">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
+
+<h1 id="relevance-signal-to-noise-ratio">Relevance: Signal to Noise Ratio</h1>
+
+<p>Some people argue that every change should be recorded in a commit. What constitutes a change? Surely you wouldn’t record a commit for each character you type, if you are adding an entirely new function to a class. What if you write the function, commit it, and then run your test suite only to discover a bug in the function? Should the fix for that bug be recorded as a separate commit in perpetuity?</p>
+
+<p>I used to think that commits should be as granular as possible, something like the create-commit-fix-commit example above. This attempts to record the <em>though process</em> by which the final code came into being. I still work this way locally, because it provides better ability to isolate small iterative experiments. It’s also much easier to reason about a very small git diff than a huge set of changes at any time, something I frequently look at the stay on track while working.</p>
+
+<p>After some time working this way, I realized that it doesn’t help people trying to come to grips with your code and how it evolved. If you leave commits that contained bugs fixed in later commits, you’re actually leaving dead ends in a maze for later maintainers to navigate, instead of a clean, linear evolution. Moreover, I really never even needed to retrace my steps in that way. I frequently use Xcode’s blame view, for instance, and I’d rather not see a 50 line function have a separate commit blamed for each line of code.</p>
+
+<h1 id="tooling-practicality">Tooling: Practicality</h1>
+
+<p>Before merging my branch upstream, I now edit my commit history to squash many of the tinkering commits into a cohesive whole with an interactive git rebase. I make heavy usage of <code class="highlighter-rouge">git commit --fixup</code> and <code class="highlighter-rouge">git rebase --autosquash</code> to automatically squash down those experimental/iterative commits. This helps if I can’t <code class="highlighter-rouge">git commit --amend</code> because I’ve already committed some other changes the commit I want to amend. I used to frequently <code class="highlighter-rouge">--amend</code> to <code class="highlighter-rouge">HEAD</code>, but I’ve been burned a few times after getting too eager to do so and have had to spelunk through the reflog. Now I’m more likely to <code class="highlighter-rouge">--fixup</code> to <code class="highlighter-rouge">HEAD</code> and just to do the big <code class="highlighter-rouge">--autosquashed</code> rebase right at the end.</p>
+
+<p>Recording cohesive commits allows for easy reverting later. My concept of “cohesive” is this: if, when you ship your next release, you disover a problem with the new code, you should be able to reverse the change with a single <code class="highlighter-rouge">git revert</code> (of course, this is an ideal to strive for, not necessarily always practical in the real world). You should not have to perform as much work to surgically remove the logic as went into writing it in the first place, and you really don’t want to have to do that after getting woken up at 3 AM.</p>
+
+<p>Git bisect can help you find out which commit to revert. What if a bug is found in a release that went out some time ago? Maybe you’re new to a project, with no knowledge of the history of the code’s evolution. <code class="highlighter-rouge">git bisect</code> is a very helpful tool in these situations, performing a binary search between the last “good” commit and the first “bad” commit, to pinpoint the commit that introduced the bug. If the code change that introduced the bug is spread out over multiple commits, understanding the context of the changes in the commit that bisection ultimately blames may be very difficult–you may not even know how many commits are related. It’s worth noting also that git bisect works best when each commit contains a code change that compiles and contains and passes all relevant tests.</p>
+
+<p>Squashing also provides an opportunity to review all the previous messages, gather your thoughts, and write a good summary of what changed. For my first few years using git, I only ever used the short commit message or “subject”. Now, my subject lines typically only contain 70 characters (enough to avoid truncation on GitHub, in Git clients like Tower, SourceTree or GitX, or when running <code class="highlighter-rouge">git log --oneline --decorate --graph</code>). The description contains a summary and usually bullet points gleaned from all the individual commits I squashed. Github will even pull all that useful information into a PR’s description field!</p>
+
+		</div>
+	</body>
+</html>
