@@ -11,10 +11,15 @@
 		<span class="page-name">Products</span>
 		
 		<div id="page-content">
+			
+			{% for product in site.products %}
+				
 			<div class="list-item">
-				<span>SemVer</span> <a href="https://github.com/tworingsoft/semver">https://github.com/tworingsoft/semver</a> 
+				<span>{{ product.name }}</span> <a href="{{ product.website }}">{{ product.website-name }}</a>
 				<p >
-					A command-line tool for bumping version numbers in your source files. Supports multiple file types and version schemas, and offers utilities to explore how best to version your software.
+					{{ product.description }}
 				</p>
 			</div>
+			
+			{% endfor %}
 {% include closing-tags.html %}
