@@ -1,6 +1,6 @@
 ---
 title: "Tracking Xcode Build Setting Changes with xcbs"
-date: 2017-02-13
+date: 2017-02-19
 layout: post
 ---
 
