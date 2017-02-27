@@ -43,7 +43,7 @@ This adheres to DRY principles and makes the code more self-documentingly readab
 
 ## Placeholder expansion
 
-OK, we've now `typedef`'d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of [gosh darn block syntax](https://goshdarnblocksyntax.com).
+OK, we've now `typedef`'d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of [gosh darn block syntax](http://goshdarnblocksyntax.com).
 
 <center>
 <img src="{{ site.url }}/blog/img/block-placeholder-expansion-before.png" alt="After method autocompletion, before placeholder expansion." width="75%"/>
