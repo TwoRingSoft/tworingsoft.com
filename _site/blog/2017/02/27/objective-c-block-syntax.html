@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+	<head>
+		<meta charset="utf-8"/>		
+		<meta name="description" content="Two Ring Software."/>
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
+		<title>Two Ring Software % Blog % Objective-C Block Syntax % 27 February 2017</title>
+		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		
+		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
+		&nbsp;
+		<a href="/blog/" class="page-name">Blog</a>
+		
+		<p>
+			<span class="title">Objective-C Block Syntax</span>
+		</p>
+		<p>
+			<span class="date">27 February 2017</span>
+		</p>
+		
+		<div id="page-content">
+<p>One of the things Objective-C developers love to hate about the language is the <a href="https://fuckingblocksyntax.com">fucking block syntax</a> (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.</p>
+
+<h2 id="a-little-abstraction-goes-a-long-way">A little abstraction goes a long way</h2>
+
+<p>I never write a method that contains all the clumsy mechanics of a block directly in a parameter type.</p>
+
+<p>Bad:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@interface</span> <span class="nc">MyClass</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">someMethodWithInput</span><span class="p">:(</span><span class="n">NSObject</span> <span class="o">*</span><span class="n">__nonnull</span><span class="p">)</span><span class="nv">input</span> <span class="nf">completion</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">__nullable</span><span class="p">)(</span><span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">a</span><span class="p">,</span> <span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">b</span><span class="p">,</span> <span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">c</span><span class="p">))</span><span class="nv">completion</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>Instead, Xcode provides an autocompletion for the string <code class="highlighter-rouge">typedefBlock</code>; start typing that outside of an <code class="highlighter-rouge">@interface</code>/<code class="highlighter-rouge"><span class="k">@implementation</span></code> scope, and you can accept an automatic expansion to the following:</p>
+
+<center>
+<img src="/blog/img/typedefblock-autocompletion.png" alt="typedefBlock autocompletion." width="75%" />
+<br />
+<br />
+<span class="caption">Autocompletion for `typedefBlock`.</span>
+</center>
+
+<p>Good:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">__nullable</span> <span class="n">MyBlockType</span><span class="p">)(</span><span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">a</span><span class="p">,</span> <span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">b</span><span class="p">,</span> <span class="n">NSObject</span> <span class="o">*</span><span class="n">__nullable</span> <span class="n">c</span><span class="p">);</span>
+
+<span class="k">@interface</span> <span class="nc">MyClass</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">someMethodWithInput</span><span class="p">:(</span><span class="n">NSObject</span> <span class="o">*</span><span class="n">__nonnull</span><span class="p">)</span><span class="nv">input</span> <span class="nf">completion</span><span class="p">:(</span><span class="n">MyBlockType</span><span class="p">)</span><span class="nv">completion</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>This adheres to DRY principles and makes the code more self-documentingly readable. So many times, I’ve seen method after method clumsily spell out the same block signature for passing networking completion blocks down the call stack with the familiar triad of <code class="highlighter-rouge">NSData</code>, <code class="highlighter-rouge">NSURLResponse</code> and <code class="highlighter-rouge">NSError</code>, when it should have been wrapped up in a <code class="highlighter-rouge">typedefBlock</code>. Removing the actual signature from 20 places to just one would have avoided many permutations of nullability specifiers, types and parameter names between all the instances of the completion signature. you can change it much easier in the future and even add documentation comments!</p>
+
+<h2 id="placeholder-expansion">Placeholder expansion</h2>
+
+<p>OK, we’ve now <code class="highlighter-rouge">typedef</code>‘d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of <a href="https://goshdarnblocksyntax.com">gosh darn block syntax</a>.</p>
+
+<center>
+<img src="/blog/img/block-placeholder-expansion-before.png" alt="After method autocompletion, before placeholder expansion." width="75%" />
+<br />
+<br />
+<span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
+</center>
+
+<p><br />
+<br />
+<br /></p>
+
+<center>
+<img src="/blog/img/block-placeholder-expansion-after.png" alt="After placeholder expansion." width="75%" />
+<br />
+<br />
+<span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
+</center>
+
+<h2 id="inline-blocks">Inline blocks</h2>
+
+<p>Xcode has one other helpful snippet to write Objective-C blocks: <code class="highlighter-rouge">inlineBlock</code>. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like <code class="highlighter-rouge">+[UIView animateWithDuration:animations:completion:]</code>, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you’re reading code or diffs in viewers that wrap text.</p>
+
+<center>
+<img src="/blog/img/inlineblock-example.png" alt="Inline block examples." width="75%" />
+<br />
+<br />
+<span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>
+</center>
+
+<p>In general, I don’t fully care for this approach, as you then have to read code upwards. It also annoyingly makes you repeat the parameter list. Most preferable to me is to still declare the blocks as local variables, but extract all the logic you would have written in the block to a method. This approach makes your code more readable, and your logic more testable and refactorable later.</p>
+
+<h2 id="what-about-swift">What about Swift?</h2>
+
+<p>Writing closures in Swift is much easier for me, but I’d still encourage you to <code class="highlighter-rouge">typealias</code> complicated closure types, and you can always visit <a href="http://fuckingswiftblocksyntax.com">fucking swift block syntax</a>, <a href="http://fuckingclosuresyntax.com">fucking closure syntax</a> and of course <a href="http://goshdarnclosuresyntax.com">gosh darn closure syntax</a>, for those of you who’ve already maxed out your cursing jar allowance for the month performing Swift 3 migrations.</p>
+
+		</div>
+	</body>
+</html>
