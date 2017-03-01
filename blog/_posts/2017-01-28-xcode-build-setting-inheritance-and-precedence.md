@@ -26,7 +26,7 @@ The special selector `$(inherited)` brings in all settings resolved at the next 
 This does not define a tree, however. Target-level Platform and Configuration settings can inherit from two parents, as seen in the diagram, forming an acyclic graph. I think of the first trunk as linear, and the second and third I think of as transposable from Project- to Target-level: each level of the Project trunk influences its dual in the Target trunk. Also keep in mind that each level in Xcode's Build Settings editor inherits from the same setting in the corresponding Xcconfig.
 
 <center>
-<img src="{{ site.url }}/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." width="75%"/>
+<img src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." width="75%"/>
 <br />
 <br />
 <span class="caption">The acyclic inheritance graph for build settings.</span>
@@ -35,7 +35,7 @@ This does not define a tree, however. Target-level Platform and Configuration se
 In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as `$(inherited) XcPb`, and the Build Settings editor version of the Target-level iOS-specific setting is defined as `$(inherited) Tf`. When you look at the Resolved column, you can see how inheritance has propogated values down the line.
 
 <center>
-<img src="{{ site.url }}/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." width="100%"/>
+<img src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." width="100%"/>
 <br />
 <br />
 <span class="caption">An example using inheritance.</span>
@@ -48,7 +48,7 @@ _Note that in this example, I purposely left `$(inherited)` off of the Xcconfig 
 Precedence governs what settings can _override_ those from other levels. It's a simple linear progression, starting from Xcode defaults down to Target-level. An easy rule of thumb is to remember that settings defined in Xcode's Build Settings editor always override the settings from any Xcconfig set for that same level. With "Levels" selected in the Build Settings editor, precedence flows from right to left.
 
 <center>
-<img src="{{ site.url }}/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." width="100%"/>
+<img src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." width="100%"/>
 <br />
 <br />
 <span class="caption">The linear precedence progression for build settings.</span>
@@ -57,7 +57,7 @@ Precedence governs what settings can _override_ those from other levels. It's a 
 The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there's no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the `$(inherited)` selector removed. So, the same cells called out above now have the values `XcPb` and `Tf`, respectively. The leftmost values win out due to precedence rules.
 
 <center>
-<img src="{{ site.url }}/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." width="100%"/>
+<img src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." width="100%"/>
 <br />
 <br />
 <span class="caption">An example using precedence.</span>
@@ -65,4 +65,4 @@ The screenshot below shows essentially the same setup as the one used to demostr
 
 # Practice Makes Perfect
 
-These simple examples demostrate the rules, but in real life things get much more complicated. Don't be afraid to jump into your project's build settings, and learn what they do. You many find you can greatly simplify some aspects of your build pipeline, and eliminate a few bugs on the way. Download the example projects demonstrating [inheritance]({{ site.url }}/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-inheritance-demo.zip) and [precedence]({{ site.url }}/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-precedence-demo.zip) used to generate the screenshots and experiment with these rules in the powerful compositional model of Xcode build settings!
+These simple examples demostrate the rules, but in real life things get much more complicated. Don't be afraid to jump into your project's build settings, and learn what they do. You many find you can greatly simplify some aspects of your build pipeline, and eliminate a few bugs on the way. Download the example projects demonstrating [inheritance](/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-inheritance-demo.zip) and [precedence](/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-precedence-demo.zip) used to generate the screenshots and experiment with these rules in the powerful compositional model of Xcode build settings!

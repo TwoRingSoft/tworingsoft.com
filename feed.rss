@@ -1,0 +1,21 @@
+---
+
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		{% for post in site.posts %}
+			<item>
+				<title>{{ post.title | xml_escape }}</title>
+				<description>{{ post.abstract | xml_escape }}</description>
+				<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+				<link>{{ post.url | prepend: site.url }}</link>
+				<guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>

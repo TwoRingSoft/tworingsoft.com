@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Objective-C Block Syntax</title>
+				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
+				<pubDate>2017-02-27T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</guid>
+			</item>
+		
+			<item>
+				<title>Tracking Xcode Build Setting Changes with xcbs</title>
+				<description>Announcing a small CLI for persisting final Xcode project build settings in lockfiles.</description>
+				<pubDate>2017-02-19T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
+			</item>
+		
+			<item>
+				<title>Xcode Build Setting Inheritance and Precedence</title>
+				<description>Straightening out the tangled web of relationships in the world of Xcode build configuration.</description>
+				<pubDate>2017-01-28T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</guid>
+			</item>
+		
+			<item>
+				<title>The Art of Source Control, Part 2: Clean Git History</title>
+				<description>Outlining some best practices concerning git history tidiness.</description>
+				<pubDate>2017-01-19T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</guid>
+			</item>
+		
+			<item>
+				<title>The Art of Source Control, Part 1: Organizing Codebases</title>
+				<description>Outlining some best practices for organizing a codebase.</description>
+				<pubDate>2017-01-14T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</guid>
+			</item>
+		
+			<item>
+				<title>Passwords</title>
+				<description>Anecdata regarding antipatterns in the realm of password management for your service's users.</description>
+				<pubDate>2017-01-04T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/04/passwords.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/04/passwords.html</guid>
+			</item>
+		
+			<item>
+				<title>Going Back to the Future to test with git-rebase</title>
+				<description>Adventures in Git, using rebase to reorder history and automate some testing, too!</description>
+				<pubDate>2016-11-22T00:00:00-05:00</pubDate>
+				<link>http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</guid>
+			</item>
+		
+			<item>
+				<title>Making the site a little more SASSy</title>
+				<description>Why I decided to use SASS to manage the site's CSS.</description>
+				<pubDate>2016-07-24T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</guid>
+			</item>
+		
+	</channel>
+</rss>

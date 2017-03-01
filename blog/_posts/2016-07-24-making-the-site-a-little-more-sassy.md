@@ -20,7 +20,7 @@ SASS supports all of these things, making me a happy coder again in web-land :) 
 One cool thing I learned about is the mapping file generation, which helps browser web inspectors to find the original .scss or .sass file line that generated the CSS ultimately used to render the page. I even found a little trick on my own, playing in Safari's Web Inspector: if you ⌘-hover over the inspector's file/line .scss/.sass hyperlink, it will toggle to the SASS-compiled .css file/line instead:
 
 <center>
-<img src="{{ site.url }}/blog/img/sass-vs-css-web-inspector-link.png" />
+<img src="/blog/img/sass-vs-css-web-inspector-link.png" />
 <br />
 <br />
 <span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>
