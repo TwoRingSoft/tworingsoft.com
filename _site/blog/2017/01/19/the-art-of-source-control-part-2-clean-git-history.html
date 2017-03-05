@@ -1,28 +1,40 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
 	<head>
-		<meta charset="utf-8"/>		
-		<meta name="description" content="Two Ring Software."/>
+		<meta charset="utf-8"/>
 		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
 		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % The Art of Source Control, Part 2: Clean Git History % 19 January 2017</title>
+		<meta name="description" content="Outlining some best practices concerning git history tidiness." />
+
+		<meta property="og:title" content="The Art of Source Control, Part 2: Clean Git History" />
+		<meta property="og:description" content="Outlining some best practices concerning git history tidiness." />
+
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		
+
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<a href="/blog/" class="page-name">Blog</a>
-		
+
 		<p>
 			<span class="title">The Art of Source Control, Part 2: Clean Git History</span>
 		</p>
 		<p>
 			<span class="date">19 January 2017</span>
 		</p>
-		
+
 		<div id="page-content">
 <p>Just like <a href="/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
 

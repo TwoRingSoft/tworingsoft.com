@@ -1,18 +1,23 @@
 {% include opening-tags.html %}
 		<title>Two Ring Software % Blog % {{ page.title }} % {{ page.date | date: '%-d %B %Y'}}</title>
+		<meta name="description" content="{{ page.abstract }}" />
+
+		<meta property="og:title" content="{{ page.title }}" />
+		<meta property="og:description" content="{{ page.abstract }}" />
+
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		
+
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<a href="/blog/" class="page-name">Blog</a>
-		
+
 		<p>
 			<span class="title">{{ page.title }}</span>
 		</p>
 		<p>
 			<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
 		</p>
-		
+
 		<div id="page-content">

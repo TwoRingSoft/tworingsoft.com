@@ -1,28 +1,40 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
 	<head>
-		<meta charset="utf-8"/>		
-		<meta name="description" content="Two Ring Software."/>
+		<meta charset="utf-8"/>
 		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
 		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Xcode Build Setting Inheritance and Precedence % 28 January 2017</title>
+		<meta name="description" content="Straightening out the tangled web of relationships in the world of Xcode build configuration." />
+
+		<meta property="og:title" content="Xcode Build Setting Inheritance and Precedence" />
+		<meta property="og:description" content="Straightening out the tangled web of relationships in the world of Xcode build configuration." />
+
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		
+
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<a href="/blog/" class="page-name">Blog</a>
-		
+
 		<p>
 			<span class="title">Xcode Build Setting Inheritance and Precedence</span>
 		</p>
 		<p>
 			<span class="date">28 January 2017</span>
 		</p>
-		
+
 		<div id="page-content">
 <p>For probably the first year or two I developed apps for iOS, I stayed as far away from the build settings area as I could. I had plenty to focus on learning the Cocoa APIs. Xcode’s configuration system is daunting in its power and flexibility, and anyways it provides you with a good enough set of defaults and migrates you on new releases to keep you running correctly.</p>
 

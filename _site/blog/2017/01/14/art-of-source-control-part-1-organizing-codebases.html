@@ -1,28 +1,40 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
 	<head>
-		<meta charset="utf-8"/>		
-		<meta name="description" content="Two Ring Software."/>
+		<meta charset="utf-8"/>
 		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
 		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % The Art of Source Control, Part 1: Organizing Codebases % 14 January 2017</title>
+		<meta name="description" content="Outlining some best practices for organizing a codebase." />
+
+		<meta property="og:title" content="The Art of Source Control, Part 1: Organizing Codebases" />
+		<meta property="og:description" content="Outlining some best practices for organizing a codebase." />
+
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		
+
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<a href="/blog/" class="page-name">Blog</a>
-		
+
 		<p>
 			<span class="title">The Art of Source Control, Part 1: Organizing Codebases</span>
 		</p>
 		<p>
 			<span class="date">14 January 2017</span>
 		</p>
-		
+
 		<div id="page-content">
 <p>Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There’s no one right way to do anything, and you can make it as simple or as complicated as you like. Today I’m examining the decisions to make around how to even organize code.</p>
 

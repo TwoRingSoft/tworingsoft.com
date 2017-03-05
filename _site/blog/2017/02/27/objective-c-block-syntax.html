@@ -1,28 +1,40 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
 	<head>
-		<meta charset="utf-8"/>		
-		<meta name="description" content="Two Ring Software."/>
+		<meta charset="utf-8"/>
 		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
 		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
 		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Objective-C Block Syntax % 27 February 2017</title>
+		<meta name="description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
+
+		<meta property="og:title" content="Objective-C Block Syntax" />
+		<meta property="og:description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
+
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		
+
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<a href="/blog/" class="page-name">Blog</a>
-		
+
 		<p>
 			<span class="title">Objective-C Block Syntax</span>
 		</p>
 		<p>
 			<span class="date">27 February 2017</span>
 		</p>
-		
+
 		<div id="page-content">
 <p>One of the things Objective-C developers love to hate about the language is the <a href="https://fuckingblocksyntax.com">fucking block syntax</a> (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.</p>
 
