@@ -2,3 +2,4 @@ collections:
 - devtools
 - apps
 url: http://tworingsoft.com
+exclude: [ Rakefile ]
