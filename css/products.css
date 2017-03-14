@@ -5,15 +5,15 @@ a {
 body {
   margin: 50px; }
 
-h1, .list-item span {
+h1, .list {
   color: #828282;
   font: 300 24pt "Raleway", sans-serif; }
 
-h2, .list-item a {
+h2, .list-item span {
   color: #828282;
   font: 300 20pt "Raleway", sans-serif; }
 
-h3 {
+h3, .list-item a {
   color: #cacaca;
   font: 300 18pt "Raleway", sans-serif; }
 

@@ -9,17 +9,52 @@
 		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
 		&nbsp;
 		<span class="page-name">Products</span>
-		
+
 		<div id="page-content">
-			
-			{% for product in site.products %}
-				
+
+		<span class="list">Apps</span>
+
+		<br /><br />
+
+			{% for app in site.apps %}
+
+			<table border="0">
+				<tr>
+					<td>
+						<img src="/img/{{ app.image }}" width="100px" />
+					</td>
+					<td>
+						<div class="list-item">
+							<span>{{ app.name }}</span> 
+							&nbsp;&nbsp;&nbsp;
+							<a href="{{ app.app-store-url }}">
+								<img src="/img/Download_on_the_App_Store_Badge_US-UK_135x40.svg" width="90px">
+							</a>
+
+							<p >
+								{{ app.description }}
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			{% endfor %}
+
+		<br /><br />
+
+		<span class="list">Dev Tools</span>
+
+		<br /><br />
+
+			{% for devtool in site.devtools %}
+
 			<div class="list-item">
-				<span>{{ product.name }}</span> <a href="{{ product.website }}">{{ product.website-name }}</a>
+				<span>{{ devtool.name }}</span> <a href="{{ devtool.website }}">{{ devtool.website-name }}</a>
 				<p >
-					{{ product.description }}
+					{{ devtool.description }}
 				</p>
 			</div>
-			
+
 			{% endfor %}
 {% include closing-tags.html %}
