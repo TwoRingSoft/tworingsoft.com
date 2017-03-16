@@ -7,7 +7,7 @@
 		
 			<item>
 				<title>Snapping Angles and Fuzzy Binary Search</title>
-				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
+				<description>Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.</description>
 				<pubDate>2017-03-16T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
