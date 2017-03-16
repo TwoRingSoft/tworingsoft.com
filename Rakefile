@@ -4,5 +4,6 @@ task :build do
 end
 
 task :publish do
+	sh 'git push origin'
 	sh 'git subtree push --prefix _site origin master'
 end
