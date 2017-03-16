@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Snapping Angles and Fuzzy Binary Search</title>
+				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
+				<pubDate>2017-03-16T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
+			</item>
+		
+			<item>
 				<title>Objective-C Block Syntax</title>
 				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
 				<pubDate>2017-02-27T00:00:00-05:00</pubDate>
