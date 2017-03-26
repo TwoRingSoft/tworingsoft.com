@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Validating Crash Reporting in Live iOS Apps</title>
+				<description>There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.</description>
+				<pubDate>2017-03-26T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</guid>
+			</item>
+		
+			<item>
 				<title>Snapping Angles and Fuzzy Binary Search</title>
 				<description>Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.</description>
 				<pubDate>2017-03-16T00:00:00-04:00</pubDate>
