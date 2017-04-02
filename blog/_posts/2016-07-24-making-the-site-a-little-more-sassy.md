@@ -19,11 +19,10 @@ SASS supports all of these things, making me a happy coder again in web-land :) 
 
 One cool thing I learned about is the mapping file generation, which helps browser web inspectors to find the original .scss or .sass file line that generated the CSS ultimately used to render the page. I even found a little trick on my own, playing in Safari's Web Inspector: if you ⌘-hover over the inspector's file/line .scss/.sass hyperlink, it will toggle to the SASS-compiled .css file/line instead:
 
-<center>
-<img src="/blog/img/sass-vs-css-web-inspector-link.png" />
-<br />
-<br />
-<span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="sass-vs-css-web-inspector-link.png" 
+	alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." 
+	caption="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." %}
 
 Overall, I'm happy with my decision to switch the site's stylesheets to SASS, and I'm happy I was able to get up and running with it so quickly. I'm sure it will make it super easy to tweak the styles for different screen sizes on phones and tablets, the piece of work I'm taking on next for the site, and also something I haven't done before.

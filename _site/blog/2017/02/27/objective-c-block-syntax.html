@@ -56,7 +56,7 @@
 <p>Instead, Xcode provides an autocompletion for the string <code class="highlighter-rouge">typedefBlock</code>; start typing that outside of an <code class="highlighter-rouge">@interface</code>/<code class="highlighter-rouge"><span class="k">@implementation</span></code> scope, and you can accept an automatic expansion to the following:</p>
 
 <center>
-<img src="/blog/img/typedefblock-autocompletion.png" alt="typedefBlock autocompletion." width="75%" />
+<img src="/blog/img/typedefblock-autocompletion.png" alt="Autocompletion for typedefBlock." width="75%" />
 <br />
 <br />
 <span class="caption">Autocompletion for `typedefBlock`.</span>
@@ -80,7 +80,7 @@
 <p>OK, we’ve now <code class="highlighter-rouge">typedef</code>‘d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of <a href="http://goshdarnblocksyntax.com">gosh darn block syntax</a>.</p>
 
 <center>
-<img src="/blog/img/block-placeholder-expansion-before.png" alt="After method autocompletion, before placeholder expansion." width="75%" />
+<img src="/blog/img/block-placeholder-expansion-before.png" alt="The autocompletion for the method call contains a placeholder for the block parameter." width="75%" />
 <br />
 <br />
 <span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
@@ -91,7 +91,7 @@
 <br /></p>
 
 <center>
-<img src="/blog/img/block-placeholder-expansion-after.png" alt="After placeholder expansion." width="75%" />
+<img src="/blog/img/block-placeholder-expansion-after.png" alt="After tabbing to the block placeholder and expanding with the Return key." width="75%" />
 <br />
 <br />
 <span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
@@ -102,7 +102,7 @@
 <p>Xcode has one other helpful snippet to write Objective-C blocks: <code class="highlighter-rouge">inlineBlock</code>. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like <code class="highlighter-rouge">+[UIView animateWithDuration:animations:completion:]</code>, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you’re reading code or diffs in viewers that wrap text.</p>
 
 <center>
-<img src="/blog/img/inlineblock-example.png" alt="Inline block examples." width="75%" />
+<img src="/blog/img/inlineblock-example.png" alt="The good and bad of Objective-C method calls with multiple block parameters." width="75%" />
 <br />
 <br />
 <span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>

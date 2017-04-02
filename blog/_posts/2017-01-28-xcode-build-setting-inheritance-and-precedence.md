@@ -25,21 +25,21 @@ The special selector `$(inherited)` brings in all settings resolved at the next 
 
 This does not define a tree, however. Target-level Platform and Configuration settings can inherit from two parents, as seen in the diagram, forming an acyclic graph. I think of the first trunk as linear, and the second and third I think of as transposable from Project- to Target-level: each level of the Project trunk influences its dual in the Target trunk. Also keep in mind that each level in Xcode's Build Settings editor inherits from the same setting in the corresponding Xcconfig.
 
-<center>
-<img src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." width="75%"/>
-<br />
-<br />
-<span class="caption">The acyclic inheritance graph for build settings.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="build-setting-inheritance.png" 
+	alt="The acyclic inheritance graph for build settings." 
+	caption="The acyclic inheritance graph for build settings." 
+	dimensions="width=\"75%\"" %}
 
 In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as `$(inherited) XcPb`, and the Build Settings editor version of the Target-level iOS-specific setting is defined as `$(inherited) Tf`. When you look at the Resolved column, you can see how inheritance has propogated values down the line.
 
-<center>
-<img src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." width="100%"/>
-<br />
-<br />
-<span class="caption">An example using inheritance.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="build-setting-inheritance-case-study.png" 
+	alt="An example using inheritance." 
+	caption="An example using inheritance." 
+	dimensions="width=\"100%\"" %}
 
 _Note that in this example, I purposely left `$(inherited)` off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over._
 
@@ -47,21 +47,21 @@ _Note that in this example, I purposely left `$(inherited)` off of the Xcconfig 
 
 Precedence governs what settings can _override_ those from other levels. It's a simple linear progression, starting from Xcode defaults down to Target-level. An easy rule of thumb is to remember that settings defined in Xcode's Build Settings editor always override the settings from any Xcconfig set for that same level. With "Levels" selected in the Build Settings editor, precedence flows from right to left.
 
-<center>
-<img src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." width="100%"/>
-<br />
-<br />
-<span class="caption">The linear precedence progression for build settings.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="build-setting-precedence.png" 
+	alt="The linear precedence progression for build settings." 
+	caption="The linear precedence progression for build settings." 
+	dimensions="width=\"100%\"" %}
 
 The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there's no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the `$(inherited)` selector removed. So, the same cells called out above now have the values `XcPb` and `Tf`, respectively. The leftmost values win out due to precedence rules.
 
-<center>
-<img src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." width="100%"/>
-<br />
-<br />
-<span class="caption">An example using precedence.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="build-setting-precedence-case-study.png" 
+	alt="An example using precedence." 
+	caption="An example using precedence." 
+	dimensions="width=\"100%\"" %}
 
 # Practice Makes Perfect
 

@@ -22,12 +22,12 @@ Bad:
 
 Instead, Xcode provides an autocompletion for the string `typedefBlock`; start typing that outside of an `@interface`/`@implementation` scope, and you can accept an automatic expansion to the following:
 
-<center>
-<img src="/blog/img/typedefblock-autocompletion.png" alt="typedefBlock autocompletion." width="75%"/>
-<br />
-<br />
-<span class="caption">Autocompletion for `typedefBlock`.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="typedefblock-autocompletion.png" 
+	alt="Autocompletion for typedefBlock." 
+	caption="Autocompletion for `typedefBlock`." 
+	dimensions="width=\"75%\"" %}
 
 Good:
 ```
@@ -46,34 +46,34 @@ This adheres to DRY principles and makes the code more self-documentingly readab
 
 OK, we've now `typedef`'d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of [gosh darn block syntax](http://goshdarnblocksyntax.com).
 
-<center>
-<img src="/blog/img/block-placeholder-expansion-before.png" alt="After method autocompletion, before placeholder expansion." width="75%"/>
-<br />
-<br />
-<span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="block-placeholder-expansion-before.png" 
+	alt="The autocompletion for the method call contains a placeholder for the block parameter." 
+	caption="The autocompletion for the method call contains a placeholder for the block parameter." 
+	dimensions="width=\"75%\"" %}
 
 <br />
 <br />
 <br />
 
-<center>
-<img src="/blog/img/block-placeholder-expansion-after.png" alt="After placeholder expansion." width="75%"/>
-<br />
-<br />
-<span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="block-placeholder-expansion-after.png" 
+	alt="After tabbing to the block placeholder and expanding with the Return key." 
+	caption="After tabbing to the block placeholder and expanding with the Return key." 
+	dimensions="width=\"75%\"" %}
 
 ## Inline blocks
 
 Xcode has one other helpful snippet to write Objective-C blocks: `inlineBlock`. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like `+[UIView animateWithDuration:animations:completion:]`, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you're reading code or diffs in viewers that wrap text.
 
-<center>
-<img src="/blog/img/inlineblock-example.png" alt="Inline block examples." width="75%"/>
-<br />
-<br />
-<span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>
-</center>
+{% include 
+	blog-post-image.html 
+	source="inlineblock-example.png" 
+	alt="The good and bad of Objective-C method calls with multiple block parameters." 
+	caption="The good and bad of Objective-C method calls with multiple block parameters." 
+	dimensions="width=\"75%\"" %}
 
 In general, I don't fully care for this approach, as you then have to read code upwards. It also annoyingly makes you repeat the parameter list. Most preferable to me is to still declare the blocks as local variables, but extract all the logic you would have written in the block to a method. This approach makes your code more readable, and your logic more testable and refactorable later.
 
