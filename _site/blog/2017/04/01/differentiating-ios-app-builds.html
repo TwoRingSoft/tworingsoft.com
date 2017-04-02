@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<title>Two Ring Software % Blog % Differentiating iOS App Builds % 1 April 2017</title>
+		<meta name="description" content="A simple way to manage all your app build variants to test alongside each other on a device." />
+
+		<meta property="og:title" content="Differentiating iOS App Builds" />
+		<meta property="og:description" content="A simple way to manage all your app build variants to test alongside each other on a device." />
+
+		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+
+		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
+		&nbsp;
+		<a href="/blog/" class="page-name">Blog</a>
+
+		<p>
+			<span class="title">Differentiating iOS App Builds</span>
+		</p>
+		<p>
+			<span class="date">1 April 2017</span>
+		</p>
+
+		<div id="page-content">
+<p>In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you’ve downloaded from the app store just to make sure <a href="/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html">everything works</a>. In this post, I’ll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.</p>
+
+<h2 id="bundle-ids">Bundle IDs</h2>
+
+<p>First things first: prevent debug, beta, and app store builds from overwriting each other on your test device. To do this, add a suffix to each of your non-app-store builds so they register as “different” apps on your iDevice. Here’s my setup:</p>
+
+<center>
+<img src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." width="100%" />
+<br />
+<br />
+<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
+</center>
+
+<h2 id="app-icons">App icons</h2>
+
+<p>Once you have multiple versions of your app on your device beside each other, you need a way to tell them apart. Inspired by <a href="https://github.com/krzysztofzablocki/KZBootstrap">Krzysztof Zabłocki’s KZBootstrap</a>, I wanted to overlay some information about each build onto the icons, depending on the build variant. While <code class="highlighter-rouge">KZBootstrap</code> seems like an amazing tool, I already had an Xcode project, and I wanted to insert a clean, minimal solution. I also didn’t want to bring any new dependencies in, like <code class="highlighter-rouge">imagemagick</code> and <code class="highlighter-rouge">ghostscript</code> as in <code class="highlighter-rouge">KZBootstrap</code> and a few other solutions I found online.</p>
+
+<p>After a little more searching, I found <a href="https://github.com/bejo/XcodeIconTagger"><code class="highlighter-rouge">XcodeIconTagger</code></a> which only uses macOS’ Automator with a Quartz filter. I modified it to get a little more flexibility out of it in <a href="https://github.com/TwoRingSoft/XcodeIconTagger">this fork</a>. Now, I can create <em>Run Script</em> Build Phases surrounding the <em>Copy Bundle Resources</em> Build Phase that first create the icon overlay, and then after copying the icons to the installation, reset the git index to discard the changes.</p>
+
+<center>
+<img src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." width="100%" />
+<br />
+<br />
+<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
+</center>
+
+<p><code class="highlighter-rouge">tag-icons.sh</code> is a script that wraps some of the different types of overlays I’d like, depending on the build variant, into a convenient interface to which I can simply supply either <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">cleanup</code> commands. (It can be found in <a href="https://github.com/TwoRingSoft/shared-utils">shared-utils</a>.) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:</p>
+
+<script src="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6.js"></script>
+
+<p>Now, I can tell all my builds apart on my device at once. Here I have a debugging development build, displaying the git commit hash that built it; a beta build, showing the semantic and build versions; a special build that visualizes touch input, which I use to create App Store preview videos; the App Store version itself, with no overlay.</p>
+
+<center>
+<img src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." width="50%" />
+<br />
+<br />
+<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
+</center>
+
+		</div>
+	</body>
+</html>

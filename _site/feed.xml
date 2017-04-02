@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Differentiating iOS App Builds</title>
+				<description>A simple way to manage all your app build variants to test alongside each other on a device.</description>
+				<pubDate>2017-04-01T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</guid>
+			</item>
+		
+			<item>
 				<title>Validating Crash Reporting in Live iOS Apps</title>
 				<description>There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.</description>
 				<pubDate>2017-03-26T00:00:00-04:00</pubDate>
