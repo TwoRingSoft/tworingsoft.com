@@ -4,6 +4,11 @@
 
 		<meta property="og:title" content="{{ page.title }}" />
 		<meta property="og:description" content="{{ page.abstract }}" />
+		{% if page.thumbnail != undefined %}
+		<meta property="og:image" content="/blog/img/{{ page.thumbnail }}" />
+		{% else %}
+		<meta property="og:image" content="/img/logo-small.jpg" />
+		{% endif %}
 
 		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
 	</head>
