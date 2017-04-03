@@ -16,10 +16,6 @@ p {
 	@extend .text;
 }
 
-#page-content { /* override from _subpage */
-	margin: 0px 100px 0px 100px;
-}
-
 /* divs containing code blocks */
 .code {
 	background-color: $tr-light-grey;

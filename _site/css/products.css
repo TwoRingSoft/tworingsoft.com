@@ -2,9 +2,6 @@
 a {
   color: #828282; }
 
-body {
-  margin: 50px; }
-
 h1, .list {
   color: #828282;
   font: 300 24pt "Raleway", sans-serif; }
@@ -36,13 +33,18 @@ h3, .list-item a {
 
 .page-name {
   color: #828282;
-  font: 100 24pt "Raleway", sans-serif;
+  font: 100 40pt "Raleway", sans-serif;
   text-decoration: none; }
 
 #page-content {
   /* div containing everything after the header */
-  margin: 100px; }
+  margin: 0px 100px 0px 100px; }
 
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+  #page-content {
+    /* div containing everything after the header */
+    margin: 0px; } }
 .list-item span {
   /* product name */ }
 

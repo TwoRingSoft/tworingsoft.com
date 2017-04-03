@@ -2,13 +2,9 @@
 
 #front-name {
 	color: $tr-grey;
-	font: 100 30pt $tr-fancy-font;
-}
-
-a {
-	font: 100 13pt $tr-font;
+	font: 100 50pt $tr-fancy-font;
 }
 
 body {
-	@extend .text;
+	font: 100 20pt $tr-fancy-font;
 }

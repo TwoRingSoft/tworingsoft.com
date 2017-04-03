@@ -2,9 +2,6 @@
 a {
   color: #828282; }
 
-body {
-  margin: 50px; }
-
 h1 {
   color: #828282;
   font: 300 24pt "Raleway", sans-serif; }
@@ -17,7 +14,7 @@ h3 {
   color: #cacaca;
   font: 300 18pt "Raleway", sans-serif; }
 
-.text, body, ul {
+.text, ul {
   color: #828282;
   font: 12pt sans-serif; }
 
@@ -36,9 +33,9 @@ h3 {
 
 #front-name {
   color: #828282;
-  font: 100 30pt "Raleway", sans-serif; }
+  font: 100 50pt "Raleway", sans-serif; }
 
-a {
-  font: 100 13pt sans-serif; }
+body {
+  font: 100 20pt "Raleway", sans-serif; }
 
 /*# sourceMappingURL=index.css.map */

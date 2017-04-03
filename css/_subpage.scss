@@ -2,10 +2,17 @@
 
 .page-name {
 	color: $tr-grey;
-	font: 100 24pt $tr-fancy-font;
+	font: 100 40pt $tr-fancy-font;
 	text-decoration: none;
 }
 
 #page-content { /* div containing everything after the header */
-	margin: 100px;
+	margin: 0px 100px 0px 100px;
+}
+
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+	#page-content { /* div containing everything after the header */
+		margin: 0px;
+	}	
 }

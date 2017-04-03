@@ -29,18 +29,21 @@
 	</head>
 	<body>
 
-		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
-		&nbsp;
-		<a href="/blog/" class="page-name">Blog</a>
-
-		<p>
-			<span class="title">Validating Crash Reporting in Live iOS Apps</span>
-		</p>
-		<p>
-			<span class="date">26 March 2017</span>
-		</p>
+				<center>
+			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
+			&nbsp;
+			
+			<a href="/blog/" class="page-name">Blog</a>
+			
+		</center>
 
 		<div id="page-content">
+
+			<p>
+				<span class="title">Validating Crash Reporting in Live iOS Apps</span>
+				<br />
+				<span class="date">26 March 2017</span>
+			</p>
 <p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
 
 <p>In the Bitcode world, however, the LLVM-IR bytecode you submit could be recompiled by Apple before distribution in the app store, invalidating the dSYMs submitted alongside the bytecode. (I’m not sure it even makes sense to immediately generate dSYMs for Bitcode apps at all, but I digress.) Now, after your submitted app is recompiled, you must download the new dSYMs from Apple and submit them to your crash reporter so they get the new binary addresses for your app’s symbols. (Shout out to <a href="https://krausefx.com/blog/download-dsym-symbolication-files-from-itunes-connect-for-bitcode-ios-apps">Fastlane</a> for creating a tool that helps automate this process; if you prefer a little more control, I wrote a tool called <code class="highlighter-rouge">upload-symbols</code> that ships with Fabric.app and the Fabric CocoaPod you can use).</p>

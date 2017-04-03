@@ -29,18 +29,21 @@
 	</head>
 	<body>
 
-		<a href="/"><img src="/img/logo-small.jpg" width="35px" /></a>
-		&nbsp;
-		<a href="/blog/" class="page-name">Blog</a>
-
-		<p>
-			<span class="title">Going Back to the Future to test with git-rebase</span>
-		</p>
-		<p>
-			<span class="date">22 November 2016</span>
-		</p>
+				<center>
+			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
+			&nbsp;
+			
+			<a href="/blog/" class="page-name">Blog</a>
+			
+		</center>
 
 		<div id="page-content">
+
+			<p>
+				<span class="title">Going Back to the Future to test with git-rebase</span>
+				<br />
+				<span class="date">22 November 2016</span>
+			</p>
 <p>I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.</p>
 
 <p>So, I set out to test the code in the past, before I wrote the new code. How could this be? While building an actual time machine would make quite the pleasing pun of “all-time yak shave”, luckily for me git already has a facility to do what I want: git-rebase.</p>
