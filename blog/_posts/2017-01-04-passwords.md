@@ -17,7 +17,7 @@ I cannot log into my account. "Wrong username or password." How can this be, as 
 
 I click "forgot password" to get the password reset email with a link to the form to create a new one (which I feel is what should have happened in the first place with the TravelBank account). Aha! Passwords cannot be more than 20 characters long, well below the passphrase I had generated. The original password change form not only didn't state this up front, but didn't complain that my chosen password didn't comply. Instead, it silently truncated my input.
 
-### What went wrong
+# What went wrong
 
 I love JetBlue and of course will continue to do business with them, but they committed several sins regarding passwords and account security here:
 
@@ -37,7 +37,7 @@ It would be very simple to have the same HTML bullet point list in the Profile -
 
 Upsetting the user's expectations like this, especially with respect to security, just shouldn't be acceptable. A good UI should immediately present feedback regarding compliance and help the user discover and fix the error. It should never even allow the user the possibility to submit invalid input.
 
-### Welcome to the club
+# Welcome to the club
 
 JetBlue/TravelBank are by far not the [only companies](http://plaintextoffenders.com) to have less-than-perfect password management. A few other things I've seen that bother me or just leave me scratching my head:
 

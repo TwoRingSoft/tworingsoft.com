@@ -15,11 +15,11 @@ As you shuttle data between disks, servers, and capture it from and present it t
 
 Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It's tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning `nil`.
 
-<script src="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488.js"></script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488" %}
 
 In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of `do`/`try`/`catch` to divert execution using `throw`, where Objective-C discouraged using exceptions for all but actual programmer error. 
 
-<script src="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8.js"></script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8" %}
 
 In both of these examples, assume:
 
@@ -35,11 +35,11 @@ So then what should an optional be used for? To represent the absence of somethi
 
 The difference becomes a bit more clear when you consider collections. What is the difference between an empty collection and a collection that is not there? In both cases, you have zero things that would be found in such a collection. The difference is in how all the code involved in shuffling the container from A to B must handle all possible combinations.
 
-<script src="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310.js"></script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310" %}
 
 If you need to do some validation etc. at multiple stages along the way, you'll need to work around the optionality of the collection. Whereas, if you always have a container, your logic can be more streamlined. The same loops and function calls work the same way whether there are 0 or 100 elements in an array.
 
-<script src="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf.js"></script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf" %}
 
 And again, by using Swift's error system, you're much more expressively describing possible failures.
 

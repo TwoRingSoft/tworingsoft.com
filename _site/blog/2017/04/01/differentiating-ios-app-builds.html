@@ -25,28 +25,25 @@
 		<meta property="og:image" content="/blog/img/app-icon-for-different-app-build-distributions.png" />
 		
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-				<center>
-			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
-			&nbsp;
-			
-			<a href="/blog/" class="page-name">Blog</a>
-			
-		</center>
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
+			
+						<div class="title">Differentiating iOS App Builds</div>
+						<div class="date">1 April 2017</div>
+<div id="post-content">
+	<p>In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you’ve downloaded from the app store just to make sure <a href="/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html">everything works</a>. In this post, I’ll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.</p>
 
-			<p>
-				<span class="title">Differentiating iOS App Builds</span>
-				<br />
-				<span class="date">1 April 2017</span>
-			</p>
-<p>In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you’ve downloaded from the app store just to make sure <a href="/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html">everything works</a>. In this post, I’ll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.</p>
-
-<h2 id="bundle-ids">Bundle IDs</h2>
+<h1 id="bundle-ids">Bundle IDs</h1>
 
 <p>First things first: prevent debug, beta, and app store builds from overwriting each other on your test device. To do this, add a suffix to each of your non-app-store builds so they register as “different” apps on your iDevice. Here’s my setup:</p>
 
@@ -57,7 +54,7 @@
 <span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
 </center>
 
-<h2 id="app-icons">App icons</h2>
+<h1 id="app-icons">App icons</h1>
 
 <p>Once you have multiple versions of your app on your device beside each other, you need a way to tell them apart. Inspired by <a href="https://github.com/krzysztofzablocki/KZBootstrap">Krzysztof Zabłocki’s KZBootstrap</a>, I wanted to overlay some information about each build onto the icons, depending on the build variant. While <code class="highlighter-rouge">KZBootstrap</code> seems like an amazing tool, I already had an Xcode project, and I wanted to insert a clean, minimal solution. I also didn’t want to bring any new dependencies in, like <code class="highlighter-rouge">imagemagick</code> and <code class="highlighter-rouge">ghostscript</code> as in <code class="highlighter-rouge">KZBootstrap</code> and a few other solutions I found online.</p>
 
@@ -74,6 +71,10 @@
 
 <script src="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6.js"></script>
 
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6">https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
 <p>Now, I can tell all my builds apart on my device at once. Here I have a debugging development build, displaying the git commit hash that built it; a beta build, showing the semantic and build versions; a special build that visualizes touch input, which I use to create App Store preview videos; the App Store version itself, with no overlay.</p>
 
 <center>
@@ -83,6 +84,7 @@
 <span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
 </center>
 
+</div>
 		</div>
 	</body>
 </html>

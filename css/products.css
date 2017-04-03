@@ -1,44 +1,45 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:100,300");
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600");
 a {
-  color: #828282; }
+  color: #000;
+  text-decoration: underline; }
+
+.hero, .page-name {
+  color: #000;
+  font: 200 35pt "Raleway", sans-serif; }
 
 h1, .list {
-  color: #828282;
-  font: 300 24pt "Raleway", sans-serif; }
+  color: #000;
+  font: 300 28pt "Raleway", sans-serif; }
 
 h2, .list-item span {
-  color: #828282;
-  font: 300 20pt "Raleway", sans-serif; }
+  color: #000;
+  font: 200 23pt "Raleway", sans-serif; }
 
 h3, .list-item a {
-  color: #cacaca;
-  font: 300 18pt "Raleway", sans-serif; }
+  color: #000;
+  font: 100 18pt "Raleway", sans-serif; }
 
 .text, .list-item p, ul {
-  color: #828282;
-  font: 12pt sans-serif; }
+  color: #000;
+  font: lighter 13pt "Times New Roman", serif; }
 
-.code {
-  color: #828282;
-  font: 12pt monospace;
-  background-color: #eeeeee; }
+.highlighter-rouge {
+  color: #800;
+  font: lighter 12pt "Courier New", monospace;
+  background-color: #eee;
+  padding: 0px 3px 0px 3px; }
 
 .caption {
   color: #828282;
-  font: italic 10pt sans-serif; }
+  font: italic 10pt "Times New Roman", serif; }
 
 .footnote {
-  color: #828282;
-  font: 100 10pt sans-serif; }
-
-.page-name {
-  color: #828282;
-  font: 100 40pt "Raleway", sans-serif;
-  text-decoration: none; }
+  color: #000;
+  font: 100 10pt "Times New Roman", serif; }
 
 #page-content {
   /* div containing everything after the header */
-  margin: 0px 100px 0px 100px; }
+  margin: 20px 100px 0px 100px; }
 
 /* 500 or below */
 @media only screen and (max-width: 500px) {

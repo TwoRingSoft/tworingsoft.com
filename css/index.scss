@@ -1,8 +1,7 @@
 @import 'common';
 
 #front-name {
-	color: $tr-grey;
-	font: 100 50pt $tr-fancy-font;
+	@extend .hero;
 }
 
 body {

@@ -25,26 +25,23 @@
 		<meta property="og:image" content="/img/logo-small.jpg" />
 		
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-				<center>
-			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
-			&nbsp;
-			
-			<a href="/blog/" class="page-name">Blog</a>
-			
-		</center>
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
-
-			<p>
-				<span class="title">The Art of Source Control, Part 2: Clean Git History</span>
-				<br />
-				<span class="date">19 January 2017</span>
-			</p>
-<p>Just like <a href="/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
+			
+						<div class="title">The Art of Source Control, Part 2: Clean Git History</div>
+						<div class="date">19 January 2017</div>
+<div id="post-content">
+	<p>Just like <a href="/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
 
 <h1 id="relevance-signal-to-noise-ratio">Relevance: Signal to Noise Ratio</h1>
 
@@ -64,6 +61,7 @@
 
 <p>Squashing also provides an opportunity to review all the previous messages, gather your thoughts, and write a good summary of what changed. For my first few years using git, I only ever used the short commit message or “subject”. Now, my subject lines typically only contain 70 characters (enough to avoid truncation on GitHub, in Git clients like Tower, SourceTree or GitX, or when running <code class="highlighter-rouge">git log --oneline --decorate --graph</code>). The description contains a summary and usually bullet points gleaned from all the individual commits I squashed. Github will even pull all that useful information into a PR’s description field!</p>
 
+</div>
 		</div>
 	</body>
 </html>

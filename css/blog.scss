@@ -1,33 +1,18 @@
 @import 'subpage';
 
-.title {
-	@extend h1;
+ul {
+	margin-top: 20px;
 }
 
-.date { 
+a {
+	@extend h2;
+	text-decoration: none;
+}
+
+.date {
 	@extend h3;
 }
 
-.entry {
+.abstract {
 	@extend .text;
-}
-
-p {
-	@extend .text;
-}
-
-/* divs containing code blocks */
-.code {
-	background-color: $tr-light-grey;
-	font-family: $tr-monospace-font;
-	color: $tr-dark-grey;
-}
-
-div > .highlighter-rouge {
-	@extend .code;
-	padding: 5px 20px 5px 20px;
-}
-
-code > .highlighter-rouge {
-	@extend .code;
 }

@@ -1,41 +1,49 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,300');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600');
 
 $tr-fancy-font: 'Raleway', sans-serif;
-$tr-font: sans-serif;
+$tr-font: 'Times New Roman', serif;
 $tr-monospace-font: 'Courier New', monospace;
 
 $tr-light-grey: #cacaca;
 $tr-grey: #828282;
 $tr-dark-grey: #424242;
+$tr-black: #000;
 
 a {
-	color: $tr-grey;
+	color: $tr-black;
+	text-decoration: underline;
+}
+
+.hero {
+	color: $tr-black;
+	font: 200 35pt $tr-fancy-font;
 }
 
 h1 {
-	color: $tr-grey; 
-	font: 300 24pt $tr-fancy-font;
+	color: $tr-black; 
+	font: 300 28pt $tr-fancy-font;
 }
 
 h2 {
-	color: $tr-grey; 
-	font: 300 20pt $tr-fancy-font;
+	color: $tr-black; 
+	font: 200 23pt $tr-fancy-font;
 }
 
 h3 {
-	color: $tr-light-grey; 
-	font: 300 18pt $tr-fancy-font;
+	color: $tr-black; 
+	font: 100 18pt $tr-fancy-font;
 }
 
 .text, ul {
-	color: $tr-grey; 
-	font: 12pt $tr-font;
+	color: $tr-black; 
+	font: lighter 13pt $tr-font;
 }
 
-.code {
-	color: $tr-grey;
-	font: 12pt monospace;
-	background-color: #eeeeee;
+.highlighter-rouge {
+	color: #800;
+	font: lighter 12pt $tr-monospace-font;
+	background-color: #eee;
+	padding: 0px 3px 0px 3px;
 }
 
 .caption {
@@ -44,6 +52,6 @@ h3 {
 }
 
 .footnote {
-	color: $tr-grey; 
+	color: $tr-black; 
 	font: 100 10pt $tr-font;
 }

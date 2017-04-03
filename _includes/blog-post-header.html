@@ -10,16 +10,18 @@
 		<meta property="og:image" content="/img/logo-small.jpg" />
 		{% endif %}
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-		{% include subpage-header.html page_name="Blog" link="/blog/" %}
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
-
-			<p>
-				<span class="title">{{ page.title }}</span>
-				<br />
-				<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
-			</p>
+			
+						<div class="title">{{ page.title }}</div>
+						<div class="date">{{ page.date | date: '%-d %B %Y'}}</div>

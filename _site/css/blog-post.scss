@@ -1,0 +1,25 @@
+@import 'subpage';
+
+.title {
+	@extend .hero;
+}
+
+.date { 
+	@extend h3;
+}
+
+.entry {
+	@extend .text;
+}
+
+p {
+	@extend .text;
+}
+
+#post-content::first-letter {
+	font-size: 230%;
+    float: left;
+    line-height: 1;
+    display: inline-block;
+		margin-right: 0.15em;
+}

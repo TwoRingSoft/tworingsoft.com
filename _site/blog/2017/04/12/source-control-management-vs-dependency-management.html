@@ -25,26 +25,23 @@
 		<meta property="og:image" content="/img/logo-small.jpg" />
 		
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-				<center>
-			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
-			&nbsp;
-			
-			<a href="/blog/" class="page-name">Blog</a>
-			
-		</center>
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
-
-			<p>
-				<span class="title">Source Control Management vs. Dependency Management</span>
-				<br />
-				<span class="date">12 April 2017</span>
-			</p>
-<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
+			
+						<div class="title">Source Control Management vs. Dependency Management</div>
+						<div class="date">12 April 2017</div>
+<div id="post-content">
+	<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
 
 <h2 id="what-is-a-compiler">What is a compiler?</h2>
 
@@ -70,6 +67,7 @@
 
 <p>The only thing I want to do with CocoaPods is to pull that lever and update what I want updated. Then I can look at the diffs, commit the changes (<a href="http://tworingsoft.github.io/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html">as its own commit!</a>), and I’ll be able to get everything I need with a single checkout next time. I’ll be able to traverse updates to my dependencies in the same way as updates to source code I manually type with my fingers, when I do my next <code class="highlighter-rouge">git bisect</code>. I won’t have to worry about GitHub outages or source locations changing or <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">being removed</a> the next time my CI build kicks off and tries to download the dependencies all over again.</p>
 
+</div>
 		</div>
 	</body>
 </html>

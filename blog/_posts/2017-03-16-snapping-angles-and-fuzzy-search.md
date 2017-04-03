@@ -11,7 +11,7 @@ This release introduces a new feature: snapping to angle intervals. Without it, 
 
 The routine that decides the closest angle went through a few revisions.
 
-### First attempt
+# First attempt
 
 First, I tried writing it specifically for a circle, knowing the range could be constrained to 360°. It did only draw angles on the appropriate intervals, but it didn't "snap" to the next one at the right time. It should snap back and forth at the midpoint between to allowed angles, but this logic didn't snap until you dragged all the way to the next interval. (Interestingly, the correct behavior was displayed in exactly one quadrant: the fourth.)
 
@@ -24,31 +24,12 @@ First, I tried writing it specifically for a circle, knowing the range could be 
 			</video>
 		</td>
 		<td>
-			<script src="https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003.js">
-			```
-			public func snappedAngle(snappingAngle: Angle) -> Angle {
-				if snappingAngle.radians == 0 {
-					return self
-				}
-
-				let interval = Int(degrees / (snappingAngle.degrees / 2))
-
-				if interval == 0 {
-					return .zero
-				} else if interval == Int(360 / (snappingAngle.degrees / 2) - 1) {
-					return Angle(degrees: 360)
-				} else {
-					let factor = interval / 2
-					return Angle(radians: snappingAngle.radians * Radian(factor))
-				}
-			}
-			```
-			</script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003" %}
 		</td>
 	</tr>
 </table>
 
-### Second attempt
+# Second attempt
 
 I wound up finding a better solution while implementing the custom input view to select a snapping angle. For this iteration of the feature, I only allow a snapping angle that evenly divides 360, so I just hardcoded the array of all such angles in [0, 360]. The input mechanism is a UISlider, so I need to map its float value to a value in this array. I wound up writing `indexOfClosestSorted` as an extension on Array that produces the index of the element with the closest value, seen below.
 
@@ -63,76 +44,15 @@ It turns out that I can use the very same function to snap angles. Instead of th
 			</video>
 		</td>
 		<td>
-			<script src="https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad.js">
-			```
-			extension String {
-	
-				func indexOfClosestSorted(toValue value: Degree) -> Int {
-					var smallestDifference = last!
-					var closestIntervalAngleIdx = 0
-					for i in 0 ..< count {
-						let closestValueCandidate = self[i]
-						var difference = fabs(closestValueCandidate - value)
-
-						if difference == 0 {
-							return i
-						}
-
-						if difference < 0 {
-							difference *= -1
-						}
-
-						if difference < smallestDifference {
-							smallestDifference = difference
-							closestIntervalAngleIdx = i
-						}
-					}
-					return closestIntervalAngleIdx
-				}
-
-			}
-			```
-			</script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad" %}
 		</td>
 	</tr>
 </table>
 
-### Bonus points
+# Bonus points
 
 This works just fine for the purposes of snapping integer angles on the unit circle, but `indexOfClosestSorted` is linear time. Also note that it expects the array it's searching to be sorted. What's another search algorithm that operates on sorted lists? [Binary search!](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search) Normally, binary search returns either the location of the query in the array, or reports that it doesn't exist. In our case, we aren't searching for the exact value, just the *closest* one: a fuzzy binary search. The terminating and recursion conditions are slightly different, and we're guaranteed to always get a result. Now we have a logtime search, giving us a (probably imperceptible, at Trgnmtry's scale) performance boost for drawing. See if you can outrun it!
 
-<script src="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e.js">
-```
-extension String where Element: Strideable {
-
-	func fuzzyBinarySearchRecursive(lowerBound: Int = 0, upperBound: Int? = nil, query: Element) -> Int {
-		let resolvedUpperBound = upperBound ?? count - 1
-
-		if lowerBound == resolvedUpperBound {
-			return lowerBound
-		}
-
-		if lowerBound == resolvedUpperBound - 1 {
-			// we're in between two elements. pick the one that's closer in value
-			let a = self[lowerBound]
-			let b = self[resolvedUpperBound]
-			let closerToA = query - a < b - query
-			return closerToA ? lowerBound : resolvedUpperBound
-		}
-
-		let midIdx = lowerBound + (resolvedUpperBound - lowerBound) / 2
-
-		let a = self[midIdx]
-		let b = self[midIdx + 1]
-		if query - a < b - query {
-			return fuzzyBinarySearchRecursive(lowerBound: lowerBound, upperBound: midIdx, query: query)
-		} else {
-			return fuzzyBinarySearchRecursive(lowerBound: midIdx + 1, upperBound: resolvedUpperBound, query: query)
-		}
-	}
-
-}
-```
-</script>
+{% include gist-embed.html url="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e" %}
 
 `fuzzyBinarySearchRecursive` extends any `Array` containing `Strideable` elements, which includes both integer and floating point types. It has some nice defaults: much of the time you'll probably want to search an entire array, which you can do with the invocation `myArray.fuzzyBinarySearchRecursive(query: 1000)`–no need to specify the search must take place between the indices `0` and `myArray.count - 1`. It's under testing now at [https://github.com/TwoRingSoft/shared-utils](https://github.com/TwoRingSoft/shared-utils)!

@@ -1,13 +1,11 @@
 @import 'common';
 
 .page-name {
-	color: $tr-grey;
-	font: 100 40pt $tr-fancy-font;
-	text-decoration: none;
+	@extend .hero;
 }
 
 #page-content { /* div containing everything after the header */
-	margin: 0px 100px 0px 100px;
+	margin: 20px 100px 0px 100px;
 }
 
 /* 500 or below */

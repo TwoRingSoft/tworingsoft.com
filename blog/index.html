@@ -13,11 +13,10 @@
 			<ul>
 				{% for post in site.posts %}
 				<li>
-					<a href="{{ post.url }}">{{ post.title }}</a>, {{ post.date | date: '%-d %B %Y'}}
-					<br />
+					<a href="{{ post.url }}">{{ post.title }}</a>, <span class="date">{{ post.date | date: '%-d %B %Y'}}<span>
+					<p class="abstract">
 						{{ post.abstract }}
-					<br />
-					<br />
+					</p
 				</li>
 				{% endfor %}
 			</ul>

@@ -7,7 +7,7 @@ abstract: Outlining some best practices for organizing a codebase.
 
 Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There's no one right way to do anything, and you can make it as simple or as complicated as you like. Today I'm examining the decisions to make around how to even organize code.
 
-## Location, location, location
+# Location, location, location
 Let's say I have an SDK called `PlugKit`. It's a new way for business owners to market and advertise their products in iOS apps. Developers can integrate just the eponymous data/networking component to completely customize how "Plugs" are displayed to their users. We also offer some prefab views available by optionally bringing in `PlugKit-UI`, and there's a demo project used as a reference implementation as well as inspiration.
 
 How should I organize the code for these products in Git? Should everything go in one repository? Should each of the three components get their own? [You've](http://gregoryszorc.com/blog/2014/09/09/on-monolithic-repositories/) probably read [many](http://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext) [articles](https://www.bitkeeper.org/BK_Nested_White_Paper.pdf) [already](https://developer.atlassian.com/blog/2015/10/monorepos-in-git/) [on](http://lists.llvm.org/pipermail/llvm-dev/2016-July/102602.html) [the](https://medium.com/@pejvan/monorepos-85e608d43b57#.tupnuwxqu) [pros](http://blog.shippable.com/our-journey-to-microservices-and-a-mono-repository) and [cons](https://www.thoughtworks.com/insights/blog/architecting-continuous-delivery) of [monorepos](http://danluu.com/monorepo/)-it's one of the great developer flame wars, up there with tabs versus spaces and functional versus OO programming. You probably already have your mind made up. What I want to do here is demonstrate some of the most basic processes I use most frequently for each possibility.
@@ -27,7 +27,7 @@ I've constructed an example of each strategy, and placed them into the directori
 
 It seems repository granularity has nothing to do with how your code is organized. Anything you can do in monorepos, you can do with multiple. To me, the big difference between the two is one of workflow.
 
-## Cloning repositories
+# Cloning repositories
 Yesterday I spilled water on my laptop and fried it. Oops. The good news is that now I have one of those newfangled models with the Slide Strip or whatever it's called. Time to pull down my code so I can get back to work:
 
 **Monorepo:**
@@ -68,7 +68,7 @@ or how about
 			    
 Don't forget that `--recursive` flag if you have submodules in your submodules!
 
-## Writing code
+# Writing code
 So I'm coding up a new feature that hits a new endpoint on the server, and because this is a totally new, paradigm-shifting type of data that's coming down, we need a completely different type of UI to display it. And of course, we want to test a few "real world" scenarios and show how to implement this in our demo app.
 
 **Monorepo:**
@@ -86,7 +86,7 @@ So I'm coding up a new feature that hits a new endpoint on the server, and becau
 	$> cd ../PlugKitDemo
 	$> git commit --all --message "commit PlugKitDemo changes, taking up PlugKit and PlugKit-UI changes"
 		
-## Merging feature branches
+# Merging feature branches
 After some review and much pedantry, at long last we can merge our code! Woohoo! We use GitHub pull requests to merge the branches in, as well as GitHub issues to track the work we're doing, so we'll want to close those too.
 
 **Monorepo:**
@@ -115,7 +115,7 @@ Heck, these days closing issues may [already be done for you](https://github.com
 
 Note that order may matter here. Reviewing the changes between three separate pull requests is also not great.
 	
-## Simplicity
+# Simplicity
 
 These are some of the most basic usages of git for a typical developer, and in each case, the more repos you must deal with the more steps each task requires. These examples are simple, but each new repo introduces many new combinations of steps particular to the way you arrange everything. I only covered some basic workflows, but plenty of others are similarly more complicated in manyrepos: git bisect, rebasing to split or squash commits, conflict resolution, or just plain searching for a variable name or string (do you even have all the repos cloned and up to date to search?).
 

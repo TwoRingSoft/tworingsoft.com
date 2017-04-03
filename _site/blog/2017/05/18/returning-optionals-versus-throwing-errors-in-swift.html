@@ -25,26 +25,23 @@
 		<meta property="og:image" content="/img/logo-small.jpg" />
 		
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-				<center>
-			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
-			&nbsp;
-			
-			<a href="/blog/" class="page-name">Blog</a>
-			
-		</center>
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
-
-			<p>
-				<span class="title">Returning Optionals Versus Throwing Errors in Swift</span>
-				<br />
-				<span class="date">18 May 2017</span>
-			</p>
-<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
+			
+						<div class="title">Returning Optionals Versus Throwing Errors in Swift</div>
+						<div class="date">18 May 2017</div>
+<div id="post-content">
+	<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
 
 <p>Swift, like Objective-C and many other languages before it, also has a way to divert the normal flow of execution in exceptional circumstances. So, if your validation routine decides it has hit a situation where it can no longer proceed, it can <code class="highlighter-rouge">throw</code> an error and bail out early.</p>
 
@@ -52,15 +49,29 @@
 
 <h1 id="failure-mode-code">Failure mode code</h1>
 
-<p>Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status of system, -1 often representing an error in the integer case. It’s temptin in Swift to use the return value of a function to signify something went wrong, by making it optional and returning <code class="highlighter-rouge">nil</code>.</p>
+<p>Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It’s tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning <code class="highlighter-rouge">nil</code>.</p>
 
 <script src="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488.js"></script>
 
-<p>In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of <code class="highlighter-rouge">do</code>/<code class="highlighter-rouge">try</code>/<code class="highlighter-rouge">catch</code> to divert execution using <code class="highlighter-rouge">throw</code> where Objective-C discouraged using exceptions for all but actual programmer error.</p>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488">https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of <code class="highlighter-rouge">do</code>/<code class="highlighter-rouge">try</code>/<code class="highlighter-rouge">catch</code> to divert execution using <code class="highlighter-rouge">throw</code>, where Objective-C discouraged using exceptions for all but actual programmer error.</p>
 
 <script src="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8.js"></script>
 
-<p>In both of these examples, think about the class definition residing in the model layer, the function definition residing something in your middle layers of business logic, and the statements at the bottom reside in your presentation layer.</p>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8">https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>In both of these examples, assume:</p>
+
+<ul>
+  <li>the class definition and function represents your model layer</li>
+  <li>the middle function definition represents your middle business logic</li>
+  <li>and the statements at the bottom represents your presentation layer.</li>
+</ul>
 
 <p>I like several things about the second approach. It saves me from a clunky <code class="highlighter-rouge">guard</code> statement in the middle layer; using <code class="highlighter-rouge">try</code> clears away edge cases and the code more clearly describes intention. All error handling logic that involves user notification cohesively resides in the presentation layer, whereas in the first example there can be many places that could plausibly handle the error, forcing you to expend more cognitive process to make those decisions.</p>
 
@@ -72,9 +83,17 @@
 
 <script src="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310.js"></script>
 
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310">https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
 <p>If you need to do some validation etc. at multiple stages along the way, you’ll need to work around the optionality of the collection. Whereas, if you always have a container, your logic can be more streamlined. The same loops and function calls work the same way whether there are 0 or 100 elements in an array.</p>
 
 <script src="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf">https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
 
 <p>And again, by using Swift’s error system, you’re much more expressively describing possible failures.</p>
 
@@ -86,6 +105,7 @@
 
 <p>Swift’s error type system has recently seen improvements and I’m sure as time goes on we’ll see more improvements to the overall propogation mechanisms. They provide a great way to describe the failure modes of your routines, so always consider if what you’re really trying to communicate is best handled with Swift’s errors. I default to the strategy described here, deviating only if the model really calls for it.</p>
 
+</div>
 		</div>
 	</body>
 </html>

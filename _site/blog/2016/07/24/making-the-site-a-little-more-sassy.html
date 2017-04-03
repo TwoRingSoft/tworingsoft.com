@@ -25,26 +25,23 @@
 		<meta property="og:image" content="/img/logo-small.jpg" />
 		
 
-		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-
-				<center>
-			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
-			&nbsp;
-			
-			<a href="/blog/" class="page-name">Blog</a>
-			
-		</center>
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
 
 		<div id="page-content">
-
-			<p>
-				<span class="title">Making the site a little more SASSy</span>
-				<br />
-				<span class="date">24 July 2016</span>
-			</p>
-<p>I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I’ve written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn’t need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I’m very glad I did!</p>
+			
+						<div class="title">Making the site a little more SASSy</div>
+						<div class="date">24 July 2016</div>
+<div id="post-content">
+	<p>I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I’ve written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn’t need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I’m very glad I did!</p>
 
 <p>I learned CSS just after version 2 was released, and in all the time since have become well acquainted with the mess it can turn into if you aren’t careful. Even with care, though, CSS lacks some basic constructs that would make code much easier to maintain. Before turning to SASS, I even Googled a few things I wanted just to make sure CSS couldn’t do them on its own in some dark corner I didn’t know about:</p>
 
@@ -69,6 +66,7 @@
 
 <p>Overall, I’m happy with my decision to switch the site’s stylesheets to SASS, and I’m happy I was able to get up and running with it so quickly. I’m sure it will make it super easy to tweak the styles for different screen sizes on phones and tablets, the piece of work I’m taking on next for the site, and also something I haven’t done before.</p>
 
+</div>
 		</div>
 	</body>
 </html>
