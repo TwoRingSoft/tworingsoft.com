@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Source Control Management vs. Dependency Management</title>
+				<description>Which manager has more authority over your project?</description>
+				<pubDate>2017-04-12T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
+			</item>
+		
+			<item>
 				<title>Differentiating iOS App Builds</title>
 				<description>A simple way to manage all your app build variants to test alongside each other on a device.</description>
 				<pubDate>2017-04-01T00:00:00-04:00</pubDate>

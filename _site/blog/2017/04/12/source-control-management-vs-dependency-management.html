@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Andrew McKnight"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<title>Two Ring Software % Blog % Source Control Management vs. Dependency Management % 12 April 2017</title>
+		<meta name="description" content="Which manager has more authority over your project?" />
+
+		<meta property="og:title" content="Source Control Management vs. Dependency Management" />
+		<meta property="og:description" content="Which manager has more authority over your project?" />
+		
+		<meta property="og:image" content="/img/logo-small.jpg" />
+		
+
+		<link href='/css/blog.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+
+				<center>
+			<a href="/"><img src="/img/logo-small.jpg" height="40em" /></a>
+			&nbsp;
+			
+			<a href="/blog/" class="page-name">Blog</a>
+			
+		</center>
+
+		<div id="page-content">
+
+			<p>
+				<span class="title">Source Control Management vs. Dependency Management</span>
+				<br />
+				<span class="date">12 April 2017</span>
+			</p>
+<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
+
+<h2 id="what-is-a-compiler">What is a compiler?</h2>
+
+<p>A compiler takes human-readable source code and translates it into machine-readable code. It doesn’t know the difference between who wrote the code, whether it was that coder that got <a href="https://www.exceptionnotfound.net/whats-your-projects-bus-factor/">hit by the bus</a> last week, or the five you had to hire to replace them.</p>
+
+<p>Correspondingly, a linker takes the blobs of machine code output from the compiler and splices them together into one blob. This might include blobs made by other compilers at other times. As long as they are well formed and readable, the linker doesn’t care whether the blobs were just spat out by the compiler ahead of it in the toolchain, downloaded from artifactory, or any combination of those and other possibilities.</p>
+
+<h2 id="what-is-a-source-control-manager">What is a source control manager?</h2>
+
+<p>Source control managers keep a record of the changes made to any text files it knows about, as a list of important milestones in that history recorded by the developer (“commits”). It does not care who commits those changes; they are recorded the same way every time.</p>
+
+<p><strong>I believe that all code that a compiler will compile, and all blobs the linker will link, should be tracked</strong> in a way that <em>guarantees</em> an exact replica of a binary, with minimal friction, given a single identifier (commit hash or tag). This means that the simple act of checking out a commit should give you everything you need to build the final product. No calls out to the network to get the right dependencies, which brings us to…</p>
+
+<h2 id="what-is-a-dependency-manager">What is a dependency manager?</h2>
+
+<p>A dependency manager is a tool that takes a list of things you want to use, reduces duplications and (hopefully) conflicts, and retrieves those things. You pull a lever, and all the souce code and precompiled binaries are retrieved (usually over the network, whether it’s an in-house LAN or the internet) and written into place on your disk.</p>
+
+<p>Think again about my earlier statements about compilers, linkers and source control. They don’t know or care about the originator of the code and blobs. On a more abstract level, a dependency manager is <em>really</em> just another code author. You may not be keying in all the glyphs that make up <a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>, but when you instruct CocoaPods to retrieve that library’s code, you are metaprogramming to generate that source code on your machine. It then gets compiled and linked the same as your application code. Therefore I believe you should check in the code you’ve “written” using your dependency manager.</p>
+
+<h2 id="dependency-managers-today">Dependency managers today</h2>
+
+<p>I think we’ve heaped far too many responsibilities onto dependency managers today. If you don’t check in your <code class="highlighter-rouge">Pods/</code> directory, you are using it to reconstruct a fragmented source history whenever you need to recreate a previous release. CocoaPods can also be used as a way to package precompiled binaries for distribution as others’ dependencies. It makes assumptions about how your Xcode project should be structured, in terms of file locations, Xcode’s File Navigator structure, build settings, artifacts and project/workspace/scheme organization. Too much can go wrong with a simple Xcode update. It’s too many moving parts, period.</p>
+
+<p>The only thing I want to do with CocoaPods is to pull that lever and update what I want updated. Then I can look at the diffs, commit the changes (<a href="http://tworingsoft.github.io/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html">as its own commit!</a>), and I’ll be able to get everything I need with a single checkout next time. I’ll be able to traverse updates to my dependencies in the same way as updates to source code I manually type with my fingers, when I do my next <code class="highlighter-rouge">git bisect</code>. I won’t have to worry about GitHub outages or source locations changing or <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">being removed</a> the next time my CI build kicks off and tries to download the dependencies all over again.</p>
+
+		</div>
+	</body>
+</html>
