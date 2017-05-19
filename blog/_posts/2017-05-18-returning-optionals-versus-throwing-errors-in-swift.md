@@ -13,15 +13,19 @@ As you shuttle data between disks, servers, and capture it from and present it t
 
 # Failure mode code
 
-Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status of system, -1 often representing an error in the integer case. It's temptin in Swift to use the return value of a function to signify something went wrong, by making it optional and returning `nil`.
+Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It's tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning `nil`.
 
 <script src="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488.js"></script>
 
-In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of `do`/`try`/`catch` to divert execution using `throw` where Objective-C discouraged using exceptions for all but actual programmer error. 
+In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of `do`/`try`/`catch` to divert execution using `throw`, where Objective-C discouraged using exceptions for all but actual programmer error. 
 
 <script src="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8.js"></script>
 
-In both of these examples, think about the class definition residing in the model layer, the function definition residing something in your middle layers of business logic, and the statements at the bottom reside in your presentation layer. 
+In both of these examples, assume:
+
+- the class definition and function represents your model layer
+- the middle function definition represents your middle business logic 
+- and the statements at the bottom represents your presentation layer. 
 
 I like several things about the second approach. It saves me from a clunky `guard` statement in the middle layer; using `try` clears away edge cases and the code more clearly describes intention. All error handling logic that involves user notification cohesively resides in the presentation layer, whereas in the first example there can be many places that could plausibly handle the error, forcing you to expend more cognitive process to make those decisions.
 
