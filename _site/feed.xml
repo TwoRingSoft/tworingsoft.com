@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Returning Optionals Versus Throwing Errors in Swift</title>
+				<description>Deciding between flow control and data model concepts in your app's business logic.</description>
+				<pubDate>2017-05-18T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</guid>
+			</item>
+		
+			<item>
 				<title>Source Control Management vs. Dependency Management</title>
 				<description>Which manager has more authority over your project?</description>
 				<pubDate>2017-04-12T00:00:00-04:00</pubDate>
