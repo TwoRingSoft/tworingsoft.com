@@ -6,6 +6,14 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Xcode 9's New Search and Replace Panel</title>
+				<description>A critique of the new Find and Replace panel's UI and UX.</description>
+				<pubDate>2017-06-19T00:00:00-04:00</pubDate>
+				<link>http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</guid>
+			</item>
+		
+			<item>
 				<title>Returning Optionals Versus Throwing Errors in Swift</title>
 				<description>Deciding between flow control and data model concepts in your app's business logic.</description>
 				<pubDate>2017-05-18T00:00:00-04:00</pubDate>
