@@ -17,7 +17,7 @@ Overall, the new panel composition and design is slick, with both bold and subtl
 {% include 
 	blog-post-image.html 
 	source="xcode-side-by-side.png" 
-	alt="The Find and Replace panel in Xcode 8 (left) and Xcode 9 (right)." %}
+	alt="The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom)." %}
 	
 _Note:_ from now on throughout this post, Xcode 8 screenshots will always have a dark editor background, and Xcode 9 will have a light background.
 
