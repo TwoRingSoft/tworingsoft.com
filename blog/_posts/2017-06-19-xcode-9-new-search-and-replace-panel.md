@@ -1,8 +1,8 @@
 ---
-title: Xcode 9's New Search and Replace Panel
+title: Xcode 9's New Find and Replace Panel
 date: 2017-06-19
 layout: post
-abstract: A critique of the new Find and Replace panel's UI and UX.
+abstract: A critique of the new source editors tool's UI and UX.
 thumbnail: xcode-side-by-side.png
 ---
 
