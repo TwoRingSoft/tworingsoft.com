@@ -12,7 +12,7 @@ Xcode 9 has a brand new source editor implemented from scratch in Swift, and the
 
 ## General look and feel
 
-Overall, the new panel composition and design is slick, with both bold and subtle differences from its predecessor. I immediately noticed that it had been changed because I use a dark background in my source editor, and Xcode 9's new Find/Replace panel now respects the selected themes! The differences are extremely subtle between different light and dark themes, though. For instance, in Default, the text fields' background color is RGB(219, 219, 219), whereas with Sunset chosen it is RGB(219, 219, 218)–less than half a percent change in the blue value!
+Overall, the new panel composition and design is slick, with both bold and subtle differences from its predecessor. I immediately noticed that it had been changed because I use a dark background in my source editor, and Xcode 9's new Find/Replace panel now respects the selected themes! The differences are extremely subtle between different light and dark themes, though. For instance, in Default, the text fields' background color is RGB(219, 219, 219), whereas with Sunset chosen it is RGB(219, 219, 218)–less than half a percent change in the blue value! Check out the differences, with Xcode 8 on top and 9 on the bottom, with both light and dark themes:
 
 {% include 
 	blog-post-image.html 
