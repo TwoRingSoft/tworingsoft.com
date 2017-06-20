@@ -29,18 +29,15 @@ This does not define a tree, however. Target-level Platform and Configuration se
 {% include 
 	blog-post-image.html 
 	source="build-setting-inheritance.png" 
-	alt="The acyclic inheritance graph for build settings." 
-	caption="The acyclic inheritance graph for build settings." 
-	dimensions="width=\"75%\"" %}
+	alt="The acyclic inheritance graph for build settings."
+	narrow="true" %}
 
 In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as `$(inherited) XcPb`, and the Build Settings editor version of the Target-level iOS-specific setting is defined as `$(inherited) Tf`. When you look at the Resolved column, you can see how inheritance has propogated values down the line.
 
 {% include 
 	blog-post-image.html 
 	source="build-setting-inheritance-case-study.png" 
-	alt="An example using inheritance." 
-	caption="An example using inheritance." 
-	dimensions="width=\"100%\"" %}
+	alt="An example using inheritance." %}
 
 _Note that in this example, I purposely left `$(inherited)` off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over._
 
@@ -51,18 +48,14 @@ Precedence governs what settings can _override_ those from other levels. It's a 
 {% include 
 	blog-post-image.html 
 	source="build-setting-precedence.png" 
-	alt="The linear precedence progression for build settings." 
-	caption="The linear precedence progression for build settings." 
-	dimensions="width=\"100%\"" %}
+	alt="The linear precedence progression for build settings." %}
 
 The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there's no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the `$(inherited)` selector removed. So, the same cells called out above now have the values `XcPb` and `Tf`, respectively. The leftmost values win out due to precedence rules.
 
 {% include 
 	blog-post-image.html 
 	source="build-setting-precedence-case-study.png" 
-	alt="An example using precedence." 
-	caption="An example using precedence." 
-	dimensions="width=\"100%\"" %}
+	alt="An example using precedence." %}
 
 # Practice Makes Perfect
 

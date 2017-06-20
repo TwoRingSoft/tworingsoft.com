@@ -48,10 +48,25 @@
 <p>First things first: prevent debug, beta, and app store builds from overwriting each other on your test device. To do this, add a suffix to each of your non-app-store builds so they register as “different” apps on your iDevice. Here’s my setup:</p>
 
 <center>
-<img src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." width="100%" />
-<br />
-<br />
-<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions {
+		
+			width: 75%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions" src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." />
+	<br />
+	<br />
+	<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
 </center>
 
 <h1 id="app-icons">App icons</h1>
@@ -61,10 +76,25 @@
 <p>After a little more searching, I found <a href="https://github.com/bejo/XcodeIconTagger"><code class="highlighter-rouge">XcodeIconTagger</code></a> which only uses macOS’ Automator with a Quartz filter. I modified it to get a little more flexibility out of it in <a href="https://github.com/TwoRingSoft/XcodeIconTagger">this fork</a>. Now, I can create <em>Run Script</em> Build Phases surrounding the <em>Copy Bundle Resources</em> Build Phase that first create the icon overlay, and then after copying the icons to the installation, reset the git index to discard the changes.</p>
 
 <center>
-<img src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." width="100%" />
-<br />
-<br />
-<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-xcode-icon-tag-build-phases {
+		
+			width: 75%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-xcode-icon-tag-build-phases { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-xcode-icon-tag-build-phases" src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." />
+	<br />
+	<br />
+	<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
 </center>
 
 <p><code class="highlighter-rouge">tag-icons.sh</code> is a script that wraps some of the different types of overlays I’d like, depending on the build variant, into a convenient interface to which I can simply supply either <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">cleanup</code> commands. (It can be found in <a href="https://github.com/TwoRingSoft/shared-utils">shared-utils</a>.) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:</p>
@@ -78,10 +108,25 @@
 <p>Now, I can tell all my builds apart on my device at once. Here I have a debugging development build, displaying the git commit hash that built it; a beta build, showing the semantic and build versions; a special build that visualizes touch input, which I use to create App Store preview videos; the App Store version itself, with no overlay.</p>
 
 <center>
-<img src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." width="50%" />
-<br />
-<br />
-<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-app-icon-for-different-app-build-distributions {
+		
+			width: 50%
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-app-icon-for-different-app-build-distributions { /* div containing everything after the header */
+				
+					width: 75%
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-app-icon-for-different-app-build-distributions" src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." />
+	<br />
+	<br />
+	<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
 </center>
 
 </div>

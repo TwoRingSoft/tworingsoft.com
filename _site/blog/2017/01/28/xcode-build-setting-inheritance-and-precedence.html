@@ -64,19 +64,49 @@
 <p>This does not define a tree, however. Target-level Platform and Configuration settings can inherit from two parents, as seen in the diagram, forming an acyclic graph. I think of the first trunk as linear, and the second and third I think of as transposable from Project- to Target-level: each level of the Project trunk influences its dual in the Target trunk. Also keep in mind that each level in Xcode’s Build Settings editor inherits from the same setting in the corresponding Xcconfig.</p>
 
 <center>
-<img src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." width="75%" />
-<br />
-<br />
-<span class="caption">The acyclic inheritance graph for build settings.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-inheritance {
+		
+			width: 50%
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-inheritance { /* div containing everything after the header */
+				
+					width: 75%
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-inheritance" src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." />
+	<br />
+	<br />
+	<span class="caption">The acyclic inheritance graph for build settings.</span>
 </center>
 
 <p>In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) XcPb</code>, and the Build Settings editor version of the Target-level iOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) Tf</code>. When you look at the Resolved column, you can see how inheritance has propogated values down the line.</p>
 
 <center>
-<img src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." width="100%" />
-<br />
-<br />
-<span class="caption">An example using inheritance.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-inheritance-case-study {
+		
+			width: 75%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-inheritance-case-study { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-inheritance-case-study" src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." />
+	<br />
+	<br />
+	<span class="caption">An example using inheritance.</span>
 </center>
 
 <p><em>Note that in this example, I purposely left <code class="highlighter-rouge">$(inherited)</code> off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over.</em></p>
@@ -86,19 +116,49 @@
 <p>Precedence governs what settings can <em>override</em> those from other levels. It’s a simple linear progression, starting from Xcode defaults down to Target-level. An easy rule of thumb is to remember that settings defined in Xcode’s Build Settings editor always override the settings from any Xcconfig set for that same level. With “Levels” selected in the Build Settings editor, precedence flows from right to left.</p>
 
 <center>
-<img src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." width="100%" />
-<br />
-<br />
-<span class="caption">The linear precedence progression for build settings.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-precedence {
+		
+			width: 75%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-precedence { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-precedence" src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." />
+	<br />
+	<br />
+	<span class="caption">The linear precedence progression for build settings.</span>
 </center>
 
 <p>The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there’s no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the <code class="highlighter-rouge">$(inherited)</code> selector removed. So, the same cells called out above now have the values <code class="highlighter-rouge">XcPb</code> and <code class="highlighter-rouge">Tf</code>, respectively. The leftmost values win out due to precedence rules.</p>
 
 <center>
-<img src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." width="100%" />
-<br />
-<br />
-<span class="caption">An example using precedence.</span>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-precedence-case-study {
+		
+			width: 75%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-precedence-case-study { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-precedence-case-study" src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." />
+	<br />
+	<br />
+	<span class="caption">An example using precedence.</span>
 </center>
 
 <h1 id="practice-makes-perfect">Practice Makes Perfect</h1>

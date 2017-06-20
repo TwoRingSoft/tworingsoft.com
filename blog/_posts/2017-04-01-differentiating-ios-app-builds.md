@@ -15,9 +15,7 @@ First things first: prevent debug, beta, and app store builds from overwriting e
 {% include 
 	blog-post-image.html 
 	source="bundle-identifier-suffixes-for-different-app-build-distributions.png" 
-	alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." 
-	caption="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device."
-	dimensions="width=\"100%\"" %}
+	alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." %}
 
 # App icons
 
@@ -28,9 +26,7 @@ After a little more searching, I found [`XcodeIconTagger`](https://github.com/be
 {% include 
 	blog-post-image.html 
 	source="xcode-icon-tag-build-phases.png" 
-	alt="The Build Phases in Xcode to tag and restore app icons for build variants." 
-	caption="The Build Phases in Xcode to tag and restore app icons for build variants."
-	dimensions="width=\"100%\"" %}
+	alt="The Build Phases in Xcode to tag and restore app icons for build variants." %}
 	
 `tag-icons.sh` is a script that wraps some of the different types of overlays I'd like, depending on the build variant, into a convenient interface to which I can simply supply either `tag` or `cleanup` commands. (It can be found in [shared-utils](https://github.com/TwoRingSoft/shared-utils).) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:
 
@@ -42,5 +38,4 @@ Now, I can tell all my builds apart on my device at once. Here I have a debuggin
 	blog-post-image.html 
 	source="app-icon-for-different-app-build-distributions.png" 
 	alt="Overlaying build variant information on app icons helps differentiate them on device." 
-	caption="Overlaying build variant information on app icons helps differentiate them on device."
-	dimensions="width=\"50%\"" %}
+	narrow="true" %}

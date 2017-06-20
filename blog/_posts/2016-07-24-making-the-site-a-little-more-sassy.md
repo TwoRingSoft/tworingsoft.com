@@ -22,7 +22,6 @@ One cool thing I learned about is the mapping file generation, which helps brows
 {% include 
 	blog-post-image.html 
 	source="sass-vs-css-web-inspector-link.png" 
-	alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." 
-	caption="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." %}
+	alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." %}
 
 Overall, I'm happy with my decision to switch the site's stylesheets to SASS, and I'm happy I was able to get up and running with it so quickly. I'm sure it will make it super easy to tweak the styles for different screen sizes on phones and tablets, the piece of work I'm taking on next for the site, and also something I haven't done before.

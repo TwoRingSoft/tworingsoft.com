@@ -36,9 +36,7 @@ OK, we've now `typedef`'d all of our block declarations, and now we want to call
 {% include 
 	blog-post-image.html 
 	source="block-placeholder-expansion-before.png" 
-	alt="The autocompletion for the method call contains a placeholder for the block parameter." 
-	caption="The autocompletion for the method call contains a placeholder for the block parameter." 
-	dimensions="width=\"75%\"" %}
+	alt="The autocompletion for the method call contains a placeholder for the block parameter." %}
 
 <br />
 <br />
@@ -47,9 +45,7 @@ OK, we've now `typedef`'d all of our block declarations, and now we want to call
 {% include 
 	blog-post-image.html 
 	source="block-placeholder-expansion-after.png" 
-	alt="After tabbing to the block placeholder and expanding with the Return key." 
-	caption="After tabbing to the block placeholder and expanding with the Return key." 
-	dimensions="width=\"75%\"" %}
+	alt="After tabbing to the block placeholder and expanding with the Return key." %}
 
 # Inline blocks
 
@@ -58,9 +54,7 @@ Xcode has one other helpful snippet to write Objective-C blocks: `inlineBlock`. 
 {% include 
 	blog-post-image.html 
 	source="inlineblock-example.png" 
-	alt="The good and bad of Objective-C method calls with multiple block parameters." 
-	caption="The good and bad of Objective-C method calls with multiple block parameters." 
-	dimensions="width=\"75%\"" %}
+	alt="The good and bad of Objective-C method calls with multiple block parameters." %}
 
 In general, I don't fully care for this approach, as you then have to read code upwards. It also annoyingly makes you repeat the parameter list. Most preferable to me is to still declare the blocks as local variables, but extract all the logic you would have written in the block to a method. This approach makes your code more readable, and your logic more testable and refactorable later.
 

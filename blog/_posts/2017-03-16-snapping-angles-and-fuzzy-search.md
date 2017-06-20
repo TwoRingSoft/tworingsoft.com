@@ -18,10 +18,9 @@ First, I tried writing it specifically for a circle, knowing the range could be 
 <table border="0">
 	<tr>
 		<td>
-			<video width="300" controls>
-				<source src="/blog/vid/original-angle-snapping-small.m4v" type="video/mp4"/>
-				Your browser does not support HTML5 video.
-			</video>
+			{% include
+				blog-post-video.html
+				source="original-angle-snapping-small.m4v" %}
 		</td>
 		<td>
 {% include gist-embed.html url="https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003" %}
@@ -38,10 +37,9 @@ It turns out that I can use the very same function to snap angles. Instead of th
 <table border="0">
 	<tr>
 		<td>
-			<video width="300" controls>
-				<source src="/blog/vid/fixed-angle-snapping-small.m4v" type="video/mp4"/>
-				Your browser does not support HTML5 video.
-			</video>
+			{% include
+				blog-post-video.html
+				source="fixed-angle-snapping-small.m4v" %}
 		</td>
 		<td>
 {% include gist-embed.html url="https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad" %}
