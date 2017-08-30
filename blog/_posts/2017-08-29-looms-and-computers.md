@@ -56,11 +56,11 @@ So there you have it, tartans actually make use of not just particular color pat
 
 ## Looms
 
-Several types of machines called [looms](https://en.wikipedia.org/wiki/Loom#Types_of_looms) have been devised to help assemble weaves. The [Jacquard loom](https://www.youtube.com/watch?v=K6NgMNvK52A) introduced a new dimension to the process by transcribing designs directly into representations that could automatically drive a machine to reproduce the images in weaves. An example of a predecessor to the modern day computer, it used punchcards in 1801 much like programmers in the early to mid 1900s used them in machines like ENIAC. Today, programs are written using textual languages not so different from spoken ones, which are compiled to 1's and 0's and run–woven?–on computers.
+Several types of machines called [looms](https://en.wikipedia.org/wiki/Loom#Types_of_looms) have been devised to help assemble weaves. The Jacquard loom introduced a new dimension to the process by transcribing designs directly into representations that could automatically drive a machine to reproduce the images in weaves. An example of a predecessor to the modern day computer, it used punchcards in 1801 much like programmers in the early to mid 1900s used them in machines like ENIAC. Today, programs are written using textual languages not so different from spoken ones, which are compiled to 1's and 0's and run–woven?–on computers.
 
-This video demonstrates simple and Jacquard looms: 
+These videos demonstrate simple and Jacquard looms:
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/UPuAdWYlr_8" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/K6NgMNvK52A" frameborder="0" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/UPuAdWYlr_8" frameborder="0" allowfullscreen></iframe></center>
 
 This is another [great overview of industrial looms](https://www.youtube.com/watch?v=TyhDkd8Iabs&feature=youtu.be&t=56s) that takes you all the way from the basics to the state of the art.
 
