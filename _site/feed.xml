@@ -11,6 +11,15 @@
 				<pubDate>2017-08-29T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/warp-and-weft.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
 			</item>
 		
 			<item>
@@ -19,6 +28,15 @@
 				<pubDate>2017-06-19T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/xcode-side-by-side.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
 			</item>
 		
 			<item>
@@ -27,6 +45,7 @@
 				<pubDate>2017-05-18T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</guid>
+				
 			</item>
 		
 			<item>
@@ -35,6 +54,7 @@
 				<pubDate>2017-04-12T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
+				
 			</item>
 		
 			<item>
@@ -43,6 +63,15 @@
 				<pubDate>2017-04-01T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/app-icon-for-different-app-build-distributions.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
 			</item>
 		
 			<item>
@@ -51,6 +80,7 @@
 				<pubDate>2017-03-26T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</guid>
+				
 			</item>
 		
 			<item>
@@ -59,6 +89,7 @@
 				<pubDate>2017-03-16T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
+				
 			</item>
 		
 			<item>
@@ -67,6 +98,15 @@
 				<pubDate>2017-02-27T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/inlineblock-example.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
 			</item>
 		
 			<item>
@@ -75,6 +115,7 @@
 				<pubDate>2017-02-19T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
+				
 			</item>
 		
 			<item>
@@ -83,6 +124,15 @@
 				<pubDate>2017-01-28T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/build-setting-inheritance.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
 			</item>
 		
 			<item>
@@ -91,6 +141,7 @@
 				<pubDate>2017-01-19T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</guid>
+				
 			</item>
 		
 			<item>
@@ -99,6 +150,7 @@
 				<pubDate>2017-01-14T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</guid>
+				
 			</item>
 		
 			<item>
@@ -107,6 +159,7 @@
 				<pubDate>2017-01-04T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/04/passwords.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/04/passwords.html</guid>
+				
 			</item>
 		
 			<item>
@@ -115,6 +168,7 @@
 				<pubDate>2016-11-22T00:00:00-05:00</pubDate>
 				<link>http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</guid>
+				
 			</item>
 		
 			<item>
@@ -123,7 +177,9 @@
 				<pubDate>2016-07-24T00:00:00-04:00</pubDate>
 				<link>http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</guid>
+				
 			</item>
 		
 	</channel>
 </rss>
+	

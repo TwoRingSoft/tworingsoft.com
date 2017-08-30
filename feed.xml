@@ -15,7 +15,17 @@
 				<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
 				<link>{{ post.url | prepend: site.url }}</link>
 				<guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
+				{% if post.thumbnail != undefined %}
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/{{ post.thumbnail }}" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				{% endif %}
 			</item>
 		{% endfor %}
 	</channel>
 </rss>
+	
