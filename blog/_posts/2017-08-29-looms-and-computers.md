@@ -81,7 +81,7 @@ Let's say our computer can add or subtract two positive numbers between 0 and 7 
 
 ## Programs
 
-Humans read and write computer programs using languages made of punctuation and words, instead of 1's and 0's. This is a C program that prints "Hello world" on a computer screen–it is the prototypical example when learning a new programming language:
+Humans read and write computer programs using languages made of punctuation and words, instead of 1's and 0's. This is a C program that prints "Hello world!" on a computer screen–the canonical example when learning a new programming language:
 
     #include <stdio.h>
     
@@ -109,7 +109,7 @@ Programs written in these so-called _high level_ languages are _compiled_ into a
 	popq	%rbp
 	retq
 
-However, we still have one more transformation before we can see what the CPU sees. Remember, the CPU works in bits, not these strange abbreviations. For instance, it doesn't know what to do with `subq	$32, %rsp` (subtract 32 from whatever value is in the stack pointer _register_, where a register is a place to store a number). Each computer chip defines an _instruction set architecture (ISA)_ that maps instructions like `subq` to a binary number called an _opcode_ (the opcode for `subq` is 01001000), which is followed by the binary representation of the inputs (there are some exceptions, but they aren't important here). Here is the entire program in binary:
+However, we still have one more transformation before we can see what the CPU sees. Remember, the CPU works in bits, not these strange abbreviations. For instance, it doesn't know what to do with `subq	$32, %rsp` (subtract 32 from whatever value is in the stack pointer _register_, where a register is a place to store a number). Each computer chip defines an _instruction set architecture (ISA)_ that maps instructions like `subq` to a binary number called an _opcode_ (the opcode for `subq` is 01001000; an ISA with an 8 bit opcode can support at least 2^9 or 512 different operations), which is followed by the binary representation of the inputs (there are some exceptions, but they aren't important here). Here is the entire program in binary:
 
 	01010101000000000000000000000000000000000000000000000000000000
 	01001000100010011110010100000000000000000000000000000000000000
@@ -128,7 +128,7 @@ However, we still have one more transformation before we can see what the CPU se
 	10111010000000000000000000000000000000000000000000000000000000
 	11000011000000000000000000000000000000000000000000000000000000
 
-It might not produce an attractive woven tapestry, but it will print "Hello world" on a computer screen!
+It might not produce an attractive woven tapestry, but it will print "Hello world!" on a computer screen!
 
 ## Modern CPUs
 
@@ -139,7 +139,7 @@ This list of 64 digit binary numbers might be fed into a 64 bit computer, like t
 	source="raspberry-pi.png" 
 	alt="A Raspberry Pi circuit board." %}
 	
-Visible lines emanate from the CPU chip, just to the right of the raspberry. These are like the warp threads, each carrying its bit value of 1 or 0 into the CPU for each clock cycle (pass of the weft). (Note that you might not see all 64 of the lines leading into the CPU, or others used for power or other controls; circuit boards like that of this Raspberry Pi are actually multiple layers, each with its own separate design of circuits!)
+Visible lines emanate from the CPU chip, just to the right of the raspberry. These are like the warp threads, each carrying its bit value of 1 or 0 into the CPU for each clock cycle (pass of the weft). (Note that you might not see all 64 of the lines leading into the CPU, or others used for power or other controls; circuit boards are actually multiple layers, of which the Raspberry Pi has 6, each with its own separate design of circuits!)
 
 Each tick of the computer's clock, the CPU goes through each of the steps to _fetch_ the next number, _decode_ the instruction, _execute_ it by potentially _reading_ numbers from registers or external memory and _writing_ back any result we need to keep around. Just like looms grew in complexity to the industrial machinery of today, modern CPU architectures go further than simply carrying out instructions one by one. Chips can coordinate different components to essentially execute multiple instructions simultaneously. This video describes the technique of "pipelining" the fetch-decode-execute-read/write cycle:
 
@@ -149,4 +149,4 @@ The video describes a pipeline with 4 stages, whereas Intel's microarchitectures
 
 # Wearing code on one's sleeves
 
-While software written in high level language may not be as tangible as a t-shirt, computing is still as physical a phenomenon as it was when it was performed with an abacus or [stepped reckoner](https://en.wikipedia.org/wiki/Stepped_reckoner). The same electicity in bolts of lightning or the human body is harnessed in wildly complex ways to drive today's ubiquitous electronics. For a little more information on the history of computers and where the Jacquard loom fits in, see this [illustrated history of computers](http://www.computersciencelab.com/ComputerHistory/HistoryPt2.htm).
+While software written in high level language may not be as tangible as a t-shirt, computing is still as physical a phenomenon as it was when it was performed with an abacus or [stepped reckoner](https://en.wikipedia.org/wiki/Stepped_reckoner). The same electicity in bolts of lightning or the human body is harnessed in wildly complex ways to drive today's electronics. For a little more information on the history of computers and where the Jacquard loom fits in, see this [illustrated history of computers](http://www.computersciencelab.com/ComputerHistory/HistoryPt2.htm).
