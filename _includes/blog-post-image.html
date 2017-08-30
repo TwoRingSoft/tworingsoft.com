@@ -2,10 +2,14 @@
 	<style scoped>
 		{% assign id = include.source | split: '.png' %}
 		#reader-adaptable-image-{{ id }} {
-		{% if include.narrow == undefined %}
-			width: 75%;
+		{% if include.narrow == undefined || include.small == undefined %}
+			{% if include.small == undefined %}
+				width: 75%;
+			{% else %}
+				width: 25%;
+			{% endif %}
 		{% else %}
-			width: 50%
+				width: 50%;
 		{% endif %}
 		}
 		@media only screen and (max-width: 500px) {
@@ -13,7 +17,7 @@
 				{% if include.narrow == undefined %}
 					width: 100%;
 				{% else %}
-					width: 75%
+					width: 75%;
 				{% endif %}
 			}	
 		}
