@@ -2,4 +2,4 @@ collections:
 - devtools
 - apps
 url: http://tworingsoft.com
-exclude: [ Rakefile ]
+exclude: [ Rakefile , LICENSE, Gemfile, Gemfile.lock, README.md ]

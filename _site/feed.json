@@ -1,0 +1,1407 @@
+{
+	"version": "https://jsonfeed.org/version/1",
+	"title": "Two Ring Software Feed",
+  "description": "Feed for blog posts and other news from Two Ring Software.",
+	"home_page_url": "http://tworingsoft.com",
+	"feed_url": "http://tworingsoft.com/feed.json",
+	"items": [
+		
+			{
+				"title": "Looms and Computers",
+				"summary": "The similarities between computers and looms, distant cousins related through their ancestor, the Jacquard loom.",
+				"date_published": "2017-08-29T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html",
+        "url": "http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html",
+        "content_html": "<p>The other day, my wife and I were talking about an arts and crafts project she was doing with her patients, adolescent girls in a therapeutic residential facility. For their summer project, they partnered with <a href="https://harrisville.com">Harrisville Designs</a> to teach them the art of looming with the hope of supporting creativity, self-esteem, and social bonding. The more we talked about it, the more I started comparing looms to computers, as I am wont to do with, well, everything. Here are my findings from researching weaving and looms, together with what I know of how computers work.</p>
+
+<h1 id="weaving">Weaving</h1>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-warp-and-weft {
+		
+			
+				width: 25%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-warp-and-weft { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-warp-and-weft" src="/blog/img/warp-and-weft.png" alt="The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)" />
+	<br />
+	<br />
+	<span class="caption">The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)</span>
+</center>
+
+<p>A weave is a 2D construction where lengthwise (<em>warp</em>) threads intersect in various ways with breadthwise threads, thus all holding each other in place. The simplest weave is one where every warp thread alternates going under and over each pass of a single thread called the <em>weft</em>, where the starting positions also alternate between over/under. Because each warp thread can only be over or under, we could represent their positions with binary numbers: <code class="highlighter-rouge">1</code> for over and <code class="highlighter-rouge">0</code> for under. Thus, a simple weave of 6 warp threads could be described as such, where each row is a new pass of the weft, and each column is a warp thread:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>101010
+010101
+101010
+010101
+101010
+010101
+</code></pre>
+</div>
+
+<p>Weaves need not proceed in a linear fashion. Doubling back, such as in a <a href="http://www.theweavingloom.com/weave-along-spanish-lace-weave/">Spanish lace</a>, hearkens to out-of-order processing in CPU architectures.</p>
+
+<h2 id="patterns">Patterns</h2>
+
+<p>You can get more interesting patterns by varying the frequency of alternations, like twill:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>101110
+011101
+111011
+110111
+101110
+011101
+</code></pre>
+</div>
+
+<p>Different weave patterns give the resulting cloth different properties like stretchiness, flexibility, tear resistence, smoothness, or decoration. To further decorate a cloth, different colors of threads may be used. Consider this plaid pattern:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-tartan {
+		
+			
+				width: 25%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-tartan { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-tartan" src="/blog/img/tartan.png" alt="A plaid pattern." />
+	<br />
+	<br />
+	<span class="caption">A plaid pattern.</span>
+</center>
+
+<p>There are just a few color combinations used as you move down the warp. If you gave a number to each, you could describe a pattern or family of patterns like Scottish clan tartans with a higher-level description that outlines the colors and pattern sequences.</p>
+
+<p>Trivia: from <a href="https://www.interweave.com/article/weaving/whats-the-difference-between-tartan-and-plaid/">interweave.com</a> on plaid vs. tartan:</p>
+
+<blockquote>
+  <p>Tartans have an identical pattern of stripes running vertically and horizontally, resulting in overlapping square grids. Regular plaids are not necessarily the same in both directions, with variation in color, size, and/or pattern of stripes. In addition, tartan is almost always woven in a two-over-two twill pattern, which forms the illusion of new colors blended from the original ones.</p>
+</blockquote>
+
+<p>So there you have it, tartans actually make use of not just particular color pattern rules, but a weave pattern that achieves a visual effect!</p>
+
+<h2 id="looms">Looms</h2>
+
+<p>Several types of machines called <a href="https://en.wikipedia.org/wiki/Loom#Types_of_looms">looms</a> have been devised to help assemble weaves. The Jacquard loom introduced a new dimension to the process by transcribing designs directly into representations that could automatically drive a machine to reproduce the images in weaves. An example of a predecessor to the modern day computer, it used punchcards in 1801 much like programmers in the early to mid 1900s used them in machines like ENIAC. Today, programs are written using textual languages not so different from spoken ones, which are compiled to 1’s and 0’s and run–woven?–on computers.</p>
+
+<p>These videos demonstrate simple and Jacquard looms:</p>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/K6NgMNvK52A" frameborder="0" allowfullscreen=""></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/UPuAdWYlr_8" frameborder="0" allowfullscreen=""></iframe></center>
+
+<p>This is another <a href="https://www.youtube.com/watch?v=TyhDkd8Iabs&amp;feature=youtu.be&amp;t=56s">great overview of industrial looms</a> that takes you all the way from the basics to the state of the art.</p>
+
+<h1 id="computing">Computing</h1>
+
+<p>The <em>Central Processing Unit (CPU)</em> can be thought of as a magic black box that takes an input and does something with it to produce an output. A simple adding computer might take two numbers as inputs, and output their sum. Digital computers don’t use decimal numbers like we do, they use binary numbers. So, if you wanted to tell a computer to add 4 and 5, you’d have to supply their binary representations. We’d tell it to add 100 and 101.</p>
+
+<p>Suppose the computer can also subtract numbers. So, if we provide it with two numbers, we need a way to tell it whether to add or subtract. Since we have just two jobs, we may conveniently use 1 to instruct it to add, and 0 to subtract. If we put together the instruction to add or subtract together with the numbers, we can form a sort of word for the computer:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1100101: 1 (add) 100 (4) 101 (and 5)
+</code></pre>
+</div>
+
+<p>Let’s say our computer can add or subtract two positive numbers between 0 and 7 (7 in binary is 111, so we’re limiting ourselves to 3 binary digits per number. We’ll only ever need 7 binary digits, so we call it a 7 bit computer–(bi)nary digi(t). We could then give it a whole series of instructions, maybe in response to a person using our special calculator that has no 8’s or 9’s:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>0101010: 101 - 010: 5 - 2
+0010101: 010 - 101: 2 - 5
+1100100: 100 + 100: 4 + 4
+0111010: 111 - 010: 7 - 2
+</code></pre>
+</div>
+
+<h2 id="programs">Programs</h2>
+
+<p>Humans read and write computer programs using languages made of punctuation and words, instead of 1’s and 0’s. This is a C program that prints “Hello world!” on a computer screen–the canonical example when learning a new programming language:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;stdio.h&gt;
+
+int main (int argc, const char * argv[]) {
+    printf("Hello, World!\n");
+    return 0;
+}
+</code></pre>
+</div>
+
+<p>Programs written in these so-called <em>high level</em> languages are <em>compiled</em> into a <em>low level</em> language called <em>assembly</em>. Here’s what the assembly for the above program might look like (generated using <code class="highlighter-rouge">cc -c helloworld.c &amp;&amp; objdump --disassemble helloworld.o</code>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pushq	%rbp
+movq	%rsp, %rbp
+subq	$32, %rsp
+leaq	37(%rip), %rax
+movl	$0, -4(%rbp)
+movl	%edi, -8(%rbp)
+movq	%rsi, -16(%rbp)
+movq	%rax, %rdi
+movb	$0, %al
+callq	0 &lt;_main+0x27&gt;
+xorl	%ecx, %ecx
+movl	%eax, -20(%rbp)
+movl	%ecx, %eax
+addq	$32, %rsp
+popq	%rbp
+retq
+</code></pre>
+</div>
+
+<p>However, we still have one more transformation before we can see what the CPU sees. Remember, the CPU works in bits, not these strange abbreviations. For instance, it doesn’t know what to do with <code class="highlighter-rouge">subq	$32, %rsp</code> (subtract 32 from whatever value is in the stack pointer <em>register</em>, where a register is a place to store a number). Each computer chip defines an <em>instruction set architecture (ISA)</em> that maps instructions like <code class="highlighter-rouge">subq</code> to a binary number called an <em>opcode</em> (the opcode for <code class="highlighter-rouge">subq</code> is 01001000; an ISA with an 8 bit opcode can support at least 2^9 or 512 different operations), which is followed by the binary representation of the inputs (there are some exceptions, but they aren’t important here). Here is the entire program in binary:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>01010101000000000000000000000000000000000000000000000000000000
+01001000100010011110010100000000000000000000000000000000000000
+10010001000001111101100001000000000000000000000000000000000000
+10010001000110100000101001001010000000000000000000000000000000
+11000111010001011111110000000000000000000000000000000000000000
+10001001011111011111100000000000000000000000000000000000000000
+10010001000100101110101111100000000000000000000000000000000000
+10010001000100111000111000000000000000000000000000000000000000
+10110000000000000000000000000000000000000000000000000000000000
+11101000000000000000000000000000000000000000000000000000000000
+11000111001001000000000000000000000000000000000000000000000000
+10001001010001011110110000000000000000000000000000000000000000
+10001001110010000000000000000000000000000000000000000000000000
+10010001000001111000100001000000000000000000000000000000000000
+10111010000000000000000000000000000000000000000000000000000000
+11000011000000000000000000000000000000000000000000000000000000
+</code></pre>
+</div>
+
+<p>It might not produce an attractive woven tapestry, but it will print “Hello world!” on a computer screen!</p>
+
+<h2 id="modern-cpus">Modern CPUs</h2>
+
+<p>This list of 64 digit binary numbers might be fed into a 64 bit computer, like that of this Raspberry Pi:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-raspberry-pi {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-raspberry-pi { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-raspberry-pi" src="/blog/img/raspberry-pi.png" alt="A Raspberry Pi circuit board." />
+	<br />
+	<br />
+	<span class="caption">A Raspberry Pi circuit board.</span>
+</center>
+
+<p>Visible lines emanate from the CPU chip, just to the right of the raspberry. These are like the warp threads, each carrying its bit value of 1 or 0 into the CPU for each clock cycle (pass of the weft). (Note that you might not see all 64 of the lines leading into the CPU, or others used for power or other controls; circuit boards are actually multiple layers, of which the Raspberry Pi has 6, each with its own separate design of circuits!)</p>
+
+<p>Each tick of the computer’s clock, the CPU goes through each of the steps to <em>fetch</em> the next number, <em>decode</em> the instruction, <em>execute</em> it by potentially <em>reading</em> numbers from registers or external memory and <em>writing</em> back any result we need to keep around. Just like looms grew in complexity to the industrial machinery of today, modern CPU architectures go further than simply carrying out instructions one by one. Chips can coordinate different components to essentially execute multiple instructions simultaneously. This video describes the technique of “pipelining” the fetch-decode-execute-read/write cycle:</p>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/eVRdfl4zxfI" frameborder="0" allowfullscreen=""></iframe></center>
+
+<p>The video describes a pipeline with 4 stages, whereas Intel’s microarchitectures have upwards of 20! Pipelining itself can be further enhanced with techniques like branch prediction, out-of-order scoreboarding, pipeline interlock and stage balancing. Other facets of the CPU or ISA may be improved with extended instruction sets and SIMD (Single Instruction Multiple Data) vectorization. Even entirely separate chips with different types of microcomponents and architectures, like GPUs (Graphical Processor Units), are used to solve different types of problems. When you’re doing billions or trillions of operations per second, having dedicated circuitry to work with particular kinds of numbers or other data makes a big difference.</p>
+
+<h1 id="wearing-code-on-ones-sleeves">Wearing code on one’s sleeves</h1>
+
+<p>While software written in high level language may not be as tangible as a t-shirt, computing is still as physical a phenomenon as it was when it was performed with an abacus or <a href="https://en.wikipedia.org/wiki/Stepped_reckoner">stepped reckoner</a>. The same electicity in bolts of lightning or the human body is harnessed in wildly complex ways to drive today’s electronics. For a little more information on the history of computers and where the Jacquard loom fits in, see this <a href="http://www.computersciencelab.com/ComputerHistory/HistoryPt2.htm">illustrated history of computers</a>.</p>
+",
+				
+          "image": "http://tworingsoft.com/blog/img/warp-and-weft.png",
+				
+			},
+		
+			{
+				"title": "Xcode 9's New Find and Replace Panel",
+				"summary": "A critique of the new source editors tool's UI and UX.",
+				"date_published": "2017-06-19T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html",
+        "url": "http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html",
+        "content_html": "<p>In Xcode, I make heavy use of the Replace function, both in the source editor (<code class="highlighter-rouge">⌘⌥F</code>) and the Find navigator (<code class="highlighter-rouge">⇧⌘⌥F</code>), and much of that use includes regular expression capabilities. At this point I can fly through all the modifier popovers and dropdowns without leaving the home keys. To boot, I’ve had a lot of practice with it lately due to the complete lack of refactoring support for Swift.</p>
+
+<p>Xcode 9 has a brand new source editor implemented from scratch in Swift, and the Find/Replace panel I’ve come to know so well also received a makeover. After using it for a few days, I’ve found what I like about it, and what I’d like to see for the final release. Below is my critique of the UI and UX, in which I’ve done my best to leave no stone unturned.</p>
+
+<h2 id="general-look-and-feel">General look and feel</h2>
+
+<p>Overall, the new panel composition and design is slick, with both bold and subtle differences from its predecessor. I immediately noticed that it had been changed because I use a dark background in my source editor, and Xcode 9’s new Find/Replace panel now respects the selected themes! The differences are extremely subtle between different light and dark themes, though. For instance, in Default, the text fields’ background color is RGB(219, 219, 219), whereas with Sunset chosen it is RGB(219, 219, 218)–less than half a percent change in the blue value! Check out the differences, with Xcode 8 on top and 9 on the bottom, with both light and dark themes:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-xcode-side-by-side {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-xcode-side-by-side { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-xcode-side-by-side" src="/blog/img/xcode-side-by-side.png" alt="The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom)." />
+	<br />
+	<br />
+	<span class="caption">The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom).</span>
+</center>
+
+<p><em>Note:</em> from now on throughout this post, Xcode 8 screenshots will always have a dark editor background, and Xcode 9 will have a light background.</p>
+
+<h2 id="the-button-cluster">The button cluster</h2>
+
+<p>The group of buttons on the right is one of the more striking changes in the new version. Before, the Find and Replace fields joined to the buttons immediately to their right, mixing the text fields and buttons in a sort of segmented control. Now, only the buttons are members of the segmented controls, their rounded corners facing those of the text fields underscoring their separation. The buttons are now shorter in height than the text fields, whereas each button is wider than it was in 8. I think at least the previous and next result buttons (“⟨” and “⟩”) and replace “All” button could lose some width, maintaining equal overall width between the top and bottom rows.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-right-button-cluster {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-right-button-cluster { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-right-button-cluster" src="/blog/img/right-button-cluster.png" alt="The right button cluster from Xcode 8 (top) and Xcode 9 (bottom)." />
+	<br />
+	<br />
+	<span class="caption">The right button cluster from Xcode 8 (top) and Xcode 9 (bottom).</span>
+</center>
+
+<p>The difference in margins around the text fields versus the button cluster to the right is a bit jarring to me. In Xcode 8, equal vertical spaces lie between the container edges to the text fields and attached button cluster rows, and between the two text fields and rows of buttons themselves. Since the buttons are now shorter than the text fields in height, the space between the rows of buttons is now twice as much as the space between the text fields, along with leaving unequal spacing to the edges of the container around them. I would prefer the buttons to remain the same height as the text fields.</p>
+
+<h2 id="search-modes">Search modes</h2>
+
+<p>The first thing that actually stood out to me (besides the obvious difference in design language) were the new case-sensitive and regex search buttons in their new home as the farthest-right accessory views in the Find field. The great news is that what used to take 5 clicks (or arrow/escape/spacebar/return key presses) now only requires one. Unfortunately, they do not respond to keyboard input, or even correctly support tab navigation (radars: <a href="http://openradar.appspot.com/radar?id=5032133286428672">rdar://32829012</a> and <a href="http://openradar.appspot.com/radar?id=4960029375463424">rdar://32863002</a>). The following video shows attempting to tab to the case-sensitivity toggle and pressing spacebar (hitting tab to attempt further navigation would likewise insert a tab into the source editor):</p>
+
+<center>
+	<style scoped="">
+		.reader-adaptable-video {
+			width: 75%;
+		}
+		@media only screen and (max-width: 500px) {
+			.reader-adaptable-video { /* div containing everything after the header */
+				width: 100%;
+			}	
+		}
+	</style>
+	<video class="reader-adaptable-video" controls="">
+		<source src="/blog/vid/tab-navigation-xcode-9-beta-search-replace.mp4" type="video/mp4" />
+		Your browser does not support HTML5 video.
+	</video>
+</center>
+
+<p>The options to restrict results to strings “starting with” and “ending with” the query are gone in Xcode 9. Personally I am fine with this since you can write regular expressions for them, using <code class="highlighter-rouge">^</code> (start) and <code class="highlighter-rouge">$</code> (end) <a href="http://www.regular-expressions.info/anchors.html">anchors</a>.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-prefix-and-suffix-search {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-prefix-and-suffix-search { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-prefix-and-suffix-search" src="/blog/img/prefix-and-suffix-search.png" alt="The prefix and suffix search options in the search option popover dropdown." />
+	<br />
+	<br />
+	<span class="caption">The prefix and suffix search options in the search option popover dropdown.</span>
+</center>
+
+<p>One other thing removed in Xcode 9 is the “Insert Pattern” (<code class="highlighter-rouge">^⌥⌘P</code>). I personally never used this, but it appears to no longer be available even via the menu bar. If I had to guess, that was a system-wide option that was not carried over to a from-scratch rewrite (a very similar Find/Replace panel exists in TextEdit.app, with the “Insert Pattern” option–but no real regex support).</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-insert-pattern {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-insert-pattern { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-insert-pattern" src="/blog/img/insert-pattern.png" alt="The Insert Pattern option in Xcode 8 didn't make it to Xcode 9." />
+	<br />
+	<br />
+	<span class="caption">The Insert Pattern option in Xcode 8 didn't make it to Xcode 9.</span>
+</center>
+
+<h2 id="other-buttons-and-controls">Other buttons and controls</h2>
+
+<p>The dropdown to the left of the text fields for “Find” and “Replace” with the ever-present current selection has been removed. This now drops down from the magnifying glass in the Find field’s left accessory view, which in Xcode 8 opened the dropdown with all the search options. Not having to display those superfluous labels reclaims some horizontal space in the panel, which I like. The vertical lines in this image show the space saved from Xcode 8 (top) to 9 (bottom).</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-magnifying-glass-dropdowns {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-magnifying-glass-dropdowns { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-magnifying-glass-dropdowns" src="/blog/img/magnifying-glass-dropdowns.png" alt="The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top)." />
+	<br />
+	<br />
+	<span class="caption">The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top).</span>
+</center>
+
+<p>The clear button to the right of the match count label in the Find field has disappeared, which may irk some developers who prefer to point and click in the GUI. To clear the text from the field, one must now double- or triple-click, or click and drag to highlight to select all the text, and press delete. Or, for the terminal lovers, <code class="highlighter-rouge">^A</code> and <code class="highlighter-rouge">^K</code> still work too.</p>
+
+<h2 id="match-count-label">Match count label</h2>
+
+<p>The count of matches, in the leftmost right accessory view position of the Find text field, previously did not display units-now it affixes “matches”. It offsets some space saved by other UI changes, but I think it looks clean and is better than having a random number hanging around. (Always <a href="https://www.opticianonline.net/opinion/letter-mind-your-units">mind your units</a>!)</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-match-count-label {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-match-count-label { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-match-count-label" src="/blog/img/match-count-label.png" alt="The match count in Xcode 8 (top) versus Xcode 9 (bottom)." />
+	<br />
+	<br />
+	<span class="caption">The match count in Xcode 8 (top) versus Xcode 9 (bottom).</span>
+</center>
+
+<h2 id="using-text-selections">Using text selections</h2>
+
+<p>Something I didn’t even notice until I started pulling apart the two UIs: in versions ≤ 8, holding <code class="highlighter-rouge">⌥</code> changes the “Replace” button to “All in Selection”. Fortunately, it still exists in the menu as “Use Selection for Replace” (<code class="highlighter-rouge">⇧⌘E</code>), along with it’s sibling “Use Selection for Find” (<code class="highlighter-rouge">⌘E</code>). I always love finding hidden little helpful details like this, so I’m waiting for the chance to use it. Hopefully I remember!</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-all-in-selection {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-all-in-selection { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-all-in-selection" src="/blog/img/all-in-selection.png" alt="The All in Selection option for replacement." />
+	<br />
+	<br />
+	<span class="caption">The All in Selection option for replacement.</span>
+</center>
+
+<h2 id="recent-searches">Recent searches</h2>
+
+<p>Another thing that might irk some folks is the disappearance of the “Recent Searches” list in the old magnifying glass dropdown. I know it has saved me a few times when I had a complicated regex constructed, and then forgot about the system-wide search field behavior in macOS! ⊙▂⊙</p>
+
+<h2 id="put-a-bow-on-it-">Put a bow on it, </h2>
+
+<p>As it’s the first beta release, and especially because this is brand new UI, there are a few rough edges. In addition to the tab-navigation problem, regex replacement currently does not interpolate capture groups <a href="http://openradar.appspot.com/radar?id=4928589677985792">rdar://32827938</a>.</p>
+
+<p>Overall I’m really pleased with the new look and feel and the UX improvements that were made. I think one or two bug fixes there, along with tweaks to margins, would seal the deal for me. But, I’m already happy with the changes, and am excited to use it in its final form in Xcode 9 along with all the <a href="http://shashikantjagtap.net/hands-xcuitest-features-xcode-9/">other</a> <a href="https://venturebeat.com/2017/06/05/apples-xcode-9-finally-allows-ios-app-testing-over-wi-fi/">great</a> <a href="https://dzone.com/articles/the-marriage-of-github-and-xcode-9">new</a> <a href="https://iosdeveloperblog.com/xcode-9-new-feature-increase-font-size-keyboard-shortcut-cmd/">features</a>!</p>
+",
+				
+          "image": "http://tworingsoft.com/blog/img/xcode-side-by-side.png",
+				
+			},
+		
+			{
+				"title": "Returning Optionals Versus Throwing Errors in Swift",
+				"summary": "Deciding between flow control and data model concepts in your app's business logic.",
+				"date_published": "2017-05-18T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html",
+        "url": "http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html",
+        "content_html": "<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
+
+<p>Swift, like Objective-C and many other languages before it, also has a way to divert the normal flow of execution in exceptional circumstances. So, if your validation routine decides it has hit a situation where it can no longer proceed, it can <code class="highlighter-rouge">throw</code> an error and bail out early.</p>
+
+<p>As you shuttle data between disks, servers, and capture it from and present it to your users, you probably have many functions to perform specific transformations or I/O tasks. You have been writing more functional code since moving to Swift, haven’t you? Well, let’s talk about return types and describing function failures!</p>
+
+<h1 id="failure-mode-code">Failure mode code</h1>
+
+<p>Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It’s tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning <code class="highlighter-rouge">nil</code>.</p>
+
+<script src="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488">https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of <code class="highlighter-rouge">do</code>/<code class="highlighter-rouge">try</code>/<code class="highlighter-rouge">catch</code> to divert execution using <code class="highlighter-rouge">throw</code>, where Objective-C discouraged using exceptions for all but actual programmer error.</p>
+
+<script src="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8">https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>In both of these examples, assume:</p>
+
+<ul>
+  <li>the class definition and function represents your model layer</li>
+  <li>the middle function definition represents your middle business logic</li>
+  <li>and the statements at the bottom represents your presentation layer.</li>
+</ul>
+
+<p>I like several things about the second approach. It saves me from a clunky <code class="highlighter-rouge">guard</code> statement in the middle layer; using <code class="highlighter-rouge">try</code> clears away edge cases and the code more clearly describes intention. All error handling logic that involves user notification cohesively resides in the presentation layer, whereas in the first example there can be many places that could plausibly handle the error, forcing you to expend more cognitive process to make those decisions.</p>
+
+<h1 id="optional-requirements">Optional requirements</h1>
+
+<p>So then what should an optional be used for? To represent the absence of something. Not the absense of something <em>because an error occurred.</em> Just absence.</p>
+
+<p>The difference becomes a bit more clear when you consider collections. What is the difference between an empty collection and a collection that is not there? In both cases, you have zero things that would be found in such a collection. The difference is in how all the code involved in shuffling the container from A to B must handle all possible combinations.</p>
+
+<script src="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310">https://gist.github.com/armcknight/91004385bbd1a79eebe5ed9cd7bab310</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>If you need to do some validation etc. at multiple stages along the way, you’ll need to work around the optionality of the collection. Whereas, if you always have a container, your logic can be more streamlined. The same loops and function calls work the same way whether there are 0 or 100 elements in an array.</p>
+
+<script src="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf">https://gist.github.com/armcknight/df1a304f22b03958d4ca2802523e9baf</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>And again, by using Swift’s error system, you’re much more expressively describing possible failures.</p>
+
+<h1 id="if-it-walks-like-an-error">If it walks like an error…</h1>
+
+<p>Think about what you’ll need to do with an error. In truly exceptional scenarios, the app is not going to function the way the user expects, so you’re probably going to need to show them an alert. This is a great use case for <code class="highlighter-rouge">throw</code>ing errors. You can bubble up errors from any application layer all the way to the UI, even transforming errors at the boundaries between layers. (You may want to log an error received from your server, then repackage it with a user-friendly message and propogate it through your controller logic until it reaches the presentation layer.)</p>
+
+<p>All the intervening code paths that return things to other things might then not need to worry about optionals. That means many less <code class="highlighter-rouge">guards</code>, <code class="highlighter-rouge">if lets</code>, optional chaining and <code class="highlighter-rouge">nil</code> coalescing along the way. Instead, you can just prefix other function calls with <code class="highlighter-rouge">try</code> (and sometimes perhaps <code class="highlighter-rouge">try?</code>). Using these constructs to communicate errors is an abuse of the optional system and hides information about the errors that would help the compiler and other developers.</p>
+
+<p>Swift’s error type system has recently seen improvements and I’m sure as time goes on we’ll see more improvements to the overall propogation mechanisms. They provide a great way to describe the failure modes of your routines, so always consider if what you’re really trying to communicate is best handled with Swift’s errors. I default to the strategy described here, deviating only if the model really calls for it.</p>
+",
+				
+			},
+		
+			{
+				"title": "Source Control Management vs. Dependency Management",
+				"summary": "Which manager has more authority over your project?",
+				"date_published": "2017-04-12T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html",
+        "url": "http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html",
+        "content_html": "<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
+
+<h2 id="what-is-a-compiler">What is a compiler?</h2>
+
+<p>A compiler takes human-readable source code and translates it into machine-readable code. It doesn’t know the difference between who wrote the code, whether it was that coder that got <a href="https://www.exceptionnotfound.net/whats-your-projects-bus-factor/">hit by the bus</a> last week, or the five you had to hire to replace them.</p>
+
+<p>Correspondingly, a linker takes the blobs of machine code output from the compiler and splices them together into one blob. This might include blobs made by other compilers at other times. As long as they are well formed and readable, the linker doesn’t care whether the blobs were just spat out by the compiler ahead of it in the toolchain, downloaded from artifactory, or any combination of those and other possibilities.</p>
+
+<h2 id="what-is-a-source-control-manager">What is a source control manager?</h2>
+
+<p>Source control managers keep a record of the changes made to any text files it knows about, as a list of important milestones in that history recorded by the developer (“commits”). It does not care who commits those changes; they are recorded the same way every time.</p>
+
+<p><strong>I believe that all code that a compiler will compile, and all blobs the linker will link, should be tracked</strong> in a way that <em>guarantees</em> an exact replica of a binary, with minimal friction, given a single identifier (commit hash or tag). This means that the simple act of checking out a commit should give you everything you need to build the final product. No calls out to the network to get the right dependencies, which brings us to…</p>
+
+<h2 id="what-is-a-dependency-manager">What is a dependency manager?</h2>
+
+<p>A dependency manager is a tool that takes a list of things you want to use, reduces duplications and (hopefully) conflicts, and retrieves those things. You pull a lever, and all the souce code and precompiled binaries are retrieved (usually over the network, whether it’s an in-house LAN or the internet) and written into place on your disk.</p>
+
+<p>Think again about my earlier statements about compilers, linkers and source control. They don’t know or care about the originator of the code and blobs. On a more abstract level, a dependency manager is <em>really</em> just another code author. You may not be keying in all the glyphs that make up <a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>, but when you instruct CocoaPods to retrieve that library’s code, you are metaprogramming to generate that source code on your machine. It then gets compiled and linked the same as your application code. Therefore I believe you should check in the code you’ve “written” using your dependency manager.</p>
+
+<h2 id="dependency-managers-today">Dependency managers today</h2>
+
+<p>I think we’ve heaped far too many responsibilities onto dependency managers today. If you don’t check in your <code class="highlighter-rouge">Pods/</code> directory, you are using it to reconstruct a fragmented source history whenever you need to recreate a previous release. CocoaPods can also be used as a way to package precompiled binaries for distribution as others’ dependencies. It makes assumptions about how your Xcode project should be structured, in terms of file locations, Xcode’s File Navigator structure, build settings, artifacts and project/workspace/scheme organization. Too much can go wrong with a simple Xcode update. It’s too many moving parts, period.</p>
+
+<p>The only thing I want to do with CocoaPods is to pull that lever and update what I want updated. Then I can look at the diffs, commit the changes (<a href="http://tworingsoft.github.io/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html">as its own commit!</a>), and I’ll be able to get everything I need with a single checkout next time. I’ll be able to traverse updates to my dependencies in the same way as updates to source code I manually type with my fingers, when I do my next <code class="highlighter-rouge">git bisect</code>. I won’t have to worry about GitHub outages or source locations changing or <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">being removed</a> the next time my CI build kicks off and tries to download the dependencies all over again.</p>
+",
+				
+			},
+		
+			{
+				"title": "Differentiating iOS App Builds",
+				"summary": "A simple way to manage all your app build variants to test alongside each other on a device.",
+				"date_published": "2017-04-01T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html",
+        "url": "http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html",
+        "content_html": "<p>In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you’ve downloaded from the app store just to make sure <a href="/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html">everything works</a>. In this post, I’ll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.</p>
+
+<h1 id="bundle-ids">Bundle IDs</h1>
+
+<p>First things first: prevent debug, beta, and app store builds from overwriting each other on your test device. To do this, add a suffix to each of your non-app-store builds so they register as “different” apps on your iDevice. Here’s my setup:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions" src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." />
+	<br />
+	<br />
+	<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
+</center>
+
+<h1 id="app-icons">App icons</h1>
+
+<p>Once you have multiple versions of your app on your device beside each other, you need a way to tell them apart. Inspired by <a href="https://github.com/krzysztofzablocki/KZBootstrap">Krzysztof Zabłocki’s KZBootstrap</a>, I wanted to overlay some information about each build onto the icons, depending on the build variant. While <code class="highlighter-rouge">KZBootstrap</code> seems like an amazing tool, I already had an Xcode project, and I wanted to insert a clean, minimal solution. I also didn’t want to bring any new dependencies in, like <code class="highlighter-rouge">imagemagick</code> and <code class="highlighter-rouge">ghostscript</code> as in <code class="highlighter-rouge">KZBootstrap</code> and a few other solutions I found online.</p>
+
+<p>After a little more searching, I found <a href="https://github.com/bejo/XcodeIconTagger"><code class="highlighter-rouge">XcodeIconTagger</code></a> which only uses macOS’ Automator with a Quartz filter. I modified it to get a little more flexibility out of it in <a href="https://github.com/TwoRingSoft/XcodeIconTagger">this fork</a>. Now, I can create <em>Run Script</em> Build Phases surrounding the <em>Copy Bundle Resources</em> Build Phase that first create the icon overlay, and then after copying the icons to the installation, reset the git index to discard the changes.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-xcode-icon-tag-build-phases {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-xcode-icon-tag-build-phases { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-xcode-icon-tag-build-phases" src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." />
+	<br />
+	<br />
+	<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
+</center>
+
+<p><code class="highlighter-rouge">tag-icons.sh</code> is a script that wraps some of the different types of overlays I’d like, depending on the build variant, into a convenient interface to which I can simply supply either <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">cleanup</code> commands. (It can be found in <a href="https://github.com/TwoRingSoft/shared-utils">shared-utils</a>.) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:</p>
+
+<script src="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6">https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>Now, I can tell all my builds apart on my device at once. Here I have a debugging development build, displaying the git commit hash that built it; a beta build, showing the semantic and build versions; a special build that visualizes touch input, which I use to create App Store preview videos; the App Store version itself, with no overlay.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-app-icon-for-different-app-build-distributions {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-app-icon-for-different-app-build-distributions { /* div containing everything after the header */
+				
+					width: 75%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-app-icon-for-different-app-build-distributions" src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." />
+	<br />
+	<br />
+	<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
+</center>
+",
+				
+          "image": "http://tworingsoft.com/blog/img/app-icon-for-different-app-build-distributions.png",
+				
+			},
+		
+			{
+				"title": "Validating Crash Reporting in Live iOS Apps",
+				"summary": "There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.",
+				"date_published": "2017-03-26T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html",
+        "url": "http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html",
+        "content_html": "<p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
+
+<p>In the Bitcode world, however, the LLVM-IR bytecode you submit could be recompiled by Apple before distribution in the app store, invalidating the dSYMs submitted alongside the bytecode. (I’m not sure it even makes sense to immediately generate dSYMs for Bitcode apps at all, but I digress.) Now, after your submitted app is recompiled, you must download the new dSYMs from Apple and submit them to your crash reporter so they get the new binary addresses for your app’s symbols. (Shout out to <a href="https://krausefx.com/blog/download-dsym-symbolication-files-from-itunes-connect-for-bitcode-ios-apps">Fastlane</a> for creating a tool that helps automate this process; if you prefer a little more control, I wrote a tool called <code class="highlighter-rouge">upload-symbols</code> that ships with Fabric.app and the Fabric CocoaPod you can use).</p>
+
+<p>We thought there would be some time before we started seeing recompilations, maybe when a new processor architecture came out, but there are other reasons Apple might want to recompile: new LLVM optimizations, or injecting code for security or DRM purposes. Indeed, we quickly found that it was happening immediately for all new apps, by testing one of my own personal apps in the store. This caused confusion for lots of our customers at the time, and to this day the process, because it requires some manual work, still trips up some developers.</p>
+
+<p>Now, I insert a secret test crash button in all my apps, to test immediately upon release. I’ll purposely cause this crash before submitted the recompiled dSYMS, to make sure that Crashlytics’ <a href="https://docs.fabric.io/apple/crashlytics/missing-dsyms.html">missing dSYM</a> logic is working in all cases. (It is a fairly complicated state machine, after all–they must buffer crashes they can’t symbolicate, notify you, and reprocess those crashes after receiving all the required dSYMs, of which there can be more than one if your crash stack traverses external non-Apple libraries.) Then, I’ll submit all the new dSYMs, ensure the buffered crashes are processed, inspect the stack traces to make sure they make sense, and maybe send up another test crash. If my app does contain any dynamic libraries, I try to construct a stack trace that includes symbols from all of them.</p>
+
+<p>While I have a lot of trust in the fine folks at Crashlytics, I appreciate that Apple holds the keys to the castle as far as crash reporting is concerned. As we learned at that WWDC, they can easily break the existing pipelines at any time by introducing new concepts or even making small tweaks to how they work. It behooves us as app developers to ensure that our instrumentation works correctly by building processes to validate them. So, crash your apps!</p>
+",
+				
+			},
+		
+			{
+				"title": "Snapping Angles and Fuzzy Binary Search",
+				"summary": "Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.",
+				"date_published": "2017-03-16T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html",
+        "url": "http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html",
+        "content_html": "<p><a href="https://itunes.apple.com/us/app/trgnmtry/id1146667288?mt=8">Trgnmtry 1.2 is out now on the Apple App Store!</a> I was hoping it’d make it through review on π day… c’est la vie.</p>
+
+<p>This release introduces a new feature: snapping to angle intervals. Without it, the angle changes continuously as you drag your finger around the unit circle. If you enable snapping to 45° intervals, for example, then as you drag your finger, the closest multiple of 45° is draw.</p>
+
+<p>The routine that decides the closest angle went through a few revisions.</p>
+
+<h1 id="first-attempt">First attempt</h1>
+
+<p>First, I tried writing it specifically for a circle, knowing the range could be constrained to 360°. It did only draw angles on the appropriate intervals, but it didn’t “snap” to the next one at the right time. It should snap back and forth at the midpoint between to allowed angles, but this logic didn’t snap until you dragged all the way to the next interval. (Interestingly, the correct behavior was displayed in exactly one quadrant: the fourth.)</p>
+
+<table border="0">
+	<tr>
+		<td>
+			<center>
+	<style scoped="">
+		.reader-adaptable-video {
+			width: 75%;
+		}
+		@media only screen and (max-width: 500px) {
+			.reader-adaptable-video { /* div containing everything after the header */
+				width: 100%;
+			}	
+		}
+	</style>
+	<video class="reader-adaptable-video" controls="">
+		<source src="/blog/vid/original-angle-snapping-small.m4v" type="video/mp4" />
+		Your browser does not support HTML5 video.
+	</video>
+</center>
+		</td>
+		<td>
+<script src="https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003.js"></script>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003">https://gist.github.com/armcknight/1fc2b992607093e8a6cbb698b6ad8003</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+		</td>
+	</tr>
+</table>
+
+<h1 id="second-attempt">Second attempt</h1>
+
+<p>I wound up finding a better solution while implementing the custom input view to select a snapping angle. For this iteration of the feature, I only allow a snapping angle that evenly divides 360, so I just hardcoded the array of all such angles in [0, 360]. The input mechanism is a UISlider, so I need to map its float value to a value in this array. I wound up writing <code class="highlighter-rouge">indexOfClosestSorted</code> as an extension on Array that produces the index of the element with the closest value, seen below.</p>
+
+<p>It turns out that I can use the very same function to snap angles. Instead of the hardcoded array of possible snapping angles, I create an array, given a selected snapping angle, of all the multiples of that angle in [0, 360]. Then it’s just a matter of calling <code class="highlighter-rouge">indexOfClosestSorted</code>.</p>
+
+<table border="0">
+	<tr>
+		<td>
+			<center>
+	<style scoped="">
+		.reader-adaptable-video {
+			width: 75%;
+		}
+		@media only screen and (max-width: 500px) {
+			.reader-adaptable-video { /* div containing everything after the header */
+				width: 100%;
+			}	
+		}
+	</style>
+	<video class="reader-adaptable-video" controls="">
+		<source src="/blog/vid/fixed-angle-snapping-small.m4v" type="video/mp4" />
+		Your browser does not support HTML5 video.
+	</video>
+</center>
+		</td>
+		<td>
+<script src="https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad.js"></script>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad">https://gist.github.com/armcknight/b07f6b01b1e01bb853925fd122a9ffad</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+		</td>
+	</tr>
+</table>
+
+<h1 id="bonus-points">Bonus points</h1>
+
+<p>This works just fine for the purposes of snapping integer angles on the unit circle, but <code class="highlighter-rouge">indexOfClosestSorted</code> is linear time. Also note that it expects the array it’s searching to be sorted. What’s another search algorithm that operates on sorted lists? <a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search">Binary search!</a> Normally, binary search returns either the location of the query in the array, or reports that it doesn’t exist. In our case, we aren’t searching for the exact value, just the <em>closest</em> one: a fuzzy binary search. The terminating and recursion conditions are slightly different, and we’re guaranteed to always get a result. Now we have a logtime search, giving us a (probably imperceptible, at Trgnmtry’s scale) performance boost for drawing. See if you can outrun it!</p>
+
+<script src="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e">https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p><code class="highlighter-rouge">fuzzyBinarySearchRecursive</code> extends any <code class="highlighter-rouge">Array</code> containing <code class="highlighter-rouge">Strideable</code> elements, which includes both integer and floating point types. It has some nice defaults: much of the time you’ll probably want to search an entire array, which you can do with the invocation <code class="highlighter-rouge">myArray.fuzzyBinarySearchRecursive(query: 1000)</code>–no need to specify the search must take place between the indices <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">myArray.count - 1</code>. It’s under testing now at <a href="https://github.com/TwoRingSoft/shared-utils">https://github.com/TwoRingSoft/shared-utils</a>!</p>
+",
+				
+			},
+		
+			{
+				"title": "Objective-C Block Syntax",
+				"summary": "Some ways to make writing Objective-C blocks in Xcode a little easier.",
+				"date_published": "2017-02-27T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html",
+        "url": "http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html",
+        "content_html": "<p>One of the things Objective-C developers love to hate about the language is the <a href="https://fuckingblocksyntax.com">fucking block syntax</a> (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.</p>
+
+<h1 id="a-little-abstraction-goes-a-long-way">A little abstraction goes a long way</h1>
+
+<p>I never write a method that contains all the clumsy mechanics of a block directly in a parameter type.</p>
+
+<p>Bad:
+<script src="https://gist.github.com/armcknight/58de74211062f1784b1cb3410f5a07b9.js"></script></p>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/58de74211062f1784b1cb3410f5a07b9">https://gist.github.com/armcknight/58de74211062f1784b1cb3410f5a07b9</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>Instead, Xcode provides an autocompletion for the string <code class="highlighter-rouge">typedefBlock</code>; start typing that outside of an <code class="highlighter-rouge">@interface</code>/<code class="highlighter-rouge"><span class="k">@implementation</span></code> scope, and you can accept an automatic expansion to the following:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-typedefblock-autocompletion {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-typedefblock-autocompletion { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-typedefblock-autocompletion" src="/blog/img/typedefblock-autocompletion.png" alt="Autocompletion for typedefBlock." />
+	<br />
+	<br />
+	<span class="caption">Autocompletion for typedefBlock.</span>
+</center>
+
+<p>Good:
+<script src="https://gist.github.com/armcknight/26662cb58286db2d0c3e1f5aefe69b71.js"></script></p>
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/26662cb58286db2d0c3e1f5aefe69b71">https://gist.github.com/armcknight/26662cb58286db2d0c3e1f5aefe69b71</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>This adheres to DRY principles and makes the code more self-documentingly readable. So many times, I’ve seen method after method clumsily spell out the same block signature for passing networking completion blocks down the call stack with the familiar triad of <code class="highlighter-rouge">NSData</code>, <code class="highlighter-rouge">NSURLResponse</code> and <code class="highlighter-rouge">NSError</code>, when it should have been wrapped up in a <code class="highlighter-rouge">typedefBlock</code>. Removing the actual signature from 20 places to just one would have avoided many permutations of nullability specifiers, types and parameter names between all the instances of the completion signature. you can change it much easier in the future and even add documentation comments!</p>
+
+<h1 id="placeholder-expansion">Placeholder expansion</h1>
+
+<p>OK, we’ve now <code class="highlighter-rouge">typedef</code>‘d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of <a href="http://goshdarnblocksyntax.com">gosh darn block syntax</a>.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-block-placeholder-expansion-before {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-block-placeholder-expansion-before { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-block-placeholder-expansion-before" src="/blog/img/block-placeholder-expansion-before.png" alt="The autocompletion for the method call contains a placeholder for the block parameter." />
+	<br />
+	<br />
+	<span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
+</center>
+
+<p><br />
+<br />
+<br /></p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-block-placeholder-expansion-after {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-block-placeholder-expansion-after { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-block-placeholder-expansion-after" src="/blog/img/block-placeholder-expansion-after.png" alt="After tabbing to the block placeholder and expanding with the Return key." />
+	<br />
+	<br />
+	<span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
+</center>
+
+<h1 id="inline-blocks">Inline blocks</h1>
+
+<p>Xcode has one other helpful snippet to write Objective-C blocks: <code class="highlighter-rouge">inlineBlock</code>. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like <code class="highlighter-rouge">+[UIView animateWithDuration:animations:completion:]</code>, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you’re reading code or diffs in viewers that wrap text.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-inlineblock-example {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-inlineblock-example { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-inlineblock-example" src="/blog/img/inlineblock-example.png" alt="The good and bad of Objective-C method calls with multiple block parameters." />
+	<br />
+	<br />
+	<span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>
+</center>
+
+<p>In general, I don’t fully care for this approach, as you then have to read code upwards. It also annoyingly makes you repeat the parameter list. Most preferable to me is to still declare the blocks as local variables, but extract all the logic you would have written in the block to a method. This approach makes your code more readable, and your logic more testable and refactorable later.</p>
+
+<h2 id="what-about-swift">What about Swift?</h2>
+
+<p>Writing closures in Swift is much easier for me, but I’d still encourage you to <code class="highlighter-rouge">typealias</code> complicated closure types, and you can always visit <a href="http://fuckingswiftblocksyntax.com">fucking swift block syntax</a>, <a href="http://fuckingclosuresyntax.com">fucking closure syntax</a> and of course <a href="http://goshdarnclosuresyntax.com">gosh darn closure syntax</a>, for those of you who’ve already maxed out your cursing jar allowance for the month performing Swift 3 migrations.</p>
+",
+				
+          "image": "http://tworingsoft.com/blog/img/inlineblock-example.png",
+				
+			},
+		
+			{
+				"title": "Tracking Xcode Build Setting Changes with xcbs",
+				"summary": "Announcing a small CLI for persisting final Xcode project build settings in lockfiles.",
+				"date_published": "2017-02-19T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html",
+        "url": "http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html",
+        "content_html": "<p>Announcing a new tool, <a href="https://github.com/tworingsoft/xcbs">xcbs</a>! Track how your Xcode schemes’ build settings change with updates to your <code class="highlighter-rouge">.xcodeproj</code> and <code class="highlighter-rouge">.xcconfig</code> files. If reading <a href="/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html">“Xcode Build Setting Inheritance and Precedence”</a> had you on the edge of your seat, then this tool might be for you. See the <a href="https://github.com/tworingsoft/xcbs/blob/master/README.md">README</a> for more information.</p>
+
+<p>Here’s to increased stability and maintainability in your Xcode projects!</p>
+",
+				
+			},
+		
+			{
+				"title": "Xcode Build Setting Inheritance and Precedence",
+				"summary": "Straightening out the tangled web of relationships in the world of Xcode build configuration.",
+				"date_published": "2017-01-28T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html",
+        "url": "http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html",
+        "content_html": "<p>For probably the first year or two I developed apps for iOS, I stayed as far away from the build settings area as I could. I had plenty to focus on learning the Cocoa APIs. Xcode’s configuration system is daunting in its power and flexibility, and anyways it provides you with a good enough set of defaults and migrates you on new releases to keep you running correctly.</p>
+
+<p>A small toy app might get by this way, but serious projects need to pay careful attention to how they build their products. With a sufficiently complicated product family, build pipeline and artifact/dependency graph, maintaining the build system can become a full time job. Some <a href="http://szulctomasz.com/2015/11/14/xcode-xcconfig-files-for-maintaining-targets-configurations.html">great</a> <a href="https://pewpewthespells.com/blog/xcconfig_guide.html">articles</a> <a href="http://www.jontolof.com/cocoa/using-xcconfig-files-for-you-xcode-project/">exist</a> that detail the <a href="https://pewpewthespells.com/blog/buildsettings.html">build settings</a> Xcode offers and ways to keep your ecosystem consistent and maintainable. While I was at Fabric, we open sourced our collection of Xcconfigs: <a href="https://github.com/twitter-fabric/FABConfig">FABConfig</a>. You can find <a href="https://github.com/jspahrsummers/xcconfigs">similar repos</a> on GitHub, and I’ve even find a nice <a href="https://jamesdempsey.net/2015/01/31/generating-xcode-build-configuration-files-with-buildsettingextractor-xcodeproj-to-xcconfig/">tool</a> to extract Xcconfigs from Xcode projects.</p>
+
+<h1 id="complex-configuration-compositions">Complex Configuration Compositions</h1>
+
+<p>Much of Xcode’s build system’s flexibility comes from composition–you can use both Xcconfigs and the Build Settings area, and <code class="highlighter-rouge">#include</code> Xcconfigs into others. Dynamic setting expansion and platform selectors enables automatic resolution of settings based on environment or target details. Settings can be <code class="highlighter-rouge">$(inherited)</code> from multiple levels of granularity and overridden by target precedence. Xcode projects have <em>Configurations</em> defining entirely parallel sets of settings.</p>
+
+<p>Inheritance and precedence have their own rules in Xcode, and the complex relationships arising from all the composition methods make it tough to confidently change a setting without inadvertently propogating unwanted changes elsewhere. As a concrete example, Cocoapods will inject Xcconfigs into your project, which can be inadvertently overridden in the Target column of the Build Settings editor.</p>
+
+<h2 id="inheritance">Inheritance</h2>
+
+<p>The special selector <code class="highlighter-rouge">$(inherited)</code> brings in all settings resolved at the next highest level in the build setting graph. There are three main inheritance “trunks” to consider:</p>
+
+<ul>
+  <li>Xcode defaults -&gt; Project -&gt; Target</li>
+  <li>Project -&gt; Configuration -&gt; Platform</li>
+  <li>Target -&gt; Configuration -&gt; Platform</li>
+</ul>
+
+<p>This does not define a tree, however. Target-level Platform and Configuration settings can inherit from two parents, as seen in the diagram, forming an acyclic graph. I think of the first trunk as linear, and the second and third I think of as transposable from Project- to Target-level: each level of the Project trunk influences its dual in the Target trunk. Also keep in mind that each level in Xcode’s Build Settings editor inherits from the same setting in the corresponding Xcconfig.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-inheritance {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-inheritance { /* div containing everything after the header */
+				
+					width: 75%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-inheritance" src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." />
+	<br />
+	<br />
+	<span class="caption">The acyclic inheritance graph for build settings.</span>
+</center>
+
+<p>In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) XcPb</code>, and the Build Settings editor version of the Target-level iOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) Tf</code>. When you look at the Resolved column, you can see how inheritance has propogated values down the line.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-inheritance-case-study {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-inheritance-case-study { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-inheritance-case-study" src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." />
+	<br />
+	<br />
+	<span class="caption">An example using inheritance.</span>
+</center>
+
+<p><em>Note that in this example, I purposely left <code class="highlighter-rouge">$(inherited)</code> off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over.</em></p>
+
+<h2 id="precedence">Precedence</h2>
+
+<p>Precedence governs what settings can <em>override</em> those from other levels. It’s a simple linear progression, starting from Xcode defaults down to Target-level. An easy rule of thumb is to remember that settings defined in Xcode’s Build Settings editor always override the settings from any Xcconfig set for that same level. With “Levels” selected in the Build Settings editor, precedence flows from right to left.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-precedence {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-precedence { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-precedence" src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." />
+	<br />
+	<br />
+	<span class="caption">The linear precedence progression for build settings.</span>
+</center>
+
+<p>The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there’s no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the <code class="highlighter-rouge">$(inherited)</code> selector removed. So, the same cells called out above now have the values <code class="highlighter-rouge">XcPb</code> and <code class="highlighter-rouge">Tf</code>, respectively. The leftmost values win out due to precedence rules.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-build-setting-precedence-case-study {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-build-setting-precedence-case-study { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-build-setting-precedence-case-study" src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." />
+	<br />
+	<br />
+	<span class="caption">An example using precedence.</span>
+</center>
+
+<h1 id="practice-makes-perfect">Practice Makes Perfect</h1>
+
+<p>These simple examples demostrate the rules, but in real life things get much more complicated. Don’t be afraid to jump into your project’s build settings, and learn what they do. You many find you can greatly simplify some aspects of your build pipeline, and eliminate a few bugs on the way. Download the example projects demonstrating <a href="/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-inheritance-demo.zip">inheritance</a> and <a href="/blog/xcodeproj/2017-01-28-xcode-build-setting-inheritance-and-precedence/build-setting-precedence-demo.zip">precedence</a> used to generate the screenshots and experiment with these rules in the powerful compositional model of Xcode build settings!</p>
+",
+				
+          "image": "http://tworingsoft.com/blog/img/build-setting-inheritance.png",
+				
+			},
+		
+			{
+				"title": "The Art of Source Control, Part 2: Clean Git History",
+				"summary": "Outlining some best practices concerning git history tidiness.",
+				"date_published": "2017-01-19T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html",
+        "url": "http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html",
+        "content_html": "<p>Just like <a href="/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
+
+<h1 id="relevance-signal-to-noise-ratio">Relevance: Signal to Noise Ratio</h1>
+
+<p>Some people argue that every change should be recorded in a commit. What constitutes a change? Surely you wouldn’t record a commit for each character you type, if you are adding an entirely new function to a class. What if you write the function, commit it, and then run your test suite only to discover a bug in the function? Should the fix for that bug be recorded as a separate commit in perpetuity?</p>
+
+<p>I used to think that commits should be as granular as possible, something like the create-commit-fix-commit example above. This attempts to record the <em>though process</em> by which the final code came into being. I still work this way locally, because it provides better ability to isolate small iterative experiments. It’s also much easier to reason about a very small git diff than a huge set of changes at any time, something I frequently look at the stay on track while working.</p>
+
+<p>After some time working this way, I realized that it doesn’t help people trying to come to grips with your code and how it evolved. If you leave commits that contained bugs fixed in later commits, you’re actually leaving dead ends in a maze for later maintainers to navigate, instead of a clean, linear evolution. Moreover, I really never even needed to retrace my steps in that way. I frequently use Xcode’s blame view, for instance, and I’d rather not see a 50 line function have a separate commit blamed for each line of code.</p>
+
+<h1 id="tooling-practicality">Tooling: Practicality</h1>
+
+<p>Before merging my branch upstream, I now edit my commit history to squash many of the tinkering commits into a cohesive whole with an interactive git rebase. I make heavy usage of <code class="highlighter-rouge">git commit --fixup</code> and <code class="highlighter-rouge">git rebase --autosquash</code> to automatically squash down those experimental/iterative commits. This helps if I can’t <code class="highlighter-rouge">git commit --amend</code> because I’ve already committed some other changes the commit I want to amend. I used to frequently <code class="highlighter-rouge">--amend</code> to <code class="highlighter-rouge">HEAD</code>, but I’ve been burned a few times after getting too eager to do so and have had to spelunk through the reflog. Now I’m more likely to <code class="highlighter-rouge">--fixup</code> to <code class="highlighter-rouge">HEAD</code> and just to do the big <code class="highlighter-rouge">--autosquashed</code> rebase right at the end.</p>
+
+<p>Recording cohesive commits allows for easy reverting later. My concept of “cohesive” is this: if, when you ship your next release, you disover a problem with the new code, you should be able to reverse the change with a single <code class="highlighter-rouge">git revert</code> (of course, this is an ideal to strive for, not necessarily always practical in the real world). You should not have to perform as much work to surgically remove the logic as went into writing it in the first place, and you really don’t want to have to do that after getting woken up at 3 AM.</p>
+
+<p>Git bisect can help you find out which commit to revert. What if a bug is found in a release that went out some time ago? Maybe you’re new to a project, with no knowledge of the history of the code’s evolution. <code class="highlighter-rouge">git bisect</code> is a very helpful tool in these situations, performing a binary search between the last “good” commit and the first “bad” commit, to pinpoint the commit that introduced the bug. If the code change that introduced the bug is spread out over multiple commits, understanding the context of the changes in the commit that bisection ultimately blames may be very difficult–you may not even know how many commits are related. It’s worth noting also that git bisect works best when each commit contains a code change that compiles and contains and passes all relevant tests.</p>
+
+<p>Squashing also provides an opportunity to review all the previous messages, gather your thoughts, and write a good summary of what changed. For my first few years using git, I only ever used the short commit message or “subject”. Now, my subject lines typically only contain 70 characters (enough to avoid truncation on GitHub, in Git clients like Tower, SourceTree or GitX, or when running <code class="highlighter-rouge">git log --oneline --decorate --graph</code>). The description contains a summary and usually bullet points gleaned from all the individual commits I squashed. Github will even pull all that useful information into a PR’s description field!</p>
+",
+				
+			},
+		
+			{
+				"title": "The Art of Source Control, Part 1: Organizing Codebases",
+				"summary": "Outlining some best practices for organizing a codebase.",
+				"date_published": "2017-01-14T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html",
+        "url": "http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html",
+        "content_html": "<p>Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There’s no one right way to do anything, and you can make it as simple or as complicated as you like. Today I’m examining the decisions to make around how to even organize code.</p>
+
+<h1 id="location-location-location">Location, location, location</h1>
+<p>Let’s say I have an SDK called <code class="highlighter-rouge">PlugKit</code>. It’s a new way for business owners to market and advertise their products in iOS apps. Developers can integrate just the eponymous data/networking component to completely customize how “Plugs” are displayed to their users. We also offer some prefab views available by optionally bringing in <code class="highlighter-rouge">PlugKit-UI</code>, and there’s a demo project used as a reference implementation as well as inspiration.</p>
+
+<p>How should I organize the code for these products in Git? Should everything go in one repository? Should each of the three components get their own? <a href="http://gregoryszorc.com/blog/2014/09/09/on-monolithic-repositories/">You’ve</a> probably read <a href="http://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext">many</a> <a href="https://www.bitkeeper.org/BK_Nested_White_Paper.pdf">articles</a> <a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">already</a> <a href="http://lists.llvm.org/pipermail/llvm-dev/2016-July/102602.html">on</a> <a href="https://medium.com/@pejvan/monorepos-85e608d43b57#.tupnuwxqu">the</a> <a href="http://blog.shippable.com/our-journey-to-microservices-and-a-mono-repository">pros</a> and <a href="https://www.thoughtworks.com/insights/blog/architecting-continuous-delivery">cons</a> of <a href="http://danluu.com/monorepo/">monorepos</a>-it’s one of the great developer flame wars, up there with tabs versus spaces and functional versus OO programming. You probably already have your mind made up. What I want to do here is demonstrate some of the most basic processes I use most frequently for each possibility.</p>
+
+<p>I’ve constructed an example of each strategy, and placed them into the directories <code class="highlighter-rouge">PlugKit-iOS-A</code> and <code class="highlighter-rouge">-B</code>. One is a monorepo with a subdirectory containing the code for each component. The other is a directory containing each of the component repositories. Can you tell which is which?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+.
+├── PlugKit-iOS-A
+│   ├── PlugKit
+│   ├── PlugKit-UI
+│   └── PlugKitDemo
+└── PlugKit-iOS-B
+    ├── PlugKit
+    ├── PlugKit-UI
+    └── PlugKitDemo
+</code></pre>
+</div>
+
+<p>It seems repository granularity has nothing to do with how your code is organized. Anything you can do in monorepos, you can do with multiple. To me, the big difference between the two is one of workflow.</p>
+
+<h1 id="cloning-repositories">Cloning repositories</h1>
+<p>Yesterday I spilled water on my laptop and fried it. Oops. The good news is that now I have one of those newfangled models with the Slide Strip or whatever it’s called. Time to pull down my code so I can get back to work:</p>
+
+<p><strong>Monorepo:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit-iOS
+</code></pre>
+</div>
+
+<p><strong>Manyrepos:</strong></p>
+
+<p>There are many ways you could organize the repos with respect to one another. You could have a flat structure like above, in which case you’d just do:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit
+$&gt; git clone git@github.com:armcknight/PlugKit-UI
+$&gt; git clone git@github.com:armcknight/PlugKitDemo
+</code></pre>
+</div>
+
+<p>or perhaps you have your demo app pull in the others as submodule dependencies (similarly for other dependency managers like Cocoapods or Carthage):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKitDemo
+$&gt; cd PlugKitDemo
+$&gt; git submodule update --init
+</code></pre>
+</div>
+
+<p>which could render</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+.
+├── PlugKitDemoCode
+└── Vendor
+    └── PlugKit
+    └── PlugKit-UI
+</code></pre>
+</div>
+
+<p>or how about</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+.
+└──Vendor
+    └── PlugKit
+	    └── Vendor
+		    └── PlugKit-UI
+</code></pre>
+</div>
+
+<p>Don’t forget that <code class="highlighter-rouge">--recursive</code> flag if you have submodules in your submodules!</p>
+
+<h1 id="writing-code">Writing code</h1>
+<p>So I’m coding up a new feature that hits a new endpoint on the server, and because this is a totally new, paradigm-shifting type of data that’s coming down, we need a completely different type of UI to display it. And of course, we want to test a few “real world” scenarios and show how to implement this in our demo app.</p>
+
+<p><strong>Monorepo:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
+$&gt; git commit --all --message "I wrote and committed this all in one go, because I'm awesome"
+</code></pre>
+</div>
+
+<p><strong>Manyrepos:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
+$&gt; cd PlugKit
+$&gt; git commit --all --message "commit PlugKit changes"
+$&gt; cd ../PlugKit-UI 
+$&gt; git commit --all --message "commit PlugKit-UI changes, taking up PlugKit changes"
+$&gt; cd ../PlugKitDemo
+$&gt; git commit --all --message "commit PlugKitDemo changes, taking up PlugKit and PlugKit-UI changes"
+</code></pre>
+</div>
+
+<h1 id="merging-feature-branches">Merging feature branches</h1>
+<p>After some review and much pedantry, at long last we can merge our code! Woohoo! We use GitHub pull requests to merge the branches in, as well as GitHub issues to track the work we’re doing, so we’ll want to close those too.</p>
+
+<p><strong>Monorepo:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git push
+# go to the PR, press the big green button
+# go to the issue, press the "Close Issue" button 
+$&gt; git pull --ff-only
+</code></pre>
+</div>
+
+<p>Heck, these days closing issues may <a href="https://github.com/blog/1506-closing-issues-via-pull-requests">already be done for you</a>!</p>
+
+<p><strong>Manyrepos:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git push
+# open PlugKit PR, press big green button
+$&gt; git pull --ff-only
+$&gt; cd ../PlugKit-UI
+$&gt; git push
+# open PlugKit-UI PR, press big green button
+$&gt; git pull --ff-only
+$&gt; cd ../PlugKitDemo
+$&gt; git push
+# open PlugKitDemo PR, press big green button
+# go to the issue, press the "Close Issue" button
+$&gt; git pull --ff-only
+</code></pre>
+</div>
+
+<p>Note that order may matter here. Reviewing the changes between three separate pull requests is also not great.</p>
+
+<h1 id="simplicity">Simplicity</h1>
+
+<p>These are some of the most basic usages of git for a typical developer, and in each case, the more repos you must deal with the more steps each task requires. These examples are simple, but each new repo introduces many new combinations of steps particular to the way you arrange everything. I only covered some basic workflows, but plenty of others are similarly more complicated in manyrepos: git bisect, rebasing to split or squash commits, conflict resolution, or just plain searching for a variable name or string (do you even have all the repos cloned and up to date to search?).</p>
+
+<p>I used to advocate strongly for a separate repo for each individual thing being developed. I used to scoff at <a href="https://blog.twitter.com/2014/hello-pants-build">Twitter</a> and <a href="https://code.facebook.com/posts/218678814984400/scaling-mercurial-at-facebook/">Facebook</a> forking git/hg just to cope with their gigantic monorepos (at this point I have to wonder if some thoughtful separation could be done–working with Twitter’s monorepo <em>was</em> painfully slow). But, I realize that not only is repo division between “codebases” mostly arbitrary, it’s much simpler to keep it together unless absolutely necessary. Either you’re working on your fork of git, or you’re maintaining automation scripts to handle all the separate repos and hoping you don’t make mistakes in the manual sequences (which you will). While I’m always open to the need to split off a new repo for reasons, I’ll default to monorepos for now.</p>
+",
+				
+			},
+		
+			{
+				"title": "Passwords",
+				"summary": "Anecdata regarding antipatterns in the realm of password management for your service's users.",
+				"date_published": "2017-01-04T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2017/01/04/passwords.html",
+        "url": "http://tworingsoft.com/blog/2017/01/04/passwords.html",
+        "content_html": "<p>Happy New Year everybody! Like probably many of you, I traveled for the holiday, flying on my airline of choice, <a href="http://www.jetblue.com/">JetBlue</a>. They’ve always treated me well and this last trip was no exception: our return flight was delayed a few hours, so they bought everyone dinner and gave us a $75 voucher towards our next flight. Sweet!</p>
+
+<p>What does this have to do with passwords? Well, to manage that voucher, they use <a href="https://travelbank.com">TravelBank</a>. Cool, never heard of them, whatever it takes to get that sweet discount. They helpfully emailed me confirmation of this new account, which stated that my password would be emailed to me in a separate message. Red flag #1. Whatever, I’ll change it once I’m in.</p>
+
+<p>I open the email containing my password to discover that it’s not a randomly generated password, but instead it’s the same password I use to log into my JetBlue TrueBlue account, which has credit card information stored. Red flag #2, and that’s a biggie. I may have 2FA set up on my email account, but I don’t expect the average internet user does.</p>
+
+<p>I immediately go to change my TrueBlue password. It simply asks for the new password (plus confirmation). So, I fire up <a href="https://1password.com">1Password</a> and generate a <a href="http://xkcd.com/936/">passphrase</a>. The form happily accepts it, and I log out to test (always do this when you change a password, you’re about to see why).</p>
+
+<p>I cannot log into my account. “Wrong username or password.” How can this be, as I just changed it, using copy/paste no less? Like so many other account management systems, it actually does have rules governing passwords, even though the password change area under my profile settings stated none.</p>
+
+<p>I click “forgot password” to get the password reset email with a link to the form to create a new one (which I feel is what should have happened in the first place with the TravelBank account). Aha! Passwords cannot be more than 20 characters long, well below the passphrase I had generated. The original password change form not only didn’t state this up front, but didn’t complain that my chosen password didn’t comply. Instead, it silently truncated my input.</p>
+
+<h1 id="what-went-wrong">What went wrong</h1>
+
+<p>I love JetBlue and of course will continue to do business with them, but they committed several sins regarding passwords and account security here:</p>
+
+<p><strong>No initial session to set the password for a new account</strong></p>
+
+<p>I would have preferred my voucher to be managed directly in my TrueBlue account, but since that isn’t the case, the next best thing would have been to allow me to create my own new password in a specially authenticated session.</p>
+
+<p><strong>Emailed non-temporary plaintext passwords</strong></p>
+
+<p><a href="http://www.reuters.com/article/us-cyber-passwords-idUSKCN0XV1I6">Email</a> is not a <a href="http://www.wsj.com/articles/yahoo-discloses-new-breach-of-1-billion-user-accounts-1481753131">secure</a> storage medium. What if I used this password for other services as well, as <a href="https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/">many people do</a>? If I were security savvy, I would go and change them all. But then, I wouldn’t have used the same password for all those services.</p>
+
+<p><strong>Inconsistent display of password rules between password change and reset forms</strong></p>
+
+<p>It would be very simple to have the same HTML bullet point list in the Profile -&gt; Settings -&gt; Change Password form as exists in the Password Reset form. Heck, this could even be a piece of shared code.</p>
+
+<p><strong>Silent modification of chosen password in the input field</strong></p>
+
+<p>Upsetting the user’s expectations like this, especially with respect to security, just shouldn’t be acceptable. A good UI should immediately present feedback regarding compliance and help the user discover and fix the error. It should never even allow the user the possibility to submit invalid input.</p>
+
+<h1 id="welcome-to-the-club">Welcome to the club</h1>
+
+<p>JetBlue/TravelBank are by far not the <a href="http://plaintextoffenders.com">only companies</a> to have less-than-perfect password management. A few other things I’ve seen that bother me or just leave me scratching my head:</p>
+
+<p><strong>Prefilled passwords</strong></p>
+
+<p>Sometimes obscured by asterisks–and in one case in plaintext–when I arrive at the login prompt. For what? Why even show the password field at all at this point? To add to the head-scratchiness, I recently received a new laptop for a new job, and the first time I visited the USBank site, it prefilled my password (after answering a security question). How? I wonder if they’re even using a not-easily-reversible hash.</p>
+
+<p><strong>No paste password fields</strong></p>
+
+<p>Funnily, I’ve only encountered these on mobile versions of websites, where it’s that much harder to type a password in correctly. This is why I shelled out for a password manager, but instead I’m encouraged to use a short, easily remembered password. If every service did this, I’d probably use the same password for them all. Now is that really less of a risk than hijacking clipboard contents? I don’t think so.</p>
+
+",
+				
+			},
+		
+			{
+				"title": "Going Back to the Future to test with git-rebase",
+				"summary": "Adventures in Git, using rebase to reorder history and automate some testing, too!",
+				"date_published": "2016-11-22T00:00:00-05:00",
+        "id": "http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html",
+        "url": "http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html",
+        "content_html": "<p>I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.</p>
+
+<p>So, I set out to test the code in the past, before I wrote the new code. How could this be? While building an actual time machine would make quite the pleasing pun of “all-time yak shave”, luckily for me git already has a facility to do what I want: git-rebase.</p>
+
+<p>First things first, I gotta go back and write a new test. I left my current feature branch (let’s call it “topic”) and went back to my main branch (“master”). Then I created a new branch “tests”, and made some commits writing a test to get that rogue codepath covered. I placed as many constraints as possible on it, capturing the buggy output in test assertions. This way, when I fix the bugs, the tests should break, and I’ll update them to pass again later.</p>
+
+<p>OK, great, now we have two diverging branches. This is the first thing git-rebase can help with. I can have it remove my original feature branch from its base in “master” and re-base it onto the head of “tests”, so it will look like I wrote that test before doing any feature work. Here’s that incantation: <code class="highlighter-rouge">git rebase --onto tests master topic</code>. The git docs have some diagrams (see the link below) as well as this <a href="https://blog.pivotal.io/labs/labs/git-rebase-onto">blog post from Pivotal Labs</a>.</p>
+
+<p>Now all the commits are in a single history again, whew. But, I had a ton of commits on my original branch, “topic”, and some of them modified that buggy codepath, and I can’t remember which commits are now breaking that test. (Generally, I like each commit in my history to both be able to build and pass tests–otherwise there should be squashing going on (another use for git-rebase!).) Luckily, git-rebase can help me find the commit. I can have it run my test suite for each commit in my history since branching from master: <code class="highlighter-rouge">git rebase --exec "run-tests.sh"</code>. Because run-tests.sh exits with a non-zero status if a test fails, the rebase will plop me right into edit mode on the commit that broke the bad tests, so I can make the world right again.</p>
+
+<p>Check out the <a href="https://git-scm.com/docs/git-rebase">git-rebase</a> documentation to find out more about –onto and –exec.</p>
+",
+				
+			},
+		
+			{
+				"title": "Making the site a little more SASSy",
+				"summary": "Why I decided to use SASS to manage the site's CSS.",
+				"date_published": "2016-07-24T00:00:00-04:00",
+        "id": "http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html",
+        "url": "http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html",
+        "content_html": "<p>I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I’ve written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn’t need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I’m very glad I did!</p>
+
+<p>I learned CSS just after version 2 was released, and in all the time since have become well acquainted with the mess it can turn into if you aren’t careful. Even with care, though, CSS lacks some basic constructs that would make code much easier to maintain. Before turning to SASS, I even Googled a few things I wanted just to make sure CSS couldn’t do them on its own in some dark corner I didn’t know about:</p>
+
+<ul>
+  <li>Value storage/retrieval, e.g. variables</li>
+  <li>Reference of previous definitions</li>
+  <li>Modular organization and importing of stylesheets*</li>
+</ul>
+
+<p><span class="footnote">*CSS has importing, but it generates additional network requests. The SASS preprocessor composes everything for you to commit and serve as one file.</span></p>
+
+<p>SASS supports all of these things, making me a happy coder again in web-land :) Now I have a stylesheet per page or page type, which inherit from various base layers. Those base layers have definitions for abstract element types that are extended by classes with specific names appropriate for the related web page.</p>
+
+<p>One cool thing I learned about is the mapping file generation, which helps browser web inspectors to find the original .scss or .sass file line that generated the CSS ultimately used to render the page. I even found a little trick on my own, playing in Safari’s Web Inspector: if you ⌘-hover over the inspector’s file/line .scss/.sass hyperlink, it will toggle to the SASS-compiled .css file/line instead:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-sass-vs-css-web-inspector-link {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-sass-vs-css-web-inspector-link { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	<img id="reader-adaptable-image-sass-vs-css-web-inspector-link" src="/blog/img/sass-vs-css-web-inspector-link.png" alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." />
+	<br />
+	<br />
+	<span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>
+</center>
+
+<p>Overall, I’m happy with my decision to switch the site’s stylesheets to SASS, and I’m happy I was able to get up and running with it so quickly. I’m sure it will make it super easy to tweak the styles for different screen sizes on phones and tablets, the piece of work I’m taking on next for the site, and also something I haven’t done before.</p>
+",
+				
+			},
+		
+	]
+}
