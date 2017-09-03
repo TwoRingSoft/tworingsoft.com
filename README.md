@@ -1,5 +1,4 @@
-# TwoRingSoft.github.io
-website for tworingsoft.com
+tworingsoft.com is served via AWS S3.
 
 # Dependencies
 
@@ -31,9 +30,6 @@ when you're done!
 	
 # Publishing
 
-All development happens on the `develop` branch, and the final compiled site is pushed to remote `master` using `git subtree`.
+Sync the `_site/` directory to the tworingsoft.com bucket on AWS. Excludes .git/
 
 	rake publish 
-
-**Note**: `git subtree push` has no `--force` option, so commits already pushed cannot be amended!
-	
