@@ -30,5 +30,5 @@ end
 
 task :publish do
   sh 'git push origin'
-  sh 'aws s3 sync _site/ s3://tworingsoft.com --exclude .git/ --profile tworing'
+  sh 'aws s3 sync _site/ s3://tworingsoft.com --exclude .git/ --profile tworing --acl public-read'
 end
