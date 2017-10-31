@@ -7,9 +7,26 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Log Level: Extreme</title>
+				<description>A brief survey of log level concepts in the iOS community and elsewhere.</description>
+				<pubDate>Mon, 30 Oct 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/its-log.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
+			</item>
+		
+			<item>
 				<title>Apple's Tech Evolutions</title>
 				<description>Extrapolating Apple's technological advances from the past onto their current product lines and research, for funsies.</description>
-				<pubDate>Thu, 19 Oct 2017 00:00:00 -0400</pubDate>
+				<pubDate>Thu, 19 Oct 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html</guid>
 				
@@ -18,7 +35,7 @@
 			<item>
 				<title>Looms and Computers</title>
 				<description>The similarities between computers and looms, distant cousins related through their ancestor, the Jacquard loom.</description>
-				<pubDate>Tue, 29 Aug 2017 00:00:00 -0400</pubDate>
+				<pubDate>Tue, 29 Aug 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html</guid>
 				
@@ -35,7 +52,7 @@
 			<item>
 				<title>Xcode 9's New Find and Replace Panel</title>
 				<description>A critique of the new source editors tool's UI and UX.</description>
-				<pubDate>Mon, 19 Jun 2017 00:00:00 -0400</pubDate>
+				<pubDate>Mon, 19 Jun 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</guid>
 				
@@ -52,7 +69,7 @@
 			<item>
 				<title>Returning Optionals Versus Throwing Errors in Swift</title>
 				<description>Deciding between flow control and data model concepts in your app's business logic.</description>
-				<pubDate>Thu, 18 May 2017 00:00:00 -0400</pubDate>
+				<pubDate>Thu, 18 May 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</guid>
 				
@@ -61,7 +78,7 @@
 			<item>
 				<title>Source Control Management vs. Dependency Management</title>
 				<description>Which manager has more authority over your project?</description>
-				<pubDate>Wed, 12 Apr 2017 00:00:00 -0400</pubDate>
+				<pubDate>Wed, 12 Apr 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
 				
@@ -70,7 +87,7 @@
 			<item>
 				<title>Differentiating iOS App Builds</title>
 				<description>A simple way to manage all your app build variants to test alongside each other on a device.</description>
-				<pubDate>Sat, 01 Apr 2017 00:00:00 -0400</pubDate>
+				<pubDate>Sat, 01 Apr 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</guid>
 				
@@ -87,7 +104,7 @@
 			<item>
 				<title>Validating Crash Reporting in Live iOS Apps</title>
 				<description>There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.</description>
-				<pubDate>Sun, 26 Mar 2017 00:00:00 -0400</pubDate>
+				<pubDate>Sun, 26 Mar 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</guid>
 				
@@ -96,7 +113,7 @@
 			<item>
 				<title>Snapping Angles and Fuzzy Binary Search</title>
 				<description>Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.</description>
-				<pubDate>Thu, 16 Mar 2017 00:00:00 -0400</pubDate>
+				<pubDate>Thu, 16 Mar 2017 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
 				
@@ -105,7 +122,7 @@
 			<item>
 				<title>Objective-C Block Syntax</title>
 				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
-				<pubDate>Mon, 27 Feb 2017 00:00:00 -0500</pubDate>
+				<pubDate>Mon, 27 Feb 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</guid>
 				
@@ -122,7 +139,7 @@
 			<item>
 				<title>Tracking Xcode Build Setting Changes with xcbs</title>
 				<description>Announcing a small CLI for persisting final Xcode project build settings in lockfiles.</description>
-				<pubDate>Sun, 19 Feb 2017 00:00:00 -0500</pubDate>
+				<pubDate>Sun, 19 Feb 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
 				
@@ -131,7 +148,7 @@
 			<item>
 				<title>Xcode Build Setting Inheritance and Precedence</title>
 				<description>Straightening out the tangled web of relationships in the world of Xcode build configuration.</description>
-				<pubDate>Sat, 28 Jan 2017 00:00:00 -0500</pubDate>
+				<pubDate>Sat, 28 Jan 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</guid>
 				
@@ -148,7 +165,7 @@
 			<item>
 				<title>The Art of Source Control, Part 2: Clean Git History</title>
 				<description>Outlining some best practices concerning git history tidiness.</description>
-				<pubDate>Thu, 19 Jan 2017 00:00:00 -0500</pubDate>
+				<pubDate>Thu, 19 Jan 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</guid>
 				
@@ -157,7 +174,7 @@
 			<item>
 				<title>The Art of Source Control, Part 1: Organizing Codebases</title>
 				<description>Outlining some best practices for organizing a codebase.</description>
-				<pubDate>Sat, 14 Jan 2017 00:00:00 -0500</pubDate>
+				<pubDate>Sat, 14 Jan 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</guid>
 				
@@ -166,7 +183,7 @@
 			<item>
 				<title>Passwords</title>
 				<description>Anecdata regarding antipatterns in the realm of password management for your service's users.</description>
-				<pubDate>Wed, 04 Jan 2017 00:00:00 -0500</pubDate>
+				<pubDate>Wed, 04 Jan 2017 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/04/passwords.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/04/passwords.html</guid>
 				
@@ -175,7 +192,7 @@
 			<item>
 				<title>Going Back to the Future to test with git-rebase</title>
 				<description>Adventures in Git, using rebase to reorder history and automate some testing, too!</description>
-				<pubDate>Tue, 22 Nov 2016 00:00:00 -0500</pubDate>
+				<pubDate>Tue, 22 Nov 2016 00:00:00 -0700</pubDate>
 				<link>http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</guid>
 				
@@ -184,7 +201,7 @@
 			<item>
 				<title>Making the site a little more SASSy</title>
 				<description>Why I decided to use SASS to manage the site's CSS.</description>
-				<pubDate>Sun, 24 Jul 2016 00:00:00 -0400</pubDate>
+				<pubDate>Sun, 24 Jul 2016 00:00:00 -0600</pubDate>
 				<link>http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</guid>
 				
