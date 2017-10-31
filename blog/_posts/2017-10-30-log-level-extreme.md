@@ -6,7 +6,7 @@ abstract: A brief survey of log level concepts in the iOS community and elsewher
 thumbnail: its-log.png
 ---
 
-I recently updated my dependency on the excellent [XCGLogger](https://github.com/DaveWoodCom/XCGLogger) and noticed that in the jump from major version 4 to 6, a new log level appeared: `SEVERE`. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, *separation of concerns," lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.
+I recently updated my dependency on the excellent [XCGLogger](https://github.com/DaveWoodCom/XCGLogger) and noticed that in the jump from major version 4 to 6, a new log level appeared: `SEVERE`. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, *separation of concerns*, lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.
 
 # It's Log™!
 
