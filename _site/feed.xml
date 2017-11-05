@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Image Galleries with Jekyll</title>
+				<description>Describing my journey to build a photo gallery for my website using Jekyll/Liquid to template all the things.</description>
+				<pubDate>Sun, 05 Nov 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/11/05/log-level-extreme.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/05/log-level-extreme.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Log Level: Extreme</title>
 				<description>A brief survey of log level concepts in the iOS community and elsewhere.</description>
 				<pubDate>Mon, 30 Oct 2017 00:00:00 -0600</pubDate>
