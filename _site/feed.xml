@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Introducing Psst</title>
+				<description>A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.</description>
+				<pubDate>Mon, 27 Nov 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Image Galleries with Jekyll</title>
 				<description>Describing my journey to build a photo gallery for my website using Jekyll/Liquid to template all the things.</description>
 				<pubDate>Sun, 05 Nov 2017 00:00:00 -0600</pubDate>

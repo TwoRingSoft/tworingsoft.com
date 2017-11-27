@@ -7,6 +7,33 @@
 	"items": [
 		
 			{
+				"title": "Introducing Psst",
+				"summary": "A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.",
+				"date_published": "2017-11-27T00:00:00-07:00",
+        "id": "http://tworingsoft.com/blog/2017/11/27/introducing-psst.html",
+        "url": "http://tworingsoft.com/blog/2017/11/27/introducing-psst.html",
+        "content_html": "<p>Have you ever committed a secret to a codebase? <a href="https://damnhandy.com/2015/09/10/how-putting-credentials-in-git-can-cost-you-at-least-6500-in-just-a-few-hours/comment-page-1/">You aren’t</a> the <a href="https://news.ycombinator.com/item?id=13650818">only one.</a> Options exist out there to help you <a href="https://github.com/anshumanbh/git-all-secrets">scan your codebase</a> for such secrets, <a href="https://github.com/awslabs/git-secrets">prevent you from committing them in the first place</a> and to <a href="https://github.com/StackExchange/blackbox">manage secrets</a> from writing code to builds and <a href="https://docs.chef.io/data_bags.html">deploys</a>. A great rundown of those methods can be found <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-managing-secrets-safely-with-version-control-systems">here</a>.</p>
+
+<h1 id="kiss-committed-credentials-goodbye">KISS committed credentials goodbye</h1>
+
+<p>I write mainly for iOS, and I want something as lightweight and simple as possible to simply replace templated strings in my codebase with the appropriate values. I’ve used <a href="https://github.com/orta/cocoapods-keys"><code class="highlighter-rouge">cocoapods-keys</code></a> for some time, and it fulfills its use case very well, but it only works on secrets that are used in your application’s executable code. This means any sort of build environment tools that require secrets, or <a href="https://fabric.io">things that want to use Plists</a>, won’t be able to use it.</p>
+
+<h1 id="sed-it-and-forget-it">SED it and forget it</h1>
+
+<p>I wrote a script to do a basic search-and-replace throughout a codebase and swap template values for actual credentials. The template values are enumerated in a file that you commit to your codebase, paired with another file that contains the actual secret values. By default, these are <code class="highlighter-rouge">.psst/keys</code> and <code class="highlighter-rouge">.psst/values</code>, but they can be anything you want. The separation makes gitignoring the secret values file easy. If no secret values file exists, the script will try to expand environment variables of the same name, a common workflow for CI setups. (Optionally, a path to a keychain can be supplied, if you prefer to check in your secrets to the codebase in a securely encrypted file.) It will then iterate through the keys with secrets in hand and perform the replacements.</p>
+
+<p>Check out the <a href="https://github.com/TwoRingSoft/psst">source code</a> or get it on homebrew:</p>
+
+<p><code class="highlighter-rouge">brew tap tworingsoft &amp;&amp; brew install psst</code> (in fish, <code class="highlighter-rouge">brew tap tworingsoft; and brew install psst</code>)</p>
+
+<h1 id="in-case-of-emergency-dont-break-continue">In case of emergency, don’t <code class="highlighter-rouge">break</code>, <code class="highlighter-rouge">continue</code></h1>
+
+<p>OK, mistakes happen. This is a software tool, and it’s being used by humans. If you find you’ve still accidentally committed sensitive data to your codebase and pushed, it’s out there forever. Don’t bother trying to rewrite your git history–immediately rotate that credential!</p>
+",
+				
+			},
+		
+			{
 				"title": "Image Galleries with Jekyll",
 				"summary": "Describing my journey to build a photo gallery for my website using Jekyll/Liquid to template all the things.",
 				"date_published": "2017-11-05T00:00:00-06:00",
