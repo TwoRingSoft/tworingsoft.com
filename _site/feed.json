@@ -16,7 +16,7 @@
 
 <p>Maybe you don’t like the hassle of editing that one line in that config file, and coming up with a commit message for the banal change? And then also maybe tagging it with the exact same template you used for all the other tags (after 2.4.17, because that’s when you started/stopped prepending a “v” to it)? Or maybe you’ve just forgotten one of the steps in the midst of hot-patching a critical bug?</p>
 
-<p>Well, I have seen and/or done all of these things at some point. That’s why I wrote <a href="">Vrsnr</a>, to help alleviate the problem for myself. And as if that weren’s simple enough, I automated the automation in a Rake task:</p>
+<p>Well, I have seen and/or done all of these things at some point. That’s why I wrote <a href="https://github.com/tworingsoft/vrsnr">Vrsnr</a> to help alleviate the problem for myself. And as if that weren’t simple enough, I automated the automation in a Rake task:</p>
 
 <script src="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e.js"></script>
 

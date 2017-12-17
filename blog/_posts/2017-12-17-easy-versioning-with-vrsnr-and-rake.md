@@ -9,7 +9,7 @@ Having produced both iOS apps and developer tools used in them, I feel very stro
 
 Maybe you don't like the hassle of editing that one line in that config file, and coming up with a commit message for the banal change? And then also maybe tagging it with the exact same template you used for all the other tags (after 2.4.17, because that's when you started/stopped prepending a "v" to it)? Or maybe you've just forgotten one of the steps in the midst of hot-patching a critical bug?
 
-Well, I have seen and/or done all of these things at some point. That's why I wrote [Vrsnr](), to help alleviate the problem for myself. And as if that weren't simple enough, I automated the automation in a Rake task:
+Well, I have seen and/or done all of these things at some point. That's why I wrote [Vrsnr](https://github.com/tworingsoft/vrsnr) to help alleviate the problem for myself. And as if that weren't simple enough, I automated the automation in a Rake task:
 
 {% include gist-embed.html url="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e" %}
 
