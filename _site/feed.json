@@ -7,6 +7,37 @@
 	"items": [
 		
 			{
+				"title": "Manage version numbers with this one line command",
+				"summary": "How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.",
+				"date_published": "2017-12-17T00:00:00-07:00",
+        "id": "http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html",
+        "url": "http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html",
+        "content_html": "<p>Having produced both iOS apps and developer tools used in them, I feel very strongly about using <a href="https://semver.org">semantic versioning</a>. It’s a small price to pay to avoid all sorts of headaches, potentially for many more people than yourself. In my opinion, there’s no reason not to do it.</p>
+
+<p>Maybe you don’t like the hassle of editing that one line in that config file, and coming up with a commit message for the banal change? And then also maybe tagging it with the exact same template you used for all the other tags (after 2.4.17, because that’s when you started/stopped prepending a “v” to it)? Or maybe you’ve just forgotten one of the steps in the midst of hot-patching a critical bug?</p>
+
+<p>Well, I have seen and/or done all of these things at some point. That’s why I wrote <a href="">Vrsnr</a>, to help alleviate the problem for myself. And as if that weren’s simple enough, I automated the automation in a Rake task:</p>
+
+<script src="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e">https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>After git stashing <code class="highlighter-rouge">--all</code> of your working index, this will:</p>
+
+<ul>
+  <li>use Vrsnr to bump the specified version component</li>
+  <li>commit the change with Vrsnr’s confirmation output as the message (“Updated CFBundleVersion from 6 to 7 in my/application/Info.plist”)</li>
+  <li>use Vrsnr’s <code class="highlighter-rouge">--read</code> to get the version information back out and create a git tag</li>
+</ul>
+
+<p>and then pop the stash to resume your regularly scheduled programming.</p>
+",
+				
+			},
+		
+			{
 				"title": "Introducing Pippin",
 				"summary": "An update and first official version of my Swift app development framework.",
 				"date_published": "2017-11-29T00:00:00-07:00",

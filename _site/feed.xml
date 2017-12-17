@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Manage version numbers with this one line command</title>
+				<description>How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.</description>
+				<pubDate>Sun, 17 Dec 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Introducing Pippin</title>
 				<description>An update and first official version of my Swift app development framework.</description>
 				<pubDate>Wed, 29 Nov 2017 00:00:00 -0700</pubDate>
