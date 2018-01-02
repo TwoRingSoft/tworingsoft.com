@@ -7,6 +7,51 @@
 	"items": [
 		
 			{
+				"title": "Announcing Pippin Version 2",
+				"summary": "Highlighting some of the new features in the first major update to Pippin.",
+				"date_published": "2018-01-02T00:00:00-07:00",
+        "id": "http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html",
+        "url": "http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html",
+        "content_html": "<p><a href="https://github.com/tworingsoft/pippin">Pippin</a> is still evolving quickly alongside some of the apps I’m working on, and I’m starting off this new year with version 2. It contains a lot of bug fixes and tweaks, but the addition of some new Core protocols are what I’m most interested in.</p>
+
+<h1 id="alerter">Alerter</h1>
+
+<p>Every app is going to need a way to display errors or other timely information (or even encourage users with a pat on the back). Introducing a protocol to do so enables other parts of Pippin to show an alert should the need arise, and for consuming apps to use and switch alerting solutions without changing callsites. An adapter to <a href="https://github.com/SwiftKickMobile/SwiftMessages">SwiftMessages</a> is provided as well.</p>
+
+<h1 id="fonts">Fonts</h1>
+
+<p>This is a foray into describing the look and feel of an app in a general way. It is used in the InfoViewController, and could open up more reusable UI to be delivered in Pippin. Because UIAppearance is already a declarative API, it isn’t clear to me if it can or should be abstracted in a useful way at this time.</p>
+
+<h1 id="inapppurchasevendor">InAppPurchaseVendor</h1>
+
+<p>If you want any return on the investment of time that goes into developing an app, then you need a way to license it. One way to do that is to offer purchases of things within your app itself. Usually a server is involved that provides the details of the products, and which ones the user has already purchased; this protocol describes the operations to get those details.</p>
+
+<h1 id="environment">Environment</h1>
+
+<p>As a bonus, there’s also a struct that contains references for all the Core protocols. So, instead of declaring properties and parameters to pass around all the different things, you can reference one struct. For now, other Core protocols will retain their individual references to others instead of using the Environment struct–optionality needs to be reworked for that to happen.</p>
+
+<h1 id="core-evolution">Core Evolution</h1>
+
+<p>Pippin Core now has protocols for the following app components:</p>
+
+<ul>
+  <li>Alerting</li>
+  <li>Appearance</li>
+  <li>Bug Reporting</li>
+  <li>Crash Reporting</li>
+  <li>In-app Debugging</li>
+  <li>Licensing</li>
+  <li>Logging</li>
+  <li>Data Modeling</li>
+</ul>
+
+<p>Check it out, and please help build it up together with me on <a href="https://github.com/tworingsoft/pippin">GitHub</a>!</p>
+
+",
+				
+			},
+		
+			{
 				"title": "Manage version numbers with this one line command",
 				"summary": "How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.",
 				"date_published": "2017-12-17T00:00:00-07:00",

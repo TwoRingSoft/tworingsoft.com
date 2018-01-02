@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Announcing Pippin Version 2</title>
+				<description>Highlighting some of the new features in the first major update to Pippin.</description>
+				<pubDate>Tue, 02 Jan 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Manage version numbers with this one line command</title>
 				<description>How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.</description>
 				<pubDate>Sun, 17 Dec 2017 00:00:00 -0700</pubDate>
