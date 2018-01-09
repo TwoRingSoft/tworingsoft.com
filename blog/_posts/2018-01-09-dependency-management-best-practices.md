@@ -23,7 +23,7 @@ Forking allows you another layer of control on when you update your dependencies
 
 # Do not trust dependency managers' central stores.
 
-Do you trust that just because you declare a dependency on SomePackage 1.2.3, that it will be there the next time your CI box performs a fresh clone and tries to build? Do you trust that the servers that run the package management tasks are up when you need them to be?
+Do you trust that just because you declare a dependency on SomePackage 1.2.3, that it will be there the next time your CI box performs a fresh clone and tries to build? Do you trust that the servers that deliver packages and metadata are up when you need them to be?
 
 Yet another thing CocoaPods allows is to use a [private podspec repo](http://guides.cocoapods.org/making/private-cocoapods.html) to serve the dependencies. If you like control over your dependencies, then this decentralized approach is superior to relying on `trunk`. Admittedly, I have not taken this step yet with my own projects, but it's worth noting for those who haven't tried it. Another thing I have yet to dive deep into is [Carthage](https://github.com/Carthage/Carthage), which is always decentralized.
 
