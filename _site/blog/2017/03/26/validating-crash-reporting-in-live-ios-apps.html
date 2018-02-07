@@ -44,7 +44,10 @@
 		<div id="page-content">
 			
 						<div class="title">Validating Crash Reporting in Live iOS Apps</div>
-						<div class="date">26 March 2017</div>
+						<div>
+							<span class="date">26 March 2017 ・ </span>
+							<span class="readtime">4 minute read</span>
+						</div>
 <div id="post-content">
 	<p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
 

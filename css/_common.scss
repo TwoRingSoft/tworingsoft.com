@@ -32,6 +32,12 @@ h3 {
 	font: 100 18pt $tr-fancy-font;
 }
 
+h4 {
+	color: $tr-black; 
+	font: 100 16pt $tr-fancy-font;
+	font-style: italic;
+}
+
 .text, ul {
 	color: $tr-black; 
 	font: lighter 13pt $tr-font;

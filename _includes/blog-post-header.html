@@ -30,4 +30,7 @@
 		<div id="page-content">
 			
 						<div class="title">{{ page.title }}</div>
-						<div class="date">{{ page.date | date: '%-d %B %Y'}}</div>
+						<div>
+							<span class="date">{{ page.date | date: '%-d %B %Y'}} ・ </span>
+							<span class="readtime">{{ page.content.size | readtime }} minute read</span>
+						</div>
