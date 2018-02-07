@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Programming: 20 Years In</title>
+				<description>As I near 20 years since first picking up computer programming, I take a quick look back at the languages I've used and the tools available to work with them, with thoughts on the synergies between them and our own brains.</description>
+				<pubDate>Wed, 07 Feb 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/02/07/programming-20-years-in.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/07/programming-20-years-in.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Dependency Management Best Practices</title>
 				<description>In light of recent news about dependency manager breakages and vulnerabilities, highlighting some steps you can take to protect your dependencies and the projects for which you need them.</description>
 				<pubDate>Tue, 09 Jan 2018 00:00:00 -0700</pubDate>
