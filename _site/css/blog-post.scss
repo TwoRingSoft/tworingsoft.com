@@ -25,10 +25,11 @@ p {
 }
 
 #post-content::first-letter {
-	font-size: 230%;
+	font-size: 300%;
   float: left;
   line-height: 1;
   display: inline-block;
   margin-right: 0.15em;
+	margin-bottom: -0.30em;
 	font-family: $tr-fancy-font;
 }
