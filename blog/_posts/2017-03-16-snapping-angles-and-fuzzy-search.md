@@ -3,6 +3,8 @@ title: Snapping Angles and Fuzzy Binary Search
 date: 2017-03-16
 layout: post
 abstract: Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 [Trgnmtry 1.2 is out now on the Apple App Store!](https://itunes.apple.com/us/app/trgnmtry/id1146667288?mt=8) I was hoping it'd make it through review on π day... c'est la vie.

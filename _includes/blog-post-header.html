@@ -31,6 +31,9 @@
 			
 						<div class="title">{{ page.title }}</div>
 						<div>
-							<span class="date">{{ page.date | date: '%-d %B %Y'}} ・ </span>
+							<span class="author">{{ page.author }}</span>
+							<span class="date"> ・ </span>
+							<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
+							<span class="date"> ・ </span>
 							<span class="readtime">{{ page.content.size | readtime }} minute read</span>
 						</div>

@@ -3,6 +3,8 @@ title: Source Control Management vs. Dependency Management
 date: 2017-04-12
 layout: post
 abstract: Which manager has more authority over your project?
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 I've taken part many times in the debate on [whether to track the `Pods/` directory in source control](https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control). I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I'll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:

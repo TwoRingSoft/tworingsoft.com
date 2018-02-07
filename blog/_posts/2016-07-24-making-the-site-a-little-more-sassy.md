@@ -3,6 +3,8 @@ title: Making the site a little more SASSy
 date: 2016-07-24
 layout: post
 abstract: Why I decided to use SASS to manage the site's CSS.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I've written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn't need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I'm very glad I did!

@@ -3,6 +3,8 @@ title: Passwords
 date: 2017-01-04
 layout: post
 abstract: Anecdata regarding antipatterns in the realm of password management for your service's users.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 Happy New Year everybody! Like probably many of you, I traveled for the holiday, flying on my airline of choice, [JetBlue](http://www.jetblue.com/). They've always treated me well and this last trip was no exception: our return flight was delayed a few hours, so they bought everyone dinner and gave us a $75 voucher towards our next flight. Sweet!

@@ -3,6 +3,8 @@ title: "The Art of Source Control, Part 1: Organizing Codebases"
 date: 2017-01-14
 layout: post
 abstract: Outlining some best practices for organizing a codebase.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There's no one right way to do anything, and you can make it as simple or as complicated as you like. Today I'm examining the decisions to make around how to even organize code.

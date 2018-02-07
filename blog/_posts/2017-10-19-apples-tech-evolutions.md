@@ -3,6 +3,8 @@ title: Apple's Tech Evolutions
 date: 2017-10-19
 layout: post
 abstract: Extrapolating Apple's technological advances from the past onto their current product lines and research, for funsies.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 Apple has a history of breakthrough products, sometimes cannibalizing others in spite of their success or popularity. Not many companies can afford to do that just to produce at the peak of their technical abilities with limited time, resources and people. As a result, culture can be hesitant to make the switch, sometimes rightly so.

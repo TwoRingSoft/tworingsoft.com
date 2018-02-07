@@ -3,6 +3,8 @@ title: Announcing Pippin Version 2
 date: 2018-01-02
 layout: post
 abstract: Highlighting some of the new features in the first major update to Pippin.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 [Pippin](https://github.com/tworingsoft/pippin) is still evolving quickly alongside some of the apps I'm working on, and I'm starting off this new year with version 2. It contains a lot of bug fixes and tweaks, but the addition of some new Core protocols are what I'm most interested in.

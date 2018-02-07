@@ -3,6 +3,8 @@ title: Returning Optionals Versus Throwing Errors in Swift
 date: 2017-05-18
 layout: post
 abstract: Deciding between flow control and data model concepts in your app's business logic.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 One of Swift's most notable, fundamental and pervasive constructs is the Optional, to help deal with the `null` problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.

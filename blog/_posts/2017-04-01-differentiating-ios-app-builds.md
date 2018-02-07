@@ -4,6 +4,8 @@ date: 2017-04-01
 layout: post
 abstract: A simple way to manage all your app build variants to test alongside each other on a device.
 thumbnail: app-icon-for-different-app-build-distributions.png
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you've downloaded from the app store just to make sure [everything works](/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html). In this post, I'll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.

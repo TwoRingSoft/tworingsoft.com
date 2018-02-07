@@ -3,6 +3,8 @@ title: Manage version numbers with this one line command
 date: 2017-12-17
 layout: post
 abstract: How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 Having produced both iOS apps and developer tools used in them, I feel very strongly about using [semantic versioning](https://semver.org). It's a small price to pay to avoid all sorts of headaches, potentially for many more people than yourself. In my opinion, there's no reason not to do it. 

@@ -4,6 +4,8 @@ date: 2017-01-28
 layout: post
 abstract: Straightening out the tangled web of relationships in the world of Xcode build configuration.
 thumbnail: build-setting-inheritance.png
+author: Andrew McKnight
+author-email: andrew@tworingsoft.com
 ---
 
 For probably the first year or two I developed apps for iOS, I stayed as far away from the build settings area as I could. I had plenty to focus on learning the Cocoa APIs. Xcode's configuration system is daunting in its power and flexibility, and anyways it provides you with a good enough set of defaults and migrates you on new releases to keep you running correctly.
