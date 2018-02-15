@@ -7,7 +7,7 @@ author: Andrew McKnight
 author-email: andrew@tworingsoft.com
 ---
 
-Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of custom configurations to compile with no Swift compiler optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.
+Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of these custom configurations to compile with no Swift optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.
 
 I already knew that I could set build settings from a podspec, but I've never done this _per configuration_. I found this [Stack Overflow answer](https://stackoverflow.com/a/34200599), where unfortunately the author notes that [conditional variable assignment](https://pewpewthespells.com/blog/xcconfig_guide.html#ConditionalVariableAssignment) doesn't work with podspecs' [`pod_target_xcconfig`](https://guides.cocoapods.org/syntax/podspec.html#pod_target_xcconfig). (Check out this GitHub issue on [CocoaPods support for conditional variable assignment](https://github.com/CocoaPods/CocoaPods/issues/7133).)
 
