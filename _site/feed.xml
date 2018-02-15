@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>CocoaPods and Custom Build Configurations</title>
+				<description>My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.</description>
+				<pubDate>Wed, 07 Feb 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Programming: 20 Years In</title>
 				<description>As I near 20 years since first picking up computer programming, I take a quick look back at the languages I've used and the tools available to work with them, with thoughts on the synergies between them and our own brains.</description>
 				<pubDate>Wed, 07 Feb 2018 00:00:00 -0700</pubDate>

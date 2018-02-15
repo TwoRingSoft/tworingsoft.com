@@ -7,6 +7,54 @@
 	"items": [
 		
 			{
+				"title": "CocoaPods and Custom Build Configurations",
+				"summary": "My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.",
+				"date_published": "2018-02-07T00:00:00-07:00",
+        "id": "http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html",
+        "url": "http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html",
+        "content_html": "<p>Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of custom configurations to compile with no Swift compiler optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.</p>
+
+<p>I already knew that I could set build settings from a podspec, but I’ve never done this <em>per configuration</em>. I found this <a href="https://stackoverflow.com/a/34200599">Stack Overflow answer</a>, where unfortunately the author notes that <a href="https://pewpewthespells.com/blog/xcconfig_guide.html#ConditionalVariableAssignment">conditional variable assignment</a> doesn’t work with podspecs’ <a href="https://guides.cocoapods.org/syntax/podspec.html#pod_target_xcconfig"><code class="highlighter-rouge">pod_target_xcconfig</code></a>. (Check out this GitHub issue on <a href="https://github.com/CocoaPods/CocoaPods/issues/7133">CocoaPods support for conditional variable assignment</a>.)</p>
+
+<p>In my particular case, needing to override <code class="highlighter-rouge">SWIFT_OPTIMIZATION_LEVEL</code> presents an additional challenge. Contrary to the findings of the SO post, I did see an xcconfig written to <code class="highlighter-rouge">Pods/Target Support Files</code> with all the configuration-specific settings, and saw it reflected in Xcode’s Build Settings GUI editor. Here’s the issue: CocoaPods hardcodes the default values for this setting, but writes them to the pbxproj <em>Target</em>-level settings, thus <a href="http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html">overriding my xcconfig settings</a>. If they instead wrote it to the <em>Project</em>-level, they’d be overridable by anything set in <code class="highlighter-rouge">pod_target_xcconfig</code>. (See <a href="https://github.com/CocoaPods/Xcodeproj/blob/c39a015920c4c15701c8383aa240b7b3207a4ed9/lib/xcodeproj/constants.rb#L333"><code class="highlighter-rouge">PROJECT_DEFAULT_BUILD_SETTINGS</code></a> and <a href="https://github.com/CocoaPods/Xcodeproj/blob/c39a015920c4c15701c8383aa240b7b3207a4ed9/lib/xcodeproj/constants.rb#L226-L230"><code class="highlighter-rouge">COMMON_BUILD_SETTINGS</code></a> in <code class="highlighter-rouge">constants.rb</code>, and <a href="https://github.com/CocoaPods/Xcodeproj/blob/c39a015920c4c15701c8383aa240b7b3207a4ed9/lib/xcodeproj/project/project_helper.rb#L51">project_helper.rb</a> where <code class="highlighter-rouge">COMMON_BUILD_SETTINGS</code> is accessed via <code class="highlighter-rouge">new_target</code> -&gt; <code class="highlighter-rouge">configuration_list</code> -&gt; <code class="highlighter-rouge">common_build_settings</code>.)</p>
+
+<p>Fortunately, there’s the venerable <code class="highlighter-rouge">post_install</code> hook, where we can modify targets’ build settings, just like was once required for <a href="https://github.com/CocoaPods/CocoaPods/issues/5521"><code class="highlighter-rouge">SWIFT_VERSION</code></a> (That workaround has since been obviated with the root specification <a href="https://guides.cocoapods.org/syntax/podspec.html#swift_version"><code class="highlighter-rouge">swift_version</code></a> as of <a href="http://blog.cocoapods.org/CocoaPods-1.4.0/">cocoapods 1.4.0</a>–ctrl-f ‘Swift Version DSL`, it’s a ways down. The catch here is that the SDK maintainers must take up this change.).</p>
+
+<p>So, in my Podfile, I wrote the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if target.name == 'MyDevPod'
+            target.build_configurations.each do |config|
+                if config.name == 'My-First-Config'
+                    config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+                elsif config.name == 'My-Second-Config'
+                    config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
+                # ...
+                # and so on for the other configurations
+                # ...
+                end
+            end
+        end
+    end
+end
+</code></pre>
+</div>
+
+<p>This is also <a href="https://github.com/CocoaPods/CocoaPods/issues/4439">recommended</a> by a few folks in a discussion in particular about <code class="highlighter-rouge">SWIFT_OPTIMIZATION_LEVEL</code>. There’s even a <a href="https://github.com/jedlewison/cocoapods-wholemodule">plugin</a>. It’s certainly a fine solution, and in general the approach enables all sorts of customizations.</p>
+
+<p>But then I found out about the Podfile’s <a href="http://guides.cocoapods.org/syntax/podfile.html#project"><code class="highlighter-rouge">project</code> directive with <code class="highlighter-rouge">build_configurations</code> hash</a> (h/t to <a href="http://www.mokacoding.com/blog/cocoapods-and-custom-build-configurations/">mokacoding’s article on the subject</a>, which is almost 4 years old now–the only difference being that <code class="highlighter-rouge">xcodeproj</code> has been renamed to <code class="highlighter-rouge">project</code>). So, I was able to remove the <code class="highlighter-rouge">post_install</code> hook in favor of this one-liner at the top of my Podfile:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>project 'MyProject', 'My-First-Config' =&gt; :debug, 'My-Second-Config' =&gt; :release # and so on for the other configurations
+</code></pre>
+</div>
+
+<p>This works because CP have coded the desired settings between Debug and Release, so that the <code class="highlighter-rouge">project</code> <code class="highlighter-rouge">build_configurations</code> hash maps to the settings I had set using <code class="highlighter-rouge">post_install</code> previously. I prefer defining these in a first-class Podfile construct like <code class="highlighter-rouge">project</code> as opposed to a more arbitrary-code solution such as <code class="highlighter-rouge">post_install</code>.</p>
+",
+				
+			},
+		
+			{
 				"title": "Programming: 20 Years In",
 				"summary": "As I near 20 years since first picking up computer programming, I take a quick look back at the languages I've used and the tools available to work with them, with thoughts on the synergies between them and our own brains.",
 				"date_published": "2018-02-07T00:00:00-07:00",
