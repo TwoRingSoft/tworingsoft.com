@@ -9,9 +9,9 @@
 			<item>
 				<title>CocoaPods and Custom Build Configurations</title>
 				<description>My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.</description>
-				<pubDate>Wed, 07 Feb 2018 00:00:00 -0700</pubDate>
-				<link>http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/07/cocoapods-custom-build-configurations.html</guid>
+				<pubDate>Thu, 15 Feb 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</guid>
 				
 			</item>
 		

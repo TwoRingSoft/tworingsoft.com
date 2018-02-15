@@ -1,6 +1,6 @@
 ---
 title: CocoaPods and Custom Build Configurations
-date: 2018-02-07
+date: 2018-02-15
 layout: post
 abstract: My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.
 author: Andrew McKnight
