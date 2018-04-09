@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Objective-C Block Syntax % 27 February 2017</title>
-		<meta name="description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
-
-		<meta property="og:title" content="Objective-C Block Syntax" />
-		<meta property="og:description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
+		<meta property="og:title" content="Two Ring Software % Blog % Objective-C Block Syntax % 27 February 2017" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Objective-C Block Syntax % 27 February 2017" />
 		
-		<meta property="twitter:title" content="Objective-C Block Syntax" />
+		<meta name="description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
+		<meta property="og:description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
 		<meta property="twitter:description" content="Some ways to make writing Objective-C blocks in Xcode a little easier." />
 		
-		
-			<meta property="og:image" content="/blog/img/inlineblock-example.png" />
-			<meta name="twitter:image" content="/blog/img/inlineblock-example.png" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/blog/img/inlineblock-example.png" />
+			
+				
+				<meta name="twitter:image" content="/blog/img/inlineblock-example.png" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">Objective-C Block Syntax</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">27 February 2017</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">9 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">Objective-C Block Syntax</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">27 February 2017</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">9 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>One of the things Objective-C developers love to hate about the language is the <a href="https://fuckingblocksyntax.com">fucking block syntax</a> (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.</p>
 

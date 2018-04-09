@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Validating Crash Reporting in Live iOS Apps % 26 March 2017</title>
-		<meta name="description" content="There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production." />
-
-		<meta property="og:title" content="Validating Crash Reporting in Live iOS Apps" />
-		<meta property="og:description" content="There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production." />
+		<meta property="og:title" content="Two Ring Software % Blog % Validating Crash Reporting in Live iOS Apps % 26 March 2017" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Validating Crash Reporting in Live iOS Apps % 26 March 2017" />
 		
-		<meta property="twitter:title" content="Validating Crash Reporting in Live iOS Apps" />
+		<meta name="description" content="There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production." />
+		<meta property="og:description" content="There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production." />
 		<meta property="twitter:description" content="There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production." />
 		
-		
-			<meta property="og:image" content="/img/logo-small.jpg" />
-			<meta name="twitter:image" content="/img/logo-small.jpg" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">Validating Crash Reporting in Live iOS Apps</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">26 March 2017</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">4 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">Validating Crash Reporting in Live iOS Apps</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">26 March 2017</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">4 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
 

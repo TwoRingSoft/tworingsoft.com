@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % CocoaPods and Custom Build Configurations % 15 February 2018</title>
-		<meta name="description" content="My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project." />
-
-		<meta property="og:title" content="CocoaPods and Custom Build Configurations" />
-		<meta property="og:description" content="My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project." />
+		<meta property="og:title" content="Two Ring Software % Blog % CocoaPods and Custom Build Configurations % 15 February 2018" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % CocoaPods and Custom Build Configurations % 15 February 2018" />
 		
-		<meta property="twitter:title" content="CocoaPods and Custom Build Configurations" />
+		<meta name="description" content="My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project." />
+		<meta property="og:description" content="My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project." />
 		<meta property="twitter:description" content="My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project." />
 		
-		
-			<meta property="og:image" content="/img/logo-small.jpg" />
-			<meta name="twitter:image" content="/img/logo-small.jpg" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">CocoaPods and Custom Build Configurations</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">15 February 2018</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">8 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">CocoaPods and Custom Build Configurations</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">15 February 2018</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">8 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of these custom configurations to compile with no Swift optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.</p>
 

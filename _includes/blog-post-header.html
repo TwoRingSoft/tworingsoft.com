@@ -1,24 +1,16 @@
-{% include opening-tags.html %}
-		<title>Two Ring Software % Blog % {{ page.title }} % {{ page.date | date: '%-d %B %Y'}}</title>
-		<meta name="description" content="{{ page.abstract }}" />
+{% assign date = page.date | date: '%-d %B %Y' %}
+{% assign postTitle="Two Ring Software % Blog % " | append: page.title | append: " % " | append: date %}
 
-		<meta property="og:title" content="{{ page.title }}" />
-		<meta property="og:description" content="{{ page.abstract }}" />
-		
-		<meta property="twitter:title" content="{{ page.title }}" />
-		<meta property="twitter:description" content="{{ page.abstract }}" />
-		
-		{% if page.thumbnail != undefined %}
-			<meta property="og:image" content="/blog/img/{{ page.thumbnail }}" />
-			<meta name="twitter:image" content="/blog/img/{{ page.thumbnail }}" />
-		{% else %}
-			<meta property="og:image" content="/img/logo-small.jpg" />
-			<meta name="twitter:image" content="/img/logo-small.jpg" />
-		{% endif %}
+{% if page.thumbnail != undefined %}
+	{% assign og_image_tag = "og:image::/blog/img/" | append: page.thumbnail %}
+	{% assign twitter_image_tag = "twitter:image::/blog/img/" | append: page.thumbnail %}
+{% else %}
+	{% assign og_image_tag = "og:image::/img/logo-small.jpg" %}
+	{% assign twitter_image_tag = "twitter:image::/img/logo-small.jpg" %}
+{% endif %}
+{% assign meta_tags = og_image_tag | append: ',' | append: twitter_image_tag %}
 
-		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
+{% include opening-tags.html title=postTitle description=page.abstract stylesheet = "/css/blog-post.css" other_meta_tags=meta_tags %}
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -26,16 +18,15 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">{{ page.title }}</div>
-						<div>
-							<span class="author">{{ page.author }}</span>
-							<span class="date"> ・ </span>
-							<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">{{ page.content.size | readtime }} minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">{{ page.title }}</div>
+					<div>
+						<span class="author">{{ page.author }}</span>
+						<span class="date"> ・ </span>
+						<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">{{ page.content.size | readtime }} minute read</span>
+					</div>
+					
+					<hr />
+					

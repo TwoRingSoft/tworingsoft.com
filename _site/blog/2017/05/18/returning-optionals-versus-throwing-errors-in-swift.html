@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Returning Optionals Versus Throwing Errors in Swift % 18 May 2017</title>
-		<meta name="description" content="Deciding between flow control and data model concepts in your app's business logic." />
-
-		<meta property="og:title" content="Returning Optionals Versus Throwing Errors in Swift" />
-		<meta property="og:description" content="Deciding between flow control and data model concepts in your app's business logic." />
+		<meta property="og:title" content="Two Ring Software % Blog % Returning Optionals Versus Throwing Errors in Swift % 18 May 2017" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Returning Optionals Versus Throwing Errors in Swift % 18 May 2017" />
 		
-		<meta property="twitter:title" content="Returning Optionals Versus Throwing Errors in Swift" />
+		<meta name="description" content="Deciding between flow control and data model concepts in your app's business logic." />
+		<meta property="og:description" content="Deciding between flow control and data model concepts in your app's business logic." />
 		<meta property="twitter:description" content="Deciding between flow control and data model concepts in your app's business logic." />
 		
-		
-			<meta property="og:image" content="/img/logo-small.jpg" />
-			<meta name="twitter:image" content="/img/logo-small.jpg" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">Returning Optionals Versus Throwing Errors in Swift</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">18 May 2017</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">9 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">Returning Optionals Versus Throwing Errors in Swift</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">18 May 2017</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">9 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
 

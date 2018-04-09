@@ -7,12 +7,34 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
+		<title>{{ include.title }}</title>
+		<meta property="og:title" content="{{ include.title }}" />
+		<meta property="twitter:title" content="{{ include.title }}" />
+		
+		<meta name="description" content="{{ include.description }}" />
+		<meta property="og:description" content="{{ include.description }}" />
+		<meta property="twitter:description" content="{{ include.description }}" />
+		
 		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='{{ include.stylesheet }}' rel='stylesheet' type='text/css'>
+		
+		{% if include.other_meta_tags != undefined %}
+			{% assign tag_key_value_pairs = include.other_meta_tags | split: ',' %}
+			{% for key_value_pair in tag_key_value_pairs %}
+				{% assign key_and_value = key_value_pair | split: '::' %}
+				<meta name="{{ key_and_value[0] }}" content="{{ key_and_value[1] }}" />
+			{% endfor %}
+		{% endif %}
+	</head>
+	<body>
+		<div id="page-content">
+			

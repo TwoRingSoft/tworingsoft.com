@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Source Control Management vs. Dependency Management % 12 April 2017</title>
-		<meta name="description" content="Which manager has more authority over your project?" />
-
-		<meta property="og:title" content="Source Control Management vs. Dependency Management" />
-		<meta property="og:description" content="Which manager has more authority over your project?" />
+		<meta property="og:title" content="Two Ring Software % Blog % Source Control Management vs. Dependency Management % 12 April 2017" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Source Control Management vs. Dependency Management % 12 April 2017" />
 		
-		<meta property="twitter:title" content="Source Control Management vs. Dependency Management" />
+		<meta name="description" content="Which manager has more authority over your project?" />
+		<meta property="og:description" content="Which manager has more authority over your project?" />
 		<meta property="twitter:description" content="Which manager has more authority over your project?" />
 		
-		
-			<meta property="og:image" content="/img/logo-small.jpg" />
-			<meta name="twitter:image" content="/img/logo-small.jpg" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">Source Control Management vs. Dependency Management</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">12 April 2017</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">6 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">Source Control Management vs. Dependency Management</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">12 April 2017</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">6 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
 

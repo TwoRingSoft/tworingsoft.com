@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" 
@@ -7,32 +13,40 @@
 
 	<head>
 		<meta charset="utf-8"/>
+		
 		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
 		
 		<meta name="twitter:site" content="@tworingsoft" />
 		<meta name="twitter:creator" content="@tworingsoft" />
 		
 		<meta name="og:site_name" content="Two Ring Software">
 		
-		<meta name="copyright" content="Two Ring Software Copyright (c) 2017"/>
-		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<title>Two Ring Software % Blog % Log Level: Extreme % 30 October 2017</title>
-		<meta name="description" content="A brief survey of log level concepts in the iOS community and elsewhere." />
-
-		<meta property="og:title" content="Log Level: Extreme" />
-		<meta property="og:description" content="A brief survey of log level concepts in the iOS community and elsewhere." />
+		<meta property="og:title" content="Two Ring Software % Blog % Log Level: Extreme % 30 October 2017" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Log Level: Extreme % 30 October 2017" />
 		
-		<meta property="twitter:title" content="Log Level: Extreme" />
+		<meta name="description" content="A brief survey of log level concepts in the iOS community and elsewhere." />
+		<meta property="og:description" content="A brief survey of log level concepts in the iOS community and elsewhere." />
 		<meta property="twitter:description" content="A brief survey of log level concepts in the iOS community and elsewhere." />
 		
-		
-			<meta property="og:image" content="/blog/img/its-log.png" />
-			<meta name="twitter:image" content="/blog/img/its-log.png" />
-		
-
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
 		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/blog/img/its-log.png" />
+			
+				
+				<meta name="twitter:image" content="/blog/img/its-log.png" />
+			
+		
 	</head>
 	<body>
+		<div id="page-content">
+			
 		
 		<h2>
 			<a href="/" style="text-decoration: none;">
@@ -40,19 +54,17 @@
 			</a>
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
-
-		<div id="page-content">
-			
-						<div class="title">Log Level: Extreme</div>
-						<div>
-							<span class="author">Andrew McKnight</span>
-							<span class="date"> ・ </span>
-							<span class="date">30 October 2017</span>
-							<span class="date"> ・ </span>
-							<span class="readtime">8 minute read</span>
-						</div>
-						
-						<hr />
+		
+					<div class="title">Log Level: Extreme</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">30 October 2017</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">8 minute read</span>
+					</div>
+					
+					<hr />
 <div id="post-content">
 	<p>I recently updated my dependency on the excellent <a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a> and noticed that in the jump from major version 4 to 6, a new log level appeared: <code class="highlighter-rouge">SEVERE</code>. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, <em>separation of concerns</em>, lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.</p>
 
