@@ -1,0 +1,55 @@
+---
+
+---
+{% include opening-tags.html title="Two Ring Software % Contracts" stylesheet="/css/contracts.css" description="Information for potential clients who would like to work with Two Ring Software." %}
+
+{% include subpage-header.html page_name="Contracts" %}
+
+<!-- <center> -->
+
+	<br />
+	<br />
+	<br />
+	
+	Two Ring Software specializes in iOS application and SDK development.
+	
+	<br />
+	<br />
+	
+	Other services include: 
+	<ul>
+		<li>web frontends in HTML/CSS/JS/PHP</li>
+		<li>backends in Ruby/Java/C++/JS/PHP</li>
+		<li>backend orchestration in AWS/Heroku</li>
+		<li>specialized numerical and scientific applications</li>
+	</ul>
+	
+	<br />
+	<br />
+	
+	Reach out today to get started on your project!
+
+	<br />
+	<br />
+	
+	<form name="contact" method="post" action="contact.php">
+		Your Name: <input type="text" name="Name"><br />
+		Your Email: <input type="text" name="Email"><br />
+		Message:<br />
+		<textarea name="Message" cols="30" rows="8"></textarea><br />
+		<input type="submit" name="submit" value="Send">
+	</form>
+
+	<br />
+	<br />
+	<br />
+	
+<!-- </center> -->
+
+	{% for client in site.clients %}
+		<blockquote>{{ client.testimonial }}
+			<cite>{{ client.supervisor }}, {{ client.name }}</cite>
+		</blockquote>
+	{% endfor %}
+
+{% include closing-tags.html %}

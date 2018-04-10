@@ -3,14 +3,3 @@
 .page-name {
 	@extend .hero;
 }
-
-#page-content { /* div containing everything after the header */
-	margin: 20px 5px 0px 5px;
-}
-
-/* 500 or below */
-@media only screen and (max-width: 500px) {
-	#page-content { /* div containing everything after the header */
-		margin: 0px;
-	}	
-}

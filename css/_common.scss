@@ -50,6 +50,24 @@ h4 {
 	padding: 0px 3px 0px 3px;
 }
 
+#page-content { /* div containing everything after the header */
+	margin: 20px 5px 0px 5px;
+	@extend .text;
+}
+
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+	.phone-text, ul {
+		color: $tr-black; 
+		font: lighter 13pt $tr-font;
+	}
+
+	#page-content { /* div containing everything after the header */
+		margin: 0px;
+		@extend .phone-text;
+	}	
+}
+
 .caption {
 	color: $tr-grey; 
 	font: italic 10pt $tr-font;

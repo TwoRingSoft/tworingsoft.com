@@ -23,7 +23,7 @@ h4 {
   font: 100 16pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
-.text, .abstract, ul {
+.text, #page-content, .abstract, ul {
   color: #000;
   font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
@@ -33,6 +33,19 @@ h4 {
   background-color: #eee;
   padding: 0px 3px 0px 3px; }
 
+#page-content {
+  /* div containing everything after the header */
+  margin: 20px 5px 0px 5px; }
+
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+  .phone-text, #page-content, ul {
+    color: #000;
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
+
+  #page-content {
+    /* div containing everything after the header */
+    margin: 0px; } }
 .caption {
   color: #828282;
   font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
@@ -41,15 +54,6 @@ h4 {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
-#page-content {
-  /* div containing everything after the header */
-  margin: 20px 5px 0px 5px; }
-
-/* 500 or below */
-@media only screen and (max-width: 500px) {
-  #page-content {
-    /* div containing everything after the header */
-    margin: 0px; } }
 ul {
   margin-top: 20px; }
 
