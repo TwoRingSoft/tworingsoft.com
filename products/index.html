@@ -49,6 +49,9 @@
 
 			<div class="list-item">
 				<span>{{ devtool.name }}</span> <a href="{{ devtool.website }}">{{ devtool.website-name }}</a>
+				{% if devtool.build-badge != undefined %}
+					<a href="{{ devtool.build-badge-link }}"><img src="{{ devtool.build-badge }}" /></a>
+				{% endif %}
 				<p >
 					{{ devtool.description }}
 				</p>
