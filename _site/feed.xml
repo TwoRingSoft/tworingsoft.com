@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Automatic Devpod Versioning and Deployment with Vrsnr</title>
+				<description>Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.</description>
+				<pubDate>Fri, 20 Apr 2018 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Reach Out and Touch Faith</title>
 				<description>Thinking about the future of the Macbook Pro, and the direction in which the TouchBar might indicate it's headed.</description>
 				<pubDate>Mon, 16 Apr 2018 00:00:00 -0600</pubDate>

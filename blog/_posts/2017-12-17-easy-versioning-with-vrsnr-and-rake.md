@@ -13,7 +13,7 @@ Maybe you don't like the hassle of editing that one line in that config file, an
 
 Well, I have seen and/or done all of these things at some point. That's why I wrote [Vrsnr](https://github.com/tworingsoft/vrsnr) to help alleviate the problem for myself. And as if that weren't simple enough, I automated the automation in a Rake task:
 
-{% include gist-embed.html url="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e" %}
+{% include gist-embed.html url="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e/61e05c2626679f2be5ef19add61db3f8846d7de0" %}
 
 After git stashing `--all` of your working index, this will:
 

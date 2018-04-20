@@ -1,0 +1,117 @@
+
+
+
+
+
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<title>Two Ring Software % Blog % Automatic Devpod Versioning and Deployment with Vrsnr % 20 April 2018</title>
+		<meta property="og:title" content="Two Ring Software % Blog % Automatic Devpod Versioning and Deployment with Vrsnr % 20 April 2018" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Automatic Devpod Versioning and Deployment with Vrsnr % 20 April 2018" />
+		
+		<meta name="description" content="Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history." />
+		<meta property="og:description" content="Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history." />
+		<meta property="twitter:description" content="Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history." />
+		
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
+	</head>
+	<body>
+		<div id="page-content">
+			
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
+		
+					<div class="title">Automatic Devpod Versioning and Deployment with Vrsnr</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">20 April 2018</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">6 minute read</span>
+					</div>
+					
+					<hr />
+					
+<div id="post-content">
+	<p>I previously talked about how I used <a href="https://github.com/tworingsoft/vrsnr">Vrsnr</a> in a Rake task to bump version numbers in <a href="http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html">“Manage version numbers with this one line command”</a>. At the time, I was using it in an iOS app’s codebase, bumping its build and version numbers as I pushed out beta builds. But, as I worked on that and other apps that use <a href="https://github.com/tworingsoft/pippin">Pippin</a>, I also continuously updated it, and needed to push new versions of its podspec for consumption back in those apps.</p>
+
+<p>In Pippin’s repo, I’m still using the same Rake task as before, but with a few tweaks since I last wrote it (you can see the old version in the old post). Previously, it always popped a stash off the stack at the end, but that wouldn’t be necessary if nothing was stashed as part of running the task. Hence, changes from who knows when would’ve been placed in the working index, confusing the programmer; now it checks if any changes are present before stashing, and only pops a stash if there were changes. Also, it no longer creates a git tag… that’s coming later on in the post.</p>
+
+<script src="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e">https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>Afer running this in Pippin’s repo, the podspec’s version has been incremented and the change is committed with a descriptive message: <code class="highlighter-rouge">Updated version from 4.2.0 to 4.3.0 in Pippin.podspec</code>. Next, I run a new Rake task written to release the pod:</p>
+
+<script src="https://gist.github.com/armcknight/be6c3d33305b720cd48cba71e1088fc2.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/be6c3d33305b720cd48cba71e1088fc2">https://gist.github.com/armcknight/be6c3d33305b720cd48cba71e1088fc2</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>This is what creates the git tag we mentioned earlier (using Vrsnr’s <code class="highlighter-rouge">--read</code> function), pushes that tag, and pushes the podspec to the CocoaPods trunk. The nice thing about separating the bumping of version and tagging is it allows you to do any branch work necessary for your git flow before creating the tag, so it doesn’t wind up pointing to orphaned commits or other strange things you might not want.</p>
+
+<p>Once I’ve found something I want to add in Pippin for use in whatever app I’m in at the moment, my flow looks like this:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">pod install</code> in the app repo, pointed at my local checkout of Pippin in the Podfile</li>
+  <li>make the changes in Pippin</li>
+  <li>run <code class="highlighter-rouge">rake bump[minor]</code> (or whatever component needs it), then <code class="highlighter-rouge">rake release</code></li>
+  <li>back in app’s repo, <code class="highlighter-rouge">pod install</code> without the path declaration to pick up the new version from trunk</li>
+  <li>commit changes using new Pippin functionality along with any tracked CocoaPods diffs from <code class="highlighter-rouge">pod install</code></li>
+</ol>
+
+<p>Five steps to get the changes in my devpod, push them to trunk, and get them back in the app, with everything properly tracked in version control. The only other thing is that path declaration in the app’s Podfile–I don’t like having to hand edit that kind of thing, dirtying my git index. So, I use environment variables:</p>
+
+<script src="https://gist.github.com/armcknight/441d7f6b86e746cd619134ea64ce8c20.js"></script>
+
+<noscript>
+	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/441d7f6b86e746cd619134ea64ce8c20">https://gist.github.com/armcknight/441d7f6b86e746cd619134ea64ce8c20</a>. Enable javascript to see them embedded here.)</p>
+</noscript>
+
+<p>With that, <code class="highlighter-rouge">pod install</code> grabs the production version, and <code class="highlighter-rouge">PIPPIN_PATH=/path/to/.../pippin pod install</code> grabs it from a local checkout (in Fish shell, <code class="highlighter-rouge">env PIPPIN_PATH=/path/to/.../pippin pod install</code>). So, I’m using the latter in step 1, and the former in step 4.</p>
+
+<h1 id="pedantic-versioner">Pedantic Versioner</h1>
+
+<p>I’m a strong believer in semantic versioning, because it makes reasoning about and automating dependencies easier. Just as well, I strongly believe in maintaining auditability and reproducibility through version control. Vrsnr](https://github.com/tworingsoft/vrsnr) helps you do both, please consider using it and helping make it better–it’s designed with extensibility in mind, to cover more types of dependencies, ecosystems and platforms!</p>
+
+</div>
+		</div>
+	</body>
+</html>
