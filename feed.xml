@@ -3,7 +3,7 @@
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 	<channel>
 		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
 		<title>Two Ring Software RSS</title>
@@ -12,9 +12,9 @@
 		{% for post in site.posts %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
-				<subtitle>{{ post.abstract | xml_escape }}</subtitle>
-				<updated>{{ post.date | date_to_rfc822 }}</updated>
-				<link rel="related" type="text/html" href="{{ post.url | prepend: site.url }}" />
+				<description>{{ post.abstract | xml_escape }}</description>
+				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+				<link>{{ post.url | prepend: site.url }}</link>
 				<guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
 				{% if post.thumbnail != undefined %}
 				<media:content 
