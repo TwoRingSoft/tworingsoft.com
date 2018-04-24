@@ -3,8 +3,8 @@
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-	<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
 		<title>Two Ring Software RSS</title>
 		<description>Two Ring Software.</description>
 		<link>http://tworingsoft.com/</link>
@@ -29,6 +29,4 @@
 				{% endif %}
 			</item>
 		{% endfor %}
-	</channel>
-</rss>
 	
