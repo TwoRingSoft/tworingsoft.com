@@ -41,4 +41,4 @@ With that, `pod install` grabs the production version, and `PIPPIN_PATH=/path/to
 
 # Pedantic Versioning
 
-I'm a strong believer in semantic versioning, because it makes reasoning about and automating dependencies easier. Just as well, I strongly believe in maintaining auditability and reproducibility through version control. Vrsnr](https://github.com/tworingsoft/vrsnr) helps you do both, please consider using it and helping make it better–it's designed with extensibility in mind, to cover more types of dependencies, ecosystems and platforms!
+I'm a strong believer in semantic versioning, because it makes reasoning about and automating dependencies easier. Just as well, I strongly believe in maintaining auditability and reproducibility through version control. [Vrsnr](https://github.com/tworingsoft/vrsnr) helps you do both, please consider using it and helping make it better–it's designed with extensibility in mind, to cover more types of dependencies, ecosystems and platforms!
