@@ -6,6 +6,7 @@ abstract: Some ways to make writing Objective-C blocks in Xcode a little easier.
 thumbnail: inlineblock-example.png
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios
 ---
 
 One of the things Objective-C developers love to hate about the language is the [fucking block syntax](https://fuckingblocksyntax.com) (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.

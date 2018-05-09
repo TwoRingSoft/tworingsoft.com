@@ -5,6 +5,7 @@ layout: post
 abstract: Thinking about the future of the Macbook Pro, and the direction in which the TouchBar might indicate it's headed.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: theory UX
 ---
 
 When the TouchBar was announced for the MacBook Pro, I was torn. On one hand, it felt gimmicky and not truly useful (suspicions I mostly confirmed after using one for a couple months). Most of the joy came from using TouchID. On the other hand, it showed that Apple was thinking about how they could do input differently on the standard form factor for work computing. It also shows where they might be headed: TouchBar is not the end goal, but the first step to something better.

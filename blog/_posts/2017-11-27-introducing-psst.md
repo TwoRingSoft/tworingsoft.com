@@ -5,6 +5,7 @@ layout: post
 abstract: A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: security products
 ---
 
 Have you ever committed a secret to a codebase? [You aren't](https://damnhandy.com/2015/09/10/how-putting-credentials-in-git-can-cost-you-at-least-6500-in-just-a-few-hours/comment-page-1/) the [only one.](https://news.ycombinator.com/item?id=13650818) Options exist out there to help you [scan your codebase](https://github.com/anshumanbh/git-all-secrets) for such secrets, [prevent you from committing them in the first place](https://github.com/awslabs/git-secrets) and to [manage secrets](https://github.com/StackExchange/blackbox) from writing code to builds and [deploys](https://docs.chef.io/data_bags.html). A great rundown of those methods can be found [here](https://www.digitalocean.com/community/tutorials/an-introduction-to-managing-secrets-safely-with-version-control-systems).

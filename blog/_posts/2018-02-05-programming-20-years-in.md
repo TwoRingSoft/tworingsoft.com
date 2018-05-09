@@ -5,6 +5,7 @@ layout: post
 abstract: As I near 20 years since first picking up computer programming, I take a quick look back at the languages I've used and the tools available to work with them, with thoughts on the synergies between them and our own brains.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: theory
 ---
 As I near 20 years of programming, here are the languages and tools I've used most intensively over my career, with many overlapping or making repeat appearances:
 

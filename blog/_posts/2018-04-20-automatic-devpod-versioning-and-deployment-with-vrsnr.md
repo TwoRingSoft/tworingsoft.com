@@ -5,6 +5,7 @@ layout: post
 abstract: Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios cocoapods products
 ---
 
 I previously talked about how I used [Vrsnr](https://github.com/tworingsoft/vrsnr) in a Rake task to bump version numbers in [“Manage version numbers with this one line command”](http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html). At the time, I was using it in an iOS app's codebase, bumping its build and version numbers as I pushed out beta builds. But, as I worked on that and other apps that use [Pippin](https://github.com/tworingsoft/pippin), I also continuously updated it, and needed to push new versions of its podspec for consumption back in those apps.

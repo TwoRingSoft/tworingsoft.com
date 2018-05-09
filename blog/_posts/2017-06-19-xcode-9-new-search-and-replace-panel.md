@@ -6,6 +6,7 @@ abstract: A critique of the new source editors tool's UI and UX.
 thumbnail: xcode-side-by-side.png
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: UX xcode
 ---
 
 In Xcode, I make heavy use of the Replace function, both in the source editor (`⌘⌥F`) and the Find navigator (`⇧⌘⌥F`), and much of that use includes regular expression capabilities. At this point I can fly through all the modifier popovers and dropdowns without leaving the home keys. To boot, I've had a lot of practice with it lately due to the complete lack of refactoring support for Swift.

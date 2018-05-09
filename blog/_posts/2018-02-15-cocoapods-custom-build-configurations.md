@@ -5,6 +5,7 @@ layout: post
 abstract: My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios cocoapods xcode
 ---
 
 Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of these custom configurations to compile with no Swift optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.

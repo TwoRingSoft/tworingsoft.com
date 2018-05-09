@@ -5,6 +5,7 @@ layout: post
 abstract: An update and first official version of my Swift app development framework.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios products
 ---
 
 Hello. I am an iOS developer. For a while now, I've had a repository of random Swift extensions and helper functions, dubbed "shared-utils." A colleague of mine once remarked how bad the kitchen-sink pattern is in code organization, and it's rung true for me ever since. Recently I renamed "shared-utils" to Pippin, to sound more Apple-y and get away from that utility name, and now today that library is marked as version 1.0.

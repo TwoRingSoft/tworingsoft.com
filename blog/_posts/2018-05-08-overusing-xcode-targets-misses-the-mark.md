@@ -5,6 +5,7 @@ layout: post
 abstract: Outlining the differences between Xcode project targets and build configurations, and how to properly use each one.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios xcode
 ---
 
 Many Xcode projects I've seen use multiple targets to build variants of the same application, when different build configurations would suffice. Of course, some of these are my own projects, which I'm fixing over time, but I've seen this in the majority of projects I've inherited as well. Let's talk about what each thing is and some tips to help you decide which to use–for more information, here is an [excellent and detailed writeup of targets, configurations and schemes](https://pewpewthespells.com/blog/using_xcode_targets.html).

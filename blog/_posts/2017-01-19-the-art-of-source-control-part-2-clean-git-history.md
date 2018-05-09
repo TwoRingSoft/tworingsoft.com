@@ -5,6 +5,7 @@ layout: post
 abstract: Outlining some best practices concerning git history tidiness.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: git
 ---
 
 Just like [organizing a codebase](/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html), git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I'm talking about today lies in curating the record of how the human readable code evolves via git commits. Each person's idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history. 

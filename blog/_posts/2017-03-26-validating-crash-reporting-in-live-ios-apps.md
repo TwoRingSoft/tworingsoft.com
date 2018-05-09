@@ -5,6 +5,7 @@ layout: post
 abstract: There's only one way to guarantee your iOS crash reporter is working&#58; purposefully crash your app in production.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: ios
 ---
 
 During my time at Fabric, Apple announced their [Bitcode](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2) concept at WWDC (more reading [here](https://lowlevelbits.org/bitcode-demystified/) and [here](https://www.infoq.com/articles/ios-9-bitcode)). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you'd submit the corresponding dSYM binary to Crashlytics, which it uses to [symbolicate](https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/) the stack frames in your crash report. 

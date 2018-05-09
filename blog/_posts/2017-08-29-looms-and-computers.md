@@ -6,6 +6,7 @@ abstract: The similarities between computers and looms, distant cousins related 
 thumbnail: warp-and-weft.png
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: theory
 ---
 
 The other day, my wife and I were talking about an arts and crafts project she was doing with her patients, adolescent girls in a therapeutic residential facility. For their summer project, they partnered with [Harrisville Designs](https://harrisville.com) to teach them the art of looming with the hope of supporting creativity, self-esteem, and social bonding. The more we talked about it, the more I started comparing looms to computers, as I am wont to do with, well, everything. Here are my findings from researching weaving and looms, together with what I know of how computers work. 

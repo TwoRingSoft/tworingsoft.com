@@ -5,6 +5,7 @@ layout: post
 abstract: In light of recent news about dependency manager breakages and vulnerabilities, highlighting some steps you can take to protect your dependencies and the projects for which you need them.
 author: Andrew McKnight
 author-email: andrew@tworingsoft.com
+tags: security cocoapods
 ---
 
 There have been a few unfortunate incidents and revelations in the world of dependency management recently, which present possible (or realized) attack vectors. Some notable examples are [leftpad](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm) and a more recent article on [hackernoon](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5). 
