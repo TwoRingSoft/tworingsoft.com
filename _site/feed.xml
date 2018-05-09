@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Overusing Xcode Targets Misses the Mark</title>
+				<description>Outlining the differences between Xcode project targets and build configurations, and how to properly use each one.</description>
+				<pubDate>Tue, 08 May 2018 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Automatic Devpod Versioning and Deployment with Vrsnr</title>
 				<description>Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.</description>
 				<pubDate>Fri, 20 Apr 2018 00:00:00 -0600</pubDate>

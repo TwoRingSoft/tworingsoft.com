@@ -37,23 +37,6 @@ h4 {
   /* div containing everything after the header */
   margin: 20px 5px 0px 5px; }
 
-/* 500 or below */
-@media only screen and (max-width: 500px) {
-  .phone-text, #page-content, ul {
-    color: #000;
-    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
-  #page-content {
-    /* div containing everything after the header */
-    margin: 0px; } }
-.caption {
-  color: #828282;
-  font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
-.footnote {
-  color: #000;
-  font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
 /* thanks to: https://stackoverflow.com/a/16326442/4789448 */
 blockquote {
   font-size: 18px;
@@ -83,6 +66,22 @@ blockquote cite {
 blockquote cite:before {
   content: "\2014 \2009"; }
 
-/* /thanks */
+/* end thanks to: https://stackoverflow.com/a/16326442/4789448 */
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+  .phone-text, #page-content, ul {
+    color: #000;
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
+
+  #page-content {
+    /* div containing everything after the header */
+    margin: 0px; } }
+.caption {
+  color: #828282;
+  font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
+
+.footnote {
+  color: #000;
+  font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
 /*# sourceMappingURL=contracts.css.map */
