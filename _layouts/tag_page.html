@@ -5,7 +5,10 @@ layout: default
 {% include opening-tags.html title=page_title stylesheet="/css/blog.css" description="Blog at Two Ring Software." %}
 
 	{% assign page_name = "Blog: " | append: page.tag %}
-	{% include subpage-header.html page_name=page_name link="/blog/" %}
+	
+	{% capture rss_link %}http://tworingsoft.com/blog/tag/{{ page.tag }}.xml{% endcapture %}
+	{% capture rss_link_alt %}Two Ring Software's {{ page.tag }} RSS Feed{% endcapture %}
+	{% include subpage-header.html page_name=page_name link="/blog/" rss_link=rss_link rss_link_alt=rss_link_alt %}
 	
 	{% include blog-post-listing.html posts=page.posts %}
 

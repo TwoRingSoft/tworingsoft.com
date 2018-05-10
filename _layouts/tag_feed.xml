@@ -2,4 +2,7 @@
 layout: nil
 ---
 
-{% include rss-feed.xml posts=page.posts %}
+{% capture title %}Two Ring Soft % {{ page.tag }}{% endcapture %}
+{% capture description %}Two Ring Software's RSS Feed for updates on {{ page.tag }}.{% endcapture %}
+{% capture link %}http://tworingsoft.com/blog/tag/{{ page.tag }}.html{% endcapture %}
+{% include rss-feed.xml posts=page.posts title=title description=description link=link %}
