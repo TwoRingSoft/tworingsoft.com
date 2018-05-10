@@ -23,7 +23,7 @@ h4, .readtime {
   font: 100 16pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
-.text, #page-content, blockquote, .abstract, ul {
+.text, #page-content, blockquote, .abstract, #tag_cloud a, ul {
   color: #000;
   font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
@@ -84,7 +84,18 @@ blockquote cite:before {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
-a {
-  text-decoration: none; }
+body {
+  margin: 0px 50px 0px 50px; }
+
+.firstpost {
+  margin: 0px 50px 0px 50px; }
+
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+  body {
+    margin: 0px; }
+
+  .firstpost {
+    margin: 0px; } }
 
 /*# sourceMappingURL=blog.css.map */
