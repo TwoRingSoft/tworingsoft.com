@@ -1,18 +1,59 @@
 ---
 
 ---
+
 {% include opening-tags.html title="Two Ring Software % Blog" stylesheet="/css/blog.css" description="Blog at Two Ring Software." %}
 
-		{% include subpage-header.html page_name="Blog" link="/blog/" %}
+	{% include subpage-header.html page_name="Blog" link="/blog/" %}
+	
+	<br />
+	<br />
+	<br />
 
-			<ul>
-				{% for post in site.posts %}
-				<li>
-					<a href="{{ post.url }}">{{ post.title }}</a>, <span class="date">{{ post.date | date: '%-d %B %Y'}}<span>
-					<p class="abstract">
+	{% assign first_post = true %}
+	{% assign older_post_idx = 0 %}
+	{% for post in site.posts %}
+		{% if first_post %}
+			{% assign first_post = false %}
+			<div class="title">Latest: {{ post.title }}</div>
+			<div>
+				<span class="author">{{ post.author }}</span>
+				<span class="date"> ・ </span>
+				<span class="date">{{ post.date | date: '%-d %B %Y'}}</span>
+				<span class="date"> ・ </span>
+				<span class="readtime">{{ post.content.size | readtime }} minute read</span>
+			</div>
+			<div class="abstract">
+				{{ post.abstract }}
+			</div>
+		
+			<br />
+			<br />
+			<table>
+				<tr>
+					<td class="title">
+						Previously:
+					</td>
+					<td rowspan="2" valign="top" style="padding: 0px 20px 0px 20px;">
+						{{ site | tag_cloud }}
+					</td>
+				</tr>
+				<tr>
+				<td>
+		{% else %}
+					<a href="{{ post.url }}"><span class="date">{{ post.title }}</span></a> <span class="readtime">{{ post.date | date: '%-d %B %Y' }}</span>
+					<p>
 						{{ post.abstract }}
-					</p
-				</li>
-				{% endfor %}
-			</ul>
+					</p>
+			{% if older_post_idx < 2 %}
+				{% assign older_post_idx = older_post_idx | plus: 1 %}
+			{% else %}
+				{% assign older_post_idx = 0 %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+				</td>
+			</tr>
+		</table>
+
 {% include closing-tags.html %}

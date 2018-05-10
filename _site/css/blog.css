@@ -2,7 +2,7 @@ a {
   color: #000;
   text-decoration: underline; }
 
-.hero, .page-name {
+.hero, .page-name, .title {
   color: #000;
   font: 200 35pt "Palatino", "Garamond", serif; }
 
@@ -10,7 +10,7 @@ h1 {
   color: #000;
   font: 300 28pt "Palatino", "Garamond", serif; }
 
-h2, a {
+h2, a, .author {
   color: #000;
   font: 200 23pt "Palatino", "Garamond", serif; }
 
@@ -18,7 +18,7 @@ h3, .date {
   color: #000;
   font: 100 18pt "Palatino", "Garamond", serif; }
 
-h4 {
+h4, .readtime {
   color: #000;
   font: 100 16pt "Palatino", "Garamond", serif;
   font-style: italic; }
@@ -83,9 +83,6 @@ blockquote cite:before {
 .footnote {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
-ul {
-  margin-top: 20px; }
 
 a {
   text-decoration: none; }

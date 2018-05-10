@@ -1,16 +1,24 @@
 @import 'subpage';
 
-ul {
-	margin-top: 20px;
-}
-
 a {
 	@extend h2;
 	text-decoration: none;
 }
 
-.date {
+.title {
+	@extend .hero;
+}
+
+.author {
+	@extend h2;
+}
+
+.date { 
 	@extend h3;
+}
+
+.readtime {
+	@extend h4;
 }
 
 .abstract {
