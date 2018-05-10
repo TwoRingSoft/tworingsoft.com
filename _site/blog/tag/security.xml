@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Dependency Management Best Practices</title>
+				<description>In light of recent news about dependency manager breakages and vulnerabilities, highlighting some steps you can take to protect your dependencies and the projects for which you need them.</description>
+				<pubDate>Tue, 09 Jan 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Introducing Psst</title>
+				<description>A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.</description>
+				<pubDate>Mon, 27 Nov 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>

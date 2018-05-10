@@ -1,0 +1,5 @@
+---
+layout: nil
+---
+
+{% include rss-feed.xml posts=page.posts %}

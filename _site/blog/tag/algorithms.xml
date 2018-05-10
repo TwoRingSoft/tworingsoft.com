@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Snapping Angles and Fuzzy Binary Search</title>
+				<description>Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.</description>
+				<pubDate>Thu, 16 Mar 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Overusing Xcode Targets Misses the Mark</title>
+				<description>Outlining the differences between Xcode project targets and build configurations, and how to properly use each one.</description>
+				<pubDate>Tue, 08 May 2018 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>CocoaPods and Custom Build Configurations</title>
+				<description>My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.</description>
+				<pubDate>Thu, 15 Feb 2018 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Xcode 9's New Find and Replace Panel</title>
+				<description>A critique of the new source editors tool's UI and UX.</description>
+				<pubDate>Mon, 19 Jun 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/xcode-side-by-side.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
+			</item>
+		
+			<item>
+				<title>Differentiating iOS App Builds</title>
+				<description>A simple way to manage all your app build variants to test alongside each other on a device.</description>
+				<pubDate>Sat, 01 Apr 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/app-icon-for-different-app-build-distributions.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
+			</item>
+		
+			<item>
+				<title>Tracking Xcode Build Setting Changes with xcbs</title>
+				<description>Announcing a small CLI for persisting final Xcode project build settings in lockfiles.</description>
+				<pubDate>Sun, 19 Feb 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Xcode Build Setting Inheritance and Precedence</title>
+				<description>Straightening out the tangled web of relationships in the world of Xcode build configuration.</description>
+				<pubDate>Sat, 28 Jan 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/build-setting-inheritance.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
+			</item>
+		
+	</channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Reach Out and Touch Faith</title>
+				<description>Thinking about the future of the Macbook Pro, and the direction in which the TouchBar might indicate it's headed.</description>
+				<pubDate>Mon, 16 Apr 2018 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2018/04/16/reach-out-and-touch-faith.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/04/16/reach-out-and-touch-faith.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Apple's Tech Evolutions</title>
+				<description>Extrapolating Apple's technological advances from the past onto their current product lines and research, for funsies.</description>
+				<pubDate>Thu, 19 Oct 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Xcode 9's New Find and Replace Panel</title>
+				<description>A critique of the new source editors tool's UI and UX.</description>
+				<pubDate>Mon, 19 Jun 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html</guid>
+				
+				<media:content 
+				    xmlns:media="http://tworingsoft.com" 
+				    url="http://tworingsoft.com/blog/img/xcode-side-by-side.png" 
+				    medium="image" 
+				    type="image/jpeg" 
+				    width="150" 
+				    height="150" />
+				
+			</item>
+		
+			<item>
+				<title>Passwords</title>
+				<description>Anecdata regarding antipatterns in the realm of password management for your service's users.</description>
+				<pubDate>Wed, 04 Jan 2017 00:00:00 -0700</pubDate>
+				<link>http://tworingsoft.com/blog/2017/01/04/passwords.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/04/passwords.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Software RSS</title>
+		<description>Two Ring Software.</description>
+		<link>http://tworingsoft.com/</link>
+		
+			<item>
+				<title>Image Galleries with Jekyll</title>
+				<description>Describing my journey to build a photo gallery for my website using Jekyll/Liquid to template all the things.</description>
+				<pubDate>Sun, 05 Nov 2017 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2017/11/05/jekyll-image-galleries.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/05/jekyll-image-galleries.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Making the site a little more SASSy</title>
+				<description>Why I decided to use SASS to manage the site's CSS.</description>
+				<pubDate>Sun, 24 Jul 2016 00:00:00 -0600</pubDate>
+				<link>http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>
