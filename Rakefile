@@ -1,12 +1,6 @@
-task :watch do
-	sh 'sass --watch css &'
-	sh 'jekyll build --watch &'
-	sleep 2
-	exit 0
-end
-
-task :endwatch do
-	sh 'killall ruby'
+task :init do
+  sh 'brew install awscli'
+  sh 'rbenv exec bundle'
 end
 
 task :build do
