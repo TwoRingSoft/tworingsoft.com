@@ -10,8 +10,8 @@ task :endwatch do
 end
 
 task :build do
-	sh 'sass --update css'
-	sh 'jekyll build'
+	sh 'rbenv exec bundle exec sass --update css'
+	sh 'rbenv exec bundle exec jekyll build'
 end
 
 task :serve do
