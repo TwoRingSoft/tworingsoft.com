@@ -22,7 +22,15 @@ task :endserve do
 	sh 'killall Python'
 end
 
-task :publish do
+desc 'Push the git repo to remote and sync the compiled site to S3, with an optional subdirectory to only publish portions.'
+task :publish, [:subdir] do |t, args|
   sh 'git push origin'
-  sh 'aws s3 sync _site/ s3://tworingsoft.com --exclude .git/ --profile tworing --acl public-read'
+  subdir = args[:subdir]
+  local = '_site/'
+  remote = 's3://tworingsoft.com/'
+  if subdir != nil then
+    local << subdir
+    remote << subdir
+  end
+  sh "aws s3 sync #{local} #{remote} --exclude .git/ --profile tworing --acl public-read"
 end
