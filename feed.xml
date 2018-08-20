@@ -1,9 +1,5 @@
 ---
 
 ---
-
-<title></title>
-<description></description>
-<link></link>
 {% include rss-feed.xml posts=site.posts title="Two Ring Software RSS" description="All updates from Two Ring Software." link="http://tworingsoft.com/" %}
 	

@@ -9,7 +9,7 @@
 			{
 				"title": "Overusing Xcode Targets Misses the Mark",
 				"summary": "Outlining the differences between Xcode project targets and build configurations, and how to properly use each one.",
-				"date_published": "2018-05-08T00:00:00-06:00",
+				"date_published": "2018-05-08T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html",
         "url": "http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html",
         "content_html": "<p>Many Xcode projects I’ve seen use multiple targets to build variants of the same application, when different build configurations would suffice. Of course, some of these are my own projects, which I’m fixing over time, but I’ve seen this in the majority of projects I’ve inherited as well. Let’s talk about what each thing is and some tips to help you decide which to use–for more information, here is an <a href="https://pewpewthespells.com/blog/using_xcode_targets.html">excellent and detailed writeup of targets, configurations and schemes</a>.</p>
@@ -52,7 +52,7 @@
 			{
 				"title": "Automatic Devpod Versioning and Deployment with Vrsnr",
 				"summary": "Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.",
-				"date_published": "2018-04-20T00:00:00-06:00",
+				"date_published": "2018-04-20T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html",
         "url": "http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html",
         "content_html": "<p>I previously talked about how I used <a href="https://github.com/tworingsoft/vrsnr">Vrsnr</a> in a Rake task to bump version numbers in <a href="http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html">“Manage version numbers with this one line command”</a>. At the time, I was using it in an iOS app’s codebase, bumping its build and version numbers as I pushed out beta builds. But, as I worked on that and other apps that use <a href="https://github.com/tworingsoft/pippin">Pippin</a>, I also continuously updated it, and needed to push new versions of its podspec for consumption back in those apps.</p>
@@ -111,7 +111,7 @@
 			{
 				"title": "Reach Out and Touch Faith",
 				"summary": "Thinking about the future of the Macbook Pro, and the direction in which the TouchBar might indicate it's headed.",
-				"date_published": "2018-04-16T00:00:00-06:00",
+				"date_published": "2018-04-16T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2018/04/16/reach-out-and-touch-faith.html",
         "url": "http://tworingsoft.com/blog/2018/04/16/reach-out-and-touch-faith.html",
         "content_html": "<p>When the TouchBar was announced for the MacBook Pro, I was torn. On one hand, it felt gimmicky and not truly useful (suspicions I mostly confirmed after using one for a couple months). Most of the joy came from using TouchID. On the other hand, it showed that Apple was thinking about how they could do input differently on the standard form factor for work computing. It also shows where they might be headed: TouchBar is not the end goal, but the first step to something better.</p>
@@ -154,7 +154,7 @@
 			{
 				"title": "CocoaPods and Custom Build Configurations",
 				"summary": "My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.",
-				"date_published": "2018-02-15T00:00:00-07:00",
+				"date_published": "2018-02-15T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html",
         "url": "http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html",
         "content_html": "<p>Problem: I have an Xcode project for an app that has many custom build configuations beyond just Debug and Release. That app is being developed together with an SDK, for which we use CocoaPods as its distribution mechanism as well as for devpod setup. In the SDK, I wanted some of these custom configurations to compile with no Swift optimizations so I could debug, while other configurations intended for release should have whole module optimization enabled.</p>
@@ -202,7 +202,7 @@ end
 			{
 				"title": "Programming: 20 Years In",
 				"summary": "As I near 20 years since first picking up computer programming, I take a quick look back at the languages I've used and the tools available to work with them, with thoughts on the synergies between them and our own brains.",
-				"date_published": "2018-02-07T00:00:00-07:00",
+				"date_published": "2018-02-07T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2018/02/07/programming-20-years-in.html",
         "url": "http://tworingsoft.com/blog/2018/02/07/programming-20-years-in.html",
         "content_html": "<p>As I near 20 years of programming, here are the languages and tools I’ve used most intensively over my career, with many overlapping or making repeat appearances:</p>
@@ -289,7 +289,7 @@ end
 			{
 				"title": "Dependency Management Best Practices",
 				"summary": "In light of recent news about dependency manager breakages and vulnerabilities, highlighting some steps you can take to protect your dependencies and the projects for which you need them.",
-				"date_published": "2018-01-09T00:00:00-07:00",
+				"date_published": "2018-01-09T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html",
         "url": "http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html",
         "content_html": "<p>There have been a few unfortunate incidents and revelations in the world of dependency management recently, which present possible (or realized) attack vectors. Some notable examples are <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">leftpad</a> and a more recent article on <a href="https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5">hackernoon</a>.</p>
@@ -324,7 +324,7 @@ end
 			{
 				"title": "Announcing Pippin Version 2",
 				"summary": "Highlighting some of the new features in the first major update to Pippin.",
-				"date_published": "2018-01-02T00:00:00-07:00",
+				"date_published": "2018-01-02T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html",
         "url": "http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html",
         "content_html": "<p><a href="https://github.com/tworingsoft/pippin">Pippin</a> is still evolving quickly alongside some of the apps I’m working on, and I’m starting off this new year with version 2. It contains a lot of bug fixes and tweaks, but the addition of some new Core protocols are what I’m most interested in.</p>
@@ -369,7 +369,7 @@ end
 			{
 				"title": "Manage version numbers with this one line command",
 				"summary": "How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.",
-				"date_published": "2017-12-17T00:00:00-07:00",
+				"date_published": "2017-12-17T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html",
         "url": "http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html",
         "content_html": "<p>Having produced both iOS apps and developer tools used in them, I feel very strongly about using <a href="https://semver.org">semantic versioning</a>. It’s a small price to pay to avoid all sorts of headaches, potentially for many more people than yourself. In my opinion, there’s no reason not to do it.</p>
@@ -400,7 +400,7 @@ end
 			{
 				"title": "Introducing Pippin",
 				"summary": "An update and first official version of my Swift app development framework.",
-				"date_published": "2017-11-29T00:00:00-07:00",
+				"date_published": "2017-11-29T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html",
         "url": "http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html",
         "content_html": "<p>Hello. I am an iOS developer. For a while now, I’ve had a repository of random Swift extensions and helper functions, dubbed “shared-utils.” A colleague of mine once remarked how bad the kitchen-sink pattern is in code organization, and it’s rung true for me ever since. Recently I renamed “shared-utils” to Pippin, to sound more Apple-y and get away from that utility name, and now today that library is marked as version 1.0.</p>
@@ -460,7 +460,7 @@ end
 			{
 				"title": "Introducing Psst",
 				"summary": "A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.",
-				"date_published": "2017-11-27T00:00:00-07:00",
+				"date_published": "2017-11-27T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/11/27/introducing-psst.html",
         "url": "http://tworingsoft.com/blog/2017/11/27/introducing-psst.html",
         "content_html": "<p>Have you ever committed a secret to a codebase? <a href="https://damnhandy.com/2015/09/10/how-putting-credentials-in-git-can-cost-you-at-least-6500-in-just-a-few-hours/comment-page-1/">You aren’t</a> the <a href="https://news.ycombinator.com/item?id=13650818">only one.</a> Options exist out there to help you <a href="https://github.com/anshumanbh/git-all-secrets">scan your codebase</a> for such secrets, <a href="https://github.com/awslabs/git-secrets">prevent you from committing them in the first place</a> and to <a href="https://github.com/StackExchange/blackbox">manage secrets</a> from writing code to builds and <a href="https://docs.chef.io/data_bags.html">deploys</a>. A great rundown of those methods can be found <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-managing-secrets-safely-with-version-control-systems">here</a>.</p>
@@ -487,7 +487,7 @@ end
 			{
 				"title": "Image Galleries with Jekyll",
 				"summary": "Describing my journey to build a photo gallery for my website using Jekyll/Liquid to template all the things.",
-				"date_published": "2017-11-05T00:00:00-06:00",
+				"date_published": "2017-11-05T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/11/05/jekyll-image-galleries.html",
         "url": "http://tworingsoft.com/blog/2017/11/05/jekyll-image-galleries.html",
         "content_html": "<p>Recently I decided that I want a photo gallery on my website, a static HTML site generated by Jekyll, just like this one. I wanted a page that lists all the albums, an index for each album that shows a gallery of all the photos, which lead to slideshow of larger images that then lead to the full raw images themselves. It turned into a fun exercise of writing Jekyll front matter and templates inside Ruby strings in a Rake task, trying to keep variables straight where data flows from one process to the next.</p>
@@ -641,7 +641,7 @@ photos/
 			{
 				"title": "Log Level: Extreme",
 				"summary": "A brief survey of log level concepts in the iOS community and elsewhere.",
-				"date_published": "2017-10-30T00:00:00-06:00",
+				"date_published": "2017-10-30T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html",
         "url": "http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html",
         "content_html": "<p>I recently updated my dependency on the excellent <a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a> and noticed that in the jump from major version 4 to 6, a new log level appeared: <code class="highlighter-rouge">SEVERE</code>. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, <em>separation of concerns</em>, lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.</p>
@@ -689,7 +689,7 @@ photos/
 			{
 				"title": "Apple's Tech Evolutions",
 				"summary": "Extrapolating Apple's technological advances from the past onto their current product lines and research, for funsies.",
-				"date_published": "2017-10-19T00:00:00-06:00",
+				"date_published": "2017-10-19T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html",
         "url": "http://tworingsoft.com/blog/2017/10/19/apples-tech-evolutions.html",
         "content_html": "<p>Apple has a history of breakthrough products, sometimes cannibalizing others in spite of their success or popularity. Not many companies can afford to do that just to produce at the peak of their technical abilities with limited time, resources and people. As a result, culture can be hesitant to make the switch, sometimes rightly so.</p>
@@ -728,7 +728,7 @@ photos/
 			{
 				"title": "Looms and Computers",
 				"summary": "The similarities between computers and looms, distant cousins related through their ancestor, the Jacquard loom.",
-				"date_published": "2017-08-29T00:00:00-06:00",
+				"date_published": "2017-08-29T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html",
         "url": "http://tworingsoft.com/blog/2017/08/29/looms-and-computers.html",
         "content_html": "<p>The other day, my wife and I were talking about an arts and crafts project she was doing with her patients, adolescent girls in a therapeutic residential facility. For their summer project, they partnered with <a href="https://harrisville.com">Harrisville Designs</a> to teach them the art of looming with the hope of supporting creativity, self-esteem, and social bonding. The more we talked about it, the more I started comparing looms to computers, as I am wont to do with, well, everything. Here are my findings from researching weaving and looms, together with what I know of how computers work.</p>
@@ -955,7 +955,7 @@ retq
 			{
 				"title": "Xcode 9's New Find and Replace Panel",
 				"summary": "A critique of the new source editors tool's UI and UX.",
-				"date_published": "2017-06-19T00:00:00-06:00",
+				"date_published": "2017-06-19T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html",
         "url": "http://tworingsoft.com/blog/2017/06/19/xcode-9-new-search-and-replace-panel.html",
         "content_html": "<p>In Xcode, I make heavy use of the Replace function, both in the source editor (<code class="highlighter-rouge">⌘⌥F</code>) and the Find navigator (<code class="highlighter-rouge">⇧⌘⌥F</code>), and much of that use includes regular expression capabilities. At this point I can fly through all the modifier popovers and dropdowns without leaving the home keys. To boot, I’ve had a lot of practice with it lately due to the complete lack of refactoring support for Swift.</p>
@@ -1199,7 +1199,7 @@ retq
 			{
 				"title": "Returning Optionals Versus Throwing Errors in Swift",
 				"summary": "Deciding between flow control and data model concepts in your app's business logic.",
-				"date_published": "2017-05-18T00:00:00-06:00",
+				"date_published": "2017-05-18T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html",
         "url": "http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html",
         "content_html": "<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
@@ -1272,7 +1272,7 @@ retq
 			{
 				"title": "Source Control Management vs. Dependency Management",
 				"summary": "Which manager has more authority over your project?",
-				"date_published": "2017-04-12T00:00:00-06:00",
+				"date_published": "2017-04-12T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html",
         "url": "http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html",
         "content_html": "<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
@@ -1307,7 +1307,7 @@ retq
 			{
 				"title": "Differentiating iOS App Builds",
 				"summary": "A simple way to manage all your app build variants to test alongside each other on a device.",
-				"date_published": "2017-04-01T00:00:00-06:00",
+				"date_published": "2017-04-01T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html",
         "url": "http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html",
         "content_html": "<p>In the course of developing, testing and distributing your app, different types of builds are produced. If you test these on a device, one might overwrite the other, or even a live version you’ve downloaded from the app store just to make sure <a href="/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html">everything works</a>. In this post, I’ll propose some simple strategies to keep all of those builds separate and easily distinguishable on your test devices.</p>
@@ -1410,7 +1410,7 @@ retq
 			{
 				"title": "Validating Crash Reporting in Live iOS Apps",
 				"summary": "There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.",
-				"date_published": "2017-03-26T00:00:00-06:00",
+				"date_published": "2017-03-26T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html",
         "url": "http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html",
         "content_html": "<p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
@@ -1429,7 +1429,7 @@ retq
 			{
 				"title": "Snapping Angles and Fuzzy Binary Search",
 				"summary": "Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.",
-				"date_published": "2017-03-16T00:00:00-06:00",
+				"date_published": "2017-03-16T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html",
         "url": "http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html",
         "content_html": "<p><a href="https://itunes.apple.com/us/app/trgnmtry/id1146667288?mt=8">Trgnmtry 1.2 is out now on the Apple App Store!</a> I was hoping it’d make it through review on π day… c’est la vie.</p>
@@ -1524,7 +1524,7 @@ retq
 			{
 				"title": "Objective-C Block Syntax",
 				"summary": "Some ways to make writing Objective-C blocks in Xcode a little easier.",
-				"date_published": "2017-02-27T00:00:00-07:00",
+				"date_published": "2017-02-27T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html",
         "url": "http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html",
         "content_html": "<p>One of the things Objective-C developers love to hate about the language is the <a href="https://fuckingblocksyntax.com">fucking block syntax</a> (disclaimer: I used this website to write the block syntax in some examples!). I certainly understand the sentiment: they are very clumsy to write and get right the first time. If you use Xcode, however, there are some strategies and helpful autocompletion flows that will make your life easier without having to fire up a new browser window.</p>
@@ -1671,7 +1671,7 @@ retq
 			{
 				"title": "Tracking Xcode Build Setting Changes with xcbs",
 				"summary": "Announcing a small CLI for persisting final Xcode project build settings in lockfiles.",
-				"date_published": "2017-02-19T00:00:00-07:00",
+				"date_published": "2017-02-19T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html",
         "url": "http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html",
         "content_html": "<p>Announcing a new tool, <a href="https://github.com/tworingsoft/xcbs">xcbs</a>! Track how your Xcode schemes’ build settings change with updates to your <code class="highlighter-rouge">.xcodeproj</code> and <code class="highlighter-rouge">.xcconfig</code> files. If reading <a href="/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html">“Xcode Build Setting Inheritance and Precedence”</a> had you on the edge of your seat, then this tool might be for you. See the <a href="https://github.com/tworingsoft/xcbs/blob/master/README.md">README</a> for more information.</p>
@@ -1684,7 +1684,7 @@ retq
 			{
 				"title": "Xcode Build Setting Inheritance and Precedence",
 				"summary": "Straightening out the tangled web of relationships in the world of Xcode build configuration.",
-				"date_published": "2017-01-28T00:00:00-07:00",
+				"date_published": "2017-01-28T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html",
         "url": "http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html",
         "content_html": "<p>For probably the first year or two I developed apps for iOS, I stayed as far away from the build settings area as I could. I had plenty to focus on learning the Cocoa APIs. Xcode’s configuration system is daunting in its power and flexibility, and anyways it provides you with a good enough set of defaults and migrates you on new releases to keep you running correctly.</p>
@@ -1825,7 +1825,7 @@ retq
 			{
 				"title": "The Art of Source Control, Part 2: Clean Git History",
 				"summary": "Outlining some best practices concerning git history tidiness.",
-				"date_published": "2017-01-19T00:00:00-07:00",
+				"date_published": "2017-01-19T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html",
         "url": "http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html",
         "content_html": "<p>Just like <a href="/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html">organizing a codebase</a>, git makes no prescription about how you organize the changes you make to that code. Hence, we find ourselves in another area where the practice depends on the person. The science of coding is in the compilation, type theory, runtime characteristics; how human readable languages are translated all the way down to binary that dictates physical changes in the hardware of the machine. The art I’m talking about today lies in curating the record of how the human readable code evolves via git commits. Each person’s idea of the ideal commit history lies in the balance between the qualitative judgement of which changes should be preserved due to their relevance, and practical considerations for the tools used to inspect that history.</p>
@@ -1854,7 +1854,7 @@ retq
 			{
 				"title": "The Art of Source Control, Part 1: Organizing Codebases",
 				"summary": "Outlining some best practices for organizing a codebase.",
-				"date_published": "2017-01-14T00:00:00-07:00",
+				"date_published": "2017-01-14T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html",
         "url": "http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html",
         "content_html": "<p>Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There’s no one right way to do anything, and you can make it as simple or as complicated as you like. Today I’m examining the decisions to make around how to even organize code.</p>
@@ -1999,7 +1999,7 @@ $&gt; git pull --ff-only
 			{
 				"title": "Passwords",
 				"summary": "Anecdata regarding antipatterns in the realm of password management for your service's users.",
-				"date_published": "2017-01-04T00:00:00-07:00",
+				"date_published": "2017-01-04T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2017/01/04/passwords.html",
         "url": "http://tworingsoft.com/blog/2017/01/04/passwords.html",
         "content_html": "<p>Happy New Year everybody! Like probably many of you, I traveled for the holiday, flying on my airline of choice, <a href="http://www.jetblue.com/">JetBlue</a>. They’ve always treated me well and this last trip was no exception: our return flight was delayed a few hours, so they bought everyone dinner and gave us a $75 voucher towards our next flight. Sweet!</p>
@@ -2053,7 +2053,7 @@ $&gt; git pull --ff-only
 			{
 				"title": "Going Back to the Future to test with git-rebase",
 				"summary": "Adventures in Git, using rebase to reorder history and automate some testing, too!",
-				"date_published": "2016-11-22T00:00:00-07:00",
+				"date_published": "2016-11-22T00:00:00-09:00",
         "id": "http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html",
         "url": "http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html",
         "content_html": "<p>I recently built up a long list of commits working on a refactor, and just realized that I rewrote a codepath that had some bugs in it. As any good refactorer (refactoror?) does, I tried to get adequate testing in place before refactoring. Unfortunately, this buggy codepath was never tested in the first place, a fact I overlooked until today.</p>
@@ -2074,7 +2074,7 @@ $&gt; git pull --ff-only
 			{
 				"title": "Making the site a little more SASSy",
 				"summary": "Why I decided to use SASS to manage the site's CSS.",
-				"date_published": "2016-07-24T00:00:00-06:00",
+				"date_published": "2016-07-24T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html",
         "url": "http://tworingsoft.com/blog/2016/07/24/making-the-site-a-little-more-sassy.html",
         "content_html": "<p>I refactored the webpages here a bit to make room for this blog, and thus also the stylesheet code I’ve written so far. I remember hearing about the CSS preprocessor <a href="http://sass-lang.com" target="_blank">SASS</a> a year or two ago when I didn’t need it, as I was developing solely for iOS. I had a feeling it would facilitate organizing my stylesheets modularly and keeping them DRY, so I resolved to learn the basics before moving forward with the refactor. I’m very glad I did!</p>

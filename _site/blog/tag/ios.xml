@@ -12,7 +12,7 @@
 			<item>
 				<title>Overusing Xcode Targets Misses the Mark</title>
 				<description>Outlining the differences between Xcode project targets and build configurations, and how to properly use each one.</description>
-				<pubDate>Tue, 08 May 2018 00:00:00 -0600</pubDate>
+				<pubDate>Tue, 08 May 2018 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/05/08/overusing-xcode-targets-misses-the-mark.html</guid>
 				
@@ -21,7 +21,7 @@
 			<item>
 				<title>Automatic Devpod Versioning and Deployment with Vrsnr</title>
 				<description>Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.</description>
-				<pubDate>Fri, 20 Apr 2018 00:00:00 -0600</pubDate>
+				<pubDate>Fri, 20 Apr 2018 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
 				
@@ -30,7 +30,7 @@
 			<item>
 				<title>CocoaPods and Custom Build Configurations</title>
 				<description>My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.</description>
-				<pubDate>Thu, 15 Feb 2018 00:00:00 -0700</pubDate>
+				<pubDate>Thu, 15 Feb 2018 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</guid>
 				
@@ -39,7 +39,7 @@
 			<item>
 				<title>Announcing Pippin Version 2</title>
 				<description>Highlighting some of the new features in the first major update to Pippin.</description>
-				<pubDate>Tue, 02 Jan 2018 00:00:00 -0700</pubDate>
+				<pubDate>Tue, 02 Jan 2018 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</guid>
 				
@@ -48,7 +48,7 @@
 			<item>
 				<title>Introducing Pippin</title>
 				<description>An update and first official version of my Swift app development framework.</description>
-				<pubDate>Wed, 29 Nov 2017 00:00:00 -0700</pubDate>
+				<pubDate>Wed, 29 Nov 2017 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</guid>
 				
@@ -57,7 +57,7 @@
 			<item>
 				<title>Log Level: Extreme</title>
 				<description>A brief survey of log level concepts in the iOS community and elsewhere.</description>
-				<pubDate>Mon, 30 Oct 2017 00:00:00 -0600</pubDate>
+				<pubDate>Mon, 30 Oct 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/10/30/log-level-extreme.html</guid>
 				
@@ -74,7 +74,7 @@
 			<item>
 				<title>Returning Optionals Versus Throwing Errors in Swift</title>
 				<description>Deciding between flow control and data model concepts in your app's business logic.</description>
-				<pubDate>Thu, 18 May 2017 00:00:00 -0600</pubDate>
+				<pubDate>Thu, 18 May 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</guid>
 				
@@ -83,7 +83,7 @@
 			<item>
 				<title>Source Control Management vs. Dependency Management</title>
 				<description>Which manager has more authority over your project?</description>
-				<pubDate>Wed, 12 Apr 2017 00:00:00 -0600</pubDate>
+				<pubDate>Wed, 12 Apr 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
 				
@@ -92,7 +92,7 @@
 			<item>
 				<title>Differentiating iOS App Builds</title>
 				<description>A simple way to manage all your app build variants to test alongside each other on a device.</description>
-				<pubDate>Sat, 01 Apr 2017 00:00:00 -0600</pubDate>
+				<pubDate>Sat, 01 Apr 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/01/differentiating-ios-app-builds.html</guid>
 				
@@ -109,7 +109,7 @@
 			<item>
 				<title>Validating Crash Reporting in Live iOS Apps</title>
 				<description>There's only one way to guarantee your iOS crash reporter is working&amp;#58; purposefully crash your app in production.</description>
-				<pubDate>Sun, 26 Mar 2017 00:00:00 -0600</pubDate>
+				<pubDate>Sun, 26 Mar 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/26/validating-crash-reporting-in-live-ios-apps.html</guid>
 				
@@ -118,7 +118,7 @@
 			<item>
 				<title>Snapping Angles and Fuzzy Binary Search</title>
 				<description>Implementing a variant of the binary search algorithm to find nearest interval angles on the unit circle.</description>
-				<pubDate>Thu, 16 Mar 2017 00:00:00 -0600</pubDate>
+				<pubDate>Thu, 16 Mar 2017 00:00:00 -0800</pubDate>
 				<link>http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html</guid>
 				
@@ -127,7 +127,7 @@
 			<item>
 				<title>Objective-C Block Syntax</title>
 				<description>Some ways to make writing Objective-C blocks in Xcode a little easier.</description>
-				<pubDate>Mon, 27 Feb 2017 00:00:00 -0700</pubDate>
+				<pubDate>Mon, 27 Feb 2017 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/27/objective-c-block-syntax.html</guid>
 				
@@ -144,7 +144,7 @@
 			<item>
 				<title>Tracking Xcode Build Setting Changes with xcbs</title>
 				<description>Announcing a small CLI for persisting final Xcode project build settings in lockfiles.</description>
-				<pubDate>Sun, 19 Feb 2017 00:00:00 -0700</pubDate>
+				<pubDate>Sun, 19 Feb 2017 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
 				
@@ -153,7 +153,7 @@
 			<item>
 				<title>Xcode Build Setting Inheritance and Precedence</title>
 				<description>Straightening out the tangled web of relationships in the world of Xcode build configuration.</description>
-				<pubDate>Sat, 28 Jan 2017 00:00:00 -0700</pubDate>
+				<pubDate>Sat, 28 Jan 2017 00:00:00 -0900</pubDate>
 				<link>http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</link>
 				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/28/xcode-build-setting-inheritance-and-precedence.html</guid>
 				
