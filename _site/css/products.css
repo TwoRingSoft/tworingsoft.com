@@ -90,4 +90,8 @@ blockquote cite:before {
 .list-item a {
   /* link to product's home page */ }
 
+.rounded-bordered {
+  border-radius: 25px;
+  border: 1px solid #000; }
+
 /*# sourceMappingURL=products.css.map */
