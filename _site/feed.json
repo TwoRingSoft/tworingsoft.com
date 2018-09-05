@@ -7,7 +7,7 @@
 	"items": [
 		
 			{
-				"title": "do try Antitypical's Result to catch Async Errors",
+				"title": "do try Antitypical's Result to catch Async Errors in Swift",
 				"summary": "Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well.",
 				"date_published": "2018-09-04T00:00:00-08:00",
         "id": "http://tworingsoft.com/blog/2018/09/04/do-try-result-oriented-error-propagation.html",
