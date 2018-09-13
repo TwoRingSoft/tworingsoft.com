@@ -1,0 +1,165 @@
+
+
+
+
+
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<title>Two Ring Software % Blog % do try Antitypical's Result to catch Async Errors in Swift % 4 September 2018</title>
+		<meta property="og:title" content="Two Ring Software % Blog % do try Antitypical's Result to catch Async Errors in Swift % 4 September 2018" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % do try Antitypical's Result to catch Async Errors in Swift % 4 September 2018" />
+		
+		<meta name="description" content="Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well." />
+		<meta property="og:description" content="Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well." />
+		<meta property="twitter:description" content="Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well." />
+		
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
+	</head>
+	<body>
+		<div id="page-content">
+			
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
+		
+					<div class="title">do try Antitypical's Result to catch Async Errors in Swift</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">4 September 2018</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">19 minute read</span>
+					</div>
+					
+					<hr />
+					
+<div id="post-content">
+	<p>I’ve previously written about using <a href="http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html">swift errors vs optionals</a> to indicate errors while fetching results (e.g. no file descriptors available to open a file to read its contents) vs absence of results (e.g. the file was read but it was empty). After publishing, a friend asked if I had heard of the <a href="https://github.com/antitypical/Result">Result</a> library, and if I’d considered using that instead of Swift errors. Indeed, I had used it due to its inclusion in <a href="https://github.com/ReactiveCocoa/ReactiveSwift">ReactiveSwift</a>/<a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a>, but had never in my own code or libraries’ API.</p>
+
+<h1 id="what-i-tried">What I tried</h1>
+
+<p>I took a generic function from my model layer, which inserts a Core Data entity and returns the instance as its own type instead of <code class="highlighter-rouge">NSManagedObject</code>, or <code class="highlighter-rouge">throw</code>s an error if the cast fails. I changed it from <code class="highlighter-rouge">throws -&gt; T</code> to <code class="highlighter-rouge">-&gt; Result&lt;T, CoreDataError&gt;</code> (typed error semantics is a nice plus for <code class="highlighter-rouge">Result</code>). This small change at such a fundamental level precipitated many code changes, and because it’s a function in a framework used by several of my apps, more work lay ahead if I committed to the change. I wound up concluding that I didn’t care to replace all error handling with <code class="highlighter-rouge">Result</code> in my own API, but I found it very helpful resolving a particular situation: combinatorial optionality in nonrethrowing function closures.</p>
+
+<h2 id="combinatorial-optionality">Combinatorial optionality</h2>
+
+<p>Lots of APIs return an optional result and optional error, like <a href="https://developer.apple.com/documentation/foundation/urlsession/1407613-datatask"><code class="highlighter-rouge">NSURLSession.dataTask(with:completionHandler:)</code></a>, whose completion block provides parameters <code class="highlighter-rouge">(Data?, URLResponse?, Error?)</code>. Because optionals are a compiler feature, you’re forced to deal with scenarios like getting <code class="highlighter-rouge">nil</code> for all three parameters. According to <a href="https://developer.apple.com/documentation/foundation/nsurlsession/1410330-datataskwithurl?language=objc#discussion"><code class="highlighter-rouge">NSURLSession</code>’s docs</a>, this can’t happen:</p>
+
+<blockquote>
+	If the request completes successfully, the data parameter of the completion handler block contains the resource data, and the error parameter is nil. If the request fails, the data parameter is nil and the error parameter contain information about the failure. If a response from the server is received, regardless of whether the request completes successfully or fails, the response parameter contains that information.
+</blockquote>
+
+<p>Nonetheless, you must conceptually handle each case in code:</p>
+
+<table class="alternating-table">
+	<tr><th>Data?</th><th>URLResponse?</th><th>Error?</th><th>Behavior</th></tr>
+	<tr><td>nil</td><td>nil</td><td>nil</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
+	<tr><td>nil</td><td>nil</td><td>present</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
+	<tr><td>nil</td><td>present</td><td>nil</td><td><b>impossible</b>; should always have only one of either a Data or an Error</td></tr>
+	<tr><td>nil</td><td>present</td><td>present</td><td>handle the Error (including passing it back to callers)</td></tr>
+	<tr><td>present</td><td>nil</td><td>nil</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
+	<tr><td>present</td><td>nil</td><td>present</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
+	<tr><td>present</td><td>present</td><td>nil</td><td>pass the Data or a deserialized object or data structure back to callers</td></tr>
+	<tr><td>present</td><td>present</td><td>present</td><td><b>impossible</b>; should always have only one of either a Data or an Error</td></tr>
+</table>
+
+<p>Only two of the eight combinations even make sense. I really want <a href="https://en.wikipedia.org/wiki/Tagged_union">union</a> semantics: a way to tell the compiler that a reference can point to either one thing/type or another at a time. <code class="highlighter-rouge">Result</code> achieves the same expressibility using Swift’s error throwing itself, along with enums and generics in a sort of Swift hat-trick. Funny enough, it’s the solution I found myself building towards when I sat down to implement my own union-y type specific to my app’s domain, instead of the general-purpose <code class="highlighter-rouge">Result</code> (starting from the Swift Language Guide’s recommendation to use <a href="https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html#ID148">enums with associated values</a>. There’s also <a href="https://github.com/robrix/Either">Either</a>, which generalizes the concept further, but its <code class="highlighter-rouge">.left</code> and <code class="highlighter-rouge">.right</code> names seemed too generic to me, whereas <code class="highlighter-rouge">Result</code> has more specific terminology for the current domain: <code class="highlighter-rouge">.success’ and </code>.failure`.</p>
+
+<p><code class="highlighter-rouge">(URLResponse, Result&lt;Data, Error&gt;)</code> exactly transcribes what the docs say into code that’s enforceable by the compiler. Of course, it’d be even easier to have an invariant return type on a function that <code class="highlighter-rouge">throws</code> and error. Even then, combinatorial optionality is easier to deal with, via a few early exits from <code class="highlighter-rouge">guard let</code>s, and you only have to do it once. The problem lies in functions that don’t rethrow errors thrown in their closure parameters…</p>
+
+<h2 id="nonrethrowing-function-closures">Nonrethrowing function closures</h2>
+
+<p>If you’ve ever <a href="https://developer.apple.com/documentation/swift/array/3017522-map"><code class="highlighter-rouge">map</code></a>ped over a Swift <code class="highlighter-rouge">Array</code>, you’ve used a function that <code class="highlighter-rouge">rethrows</code> Swift errors thrown from its closure parameter’s scope. It’s as simple as declaring a function as <code class="highlighter-rouge">rethrows</code> and the closure parameter it accepts as <code class="highlighter-rouge">throws</code>. Otherwise, any thrown errors must be handled inside that closure’s scope, and this is enforced by the compiler. (To see more, check out “Rethrowing Functions and Methods” under “Functions” in the <a href="https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID362">Swift language reference’s “Declarations” section</a>.)</p>
+
+<p>Any calls to nonrethrowing functions in a call hierarchy stop thrown error propagation at that point. For instance, imagine a user action results in saving some data to your local cache and then uploading the data over the network, with any errors presented back to the user. A simplified description of the flow of execution through different application layers might look like so: <code class="highlighter-rouge">UI -&gt; model -&gt; network</code>, with errors propagating backwards. If all layers had functions declared with <code class="highlighter-rouge">throws</code>/<code class="highlighter-rouge">rethrows</code>, then we could just <code class="highlighter-rouge">throw</code> an error all the way back to the UI layer, where a <code class="highlighter-rouge">catch</code> block would handle it and present a dialog to the user. However, because <code class="highlighter-rouge">NSURLSession.dataTask</code> accepts a closure and is not declared <code class="highlighter-rouge">rethrows</code>, you cannot <code class="highlighter-rouge">throw</code> any error in the first place for failures. You must design your call hierarchy to use async patterns (closures, delegates, notifications etc) and pass errors as optional parameters.</p>
+
+<h2 id="my-app-clgeocoder-and-core-data">My app: CLGeocoder and Core Data</h2>
+
+<p>At some point in my app, Core Data entities (returned from the same function I mentioned earlier) are populated with data returned from <a href="https://developer.apple.com/documentation/corelocation/clgeocoder/1423621-reversegeocodelocation"><code class="highlighter-rouge">CLGeocoder.reverseGeocodeLocation(_:completionHandler:)</code></a>. Like <code class="highlighter-rouge">NSURLSession</code>, the <code class="highlighter-rouge">completionHandler</code> closure passes back multiple optional parameters, in this case <a href="https://developer.apple.com/documentation/corelocation/clgeocodecompletionhandler"><code class="highlighter-rouge">([CLPlacemark]?, Error?)</code></a>. Whereas with plain functions I’d <code class="highlighter-rouge">throw</code> an error all the way back from my model/network layers to the UI, now they all call closures passing something like <code class="highlighter-rouge">Result&lt;CLLocation, Error&gt;</code>. <code class="highlighter-rouge">Result</code> has mostly reduced the difference between propagating errors synchronously and async to one of syntax.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>From a reading of <a href="https://github.com/apple/swift/blob/master/docs/ErrorHandling.rst#manual-propagation-and-manipulation-of-errors">Swift</a> <a href="https://github.com/apple/swift/blob/master/docs/ErrorHandlingRationale.rst">docs</a> and <a href="https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160314/012545.html">evolution</a> and <a href="https://forums.swift.org/t/throws-as-returning-a-result/1799">forum</a> <a href="https://forums.swift.org/t/adding-result-to-the-standard-library/6932">posts</a>, it seems that the most likely thing we’ll see is an <code class="highlighter-rouge">async/await</code> mechanism that works with <code class="highlighter-rouge">throw</code>, and we can break out of the restrictive closures I mentioned (hopefully). Until then, I’ll keep using <code class="highlighter-rouge">Result</code> as a way to maintain clean call/error hierarchies that, from time to time, must include that tough breed of closures.</p>
+
+<p>If you’re weighing whether to use <code class="highlighter-rouge">Result</code> in your own API, here are the other pros and cons I came up with while experimenting with it:</p>
+
+<hr />
+
+<h1 id="pros">Pros</h1>
+
+<h2 id="typed-errors">Typed Errors</h2>
+
+<p>A Swift function may declare that it <code class="highlighter-rouge">throws</code> an error, but not which subtypes of <code class="highlighter-rouge">Error</code> they may be. You may attempt conditional casts in <code class="highlighter-rouge">catch</code> declarations, but you must always fall back to the “default” case of the <code class="highlighter-rouge">Error</code> root type as well. <code class="highlighter-rouge">Result</code> allows you to specify a particular subtype, such as <code class="highlighter-rouge">Result&lt;String, MySwiftErrorSubtype&gt;</code>.</p>
+
+<h2 id="no-combinatorial-optionality">No Combinatorial Optionality</h2>
+
+<p>See: this blog post</p>
+
+<h1 id="cons">Cons</h1>
+
+<h2 id="structural-code-changes">Structural Code Changes</h2>
+
+<p>Unless you decide at some point to convert the result’s error field to a thrown error, the change from <code class="highlighter-rouge">do-try-catch</code> to <code class="highlighter-rouge">switch-success-failure</code> permeates throughout your codebase. At first, there was no clear answer on where to make the switch for me, so I just passed the <code class="highlighter-rouge">Result</code> all the way to my presentation layer. This changed a lot of code everywhere in my app, although in the end I found it comprehensible and concise.</p>
+
+<p>Changing from a <code class="highlighter-rouge">do-try-catch</code> to <code class="highlighter-rouge">switch-failure-success</code> has its own tradeoffs:</p>
+
+<h3 id="pros-1">Pros</h3>
+
+<ul>
+  <li>Clearer separation of happy path and failure modes: they’re literally labeled by the <code class="highlighter-rouge">success/failure</code> case names in each <code class="highlighter-rouge">switch</code>.</li>
+  <li>I find <code class="highlighter-rouge">switch</code> boilerplate easier to cognitively filter out than <code class="highlighter-rouge">do-try-catch</code> boilerplate.</li>
+</ul>
+
+<h3 id="cons-1">Cons</h3>
+
+<ul>
+  <li>Code ordering: <code class="highlighter-rouge">do-try-catch</code> imposes a specific order on your code statements and blocks. You must write the statements that depend on the result of the throwing call after that call, and the error handling must follow that in a catch block. You can’t write a catch block anywhere else. With <code class="highlighter-rouge">switch-failure-success</code>, you can write the <code class="highlighter-rouge">failure</code> case first, similar to an early exit with a <code class="highlighter-rouge">guard</code> (my preference), but you can also put the <code class="highlighter-rouge">success</code> case first. <code class="highlighter-rouge">switch</code> imposes no ordering on its case labels, so even though this is a small, pedantic nitpick, you must expend a little cognitive overhead each time to decide which case to write first. And if you have anything less than perfect memory and willpower, you will eventually swap the ordering in your code, introducing inconsistency.</li>
+  <li>Nesting: you may have a <code class="highlighter-rouge">do</code> block that calls multiple <code class="highlighter-rouge">throw</code>ing functions at the same scope level. If each of those instead returned a <code class="highlighter-rouge">Result</code>, they must be nested inside each other’s <code class="highlighter-rouge">switch</code> blocks, or use higher-order functions like <code class="highlighter-rouge">map</code> to recompose the results (further overloading the meaning of those function names, and requiring you to remember to use <code class="highlighter-rouge">flatMap</code> with <code class="highlighter-rouge">Result</code> as with <code class="highlighter-rouge">Optional</code>, and not <code class="highlighter-rouge">compactMap</code> as with <code class="highlighter-rouge">Sequence</code>).</li>
+</ul>
+
+<h2 id="dependency">Dependency</h2>
+
+<p>Inserting a dependency requiring pervasive changes, that I don’t maintain, and that changes the way I express code execution, is risky. Changes in anything from Swift <code class="highlighter-rouge">Error</code>s, stdlib protocols, generics or closures could affect how Result operates, and maybe even necessitate code changes to fix API breakage. However small, there is a nonzero probability that I may one day have to rewrite the code that used <code class="highlighter-rouge">Result</code>.</p>
+
+</div>
+<p>
+	<hr />
+</p>
+<p>
+	Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>!
+</p>
+		</div>
+	</body>
+</html>

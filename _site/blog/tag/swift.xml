@@ -1,0 +1,49 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % swift</title>
+		<description>Two Ring Software's RSS Feed for updates on swift.</description>
+		<link>http://tworingsoft.com/blog/tag/swift.html</link>
+		
+			<item>
+				<title>do try Antitypical's Result to catch Async Errors in Swift</title>
+				<description>Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well.</description>
+				<pubDate>Tue, 04 Sep 2018 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2018/09/04/do-try-result-oriented-error-propagation.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/09/04/do-try-result-oriented-error-propagation.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Announcing Pippin Version 2</title>
+				<description>Highlighting some of the new features in the first major update to Pippin.</description>
+				<pubDate>Tue, 02 Jan 2018 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Introducing Pippin</title>
+				<description>An update and first official version of my Swift app development framework.</description>
+				<pubDate>Wed, 29 Nov 2017 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</guid>
+				
+			</item>
+		
+			<item>
+				<title>Returning Optionals Versus Throwing Errors in Swift</title>
+				<description>Deciding between flow control and data model concepts in your app's business logic.</description>
+				<pubDate>Thu, 18 May 2017 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/05/18/returning-optionals-versus-throwing-errors-in-swift.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>
