@@ -84,13 +84,13 @@ blockquote cite:before {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
-table, th, td {
+.bordered-table, .bordered-table th, .bordered-table td {
   border: 1px solid #999; }
 
-table {
+.bordered-table {
   border-collapse: collapse; }
 
-th, td {
+.bordered-table th, .bordered-table td {
   padding: 10px; }
 
 .alternating-table tr:nth-child(even) {

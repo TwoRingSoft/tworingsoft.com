@@ -24,7 +24,7 @@ Lots of APIs return an optional result and optional error, like [`NSURLSession.d
 
 Nonetheless, you must conceptually handle each case in code:
 
-<table class="alternating-table">
+<table class="alternating-table bordered-table">
 	<tr><th>Data?</th><th>URLResponse?</th><th>Error?</th><th>Behavior</th></tr>
 	<tr><td>nil</td><td>nil</td><td>nil</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
 	<tr><td>nil</td><td>nil</td><td>present</td><td><b>impossible</b>; should always have a URLResponse</td></tr>

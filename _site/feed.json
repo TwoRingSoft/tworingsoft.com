@@ -28,7 +28,7 @@
 
 <p>Nonetheless, you must conceptually handle each case in code:</p>
 
-<table class="alternating-table">
+<table class="alternating-table bordered-table">
 	<tr><th>Data?</th><th>URLResponse?</th><th>Error?</th><th>Behavior</th></tr>
 	<tr><td>nil</td><td>nil</td><td>nil</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
 	<tr><td>nil</td><td>nil</td><td>present</td><td><b>impossible</b>; should always have a URLResponse</td></tr>
