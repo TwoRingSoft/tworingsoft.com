@@ -37,7 +37,7 @@ From here it wasn't too much more to get to running the app in the cloud via Her
 - `brew install postresql`
 - `createdb`
 
-Finally, rerunning the Rails server was able to get me to the Heroku tutorial's welcome controller page. Whew... I have a working Rails app again!
+Finally, rerunning the Rails server was able to get me to the Heroku tutorial's welcome controller page. Whew... I have a working Rails app again! I committed it to [a GitHub repo](https://github.com/armcknight/rails-app) for preservation.
 
 # Postscript
 

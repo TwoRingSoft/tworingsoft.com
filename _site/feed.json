@@ -54,7 +54,7 @@
   <li><code class="highlighter-rouge">createdb</code></li>
 </ul>
 
-<p>Finally, rerunning the Rails server was able to get me to the Heroku tutorial’s welcome controller page. Whew… I have a working Rails app again!</p>
+<p>Finally, rerunning the Rails server was able to get me to the Heroku tutorial’s welcome controller page. Whew… I have a working Rails app again! I committed it to <a href="https://github.com/armcknight/rails-app">a GitHub repo</a> for preservation.</p>
 
 <h1 id="postscript">Postscript</h1>
 
