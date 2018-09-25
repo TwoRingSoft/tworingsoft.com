@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>My holy grail: a simple Rails install</title>
+				<description>Describing yet another winding foray into setting up a Rails app.</description>
+				<pubDate>Tue, 25 Sep 2018 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2018/09/25/my-holy-grail-a-simple-Rails-install.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/09/25/my-holy-grail-a-simple-Rails-install.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>do try Antitypical's Result to catch Async Errors in Swift</title>
 				<description>Reviewing my foray into using Result for error handling in Swift, and my realization of a particular use case it solves well.</description>
 				<pubDate>Tue, 04 Sep 2018 00:00:00 -0800</pubDate>
