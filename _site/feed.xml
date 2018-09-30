@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>New command line tools</title>
+				<description>Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn.</description>
+				<pubDate>Sun, 30 Sep 2018 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2018/09/30/new-command-line-tools.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/09/30/new-command-line-tools.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>My holy grail: a simple Rails install</title>
 				<description>Describing yet another winding foray into setting up a Rails app.</description>
 				<pubDate>Tue, 25 Sep 2018 00:00:00 -0800</pubDate>

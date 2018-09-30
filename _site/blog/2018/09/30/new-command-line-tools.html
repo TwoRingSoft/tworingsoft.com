@@ -1,0 +1,112 @@
+
+
+
+
+
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<title>Two Ring Software % Blog % New command line tools % 30 September 2018</title>
+		<meta property="og:title" content="Two Ring Software % Blog % New command line tools % 30 September 2018" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % New command line tools % 30 September 2018" />
+		
+		<meta name="description" content="Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn." />
+		<meta property="og:description" content="Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn." />
+		<meta property="twitter:description" content="Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn." />
+		
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
+	</head>
+	<body>
+		<div id="page-content">
+			
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
+		
+					<div class="title">New command line tools</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">30 September 2018</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">6 minute read</span>
+					</div>
+					
+					<hr />
+					
+<div id="post-content">
+	<p>Over the last few weeks I’ve written two new tools for the command line: <code class="highlighter-rouge">rebuild-sims</code> and <code class="highlighter-rouge">sync-forks</code>. They join a small but growing family of tools to help with software development. Here’s a bit about the newcomers and how I see that collection growing and staying organized.</p>
+
+<h1 id="rebuild-sims"><code class="highlighter-rouge">rebuild-sims</code></h1>
+
+<p>At some point a few weeks ago I found I’d corrupted my installs of iOS simulators. I tried fixing it myself to no avail, partly because I was trying to wrap up a release for an app update (of course, with yhr timing). I looked around for a drop in solution online and found this gist: <a href="https://gist.github.com/cabeca/3ff77007204e5479f7af">simulator populator xcode</a>, but I had some issues with it:</p>
+
+<ul>
+  <li>it tried to build <em>every</em> combination of device and platform, for things like watch + iOS</li>
+  <li>it has to be copied and pasted from a Gist, and then I have to manage it from there</li>
+</ul>
+
+<p>So, I took the opportunity to rewrite it a bit to improve performance, and serve it in a Gem for ease of distribution and use.</p>
+
+<h1 id="sync-forks"><code class="highlighter-rouge">sync-forks</code></h1>
+
+<p>I find a lot of useful code on GitHub, and when I want to use something in a project I try to <a href="http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html">safely isolate the dependency</a>, part of which involves forking it.</p>
+
+<p>Forking a repository really just means creating a new node in the graph of its remotes, but GitHub adds a helpful UX layer on top of that: if you fork a repo via the GitHub UI, your repository is tagged with information about the original one. Hence, the little “forked from original-owner/repository-name” link under a fork’s name on its GitHub page.</p>
+
+<p>I currently have around 80 forks. I’ve tried keeping them up to date locally to maintain as much control as possible over my fate as a dependee, but that’s a lot of work. For a while I’ve wanted a way to automatically ensure I have a local copy of each fork.</p>
+
+<p><code class="highlighter-rouge">sync-forks</code> uses the GitHub API via the <a href=""><code class="highlighter-rouge">github_api</code></a> Gem to get a list of all your repositories and clone those that are forks. In each local repo, the git remote <code class="highlighter-rouge">origin</code> will point to your fork, and <code class="highlighter-rouge">sync-forks</code> will add a new remote named <code class="highlighter-rouge">upstream</code> that points to the original.</p>
+
+<p>Eventually, I’d like a way to automatically fetch new commits from <code class="highlighter-rouge">upstream</code>s and apply them (using <code class="highlighter-rouge">--ff-only</code> for safety) to the local default branch, and then push to <code class="highlighter-rouge">origin</code>. Maybe later a more sophisticated approach using <code class="highlighter-rouge">git pull --rebase</code> and a stored <code class="highlighter-rouge">rerere</code> strategy could be used for customized forks.</p>
+
+<p>Here’s another pie-in-the-sky idea: automate <em>forking</em> for all your dependencies. I’m not perfect about going around and forking all the repos for dependencies I use in my apps, or even in these Gems. While it is true that package managers may leave caches or checkouts of dependencies in various places, it might be nice to archive them all on a personal server, perhaps. If <code class="highlighter-rouge">sync-forks</code> could crawl all of my Gem or CocoaPod dependencies, fork them on their respective platforms (if possible–GitHub would work, but a privately hosted Git repo probably won’t) and do the usual sync work, then you’d have a total mirror of all the software your apps need to work!</p>
+
+<h1 id="tworingtools"><code class="highlighter-rouge">tworingtools</code></h1>
+
+<p>These are distributed in a Ruby Gem named <code class="highlighter-rouge">tworingtools</code>, which provided a nice little learning opportunity to me, since this is the first Gem I’ve created. I also have a set of tools distibuted via <code class="highlighter-rouge">Homebrew</code> in <a href="https://github.com/TwoRingSoft/homebrew-formulae">tworingsoft/homebrew-formulae</a>, but I’ve found that approach tougher. Going forward, I’d like to merge these collections.</p>
+
+<p><code class="highlighter-rouge">tworingtools</code> is currently all housed in a single repository, including specs, which I like. I currently have the Homebrew specs stored in a separate repo from the tools, introducing more complexity. Ultimately I’d like to combine those source repositories into <code class="highlighter-rouge">tworingtools</code>, and add them appropriately to the gemspec. All the better if I can also host the Homebrew specs in that same repository, and target both package managers.</p>
+
+</div>
+<p>
+	<hr />
+</p>
+<p>
+	Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>!
+</p>
+		</div>
+	</body>
+</html>
