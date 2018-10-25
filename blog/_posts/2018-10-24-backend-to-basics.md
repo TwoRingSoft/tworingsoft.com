@@ -1,6 +1,6 @@
 ---
 title: "Backend to Basics"
-date: 2018-09-30
+date: 2018-10-24
 layout: post
 abstract: Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server.
 author: Andrew McKnight
