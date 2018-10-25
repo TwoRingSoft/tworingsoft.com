@@ -1,0 +1,128 @@
+
+
+
+
+
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
+		
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<title>Two Ring Software % Blog % Backend to Basics % 30 September 2018</title>
+		<meta property="og:title" content="Two Ring Software % Blog % Backend to Basics % 30 September 2018" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Backend to Basics % 30 September 2018" />
+		
+		<meta name="description" content="Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server." />
+		<meta property="og:description" content="Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server." />
+		<meta property="twitter:description" content="Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server." />
+		
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+		
+	</head>
+	<body>
+		<div id="page-content">
+			
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
+		
+					<div class="title">Backend to Basics</div>
+					<div>
+						<span class="author">Andrew McKnight</span>
+						<span class="date"> ・ </span>
+						<span class="date">30 September 2018</span>
+						<span class="date"> ・ </span>
+						<span class="readtime">5 minute read</span>
+					</div>
+					
+					<hr />
+					
+<div id="post-content">
+	<p>About a month ago I wrote about my continued tribulations with setting up a Rails installation locally on my dev machine. Once I figured things out, I codified it into a repository holding a simple <a href="https://github.com/armcknight/rails-hello-world">Hello World! on Rails</a>. Then I wondered what it was like to set up some other backend systems, so I made a collection of Hello World! examples for <a href="https://github.com/armcknight/django-hello-world">django</a>, <a href="https://github.com/armcknight/sinatra-hello-world">sinatra</a> and <a href="https://github.com/armcknight/rails-hello-world">node</a>, all deployable locally or on Heroku. Of these, I think that Django actually was my favorite in terms of how the dev environment operates and how code is structured, even though I don’t like Python as a programming language very much.</p>
+
+<p>Also, these are all interpreted languages, and I like to work with compiled languages for applications if possible. (I usually use interpreted languages for complicated scripting that’s too complicated for shell scripts.)  I learned enough Rust to put together a Hello World!, and then it occurred to me that there’s another compiled language, that I already know well, and love: Swift!</p>
+
+<p>So I created a <a href="https://github.com/armcknight/vapor-hello-world">Swift server Hello World!</a> using <a href="https://vapor.codes">Vapor</a>, which has quite an ecosystem around it today via <a href="https://github.com/vapor">vapor</a> and <a href="https://github.com/vapor-community">vapor-community</a> on GitHub, which have tons of helpful tools for backend needs:</p>
+
+<ul>
+  <li>payments: <a href="https://github.com/vapor-community/stripe-provider">Stripe-provider</a></li>
+  <li>security:
+    <ul>
+      <li><a href="https://github.com/vapor-community/moat">moat</a></li>
+      <li><a href="https://github.com/vapor-community/CSRF">CSRF</a></li>
+    </ul>
+  </li>
+  <li>communications:
+    <ul>
+      <li>Apple push notifications: <a href="https://github.com/vapor-community/apns">apns</a></li>
+      <li>Telesign: <a href="https://github.com/vapor-community/telesign-provider">Telesign-provider</a></li>
+      <li>SendGrid: <a href="https://github.com/vapor-community/sendgrid-provider">sendgrid-provider</a></li>
+    </ul>
+  </li>
+  <li>auth
+    <ul>
+      <li><a href="https://github.com/vapor-community/redis-provider">auth-provider</a></li>
+      <li><a href="https://github.com/vapor-community/Imperial">Imperial</a></li>
+    </ul>
+  </li>
+  <li>monitoring: <a href="https://github.com/vapor-community/VaporMonitoring">VaporMonitoring</a></li>
+  <li>databases:
+    <ul>
+      <li><a href="https://github.com/vapor-community/postgresql-provider">postgresql-provider</a></li>
+      <li><a href="https://github.com/vapor-community/mongo-provider">mongo-provider</a></li>
+      <li><a href="https://github.com/vapor-community/redis-provider">redis-provider</a></li>
+      <li><a href="https://github.com/vapor-community/sqlite-provider">sqlite-provider</a></li>
+      <li>Firebase: <a href="https://github.com/vapor-community/ferno">ferno</a></li>
+    </ul>
+  </li>
+  <li>forms: <a href="https://github.com/vapor-community/forms">forms</a></li>
+  <li>validation: <a href="https://github.com/vapor-community/validation-provider">validation-provider</a></li>
+  <li>templating:
+    <ul>
+      <li>leaf, Vapor’s native templates: <a href="https://github.com/vapor-community/leaf-provider">leaf-provider</a></li>
+      <li>Mustache: <a href="https://github.com/vapor-community/mustache-provider">mustache-provider</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>…and lots more. I implemented another example of a Vapor server app with a PostgreSQL database connection, deployable on Heroku: <a href="https://github.com/armcknight/vapor-postgres">vapor-postgres</a>.</p>
+
+</div>
+<p>
+	<hr />
+</p>
+<p>
+	Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>!
+</p>
+		</div>
+	</body>
+</html>

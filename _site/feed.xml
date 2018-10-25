@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Backend to Basics</title>
+				<description>Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server.</description>
+				<pubDate>Sun, 30 Sep 2018 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2018/09/30/backend-to-basics.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/09/30/backend-to-basics.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>New command line tools</title>
 				<description>Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn.</description>
 				<pubDate>Sun, 30 Sep 2018 00:00:00 -0800</pubDate>
