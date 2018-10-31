@@ -1,6 +1,6 @@
 <center>
 	<style scoped>
-		{% assign id = include.source | split: '.png' %}
+		{% assign id = include.source | split: '.png' | last | split: '/' | last %}
 		#reader-adaptable-image-{{ id }} {
 		{% if include.narrow == undefined || include.small == undefined %}
 			{% if include.small == undefined %}
@@ -22,7 +22,11 @@
 			}	
 		}
 	</style>
+	{% if include.external == undefined %}
 	<img id="reader-adaptable-image-{{ id }}" src="/blog/img/{{ include.source }}" alt="{{ include.alt }}" />
+	{% else %}
+	<img id="reader-adaptable-image-{{ id }}" src="{{ include.source }}" alt="{{ include.alt }}" />
+	{% endif %}
 	<br />
 	<br />
 	<span class="caption">{{ include.alt }}</span>
