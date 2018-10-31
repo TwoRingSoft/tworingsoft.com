@@ -14,11 +14,11 @@ I've [written](/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html) a [few
 
 One thing I've started since the last writing about version numbers is trying to build a habit of keeping an up-to-date changelog. And wouldn't you know it, there's a standard for it: [_keep a changelog_](https://keepachangelog.com/en/1.0.0/).
 
-{% include blog-post-image.html source="https://imgs.xkcd.com/comics/standards.png" alt="From <a href='https://xkcd.com/927/'>https://xkcd.com/927/</a>" external="true" %}
+{% include blog-post-image.html source="https://imgs.xkcd.com/comics/standards.png" alt="From <a href='https://xkcd.com/927/'>https://xkcd.com/927/</a>" external="true" narrow="true" %}
 
 Once nice thing about standards is that it allows ease of automation. Once I have a predictable format, I can start writing code that exploits the consistency to shuffle things around for me.
 
-{% include blog-post-image.html source="https://imgs.xkcd.com/comics/automation.png" alt="From <a href='https://xkcd.com/1319/'>https://xkcd.com/1319/</a>" external="true" %}
+{% include blog-post-image.html source="https://imgs.xkcd.com/comics/automation.png" alt="From <a href='https://xkcd.com/1319/'>https://xkcd.com/1319/</a>" external="true" narrow="true" %}
 
 # Git a Grip
 
