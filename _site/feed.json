@@ -7,6 +7,85 @@
 	"items": [
 		
 			{
+				"title": "On a Mission to Automate Revision",
+				"summary": "Introducing a new tool as part of my evolution towards effortless versioning of code.",
+				"date_published": "2018-10-30T00:00:00-08:00",
+        "id": "http://tworingsoft.com/blog/2018/10/30/on-a-mission-to-automate-revision.html",
+        "url": "http://tworingsoft.com/blog/2018/10/30/on-a-mission-to-automate-revision.html",
+        "content_html": "<p>I’ve <a href="/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html">written</a> a <a href="/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html">few</a> times now about how I’ve slowly automated versioning for apps, SDKs and devtools. Today I wrote a new Ruby tool to help a bit with the process: <code class="highlighter-rouge">changetag</code>, the newest component of my <a href="(https://github.com/tworingsoft/tools)"><code class="highlighter-rouge">tworingtools</code></a> <a href="https://rubygems.org/gems/tworingtools">Gem</a>. Let’s see what I’ve been up to, how the process is changing, and what <code class="highlighter-rouge">changetag</code> does to help.</p>
+
+<h1 id="keep-a-changelog">Keep a Changelog</h1>
+
+<p>One thing I’ve started since the last writing about version numbers is trying to build a habit of keeping an up-to-date changelog. And wouldn’t you know it, there’s a standard for it: <a href="https://keepachangelog.com/en/1.0.0/"><em>keep a changelog</em></a>.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-standards {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-standards { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-standards" src="https://imgs.xkcd.com/comics/standards.png" alt="From &lt;a href='https://xkcd.com/927/'&gt;https://xkcd.com/927/&lt;/a&gt;" />
+	
+	<br />
+	<br />
+	<span class="caption">From <a href="https://xkcd.com/927/">https://xkcd.com/927/</a></span>
+</center>
+
+<p>Once nice thing about standards is that it allows ease of automation. Once I have a predictable format, I can start writing code that exploits the consistency to shuffle things around for me.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-automation {
+		
+			
+				width: 75%;
+			
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-automation { /* div containing everything after the header */
+				
+					width: 100%;
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-automation" src="https://imgs.xkcd.com/comics/automation.png" alt="From &lt;a href='https://xkcd.com/1319/'&gt;https://xkcd.com/1319/&lt;/a&gt;" />
+	
+	<br />
+	<br />
+	<span class="caption">From <a href="https://xkcd.com/1319/">https://xkcd.com/1319/</a></span>
+</center>
+
+<h1 id="git-a-grip">Git a Grip</h1>
+
+<p><a href="https://github.com/tworingsoft/vrsnr">Vrsnr</a> helps change the version numbers wherever they may reside, via a consistent interface at the command line. I have a <a href="https://gist.github.com/armcknight/8c2def2f9c0ba6714611a28ce14f1a0e">Rake task to make the change and commit it to git</a>, which I’ve been copying around for a while now (I know, that’s gross–I’m thinking about how to share it, or integrate it into Vrsnr). Then I have a separate <a href="https://gist.github.com/armcknight/be6c3d33305b720cd48cba71e1088fc2">Rake task to create a git tag and push</a> to the necessary places (git remotes, dependency servers).</p>
+
+<h1 id="put-the-ease-in-release">Put the Ease in Release</h1>
+
+<p><code class="highlighter-rouge">changetag</code> extracts the relevant entry from your changelog and writes it into the message of a <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">git tag annotation</a>. This way your release notes are neatly encapsulated with the version number, all in the milestone mechanism provided by source control.</p>
+
+<p>GitHub lists each tag you push under a “Releases” tab, and will include by default any message written into the tag’s annotation. You may also edit the release notes through the web UI or the GitHub API to make nicely formatted markdown notes. This is not yet done in <code class="highlighter-rouge">changetag</code> yet but is planned for the future. In the meantime, the notes are still listed there.</p>
+",
+				
+			},
+		
+			{
 				"title": "Backend to Basics",
 				"summary": "Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server.",
 				"date_published": "2018-10-24T00:00:00-08:00",
@@ -1005,7 +1084,9 @@ photos/
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-warp-and-weft" src="/blog/img/warp-and-weft.png" alt="The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)" />
+	
 	<br />
 	<br />
 	<span class="caption">The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)</span>
@@ -1057,7 +1138,9 @@ photos/
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-tartan" src="/blog/img/tartan.png" alt="A plaid pattern." />
+	
 	<br />
 	<br />
 	<span class="caption">A plaid pattern.</span>
@@ -1181,7 +1264,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-raspberry-pi" src="/blog/img/raspberry-pi.png" alt="A Raspberry Pi circuit board." />
+	
 	<br />
 	<br />
 	<span class="caption">A Raspberry Pi circuit board.</span>
@@ -1236,7 +1321,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-xcode-side-by-side" src="/blog/img/xcode-side-by-side.png" alt="The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom)." />
+	
 	<br />
 	<br />
 	<span class="caption">The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom).</span>
@@ -1266,7 +1353,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-right-button-cluster" src="/blog/img/right-button-cluster.png" alt="The right button cluster from Xcode 8 (top) and Xcode 9 (bottom)." />
+	
 	<br />
 	<br />
 	<span class="caption">The right button cluster from Xcode 8 (top) and Xcode 9 (bottom).</span>
@@ -1315,7 +1404,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-prefix-and-suffix-search" src="/blog/img/prefix-and-suffix-search.png" alt="The prefix and suffix search options in the search option popover dropdown." />
+	
 	<br />
 	<br />
 	<span class="caption">The prefix and suffix search options in the search option popover dropdown.</span>
@@ -1341,7 +1432,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-insert-pattern" src="/blog/img/insert-pattern.png" alt="The Insert Pattern option in Xcode 8 didn't make it to Xcode 9." />
+	
 	<br />
 	<br />
 	<span class="caption">The Insert Pattern option in Xcode 8 didn't make it to Xcode 9.</span>
@@ -1369,7 +1462,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-magnifying-glass-dropdowns" src="/blog/img/magnifying-glass-dropdowns.png" alt="The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top)." />
+	
 	<br />
 	<br />
 	<span class="caption">The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top).</span>
@@ -1399,7 +1494,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-match-count-label" src="/blog/img/match-count-label.png" alt="The match count in Xcode 8 (top) versus Xcode 9 (bottom)." />
+	
 	<br />
 	<br />
 	<span class="caption">The match count in Xcode 8 (top) versus Xcode 9 (bottom).</span>
@@ -1427,7 +1524,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-all-in-selection" src="/blog/img/all-in-selection.png" alt="The All in Selection option for replacement." />
+	
 	<br />
 	<br />
 	<span class="caption">The All in Selection option for replacement.</span>
@@ -1586,7 +1685,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions" src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." />
+	
 	<br />
 	<br />
 	<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
@@ -1616,7 +1717,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-xcode-icon-tag-build-phases" src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." />
+	
 	<br />
 	<br />
 	<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
@@ -1648,7 +1751,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-app-icon-for-different-app-build-distributions" src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." />
+	
 	<br />
 	<br />
 	<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
@@ -1811,7 +1916,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-typedefblock-autocompletion" src="/blog/img/typedefblock-autocompletion.png" alt="Autocompletion for typedefBlock." />
+	
 	<br />
 	<br />
 	<span class="caption">Autocompletion for typedefBlock.</span>
@@ -1847,7 +1954,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-block-placeholder-expansion-before" src="/blog/img/block-placeholder-expansion-before.png" alt="The autocompletion for the method call contains a placeholder for the block parameter." />
+	
 	<br />
 	<br />
 	<span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
@@ -1875,7 +1984,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-block-placeholder-expansion-after" src="/blog/img/block-placeholder-expansion-after.png" alt="After tabbing to the block placeholder and expanding with the Return key." />
+	
 	<br />
 	<br />
 	<span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
@@ -1903,7 +2014,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-inlineblock-example" src="/blog/img/inlineblock-example.png" alt="The good and bad of Objective-C method calls with multiple block parameters." />
+	
 	<br />
 	<br />
 	<span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>
@@ -1977,7 +2090,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-build-setting-inheritance" src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." />
+	
 	<br />
 	<br />
 	<span class="caption">The acyclic inheritance graph for build settings.</span>
@@ -2003,7 +2118,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-build-setting-inheritance-case-study" src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." />
+	
 	<br />
 	<br />
 	<span class="caption">An example using inheritance.</span>
@@ -2033,7 +2150,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-build-setting-precedence" src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." />
+	
 	<br />
 	<br />
 	<span class="caption">The linear precedence progression for build settings.</span>
@@ -2059,7 +2178,9 @@ retq
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-build-setting-precedence-case-study" src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." />
+	
 	<br />
 	<br />
 	<span class="caption">An example using precedence.</span>
@@ -2363,7 +2484,9 @@ $&gt; git pull --ff-only
 			}	
 		}
 	</style>
+	
 	<img id="reader-adaptable-image-sass-vs-css-web-inspector-link" src="/blog/img/sass-vs-css-web-inspector-link.png" alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." />
+	
 	<br />
 	<br />
 	<span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>

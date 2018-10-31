@@ -10,6 +10,15 @@
 		<link>http://tworingsoft.com/blog/tag/tools.html</link>
 		
 			<item>
+				<title>On a Mission to Automate Revision</title>
+				<description>Introducing a new tool as part of my evolution towards effortless versioning of code.</description>
+				<pubDate>Tue, 30 Oct 2018 00:00:00 -0800</pubDate>
+				<link>http://tworingsoft.com/blog/2018/10/30/on-a-mission-to-automate-revision.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/10/30/on-a-mission-to-automate-revision.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>New command line tools</title>
 				<description>Announcing some new CLI tools available, and plans on how to consolidate others like psst, xcbs and vrsn.</description>
 				<pubDate>Sun, 30 Sep 2018 00:00:00 -0800</pubDate>
