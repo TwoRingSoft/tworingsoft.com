@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>Swift Async Operations at Your Command</title>
+				<description>Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.</description>
+				<pubDate>Mon, 19 Nov 2018 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>On a Mission to Automate Revision</title>
 				<description>Introducing a new tool as part of my evolution towards effortless versioning of code.</description>
 				<pubDate>Tue, 30 Oct 2018 00:00:00 -0800</pubDate>

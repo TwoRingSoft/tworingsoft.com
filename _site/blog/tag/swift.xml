@@ -10,6 +10,15 @@
 		<link>http://tworingsoft.com/blog/tag/swift.html</link>
 		
 			<item>
+				<title>Swift Async Operations at Your Command</title>
+				<description>Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.</description>
+				<pubDate>Mon, 19 Nov 2018 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Backend to Basics</title>
 				<description>Catching up on some experimentation with different backend, one of which was the Vapor framework for Swift on the server.</description>
 				<pubDate>Wed, 24 Oct 2018 00:00:00 -0800</pubDate>

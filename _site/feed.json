@@ -7,6 +7,118 @@
 	"items": [
 		
 			{
+				"title": "Swift Async Operations at Your Command",
+				"summary": "Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.",
+				"date_published": "2018-11-19T00:00:00-09:00",
+        "id": "http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html",
+        "url": "http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html",
+        "content_html": "<p>I recently rewrote <a href="https://github.com/google-fabric/faboperation"><code class="highlighter-rouge">FABOperation</code></a> in Swift for an app that uses <a href="https://github.com/tworingsoft/pippin">Pippin</a>. <code class="highlighter-rouge">FABOperation</code> was originally a class written by <a href="https://twitter.com/mattie">Matt Massicotte</a>, so all credit is due to him for the original, robust solution (explained later in the article). I picked it up and added the compound operation class (which, besides encapsulating arbitrary pipelines of operations, helps aggregate all their errors), some tests and a demo macOS app. After open-sourcing it while at Twitter/Fabric (which is now Google/Fabric), I spoke about it at <a href="https://vimeo.com/210042860">mDevCon 2016</a> (some of that information now being out of date or incorrect).</p>
+
+<blockquote>
+  <p>All references here to Pippin’s <code class="highlighter-rouge">AsyncOperation</code> also apply to <code class="highlighter-rouge">FABOperation</code>–I’ll point out specific differences using the <code class="highlighter-rouge">FAB</code>-prefixed names.</p>
+</blockquote>
+
+<p>Let’s start with some background info on Apple’s <code class="highlighter-rouge">Operation</code> (<code class="highlighter-rouge">NSOperation</code> in Objective-C).</p>
+
+<h1 id="operation-operation">Operation Operation</h1>
+
+<p>An <a href="https://developer.apple.com/documentation/foundation/operation"><code class="highlighter-rouge">Operation</code></a> encapsulates a bit of work, as a code application of the <a href="http://wiki.c2.com/?CommandPattern">“Command” software pattern</a>. It’s one of many patterns you may already know from using Apple’s SDKs: “Delegate” (<code class="highlighter-rouge">UITableViewDataSource</code>), “Abstract Factory” (<code class="highlighter-rouge">NSString</code>, <code class="highlighter-rouge">NSNumber</code>), “Observer” (KVO and <code class="highlighter-rouge">NSNotification</code>) and “Flyweight” (<code class="highlighter-rouge">UITableViewCell</code> reuse) among others.</p>
+
+<p>By cordoning off logic and associated state into discrete pieces, you can write flexible, reusable and testable code. Apple’s <a href="https://developer.apple.com/videos/play/wwdc2015/226">WWDC 2015 Session 226: Advanced NSOperations</a> highlights how this architecture benefitted the WWDC iOS app, and my own presentation did the same for some of our tools at Crashlytics.</p>
+
+<p>You can create plain ol’ <code class="highlighter-rouge">Operation</code>s and run them by calling <code class="highlighter-rouge">start()</code> or by placing them on an <code class="highlighter-rouge">OperationQueue</code>. Its constructors can accept <code class="highlighter-rouge">NSInvocation</code>s or closures, and you can add more logic in its <code class="highlighter-rouge">completionBlock</code> closure. For more customization, you can subclass it and override <code class="highlighter-rouge">main()</code>, where the business logic resides. You can use one or multiple queues, either serial or concurrent, to architect complex state machines.</p>
+
+<p>The thing is, <code class="highlighter-rouge">Operation</code> is synchronous… if you want an asynchronous version, you have to build it yourself.</p>
+
+<h1 id="why-asyncoperation">Why AsyncOperation?</h1>
+
+<p>Imagine you want to encapsulate a network request, and you simply subclass <code class="highlighter-rouge">Operation</code> and initiate the request in its <code class="highlighter-rouge">main()</code> body. Two problems immediately arise.</p>
+
+<p>First, if you place the operation on a queue, it won’t block subsequent or dependent operations from beginning before your network request completes. Once the request is started, like with <code class="highlighter-rouge">URLSessionDataTask.resume()</code>, the <code class="highlighter-rouge">main()</code> function returns, the operation is popped off the queue, and others waiting begin, probably before they should. Dependent operations, possibly in parallel queues, could start too soon, maybe tak UI down a default success path before an operation fails.</p>
+
+<p>Second, you have no way to shuttle the network response to consumers of your operation. You could populate some properties on it, but how does your consumer know when to access them? <code class="highlighter-rouge">completionBlock</code> executes immediately after <code class="highlighter-rouge">main()</code>; you likely won’t have your response data that soon.</p>
+
+<p><code class="highlighter-rouge">AsyncOperation</code> solves the first problem by setting the <code class="highlighter-rouge">isConcurrent</code> and <code class="highlighter-rouge">isAsynchronous</code> properties to <code class="highlighter-rouge">true</code>, overriding <code class="highlighter-rouge">start()</code> and <code class="highlighter-rouge">main()</code>, and providing a way to manually finish the operation: <code class="highlighter-rouge">finish(withError:)</code>. As it turns out, though, there’s a lot more to the problem. <code class="highlighter-rouge">OperationQueue</code> uses KVO to start operations and pop them from the queue, depending on changes to its state properties:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">isReady</code></li>
+  <li><code class="highlighter-rouge">isExecuting</code></li>
+  <li><code class="highlighter-rouge">isFinished</code></li>
+  <li><code class="highlighter-rouge">isCancelled</code></li>
+</ul>
+
+<p>Managing transitions between these states in a concurrent environment presents a formidable challenge. And because <code class="highlighter-rouge">OperationQueue</code> monitors these changes via KVO, the appropriate KVO events must be dispatched before and after each state change. <code class="highlighter-rouge">AsyncOperation</code> gates all state changes using a recursive lock, and uses a closure syntax to ensure KVO correctness.</p>
+
+<p>To solve the second problem, we added a new closure, <code class="highlighter-rouge">asyncCompletionBlock</code>, which passes back any errors encountered. Subclasses may also provide their own custom closures or properties to pass back typed data, but still need to call <code class="highlighter-rouge">finish(withError:)</code> for correct behavior on queues and in compound operations. For parity with <code class="highlighter-rouge">NSOperation</code>, <code class="highlighter-rouge">completionBlock</code> is still the very <em>last</em> thing executed, that is, <em>after</em> <code class="highlighter-rouge">asyncCompletionBlock</code>.</p>
+
+<h1 id="why-compoundoperation">Why CompoundOperation?</h1>
+
+<p>With <code class="highlighter-rouge">FABOperation</code>, we started architecting complicated business logic into state machines that could include network requests and interprocess communication, e.g. via <code class="highlighter-rouge">NSTask</code> and <code class="highlighter-rouge">XPC</code>. Eventually we found a few subroutines made of multiple operations that we wanted to reuse and manage as a unit.</p>
+
+<p>We created <code class="highlighter-rouge">FABCompoundOperation</code> to handle executing a set of mixed sync/async operations, aggregate any errors encountered, and propagate cancellation. The set of errors is passed through via its own <code class="highlighter-rouge">asyncCompletionBlock</code>.</p>
+
+<h1 id="rewriting-in-swift">Rewriting in Swift</h1>
+
+<p>I haven’t personally needed to use <code class="highlighter-rouge">FABOperation</code> since Crashlytics, but recently found a need, and wanted to use my own implementation delivered via Pippin. I decided to rewrite the classes in Swift as a way to refresh my memory and see if the design or logic could be improved–this often happens when I write things in a new language. Swift is very safe, so it helps surface plenty of things easy to miss in a dynamic language like ObjC–this time around was no exception. Let’s see some of the good and bad…</p>
+
+<h2 id="successes">Successes</h2>
+
+<h3 id="swift">Swift</h3>
+
+<p>Having Swift code is <em>obviously</em> the best part about translating Objective-C into Swift :) But seriously, it substantially reduced the amount of code. It also eliminated some conditionally compiled ObjC code from <code class="highlighter-rouge">FABCompoundOperation</code> to handle <code class="highlighter-rouge">dispatch_queue_t</code> as both retain/release or, if building for systems <a href="https://developer.apple.com/documentation/dispatch/1496328-dispatch_release?language=objc">starting with macOS 10.8 and iOS 6, ARC</a>. There’s even a bug here surfaced by a newer compiler warning in Xcode: we never called <code class="highlighter-rouge">[super dealloc]</code>! I found a few other logical errors:</p>
+
+<h3 id="compound-completion">Compound Completion</h3>
+
+<p>Compound operations used to try injecting compound completion attempts into the <code class="highlighter-rouge">asyncCompletionCompletion</code> <em>as well as</em> <code class="highlighter-rouge">NSOperation</code>’s stock <code class="highlighter-rouge">completionBlock</code>. So, every time an async operation would finish, there would be two checks to see if the compound operation was done: in both <code class="highlighter-rouge">competionBlock</code> and <code class="highlighter-rouge">asyncCompletionBlock</code>. Because <code class="highlighter-rouge">completionBlock</code> always executes after its new async counterpart, we can safely use that as the sole check to see if any operation, sync or async, is finished. Aggregating errors from async operations is now its own injected closure, whereas before there was one closure that tried to do both jobs.</p>
+
+<h3 id="compound-cancellation">Compound Cancellation</h3>
+
+<p>I found an inconsistency in <code class="highlighter-rouge">CompoundOperation</code>’s completion attempt logic, where if it is cancelled at the time it tries to complete, it will finish with an error and then nil out the reference to <code class="highlighter-rouge">asyncCompletionBlock. However, it doesn't nil it out in the case where it's not cancelled and all operations have finished. I moved the nil-out of </code>asyncCompletionBlock<code class="highlighter-rouge"> into </code>AsyncOperation.finish(withError:)<code class="highlighter-rouge">, so compound as well as regular async operations all treat </code>asyncCompletionBlock` consistently, regardless of the final state.</p>
+
+<h2 id="challenges">Challenges</h2>
+
+<h3 id="testing">Testing</h3>
+
+<p>Testing any concurrent code is tricky, and this is no exception. I ran into a few issues validating and fixing the old tests I’d written, and writing a few new ones to verify the behavior of operations in general in service of this post!</p>
+
+<h4 id="kvo">KVO</h4>
+
+<p>I brought over some old ObjC tests that exercised cancellation logic in async and compound operations. After adding some for stock synchronous <code class="highlighter-rouge">NSOperation</code>s, I straightened out some discrepencies around when and which completions blocks are executed, and also for some KVO events. I also hit a possible known runtime bug w.r.t. which selector names receive KVO events for operation state properties, where <code class="highlighter-rouge">NSOperation</code> sends updates on keypaths with the ‘is’ prefix, e.g. <code class="highlighter-rouge">isExecuting</code>, whereas my Swift <code class="highlighter-rouge">AsyncOperation</code> sends them on the backing property names, e.g. <code class="highlighter-rouge">executing</code>; this despite explicitly sending it on the prefixed version in <code class="highlighter-rouge">AsyncOperation</code>’s implementation, and the fact the everything still works on queues in the demo project. Some <a href="https://bugs.swift.org/browse/SR-4397">filed bugs</a> and <a href="https://forums.developer.apple.com/thread/87398">discussions</a> were pointed out to me around <code class="highlighter-rouge">Operation</code> KVO, so it looks like work is still being done here.</p>
+
+<h3 id="concurrency">Concurrency</h3>
+
+<p>Originally, my test <code class="highlighter-rouge">AsyncOperation</code> subclass would use delayed GCD async dispatches to simulate long running tasks. However, I wanted to add some tests that exercise normal execution of operations, fulfilling expectations in all their completion blocks and for all KVO events. However <code class="highlighter-rouge">waitForExpectations(withTimeout:handler:)</code> blocks execution to wait for those expectations. I wound up removing the delayed dispatch; the time simulation doesn’t matter to verify all the completion behavior is correct. (To see them work with time delays, check out the demo project mentioned at the end of the post.)</p>
+
+<p>Similarly, I had trouble testing normal behvavior of compound operations. I could not find a way to allow their private operation queues to finish normal execution, that wouldn’t deadlock with the test’s attempt to wait for expectations. These test cases are currently commented out with a note; the demo operation is currently the best way to verify that multiple compound operations execute correctly on a queue.</p>
+
+<h3 id="swift-to-objc">Swift-to-ObjC</h3>
+
+<p>At the time we put <code class="highlighter-rouge">FABOperation</code> together, we chose to keep it Objective-C rather than the hot new language we now know and love: Swift. Matt’s original reasoning is still on the README as of this writing, and still holds today:</p>
+
+<blockquote>
+  <p>There are a huge amount of apps out there that have zero Swift in them. We didn’t want to force those apps to include the Swift runtime libs. This is a trade-off, and it’s one that we hope will become less and less necessary over time.</p>
+</blockquote>
+
+<p>While I translated the async operations into Swift for Pippin, I wanted to keep the test and demo sources I had originally written in ObjC. This has the dual benefit of saving time rewriting that part, but more importantly it exercises usage of a now Swift API back in ObjC land.</p>
+
+<p>One component of the tests and demo is a set of <code class="highlighter-rouge">AsyncOperation</code> subclasses. However, <a href="https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift#//apple_ref/doc/uid/TP40014216-CH12-XID_67">ObjC classes cannot inherit from Swift classes</a>! There’s no way around this one, I had to rewrite <code class="highlighter-rouge">TestAsyncOperation</code> and the demo subclasses in Swift.</p>
+
+<h3 id="swift-to-objc-1">Swift-to-ObjC</h3>
+
+<p>Nope, I didn’t copypasta that last heading. Nobody ever said it’d be easy using Swift from Objective-C.</p>
+
+<p>This one concerns <code class="highlighter-rouge">Swift.Error</code> and <code class="highlighter-rouge">NSError</code>. Originally, if <code class="highlighter-rouge">FABCompoundOperation</code> had one or more suboperations fail, it would pass an <code class="highlighter-rouge">NSError</code> back through <code class="highlighter-rouge">asyncCompletionBlock</code> with a <code class="highlighter-rouge">userInfo</code> key mapped to an array of those errors. In the Swift version, I’d like to use an <code class="highlighter-rouge">Error</code> <code class="highlighter-rouge">enum</code> instead of global error code variables, but then I’d have to attach an associated value to pass that array of errors, which doesn’t bridge to ObjC. There were also asserts on the error codes themselves in ObjC test code, which was lost in the translation to a native Swift error. So, while I did switch to an Error enum, I had to include a function to transform them back into <code class="highlighter-rouge">NSError</code>s anyways :/ Maybe one day, if native Swift errors somehow truly replace NSError, I’ll be able to remove the transform.</p>
+
+<h1 id="try-it-out">Try it out!</h1>
+
+<p>The original demo project I wrote is now located in <code class="highlighter-rouge">Examples/OperationDemo.xcodeproj</code>, so <code class="highlighter-rouge">pod try https://github.com/tworingsoft/pippin</code> will allow you to check out the demo straightaway! Right now, you can test sync, async and a compound operation composed of a mixture of both, and it will show you when each stage of each operation runs. You can start and stop the queue they’re on, switch it between serial and concurrent modes, or cancel the operations.</p>
+
+<p>And of course, contributions are <a href="https://github.com/tworingsoft/pippin">more than welcome</a>, and I’d love to hear if you use <code class="highlighter-rouge">AsyncOperation</code> or <code class="highlighter-rouge">Pippin</code> in one of your apps!</p>
+",
+				
+			},
+		
+			{
 				"title": "On a Mission to Automate Revision",
 				"summary": "Introducing a new tool as part of my evolution towards effortless versioning of code.",
 				"date_published": "2018-10-30T00:00:00-08:00",
