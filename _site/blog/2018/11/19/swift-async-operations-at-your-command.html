@@ -89,7 +89,7 @@
 
 <p>Imagine you want to encapsulate a network request, and you simply subclass <code class="highlighter-rouge">Operation</code> and initiate the request in its <code class="highlighter-rouge">main()</code> body. Two problems immediately arise.</p>
 
-<p>First, if you place the operation on a queue, it won’t block subsequent or dependent operations from beginning before your network request completes. Once the request is started, like with <code class="highlighter-rouge">URLSessionDataTask.resume()</code>, the <code class="highlighter-rouge">main()</code> function returns, the operation is popped off the queue, and others waiting begin, probably before they should. Dependent operations, possibly in parallel queues, could start too soon, maybe tak UI down a default success path before an operation fails.</p>
+<p>First, if you place the operation on a queue, it won’t block subsequent or dependent operations from beginning before your network request completes. Once the request is started, like with <code class="highlighter-rouge">URLSessionDataTask.resume()</code>, the <code class="highlighter-rouge">main()</code> function returns, the operation is popped off the queue, and others that were waiting will begin, probably before they should. Dependent operations, possibly in parallel queues, will start too soon, maybe displaying UI for a default success path before an operation fails, or passing empty, stale or corrupt data to subsequent logic.</p>
 
 <p>Second, you have no way to shuttle the network response to consumers of your operation. You could populate some properties on it, but how does your consumer know when to access them? <code class="highlighter-rouge">completionBlock</code> executes immediately after <code class="highlighter-rouge">main()</code>; you likely won’t have your response data that soon.</p>
 
@@ -140,9 +140,9 @@
 
 <p>I brought over some old ObjC tests that exercised cancellation logic in async and compound operations. After adding some for stock synchronous <code class="highlighter-rouge">NSOperation</code>s, I straightened out some discrepencies around when and which completions blocks are executed, and also for some KVO events. I also hit a possible known runtime bug w.r.t. which selector names receive KVO events for operation state properties, where <code class="highlighter-rouge">NSOperation</code> sends updates on keypaths with the ‘is’ prefix, e.g. <code class="highlighter-rouge">isExecuting</code>, whereas my Swift <code class="highlighter-rouge">AsyncOperation</code> sends them on the backing property names, e.g. <code class="highlighter-rouge">executing</code>; this despite explicitly sending it on the prefixed version in <code class="highlighter-rouge">AsyncOperation</code>’s implementation, and the fact the everything still works on queues in the demo project. Some <a href="https://bugs.swift.org/browse/SR-4397">filed bugs</a> and <a href="https://forums.developer.apple.com/thread/87398">discussions</a> were pointed out to me around <code class="highlighter-rouge">Operation</code> KVO, so it looks like work is still being done here.</p>
 
-<h3 id="concurrency">Concurrency</h3>
+<h4 id="concurrency">Concurrency</h4>
 
-<p>Originally, my test <code class="highlighter-rouge">AsyncOperation</code> subclass would use delayed GCD async dispatches to simulate long running tasks. However, I wanted to add some tests that exercise normal execution of operations, fulfilling expectations in all their completion blocks and for all KVO events. However <code class="highlighter-rouge">waitForExpectations(withTimeout:handler:)</code> blocks execution to wait for those expectations. I wound up removing the delayed dispatch; the time simulation doesn’t matter to verify all the completion behavior is correct. (To see them work with time delays, check out the demo project mentioned at the end of the post.)</p>
+<p>Originally, my test <code class="highlighter-rouge">AsyncOperation</code> subclass would use delayed GCD async dispatches to simulate long running tasks. Now, I wanted to add some tests that exercise normal execution of operations, fulfilling expectations in all their completion blocks and for all KVO events. However <code class="highlighter-rouge">waitForExpectations(withTimeout:handler:)</code> blocks execution to wait for those expectations. I wound up removing the delayed dispatch; the time simulation doesn’t matter when verifying all the completion behavior is correct–by definition, an async operation requires <em>arbitrary</em> time to complete, so short==long for our purposes. (To see them work with time delays, check out the demo project mentioned at the end of the post.)</p>
 
 <p>Similarly, I had trouble testing normal behvavior of compound operations. I could not find a way to allow their private operation queues to finish normal execution, that wouldn’t deadlock with the test’s attempt to wait for expectations. These test cases are currently commented out with a note; the demo operation is currently the best way to verify that multiple compound operations execute correctly on a queue.</p>
 
@@ -154,9 +154,9 @@
   <p>There are a huge amount of apps out there that have zero Swift in them. We didn’t want to force those apps to include the Swift runtime libs. This is a trade-off, and it’s one that we hope will become less and less necessary over time.</p>
 </blockquote>
 
-<p>While I translated the async operations into Swift for Pippin, I wanted to keep the test and demo sources I had originally written in ObjC. This has the dual benefit of saving time rewriting that part, but more importantly it exercises usage of a now Swift API back in ObjC land.</p>
+<p>While I translated the async operations into Swift for Pippin, I wanted to keep the test and demo sources I had originally written in ObjC. This has the dual benefit of saving time rewriting that part, but more importantly it exercises usage of a now-Swift API back in ObjC land.</p>
 
-<p>One component of the tests and demo is a set of <code class="highlighter-rouge">AsyncOperation</code> subclasses. However, <a href="https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift#//apple_ref/doc/uid/TP40014216-CH12-XID_67">ObjC classes cannot inherit from Swift classes</a>! There’s no way around this one, I had to rewrite <code class="highlighter-rouge">TestAsyncOperation</code> and the demo subclasses in Swift.</p>
+<p>One component of the tests and demo is a set of <code class="highlighter-rouge">AsyncOperation</code> subclasses. However, <a href="https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift#//apple_ref/doc/uid/TP40014216-CH12-XID_67">ObjC classes cannot inherit from Swift classes</a>! There’s no way around this one: I had to rewrite <code class="highlighter-rouge">TestAsyncOperation</code> and the demo subclasses in Swift.</p>
 
 <h3 id="swift-to-objc-1">Swift-to-ObjC</h3>
 
@@ -175,7 +175,7 @@
 	<hr />
 </p>
 <p>
-	Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>!
+	Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
 </p>
 		</div>
 	</body>
