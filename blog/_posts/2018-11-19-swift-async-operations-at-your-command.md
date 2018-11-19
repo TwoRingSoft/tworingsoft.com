@@ -66,7 +66,7 @@ Compound operations used to try injecting compound completion attempts into the 
 
 ### Compound Cancellation
 
-I found an inconsistency in `CompoundOperation`'s completion attempt logic, where if it is cancelled at the time it tries to complete, it will finish with an error and then nil out the reference to `asyncCompletionBlock. However, it doesn't nil it out in the case where it's not cancelled and all operations have finished. I moved the nil-out of `asyncCompletionBlock` into `AsyncOperation.finish(withError:)`, so compound as well as regular async operations all treat `asyncCompletionBlock` consistently, regardless of the final state.
+I found an inconsistency in `CompoundOperation`'s completion attempt logic, where if it is cancelled at the time it tries to complete, it will finish with an error and then nil out the reference to `asyncCompletionBlock`. However, it doesn't nil it out in the case where it's not cancelled and all operations have finished. I moved the nil-out of `asyncCompletionBlock` into `AsyncOperation.finish(withError:)`, so compound as well as regular async operations all treat `asyncCompletionBlock` consistently, regardless of the final state.
 
 ## Challenges
 
