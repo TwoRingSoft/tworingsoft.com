@@ -28,7 +28,7 @@ The thing is, `Operation` is synchronous... if you want an asynchronous version,
 
 Imagine you want to encapsulate a network request, and you simply subclass `Operation` and initiate the request in its `main()` body. Two problems immediately arise. 
 
-First, if you place the operation on a queue, it won't block subsequent or dependent operations from beginning before your network request completes. Once the request is started, like with `URLSessionDataTask.resume()`, the `main()` function returns, the operation is popped off the queue, and others waiting begin, probably before they should. Dependent operations, possibly in parallel queues, could start too soon, maybe tak UI down a default success path before an operation fails.
+First, if you place the operation on a queue, it won't block subsequent or dependent operations from beginning before your network request completes. Once the request is started, like with `URLSessionDataTask.resume()`, the `main()` function returns, the operation is popped off the queue, and others that were waiting will begin, probably before they should. Dependent operations, possibly in parallel queues, will start too soon, maybe displaying UI for a default success path before an operation fails, or passing empty, stale or corrupt data to subsequent logic.
 
 Second, you have no way to shuttle the network response to consumers of your operation. You could populate some properties on it, but how does your consumer know when to access them? `completionBlock` executes immediately after `main()`; you likely won't have your response data that soon.
 
@@ -78,9 +78,9 @@ Testing any concurrent code is tricky, and this is no exception. I ran into a fe
 
 I brought over some old ObjC tests that exercised cancellation logic in async and compound operations. After adding some for stock synchronous `NSOperation`s, I straightened out some discrepencies around when and which completions blocks are executed, and also for some KVO events. I also hit a possible known runtime bug w.r.t. which selector names receive KVO events for operation state properties, where `NSOperation` sends updates on keypaths with the ‘is’ prefix, e.g. `isExecuting`, whereas my Swift `AsyncOperation` sends them on the backing property names, e.g. `executing`; this despite explicitly sending it on the prefixed version in `AsyncOperation`'s implementation, and the fact the everything still works on queues in the demo project. Some [filed bugs](https://bugs.swift.org/browse/SR-4397) and [discussions](https://forums.developer.apple.com/thread/87398) were pointed out to me around `Operation` KVO, so it looks like work is still being done here.
 
-### Concurrency
+#### Concurrency
 
-Originally, my test `AsyncOperation` subclass would use delayed GCD async dispatches to simulate long running tasks. However, I wanted to add some tests that exercise normal execution of operations, fulfilling expectations in all their completion blocks and for all KVO events. However `waitForExpectations(withTimeout:handler:)` blocks execution to wait for those expectations. I wound up removing the delayed dispatch; the time simulation doesn't matter to verify all the completion behavior is correct. (To see them work with time delays, check out the demo project mentioned at the end of the post.)
+Originally, my test `AsyncOperation` subclass would use delayed GCD async dispatches to simulate long running tasks. Now, I wanted to add some tests that exercise normal execution of operations, fulfilling expectations in all their completion blocks and for all KVO events. However `waitForExpectations(withTimeout:handler:)` blocks execution to wait for those expectations. I wound up removing the delayed dispatch; the time simulation doesn't matter when verifying all the completion behavior is correct–by definition, an async operation requires _arbitrary_ time to complete, so short==long for our purposes. (To see them work with time delays, check out the demo project mentioned at the end of the post.)
 
 Similarly, I had trouble testing normal behvavior of compound operations. I could not find a way to allow their private operation queues to finish normal execution, that wouldn't deadlock with the test's attempt to wait for expectations. These test cases are currently commented out with a note; the demo operation is currently the best way to verify that multiple compound operations execute correctly on a queue.
 
@@ -90,9 +90,9 @@ At the time we put `FABOperation` together, we chose to keep it Objective-C rath
 
 > There are a huge amount of apps out there that have zero Swift in them. We didn't want to force those apps to include the Swift runtime libs. This is a trade-off, and it's one that we hope will become less and less necessary over time.
 
-While I translated the async operations into Swift for Pippin, I wanted to keep the test and demo sources I had originally written in ObjC. This has the dual benefit of saving time rewriting that part, but more importantly it exercises usage of a now Swift API back in ObjC land.
+While I translated the async operations into Swift for Pippin, I wanted to keep the test and demo sources I had originally written in ObjC. This has the dual benefit of saving time rewriting that part, but more importantly it exercises usage of a now-Swift API back in ObjC land.
 
-One component of the tests and demo is a set of `AsyncOperation` subclasses. However, [ObjC classes cannot inherit from Swift classes](https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift#//apple_ref/doc/uid/TP40014216-CH12-XID_67)! There's no way around this one, I had to rewrite `TestAsyncOperation` and the demo subclasses in Swift.
+One component of the tests and demo is a set of `AsyncOperation` subclasses. However, [ObjC classes cannot inherit from Swift classes](https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift#//apple_ref/doc/uid/TP40014216-CH12-XID_67)! There's no way around this one: I had to rewrite `TestAsyncOperation` and the demo subclasses in Swift.
 
 ### Swift-to-ObjC
 

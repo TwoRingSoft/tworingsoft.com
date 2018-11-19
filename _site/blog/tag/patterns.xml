@@ -1,0 +1,22 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % patterns</title>
+		<description>Two Ring Software's RSS Feed for updates on patterns.</description>
+		<link>http://tworingsoft.com/blog/tag/patterns.html</link>
+		
+			<item>
+				<title>Swift Async Operations at Your Command</title>
+				<description>Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.</description>
+				<pubDate>Mon, 19 Nov 2018 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/11/19/swift-async-operations-at-your-command.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>
