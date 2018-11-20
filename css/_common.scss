@@ -40,19 +40,22 @@ h4 {
 
 .text, ul {
 	color: $tr-black; 
-	font: lighter 13pt $tr-font;
+	font: lighter 18pt $tr-font;
+}
+
+/* 500 or above */
+@media only screen and (min-width: 500px) {
+	.text, ul {
+		color: $tr-black; 
+		font: lighter 13pt $tr-font;
+	}
 }
 
 .highlighter-rouge {
-	color: #800;
-	font: lighter 12pt $tr-monospace-font;
+	color: #700;
+	font: heavier 12pt $tr-monospace-font;
 	background-color: #eee;
 	padding: 0px 3px 0px 3px;
-}
-
-#page-content { /* div containing everything after the header */
-	margin: 20px 5px 0px 5px;
-	@extend .text;
 }
 
 /* thanks to: https://stackoverflow.com/a/16326442/4789448 */
@@ -89,19 +92,6 @@ blockquote cite:before {
     content: "\2014 \2009";
 }
 /* end thanks to: https://stackoverflow.com/a/16326442/4789448 */
-
-/* 500 or below */
-@media only screen and (max-width: 500px) {
-	.phone-text, ul {
-		color: $tr-black; 
-		font: lighter 13pt $tr-font;
-	}
-
-	#page-content { /* div containing everything after the header */
-		margin: 0px;
-		@extend .phone-text;
-	}	
-}
 
 .caption {
 	color: $tr-grey; 

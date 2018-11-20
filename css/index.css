@@ -23,19 +23,20 @@ h4 {
   font: 100 16pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
-.text, #page-content, blockquote, ul {
+.text, blockquote, ul {
   color: #000;
-  font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
+  font: lighter 18pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
+/* 500 or above */
+@media only screen and (min-width: 500px) {
+  .text, blockquote, ul {
+    color: #000;
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; } }
 .highlighter-rouge {
-  color: #800;
-  font: lighter 12pt "Courier New", monospace;
+  color: #700;
+  font: heavier 12pt "Courier New", monospace;
   background-color: #eee;
   padding: 0px 3px 0px 3px; }
-
-#page-content {
-  /* div containing everything after the header */
-  margin: 20px 5px 0px 5px; }
 
 /* thanks to: https://stackoverflow.com/a/16326442/4789448 */
 blockquote {
@@ -67,15 +68,6 @@ blockquote cite:before {
   content: "\2014 \2009"; }
 
 /* end thanks to: https://stackoverflow.com/a/16326442/4789448 */
-/* 500 or below */
-@media only screen and (max-width: 500px) {
-  .phone-text, #page-content, ul {
-    color: #000;
-    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
-  #page-content {
-    /* div containing everything after the header */
-    margin: 0px; } }
 .caption {
   color: #828282;
   font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }

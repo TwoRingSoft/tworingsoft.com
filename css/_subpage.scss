@@ -3,3 +3,14 @@
 .page-name {
 	@extend .hero;
 }
+
+#page-content { /* div containing everything after the header */
+	margin: 0px 50px 0px 50px; /* put a 50 px margin on left and right edges, 0 on top/bottom */
+}
+
+/* 500 or below */
+@media only screen and (max-width: 500px) {
+	#page-content { /* div containing everything after the header */
+		margin: 0px; /* on small devices, remove all margins */
+	}
+}
