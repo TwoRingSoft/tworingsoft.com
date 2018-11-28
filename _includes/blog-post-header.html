@@ -19,14 +19,8 @@
 			<a href="/blog/" style="text-decoration: none;">Blog</a>
 		</h2>
 		
-					<div class="title">{{ page.title }}</div>
-					<div>
-						<span class="author">{{ page.author }}</span>
-						<span class="date"> ・ </span>
-						<span class="date">{{ page.date | date: '%-d %B %Y'}}</span>
-						<span class="date"> ・ </span>
-						<span class="readtime">{{ page.content.size | readtime }} minute read</span>
-					</div>
-					
-					<hr />
+		<div class="title">{{ page.title }}</div>
+		<div class="byline">{{ page.author }} – {{ page.date | date: '%-d %B %Y'}}</div>
+		
+		<hr />
 					

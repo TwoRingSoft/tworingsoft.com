@@ -7,54 +7,31 @@
 	{% for post in include.posts %}
 		{% if first_post %}
 			{% assign first_post = false %}
-			<div class="firstpost">
-				<center>
-					<div class="title">
-						Latest: <a href="{{ post.url }}"><span class="title">{{ post.title }}</span></a>
-					</div>
-					<span class="author">{{ post.author }}</span>
-					<span class="date"> ・ </span>
-					<span class="date">{{ post.date | date: '%-d %B %Y'}}</span>
-					<span class="date"> ・ </span>
-					<span class="readtime">{{ post.content.size | readtime }} minute read</span>
-					<div class="abstract">
-						{{ post.abstract }}
-					</div>
-				</center>
-			</div>
-			<br />
-			<br />
-			<table width="100%">
+			<table>
 				<tr>
-					<td class="title">
-						Previously
+					<td width="75%">
+						<div class="latest-title">Latest: <a href="{{ post.url }}"><span class="latest-title">{{ post.title }}</span></a></div>
+						<div class="latest-abstract">{{ post.abstract }} <span class="latest-readtime">({{ post.content.size | readtime }} minute read)</span></div>
 					</td>
-					<td width="150px" class="readtime" rowspan="2" valign="top" style="padding: 0px 20px 0px 20px; border: 2px black;">
-						<div class="title" style="margin-top: 20px;">
-							Tags
-						</div>
-						<br />
-						<div id="tag_cloud">
-							{{ site | tag_cloud }}
-						</div>
+					<td style="margin: 0px 20px 0px 0px; vertical-align: top;">
+						<div id="tag_cloud"><span class="section-heading">Tags:</span> {{ site | tag_cloud }}</div>
 					</td>
 				</tr>
-				<tr>
-				<td valign="top">
-					<br />
+			</table>
+			<br />
+			<br />
+			<div class="section-heading">Previously:</div>
+			<div>
 		{% else %}
-					<a href="{{ post.url }}"><span class="author">{{ post.title }}</span></a><span class="date"> ・ {{ post.date | date: '%-d %B %Y' }}</span>
-					<br />
-					{{ post.abstract }}
-					<br />
-					<br />
+			<div style="width: 200px; display: inline-block; margin: 20px 20px 0px 20px; vertical-align: top;">
+				<a href="{{ post.url }}"><span class="previous-title">{{ post.title }}</span></a>
+				<div class="previous-abstract">{{ post.abstract }}</div>
+				
 			{% if older_post_idx < 2 %}
 				{% assign older_post_idx = older_post_idx | plus: 1 %}
 			{% else %}
 				{% assign older_post_idx = 0 %}
 			{% endif %}
 		{% endif %}
+			</div>
 	{% endfor %}
-				</td>
-			</tr>
-		</table>

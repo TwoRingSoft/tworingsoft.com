@@ -1,0 +1,159 @@
+/**************
+* definitions *
+**************/
+
+/* faces */
+
+$tr-fancy-font: 'Palatino', 'Garamond', serif;
+$tr-font: 'Verdana', 'Helvetica', 'Arial', sans-serif;
+$tr-monospace-font: 'Courier New', monospace;
+
+/* colors */
+
+$tr-light-grey: #cacaca;
+$tr-grey: #828282;
+$tr-dark-grey: #424242;
+$tr-black: #000;
+
+/* mobile text sizes */
+
+$tr-hero-mobile: 44pt;
+$tr-h1-mobile: 38pt;
+$tr-h2-mobile: 32pt;
+$tr-h3-mobile: 27pt;
+$tr-h4-mobile: 24pt;
+$tr-h5-mobile: 21pt;
+$tr-text-mobile: 15pt;
+
+/* desktop text sizes */
+
+$tr-hero-desktop: 40pt;
+$tr-h1-desktop: 34pt;
+$tr-h2-desktop: 28pt;
+$tr-h3-desktop: 23pt;
+$tr-h4-desktop: 20pt;
+$tr-h5-desktop: 17pt;
+$tr-text-desktop: 13pt;
+
+/****************
+* text elements *
+****************/
+
+.hero {
+	color: $tr-black;
+	font: 200 $tr-hero-mobile $tr-fancy-font;
+}
+h1 {
+	color: $tr-black; 
+	font: 200 $tr-h1-mobile $tr-fancy-font;
+}
+h2 {
+	color: $tr-black; 
+	font: 200 $tr-h2-mobile $tr-fancy-font;
+}
+h3 {
+	color: $tr-black; 
+	font: 100 $tr-h3-mobile $tr-fancy-font;
+}
+h4 {
+	color: $tr-black; 
+	font: 100 $tr-h4-mobile $tr-fancy-font;
+	font-style: italic;
+}
+h5 {
+	color: $tr-black; 
+	font: 100 $tr-h5-mobile $tr-fancy-font;
+	font-style: italic;
+}
+.text, ul {
+	color: $tr-black; 
+	font: lighter $tr-text-mobile $tr-font;
+}
+
+@media only screen and (min-width: 500px) {
+	.hero { font-size: $tr-hero-desktop; }
+	h1 { font-size: $tr-h1-desktop; }
+	h2 { font-size: $tr-h2-desktop; }
+	h3 { font-size: $tr-h3-desktop; }
+	h4 { font-size: $tr-h4-desktop; }
+	h5 { font-size: $tr-h5-desktop; }
+	.text, ul { font-size: $tr-text-desktop; }
+}
+
+/***************************
+* other top-level elements *
+***************************/
+
+a {
+	color: $tr-black;
+	text-decoration: underline;
+}
+
+/*
+* monospace and code snippets
+*/
+
+.highlighter-rouge {
+	color: #333;
+	font: heavier $tr-text-mobile $tr-monospace-font;
+	background-color: #eee;
+	padding: 0px 3px 0px 3px;
+}
+@media only screen and (min-width: 500px) {
+	.highlighter-rouge {
+		font: heavier $tr-text-desktop $tr-monospace-font;
+	}
+}
+
+/****************
+* inline quotes *
+****************/
+
+/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
+blockquote {
+	@extend .text;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    position: relative;
+    color: #383838;
+}
+
+blockquote:before {
+	font-family: serif;
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
+
+/*****************
+* other elements *
+*****************/
+
+.caption {
+	color: $tr-grey; 
+	font: italic 10pt $tr-font;
+}
+
+.footnote {
+	color: $tr-black; 
+	font: 100 10pt $tr-font;
+}

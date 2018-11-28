@@ -1,44 +1,88 @@
+@charset "UTF-8";
+/**************
+* definitions *
+**************/
+/* faces */
+/* colors */
+/* mobile text sizes */
+/* desktop text sizes */
+/****************
+* text elements *
+****************/
+.hero, .page-name, .latest-title {
+  color: #000;
+  font: 200 44pt "Palatino", "Garamond", serif; }
+
+h1, .section-heading {
+  color: #000;
+  font: 200 38pt "Palatino", "Garamond", serif; }
+
+h2, a {
+  color: #000;
+  font: 200 32pt "Palatino", "Garamond", serif; }
+
+h3, .previous-title {
+  color: #000;
+  font: 100 27pt "Palatino", "Garamond", serif; }
+
+h4 {
+  color: #000;
+  font: 100 24pt "Palatino", "Garamond", serif;
+  font-style: italic; }
+
+h5 {
+  color: #000;
+  font: 100 21pt "Palatino", "Garamond", serif;
+  font-style: italic; }
+
+.text, blockquote, #tag_cloud a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
+  color: #000;
+  font: lighter 15pt "Verdana", "Helvetica", "Arial", sans-serif; }
+
+@media only screen and (min-width: 500px) {
+  .hero, .page-name, .latest-title {
+    font-size: 40pt; }
+
+  h1, .section-heading {
+    font-size: 34pt; }
+
+  h2, a {
+    font-size: 28pt; }
+
+  h3, .previous-title {
+    font-size: 23pt; }
+
+  h4 {
+    font-size: 20pt; }
+
+  h5 {
+    font-size: 17pt; }
+
+  .text, blockquote, #tag_cloud a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
+    font-size: 13pt; } }
+/***************************
+* other top-level elements *
+***************************/
 a {
   color: #000;
   text-decoration: underline; }
 
-.hero, .page-name, .title {
-  color: #000;
-  font: 200 35pt "Palatino", "Garamond", serif; }
-
-h1 {
-  color: #000;
-  font: 300 28pt "Palatino", "Garamond", serif; }
-
-h2, a, .author {
-  color: #000;
-  font: 200 23pt "Palatino", "Garamond", serif; }
-
-h3, .date {
-  color: #000;
-  font: 100 18pt "Palatino", "Garamond", serif; }
-
-h4, .readtime {
-  color: #000;
-  font: 100 16pt "Palatino", "Garamond", serif;
-  font-style: italic; }
-
-.text, blockquote, .abstract, #tag_cloud a, ul {
-  color: #000;
-  font: lighter 18pt "Verdana", "Helvetica", "Arial", sans-serif; }
-
-/* 500 or above */
-@media only screen and (min-width: 500px) {
-  .text, blockquote, .abstract, #tag_cloud a, ul {
-    color: #000;
-    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; } }
+/*
+* monospace and code snippets
+*/
 .highlighter-rouge {
-  color: #700;
-  font: heavier 12pt "Courier New", monospace;
+  color: #333;
+  font: heavier 15pt "Courier New", monospace;
   background-color: #eee;
   padding: 0px 3px 0px 3px; }
 
-/* thanks to: https://stackoverflow.com/a/16326442/4789448 */
+@media only screen and (min-width: 500px) {
+  .highlighter-rouge {
+    font: heavier 13pt "Courier New", monospace; } }
+/****************
+* inline quotes *
+****************/
+/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
 blockquote {
   font-size: 18px;
   font-style: italic;
@@ -67,7 +111,10 @@ blockquote cite {
 blockquote cite:before {
   content: "\2014 \2009"; }
 
-/* end thanks to: https://stackoverflow.com/a/16326442/4789448 */
+/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
+/*****************
+* other elements *
+*****************/
 .caption {
   color: #828282;
   font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
@@ -102,5 +149,22 @@ blockquote cite:before {
     /* div containing everything after the header */
     margin: 0px;
     /* on small devices, remove all margins */ } }
+/**************
+* latest post *
+**************/
+.latest-abstract {
+  margin: 20px 20px 0px 20px; }
+
+.latest-readtime {
+  font-style: italic; }
+
+/*****************
+* previous posts * 
+*****************/
+.previous-title {
+  font-size: 80%; }
+
+.previous-abstract {
+  font-size: 80%; }
 
 /*# sourceMappingURL=blog.css.map */

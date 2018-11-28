@@ -5,25 +5,41 @@ a {
 }
 
 #tag_cloud a {
-	@extend .abstract;
+	@extend .text;
 }
 
-.title {
+.section-heading {
+	@extend h1;
+}
+
+/**************
+* latest post *
+**************/
+
+.latest-title {
 	@extend .hero;
 }
 
-.author {
-	@extend h2;
-}
-
-.date { 
-	@extend h3;
-}
-
-.readtime {
-	@extend h4;
-}
-
-.abstract {
+.latest-abstract {
 	@extend .text;
+	margin: 20px 20px 0px 20px;
+}
+
+.latest-readtime {
+	@extend .text;
+	font-style: italic;
+}
+
+/*****************
+* previous posts * 
+*****************/
+
+.previous-title {
+	@extend h3;
+	font-size: 80%;
+}
+
+.previous-abstract {
+	@extend .text;
+	font-size: 80%;
 }

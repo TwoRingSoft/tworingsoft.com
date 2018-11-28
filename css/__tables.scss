@@ -1,0 +1,19 @@
+.bordered-table, .bordered-table th, .bordered-table td {
+  border: 1px solid #999;
+}
+
+.bordered-table {
+  border-collapse: collapse;
+}
+
+.bordered-table th, .bordered-table td {
+  padding: 10px;
+}
+
+.alternating-table tr:nth-child(even) {
+   background: #CCC; 
+}
+
+.alternating-table tr:nth-child(odd) {
+   background: #FFF; 
+}
