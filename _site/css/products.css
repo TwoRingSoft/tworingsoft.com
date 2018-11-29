@@ -10,33 +10,33 @@
 ****************/
 .hero, .page-name {
   color: #000;
-  font: 200 44pt "Palatino", "Garamond", serif; }
+  font: 200 30pt "Palatino", "Garamond", serif; }
 
 h1, .list {
   color: #000;
-  font: 200 38pt "Palatino", "Garamond", serif; }
+  font: 200 27pt "Palatino", "Garamond", serif; }
 
 h2, .list-item span {
   color: #000;
-  font: 200 32pt "Palatino", "Garamond", serif; }
+  font: 200 24pt "Palatino", "Garamond", serif; }
 
 h3, .list-item a {
   color: #000;
-  font: 100 27pt "Palatino", "Garamond", serif; }
+  font: 100 21pt "Palatino", "Garamond", serif; }
 
 h4 {
   color: #000;
-  font: 100 24pt "Palatino", "Garamond", serif;
+  font: 100 18pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
 h5 {
   color: #000;
-  font: 100 21pt "Palatino", "Garamond", serif;
+  font: 100 15pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
 .text, .list-item p, ul {
   color: #000;
-  font: lighter 15pt "Verdana", "Helvetica", "Arial", sans-serif; }
+  font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
 @media only screen and (min-width: 500px) {
   .hero, .page-name {
@@ -71,7 +71,7 @@ a {
 */
 .highlighter-rouge {
   color: #333;
-  font: heavier 15pt "Courier New", monospace;
+  font: heavier 13pt "Courier New", monospace;
   background-color: #eee;
   padding: 0px 3px 0px 3px; }
 
