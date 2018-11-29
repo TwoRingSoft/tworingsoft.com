@@ -8,7 +8,7 @@ author-email: andrew@tworingsoft.com
 tags: swift ios objc patterns
 ---
 
-I recently rewrote [`FABOperation`](https://github.com/google-fabric/faboperation) in Swift for an app that uses [Pippin](https://github.com/tworingsoft/pippin). `FABOperation` was originally a class written by [Matt Massicotte](https://twitter.com/mattie), so all credit is due to him for the original, robust solution (explained later in the article). I picked it up and added the compound operation class (which, besides encapsulating arbitrary pipelines of operations, helps aggregate all their errors), some tests and a demo macOS app. After open-sourcing it while at Twitter/Fabric (which is now Google/Fabric), I spoke about it at [mDevCon 2016](https://vimeo.com/210042860) (some of that information now being out of date or incorrect).
+I recently rewrote [`FABOperation`](https://github.com/google-fabric/faboperation) in Swift for an app that uses [Pippin](https://github.com/tworingsoft/pippin). `FABOperation` was originally a class written by [Matt Massicotte](https://twitter.com/mattie), so credit is due to him for the original, robust solution (explained later in the article). I later picked it up and added the compound operation class, some tests and a demo macOS app. After open-sourcing it while at Twitter/Fabric, I spoke about it at [mDevCon 2016](https://vimeo.com/210042860).
 
 > All references here to Pippin's `AsyncOperation` also apply to `FABOperation`–I'll point out specific differences using the `FAB`-prefixed names.
 
