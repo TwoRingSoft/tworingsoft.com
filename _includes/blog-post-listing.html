@@ -7,23 +7,23 @@
 	{% for post in include.posts %}
 		{% if first_post %}
 			{% assign first_post = false %}
-			<table>
-				<tr>
-					<td width="75%">
-						<div class="latest-title">Latest: <a href="{{ post.url }}"><span class="latest-title">{{ post.title }}</span></a></div>
-						<div class="latest-abstract">{{ post.abstract }} <span class="latest-readtime">({{ post.content.size | readtime }} minute read)</span></div>
-					</td>
-					<td style="margin: 0px 20px 0px 0px; vertical-align: top;">
-						<div id="tag_cloud"><span class="section-heading">Tags:</span> {{ site | tag_cloud }}</div>
-					</td>
-				</tr>
-			</table>
+			
+			<header>
+				<latest>
+					<div class="latest-title">Latest: <a href="{{ post.url }}"><span class="latest-title">{{ post.title }}</span></a></div>
+					<div class="latest-abstract">{{ post.abstract }} <span class="latest-readtime">({{ post.content.size | readtime }} minute read)</span></div>
+				</latest>
+				<tags>
+					<span class="section-heading">Tags:</span> {{ site | tag_cloud }}
+				</tags>
+			</header>
+			
 			<br />
-			<br />
+			
 			<div class="section-heading">Previously:</div>
 			<div>
 		{% else %}
-			<div style="width: 200px; display: inline-block; margin: 20px 20px 0px 20px; vertical-align: top;">
+			<previous>
 				<a href="{{ post.url }}"><span class="previous-title">{{ post.title }}</span></a>
 				<div class="previous-abstract">{{ post.abstract }}</div>
 				
@@ -33,5 +33,6 @@
 				{% assign older_post_idx = 0 %}
 			{% endif %}
 		{% endif %}
-			</div>
+			</previous>
+			
 	{% endfor %}

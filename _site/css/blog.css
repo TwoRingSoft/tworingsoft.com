@@ -35,7 +35,7 @@ h5 {
   font: 100 21pt "Palatino", "Garamond", serif;
   font-style: italic; }
 
-.text, blockquote, #tag_cloud a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
+.text, blockquote, tags a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
   color: #000;
   font: lighter 15pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
@@ -58,7 +58,7 @@ h5 {
   h5 {
     font-size: 17pt; }
 
-  .text, blockquote, #tag_cloud a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
+  .text, blockquote, tags a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
     font-size: 13pt; } }
 /***************************
 * other top-level elements *
@@ -149,9 +149,60 @@ blockquote cite:before {
     /* div containing everything after the header */
     margin: 0px;
     /* on small devices, remove all margins */ } }
+/*
+ vvv thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
+*/
+/**********************************************
+* responsive layout for tags and latest post	*
+**********************************************/
+* {
+  box-sizing: border-box; }
+
+/* Container for flexboxes */
+header {
+  display: -webkit-flex;
+  display: flex;
+  vertical-align: top; }
+
+tags {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 20px;
+  vertical-align: top;
+  /* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+  padding-left: 20px;
+  text-indent: -20px;
+  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */ }
+
+latest {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3; }
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media only screen and (max-width: 500px) {
+  header {
+    -webkit-flex-direction: column;
+    flex-direction: column; } }
+/*
+ ^^^ thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
+*/
 /**************
 * latest post *
 **************/
+.latest-post {
+  float: left;
+  width: 70%; }
+
+.latest-post:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+@media only screen and (max-width: 500px) {
+  .latest-post {
+    width: 100%; } }
 .latest-abstract {
   margin: 20px 20px 0px 20px; }
 
@@ -166,5 +217,16 @@ blockquote cite:before {
 
 .previous-abstract {
   font-size: 80%; }
+
+previous {
+  width: 200px;
+  display: inline-block;
+  margin: 20px 20px 0px 20px;
+  vertical-align: top; }
+
+@media only screen and (max-width: 500px) {
+  previous {
+    width: 100%;
+    margin: 0px; } }
 
 /*# sourceMappingURL=blog.css.map */
