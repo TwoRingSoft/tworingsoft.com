@@ -1,1 +1,40 @@
 @import 'subpage';
+
+/****************
+* inline quotes *
+****************/
+
+/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
+blockquote {
+	@extend .text;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    position: relative;
+    color: #383838;
+}
+
+blockquote:before {
+	font-family: serif;
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */

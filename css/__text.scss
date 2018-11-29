@@ -24,6 +24,8 @@ $tr-h3-mobile: 27pt;
 $tr-h4-mobile: 24pt;
 $tr-h5-mobile: 21pt;
 $tr-text-mobile: 15pt;
+$tr-note-mobile: 13pt;
+$tr-note-font-mobile: 200 $tr-note-mobile $tr-font;
 
 /* desktop text sizes */
 
@@ -34,6 +36,8 @@ $tr-h3-desktop: 23pt;
 $tr-h4-desktop: 20pt;
 $tr-h5-desktop: 17pt;
 $tr-text-desktop: 13pt;
+$tr-note-desktop: 11pt;
+$tr-note-font-desktop: 200 $tr-note-desktop $tr-font;
 
 /****************
 * text elements *
@@ -112,45 +116,6 @@ a {
 		font: heavier $tr-text-desktop $tr-monospace-font;
 	}
 }
-
-/****************
-* inline quotes *
-****************/
-
-/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
-blockquote {
-	@extend .text;
-    font-size: 18px;
-    font-style: italic;
-    margin: 0.25em 0;
-    padding: 0.35em 40px;
-    position: relative;
-    color: #383838;
-}
-
-blockquote:before {
-	font-family: serif;
-    display: block;
-    padding-left: 10px;
-    content: "\201C";
-    font-size: 80px;
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    color: #7a7a7a;
-}
-
-blockquote cite {
-    color: #999999;
-    font-size: 14px;
-    display: block;
-    margin-top: 5px;
-}
-
-blockquote cite:before {
-    content: "\2014 \2009";
-}
-/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
 
 /*****************
 * other elements *

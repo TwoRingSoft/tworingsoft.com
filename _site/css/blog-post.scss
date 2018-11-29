@@ -47,3 +47,17 @@ p {
 	margin-bottom: -0.30em;
 	font-family: $tr-fancy-font;
 }
+
+blockquote p {
+  font: $tr-note-font-desktop;
+  font-style: italic;
+  padding: 10px 20px 10px 20px;
+  border-left: 5px grey solid;
+}
+@media only screen and (max-width: 500px) {
+  blockquote p {
+    font: $tr-note-font-mobile;
+    font-style: italic;
+    margin: 0px 10px 0px 10px;
+  } 
+}

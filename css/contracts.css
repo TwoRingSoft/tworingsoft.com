@@ -79,39 +79,6 @@ a {
 @media only screen and (min-width: 500px) {
   .highlighter-rouge {
     font: heavier 13pt "Courier New", monospace; } }
-/****************
-* inline quotes *
-****************/
-/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
-blockquote {
-  font-size: 18px;
-  font-style: italic;
-  margin: 0.25em 0;
-  padding: 0.35em 40px;
-  position: relative;
-  color: #383838; }
-
-blockquote:before {
-  font-family: serif;
-  display: block;
-  padding-left: 10px;
-  content: "\201C";
-  font-size: 80px;
-  position: absolute;
-  left: -20px;
-  top: -20px;
-  color: #7a7a7a; }
-
-blockquote cite {
-  color: #999999;
-  font-size: 14px;
-  display: block;
-  margin-top: 5px; }
-
-blockquote cite:before {
-  content: "\2014 \2009"; }
-
-/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
 /*****************
 * other elements *
 *****************/
@@ -158,5 +125,38 @@ blockquote cite:before {
     /* div containing everything after the header */
     margin: 0px;
     /* on small devices, remove all margins */ } }
+/****************
+* inline quotes *
+****************/
+/* ⬇️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
+blockquote {
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  position: relative;
+  color: #383838; }
+
+blockquote:before {
+  font-family: serif;
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a; }
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px; }
+
+blockquote cite:before {
+  content: "\2014 \2009"; }
+
+/* ⬆️ thanks to: https://stackoverflow.com/a/16326442/4789448 */
 
 /*# sourceMappingURL=contracts.css.map */
