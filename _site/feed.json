@@ -7,6 +7,116 @@
 	"items": [
 		
 			{
+				"title": "Developer CLI tool reference",
+				"summary": "A collection of command line tools I've used on *nix systems.",
+				"date_published": "2018-11-29T00:00:00-09:00",
+        "id": "http://tworingsoft.com/blog/2018/11/29/developer-cli-tool-reference.html",
+        "url": "http://tworingsoft.com/blog/2018/11/29/developer-cli-tool-reference.html",
+        "content_html": "<p>I’ve long kept a list of tools to help me brainstorm when I go off to spelunk through a given problem or system. As such, the tools are divided into a few broad categories.</p>
+
+<p>I figured it’d be helpful to publish it here–the goal is to have a living version of this document, so I’ll update it as needed from time to time. Feel free to <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2018-11-29-developer-cli-tool-reference.md">submit changes to add or improve something</a>!</p>
+
+<blockquote>
+  <p>Many of these have an enhanced version in <a href="https://www.gnu.org/software/coreutils/coreutils.html">gnu core utils</a> (<code class="highlighter-rouge">brew install coreutils</code>) prefixed with a <code class="highlighter-rouge">g</code>. If available, it allows for a consistent experience across different *nix systems, as some builtins have slightly different option sets and behavior between OSes, such as Linux versus macOS.</p>
+</blockquote>
+
+<h1 id="binary-executables">Binary executables</h1>
+
+<ul>
+  <li>otool</li>
+  <li>lipo</li>
+  <li>dwarfdump</li>
+  <li>nm</li>
+  <li>strings</li>
+  <li>dsymutil</li>
+  <li>objdump</li>
+  <li>uuencode/uudecode</li>
+  <li>patch</li>
+  <li>xxd</li>
+</ul>
+
+<h1 id="networking">Networking</h1>
+
+<ul>
+  <li>scutil</li>
+  <li>ifconfig</li>
+  <li>curl</li>
+  <li>ping</li>
+  <li>traceroute</li>
+  <li>netstat</li>
+  <li>nslookup</li>
+  <li>whois</li>
+  <li>hostname</li>
+  <li>tcpdump</li>
+  <li>ssh</li>
+  <li>ftp</li>
+  <li>scp</li>
+  <li>host</li>
+  <li>telnet (removed from macOS starting with High Sierra)</li>
+  <li>wget†</li>
+  <li>iwlist†</li>
+  <li>iwconfig†</li>
+  <li>ufw†</li>
+  <li>nc*: netcat</li>
+  <li>dsh*: distributed shell, multiple concurrent SSH sessions</li>
+  <li>awscli*: AWS CLI</li>
+  <li>scout2*: AWS security auditing</li>
+</ul>
+
+<h1 id="system">System</h1>
+
+<ul>
+  <li>ls</li>
+  <li>file</li>
+  <li>lsof</li>
+  <li>top</li>
+  <li>ps</li>
+  <li>finger</li>
+  <li>fswatch</li>
+  <li>stat/readlink</li>
+  <li>kill</li>
+  <li>killall</li>
+  <li>fuser</li>
+  <li>uname</li>
+  <li>whoami</li>
+  <li>pwd</li>
+  <li>env</li>
+  <li>screen</li>
+  <li>systemctl†</li>
+  <li>service†</li>
+  <li>tree*</li>
+  <li>tmux*: terminal multiplexer; terminal split-pane screen sessions</li>
+  <li>tmuxinator*: script and manage tmux sessions</li>
+</ul>
+
+<h1 id="stream-processing">Stream processing</h1>
+
+<ul>
+  <li>xargs</li>
+  <li>awk</li>
+  <li>cat</li>
+  <li>echo</li>
+  <li>sed</li>
+  <li>tail</li>
+  <li>head</li>
+  <li>less</li>
+  <li>more</li>
+  <li>cut</li>
+  <li>tee</li>
+  <li>grep</li>
+  <li>jq*: JSON manipulation</li>
+  <li>ag*: The Silver Searcher, a grep alternative</li>
+</ul>
+
+<div class="footnote">
+* 3rd party<br />
+† Linux only
+</div>
+",
+				
+			},
+		
+			{
 				"title": "Swift Async Operations at Your Command",
 				"summary": "Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.",
 				"date_published": "2018-11-19T00:00:00-09:00",
