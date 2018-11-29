@@ -5,12 +5,10 @@ a {
 }
 
 .section-heading {
-	@extend h1;
+	font: $h1-font-desktop;
 }
 
-/*
- vvv thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
-*/
+/* vvv thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox */
 
 /**********************************************
 * responsive layout for tags and latest post	*
@@ -31,13 +29,8 @@ tags {
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-	margin-top: 20px;
 	vertical-align: top;
-	
-	/* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
-	padding-left: 20px;
-	text-indent: -20px;
-	/* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+  @extend .hanging-indent;
 }
 
 tags a {
@@ -56,11 +49,12 @@ latest {
 		-webkit-flex-direction: column;
 		flex-direction: column;
 	}
+  tags {
+  	margin-top: 20px;
+  }
 }
 
-/*
- ^^^ thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
-*/
+/* ^^^ thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox */
 
 /**************
 * latest post *
@@ -84,6 +78,11 @@ latest {
 .latest-title {
 	@extend .hero;
 }
+@media only screen and (max-width: 500px) {
+	.latest-title {
+  	font: $h1-font-mobile;
+	}
+}
 
 .latest-abstract {
 	@extend .text;
@@ -99,25 +98,31 @@ latest {
 * previous posts * 
 *****************/
 
-.previous-title {
-	@extend h3;
-	font-size: 80%;
+.previous-section {
+  margin-top: 20px;
 }
 
 .previous-abstract {
 	@extend .text;
-	font-size: 80%;
 }
 
 previous {
-  width: 200px; 
-  display: inline-block; 
+  width: 200px;
+  display: inline-block;
   margin: 20px 20px 0px 20px; 
   vertical-align: top;
 }
+previous a {
+	@extend h3;
+}
 @media only screen and (max-width: 500px) {
 	previous {
+    text-indent: 0px;
 		width: 100%;
-    margin: 0px;
+  	margin: 20px 0px 0px 0px;
 	}
+  .previous-abstract {
+    margin: 0px 20px 0px 20px;
+    font: $tr-text-font-mobile;
+  }
 }

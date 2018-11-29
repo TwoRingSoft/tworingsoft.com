@@ -43,13 +43,19 @@ $tr-text-desktop: 13pt;
 	color: $tr-black;
 	font: 200 $tr-hero-mobile $tr-fancy-font;
 }
+
+$h1-font-desktop: 200 $tr-h1-desktop $tr-fancy-font;
+$h1-font-mobile: 200 $tr-h1-mobile $tr-fancy-font;
 h1 {
 	color: $tr-black; 
-	font: 200 $tr-h1-mobile $tr-fancy-font;
+	font: $h1-font-mobile;
 }
+
+$h2-font-desktop: 200 $tr-h2-desktop $tr-fancy-font;
+$h2-font-mobile: 200 $tr-h2-mobile $tr-fancy-font;
 h2 {
 	color: $tr-black; 
-	font: 200 $tr-h2-mobile $tr-fancy-font;
+	font: $h2-font-mobile;
 }
 h3 {
 	color: $tr-black; 
@@ -65,19 +71,21 @@ h5 {
 	font: 100 $tr-h5-mobile $tr-fancy-font;
 	font-style: italic;
 }
+$tr-text-font-mobile: lighter $tr-text-mobile $tr-font;
+$tr-text-font-desktop: lighter $tr-text-desktop $tr-font;
 .text, ul {
 	color: $tr-black; 
-	font: lighter $tr-text-mobile $tr-font;
+	font: $tr-text-font-mobile;
 }
 
 @media only screen and (min-width: 500px) {
 	.hero { font-size: $tr-hero-desktop; }
-	h1 { font-size: $tr-h1-desktop; }
-	h2 { font-size: $tr-h2-desktop; }
+	h1 { font: $h1-font-desktop; }
+	h2 { font: $h2-font-desktop; }
 	h3 { font-size: $tr-h3-desktop; }
 	h4 { font-size: $tr-h4-desktop; }
 	h5 { font-size: $tr-h5-desktop; }
-	.text, ul { font-size: $tr-text-desktop; }
+	.text, ul { font: $tr-text-font-desktop; }
 }
 
 /***************************
@@ -156,4 +164,15 @@ blockquote cite:before {
 .footnote {
 	color: $tr-black; 
 	font: 100 10pt $tr-font;
+}
+
+/*********
+* layout *
+*********/
+
+.hanging-indent {
+	/* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+	padding-left: 20px;
+	text-indent: -20px;
+	/* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
 }

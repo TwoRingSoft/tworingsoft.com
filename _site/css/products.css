@@ -44,10 +44,10 @@ h5 {
     font-size: 40pt; }
 
   h1, .list {
-    font-size: 34pt; }
+    font: 200 34pt "Palatino", "Garamond", serif; }
 
   h2, .list-item span {
-    font-size: 28pt; }
+    font: 200 28pt "Palatino", "Garamond", serif; }
 
   h3, .list-item a {
     font-size: 23pt; }
@@ -59,7 +59,7 @@ h5 {
     font-size: 17pt; }
 
   .text, blockquote, .list-item p, ul {
-    font-size: 13pt; } }
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; } }
 /***************************
 * other top-level elements *
 ***************************/
@@ -122,6 +122,15 @@ blockquote cite:before {
 .footnote {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
+
+/*********
+* layout *
+*********/
+.hanging-indent {
+  /* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+  padding-left: 20px;
+  text-indent: -20px;
+  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */ }
 
 .bordered-table, .bordered-table th, .bordered-table td {
   border: 1px solid #999; }

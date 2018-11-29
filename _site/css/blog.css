@@ -13,7 +13,7 @@
   color: #000;
   font: 200 44pt "Palatino", "Garamond", serif; }
 
-h1, .section-heading {
+h1 {
   color: #000;
   font: 200 38pt "Palatino", "Garamond", serif; }
 
@@ -21,7 +21,7 @@ h2, a {
   color: #000;
   font: 200 32pt "Palatino", "Garamond", serif; }
 
-h3, .previous-title {
+h3, previous a {
   color: #000;
   font: 100 27pt "Palatino", "Garamond", serif; }
 
@@ -43,13 +43,13 @@ h5 {
   .hero, .page-name, .latest-title {
     font-size: 40pt; }
 
-  h1, .section-heading {
-    font-size: 34pt; }
+  h1 {
+    font: 200 34pt "Palatino", "Garamond", serif; }
 
   h2, a {
-    font-size: 28pt; }
+    font: 200 28pt "Palatino", "Garamond", serif; }
 
-  h3, .previous-title {
+  h3, previous a {
     font-size: 23pt; }
 
   h4 {
@@ -59,7 +59,7 @@ h5 {
     font-size: 17pt; }
 
   .text, blockquote, tags a, .latest-abstract, .latest-readtime, .previous-abstract, ul {
-    font-size: 13pt; } }
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; } }
 /***************************
 * other top-level elements *
 ***************************/
@@ -123,6 +123,15 @@ blockquote cite:before {
   color: #000;
   font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
+/*********
+* layout *
+*********/
+.hanging-indent, tags {
+  /* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+  padding-left: 20px;
+  text-indent: -20px;
+  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */ }
+
 .bordered-table, .bordered-table th, .bordered-table td {
   border: 1px solid #999; }
 
@@ -149,9 +158,10 @@ blockquote cite:before {
     /* div containing everything after the header */
     margin: 0px;
     /* on small devices, remove all margins */ } }
-/*
- vvv thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
-*/
+.section-heading {
+  font: 200 34pt "Palatino", "Garamond", serif; }
+
+/* vvv thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox */
 /**********************************************
 * responsive layout for tags and latest post	*
 **********************************************/
@@ -168,12 +178,7 @@ tags {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-top: 20px;
-  vertical-align: top;
-  /* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
-  padding-left: 20px;
-  text-indent: -20px;
-  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */ }
+  vertical-align: top; }
 
 latest {
   -webkit-flex: 3;
@@ -184,10 +189,11 @@ latest {
 @media only screen and (max-width: 500px) {
   header {
     -webkit-flex-direction: column;
-    flex-direction: column; } }
-/*
- ^^^ thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox
-*/
+    flex-direction: column; }
+
+  tags {
+    margin-top: 20px; } }
+/* ^^^ thanks to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox */
 /**************
 * latest post *
 **************/
@@ -203,6 +209,9 @@ latest {
 @media only screen and (max-width: 500px) {
   .latest-post {
     width: 100%; } }
+@media only screen and (max-width: 500px) {
+  .latest-title {
+    font: 200 38pt "Palatino", "Garamond", serif; } }
 .latest-abstract {
   margin: 20px 20px 0px 20px; }
 
@@ -212,11 +221,8 @@ latest {
 /*****************
 * previous posts * 
 *****************/
-.previous-title {
-  font-size: 80%; }
-
-.previous-abstract {
-  font-size: 80%; }
+.previous-section {
+  margin-top: 20px; }
 
 previous {
   width: 200px;
@@ -226,7 +232,12 @@ previous {
 
 @media only screen and (max-width: 500px) {
   previous {
+    text-indent: 0px;
     width: 100%;
-    margin: 0px; } }
+    margin: 20px 0px 0px 0px; }
+
+  .previous-abstract {
+    margin: 0px 20px 0px 20px;
+    font: lighter 15pt "Verdana", "Helvetica", "Arial", sans-serif; } }
 
 /*# sourceMappingURL=blog.css.map */
