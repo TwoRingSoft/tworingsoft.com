@@ -7,6 +7,306 @@
 	"items": [
 		
 			{
+				"title": "Fun with Unicode in Swift",
+				"summary": "Looking at some ways to write tricky Swift code using Unicode.",
+				"date_published": "2018-12-10T00:00:00-09:00",
+        "id": "http://tworingsoft.com/blog/2018/12/10/fun-with-unicode-in-swift.html",
+        "url": "http://tworingsoft.com/blog/2018/12/10/fun-with-unicode-in-swift.html",
+        "content_html": "<p>I recently saw an <a href="https://blog.golang.org/go2-here-we-come">article suggesting that Go may get unicode identifiers in 2.0</a> (<a href="https://github.com/golang/go/issues/20706">original proposal/discussion on GitHub</a>). Now, I don’t use golang, but another language I do know and love already supports this. The news and discussion reminded me of some things I’ve read and thought about with regards to Swift, so I’m putting it all down here.</p>
+
+<h1 id="unicode-in-swift">Unicode in Swift</h1>
+
+<p>Swift can include Unicode in identifier names, like variables, functions or enum/protocol/value/class definitions (but importantly, not in operators). This gives developers the ability to write code that is internationalized, appears more mathematical or just looks like <a href="https://twitter.com/glitchr_">Glitchr_’s Twitter feed</a>. In the spirit of the exquisite <a href="https://github.com/armcknight/unmaintainable-code">how to write unmaintainable code</a>, let’s look at a few fun things that could be done to write unmaintainable Swift code!</p>
+
+<blockquote>
+  <p>I use the awesome <a href="https://github.com/tonsky/FiraCode">FiraCode</a> font face in Xcode (and everything else!), hence in all these screenshots. Unicode characters will render differently for different fonts. For many of these tricks, it’s obvious where the differences lie, but that may not be as true for all typefaces.</p>
+</blockquote>
+
+<h2 id="lookalikes">Lookalikes</h2>
+
+<p>Unicode has lots of alternative codepoints for the same character. Put them to work to help store more data, seemingly without the need to create more variables!</p>
+
+<p>You can replace combinations of letters with ligatured versions…</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-letter-combinations {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-letter-combinations { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-letter-combinations" src="/blog/img/unicode-swift-letter-combinations.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>…or hide operator-like glyphs to fake expressions.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-operators {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-operators { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-operators" src="/blog/img/unicode-swift-operators.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>When in Rome…</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-roman-numerals {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-roman-numerals { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-roman-numerals" src="/blog/img/unicode-swift-roman-numerals.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>…it’s all Greek to me!</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-greek-letters {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-greek-letters { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-greek-letters" src="/blog/img/unicode-swift-greek-letters.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>Full-width characters can fake a function…</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-full-width {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-full-width { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-full-width" src="/blog/img/unicode-swift-full-width.png" alt="Oh no he didn't use an empty catch block as an example!" />
+	
+	<br />
+	<br />
+	<span class="caption">Oh no he didn't use an empty catch block as an example!</span>
+</center>
+
+<p>…and you can always use the Socratic method!</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-greek-question-mark {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-greek-question-mark { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-greek-question-mark" src="/blog/img/unicode-swift-greek-question-mark.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<h2 id="noseeums">Noseeums</h2>
+
+<p>The original inspiration for this post was a zero width space in some text I copied from a JIRA ticket right to code. It took me a bit to figure out what’d happened, and with any luck, equally so for each your colleagues! That’s what we call network effect.</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-invisible-spaces {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-invisible-spaces { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-invisible-spaces" src="/blog/img/unicode-swift-invisible-spaces.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<h2 id="emoji">Emoji</h2>
+
+<p>They’re much slower to type, and many are nearly indistiguishable from one another, but <a href="https://ericasadun.com/2016/11/08/swift-by-emoji-a-considered-approach/">emoji use in Swift</a> sure is fun 🎉!</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-emoji {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-emoji { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-emoji" src="/blog/img/unicode-swift-emoji.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<h2 id="zalgo">Zalgo</h2>
+
+<p>The <code class="highlighter-rouge">mutating</code> keyword just doesn’t drive the point home enough. You need to make those functions strike fear into the hearts of those who would invoke such dangerous spells!</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-unicode-swift-zalgo {
+		
+				width: 50%;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-unicode-swift-zalgo { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-unicode-swift-zalgo" src="/blog/img/unicode-swift-zalgo.png" alt="" />
+	
+	<br />
+	<br />
+	<span class="caption"></span>
+</center>
+
+<h1 id="dark-ages-of-code-">Dark Ages of Code? 🌚</h1>
+
+<p>This is all fun and games, but what if we were to <a href="http://www.bbc.com/future/story/20151012-will-emoji-become-a-new-language">use Unicode in earnest</a> and then <a href="https://openspace.sfmoma.org/2018/07/the-absolute-denial-of-💩/">things change</a>, like <a href="https://blog.emojipedia.org/apple-and-the-gun-emoji/">Apple changing a deadly revolver to a harmless and fun watergun</a>? Given enough time, could entire code sectors and execution paths become unreadable, their <a href="https://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/">intent lost</a> along with the sensibilities of a previous programmer, design team, society, or civilization?</p>
+
+<h1 id="look-on-the-bright-side-">Look on the Bright Side! 🌞</h1>
+
+<p>I don’t think we’re at a point where we use enough Unicode in code to worry about any significant meaning to be lost in translation or redesigns. Nor do I think most of these tricks would get by a code review or go unnoticed using something as simple as syntax coloring. The most I’ve been harmed thus far is a 5 minute head-scratcher… I’m not too worried about the future 😎</p>
+
+<p>Toy with some head-scratchers of your own with the <a href="https://github.com/armcknight/swift-unicode-playground">Xcode Playground containing these Swift Unicode examples</a>, and if you figure out something interesting, submit a PR!</p>
+",
+				
+			},
+		
+			{
 				"title": "Developer CLI tool reference",
 				"summary": "A collection of command line tools I've used on *nix systems.",
 				"date_published": "2018-11-29T00:00:00-09:00",
@@ -251,7 +551,9 @@
 		@media only screen and (max-width: 500px) {
 			#reader-adaptable-image-standards { /* div containing everything after the header */
 				
-					width: 75%;
+					
+						width: 75%;
+					
 				
 			}	
 		}
@@ -277,7 +579,9 @@
 		@media only screen and (max-width: 500px) {
 			#reader-adaptable-image-automation { /* div containing everything after the header */
 				
-					width: 75%;
+					
+						width: 75%;
+					
 				
 			}	
 		}
@@ -1964,7 +2268,9 @@ retq
 		@media only screen and (max-width: 500px) {
 			#reader-adaptable-image-app-icon-for-different-app-build-distributions { /* div containing everything after the header */
 				
-					width: 75%;
+					
+						width: 75%;
+					
 				
 			}	
 		}
@@ -2303,7 +2609,9 @@ retq
 		@media only screen and (max-width: 500px) {
 			#reader-adaptable-image-build-setting-inheritance { /* div containing everything after the header */
 				
-					width: 75%;
+					
+						width: 75%;
+					
 				
 			}	
 		}

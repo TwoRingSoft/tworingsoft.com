@@ -10,6 +10,15 @@
 		<link>http://tworingsoft.com/blog/tag/swift.html</link>
 		
 			<item>
+				<title>Fun with Unicode in Swift</title>
+				<description>Looking at some ways to write tricky Swift code using Unicode.</description>
+				<pubDate>Mon, 10 Dec 2018 00:00:00 -0900</pubDate>
+				<link>http://tworingsoft.com/blog/2018/12/10/fun-with-unicode-in-swift.html</link>
+				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/12/10/fun-with-unicode-in-swift.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Swift Async Operations at Your Command</title>
 				<description>Rewriting an old asynchronous Operation (née NSOperation) subclass in Swift for Pippin, learning new things.</description>
 				<pubDate>Mon, 19 Nov 2018 00:00:00 -0900</pubDate>
