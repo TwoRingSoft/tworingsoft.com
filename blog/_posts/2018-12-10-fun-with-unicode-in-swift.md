@@ -69,6 +69,6 @@ This is all fun and games, but what if we were to [use Unicode in earnest](http:
 
 # Look on the Bright Side! 🌞
 
-I don't think we're at a point where we use enough Unicode in code to worry about any significant meaning to be lost in translation or redesigns. Nor do I think most of these tricks would get by a code review or go unnoticed using something as simple as syntax coloring. The most I've been harmed thus far is a 5 minute head-scratcher... I'm not too worried about the future 😎
+I don't think we're at a point where we use enough Unicode in code to worry about any significant meaning to be lost in translation or redesigns. Tricks like identifiers containing alternate semicolons, parens or curlies would probably stand out using something as simple as syntax coloring. The sneakier lookalikes can be caught using automation like [SwiftLint](https://github.com/realm/SwiftLint) or [Danger](https://danger.systems). The most I've been harmed thus far is a 5 minute head-scratcher... I'm not too worried about the future 😎
 
 Toy with some head-scratchers of your own with the [Xcode Playground containing these Swift Unicode examples](https://github.com/armcknight/swift-unicode-playground), and if you figure out something interesting, submit a PR!
