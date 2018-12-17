@@ -8,8 +8,7 @@ author-email: andrew@tworingsoft.com
 tags: swift
 ---
 
-
-I recently saw an [article suggesting that Go may get unicode identifiers in 2.0](https://blog.golang.org/go2-here-we-come) ([original proposal/discussion on GitHub](https://github.com/golang/go/issues/20706)). Now, I don't use golang, but another language I do know and love already supports this. The news and discussion reminded me of some things I've read and thought about with regards to Swift, so I'm putting it all down here.
+I recently saw an [article mentioning Unicode identifiers in Go](https://blog.golang.org/go2-here-we-come) ([discussion on GitHub](https://github.com/golang/go/issues/20706)). Now, I don't use golang, but another language I do know and love also supports Unicode identifiers.
 
 # Unicode in Swift
 
