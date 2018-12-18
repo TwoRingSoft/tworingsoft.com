@@ -2,7 +2,7 @@ collections:
 - devtools
 - apps
 - clients
-url: http://tworingsoft.com
+url: https://tworingsoft.com
 exclude: [ Rakefile , LICENSE, Gemfile, Gemfile.lock, README.md, .gitignore, vendor ]
 tag_page_layout: tag_page
 tag_page_dir: blog/tag
