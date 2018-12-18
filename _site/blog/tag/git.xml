@@ -13,8 +13,8 @@
 				<title>Source Control Management vs. Dependency Management</title>
 				<description>Which manager has more authority over your project?</description>
 				<pubDate>Wed, 12 Apr 2017 00:00:00 -0800</pubDate>
-				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
+				<link>https://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
 				
 			</item>
 		
@@ -22,8 +22,8 @@
 				<title>The Art of Source Control, Part 2: Clean Git History</title>
 				<description>Outlining some best practices concerning git history tidiness.</description>
 				<pubDate>Thu, 19 Jan 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</guid>
+				<link>https://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html</guid>
 				
 			</item>
 		
@@ -31,8 +31,8 @@
 				<title>The Art of Source Control, Part 1: Organizing Codebases</title>
 				<description>Outlining some best practices for organizing a codebase.</description>
 				<pubDate>Sat, 14 Jan 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</guid>
+				<link>https://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/01/14/art-of-source-control-part-1-organizing-codebases.html</guid>
 				
 			</item>
 		
@@ -40,8 +40,8 @@
 				<title>Going Back to the Future to test with git-rebase</title>
 				<description>Adventures in Git, using rebase to reorder history and automate some testing, too!</description>
 				<pubDate>Tue, 22 Nov 2016 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</guid>
+				<link>https://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2016/11/22/going-back-to-the-future-to-test-with-git-rebase.html</guid>
 				
 			</item>
 		

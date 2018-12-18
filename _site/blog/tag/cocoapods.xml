@@ -13,8 +13,8 @@
 				<title>Automatic Devpod Versioning and Deployment with Vrsnr</title>
 				<description>Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.</description>
 				<pubDate>Fri, 20 Apr 2018 00:00:00 -0800</pubDate>
-				<link>http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
+				<link>https://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
 				
 			</item>
 		
@@ -22,8 +22,8 @@
 				<title>CocoaPods and Custom Build Configurations</title>
 				<description>My long journey to set a devpod's SWIFT_OPTIMIZATION_LEVEL, from the podspec's pods_target_xcconfig, to Podfile's post_install and finally arriving at the succinct project.</description>
 				<pubDate>Thu, 15 Feb 2018 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</guid>
+				<link>https://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2018/02/15/cocoapods-custom-build-configurations.html</guid>
 				
 			</item>
 		
@@ -31,8 +31,8 @@
 				<title>Dependency Management Best Practices</title>
 				<description>In light of recent news about dependency manager breakages and vulnerabilities, highlighting some steps you can take to protect your dependencies and the projects for which you need them.</description>
 				<pubDate>Tue, 09 Jan 2018 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</guid>
+				<link>https://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html</guid>
 				
 			</item>
 		
@@ -40,8 +40,8 @@
 				<title>Source Control Management vs. Dependency Management</title>
 				<description>Which manager has more authority over your project?</description>
 				<pubDate>Wed, 12 Apr 2017 00:00:00 -0800</pubDate>
-				<link>http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
+				<link>https://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html</guid>
 				
 			</item>
 		

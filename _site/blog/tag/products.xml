@@ -13,8 +13,8 @@
 				<title>Automatic Devpod Versioning and Deployment with Vrsnr</title>
 				<description>Describing my process for semantically versioning the Pippin podspec, deploying it to CocoaPods trunk, and committing all the results to git history.</description>
 				<pubDate>Fri, 20 Apr 2018 00:00:00 -0800</pubDate>
-				<link>http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
+				<link>https://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2018/04/20/automatic-devpod-versioning-and-deployment-with-vrsnr.html</guid>
 				
 			</item>
 		
@@ -22,8 +22,8 @@
 				<title>Announcing Pippin Version 2</title>
 				<description>Highlighting some of the new features in the first major update to Pippin.</description>
 				<pubDate>Tue, 02 Jan 2018 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</guid>
+				<link>https://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2018/01/02/introducing-pippin-version-2.html</guid>
 				
 			</item>
 		
@@ -31,8 +31,8 @@
 				<title>Manage version numbers with this one line command</title>
 				<description>How I'm currently using Rake to automate a few common tasks I carry out to manage my iOS apps' version numbers.</description>
 				<pubDate>Sun, 17 Dec 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</guid>
+				<link>https://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/12/17/easy-versioning-with-vrsnr-and-rake.html</guid>
 				
 			</item>
 		
@@ -40,8 +40,8 @@
 				<title>Introducing Pippin</title>
 				<description>An update and first official version of my Swift app development framework.</description>
 				<pubDate>Wed, 29 Nov 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</guid>
+				<link>https://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/11/29/introducing-pippin.html</guid>
 				
 			</item>
 		
@@ -49,8 +49,8 @@
 				<title>Introducing Psst</title>
 				<description>A simple script to perform straigtforward template replacement of credentials in a codebase, to help avoid committing them.</description>
 				<pubDate>Mon, 27 Nov 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/11/27/introducing-psst.html</guid>
+				<link>https://tworingsoft.com/blog/2017/11/27/introducing-psst.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/11/27/introducing-psst.html</guid>
 				
 			</item>
 		
@@ -58,8 +58,8 @@
 				<title>Tracking Xcode Build Setting Changes with xcbs</title>
 				<description>Announcing a small CLI for persisting final Xcode project build settings in lockfiles.</description>
 				<pubDate>Sun, 19 Feb 2017 00:00:00 -0900</pubDate>
-				<link>http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
-				<guid isPermaLink="true">http://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
+				<link>https://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2017/02/19/tracking-xcode-build-setting-changes.html</guid>
 				
 			</item>
 		
