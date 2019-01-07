@@ -1,0 +1,22 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % meta</title>
+		<description>Two Ring Software's RSS Feed for updates on meta.</description>
+		<link>http://tworingsoft.com/blog/tag/meta.html</link>
+		
+			<item>
+				<title>New Year, New Task Management</title>
+				<description>Describing the setup I've put in place towards a New Year's resolution to manage my time a little better, both for the day-to-day and longer-running goals.</description>
+				<pubDate>Mon, 07 Jan 2019 00:00:00 -0900</pubDate>
+				<link>https://tworingsoft.com/blog/2019/01/07/new-year-new-task-management.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2019/01/07/new-year-new-task-management.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>

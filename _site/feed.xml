@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>New Year, New Task Management</title>
+				<description>Describing the setup I've put in place towards a New Year's resolution to manage my time a little better, both for the day-to-day and longer-running goals.</description>
+				<pubDate>Mon, 07 Jan 2019 00:00:00 -0900</pubDate>
+				<link>https://tworingsoft.com/blog/2019/01/07/new-year-new-task-management.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2019/01/07/new-year-new-task-management.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Fun with Unicode in Swift</title>
 				<description>Looking at some ways to write tricky Swift code using Unicode.</description>
 				<pubDate>Mon, 10 Dec 2018 00:00:00 -0900</pubDate>
