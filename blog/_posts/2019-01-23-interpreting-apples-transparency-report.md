@@ -10,11 +10,13 @@ tags: apple ethics legal data
 
 Earlier this month Apple released their [transparency report](https://www.apple.com/legal/transparency/) for January 1 to June 30 of 2018, detailing requests for various types of information from governments and private third parties. They publish the information in a nice web app presentation, PDFs and CSVs... perfect for some number crunching.
 
+> Update: removed a comment about Germany being an outlier in the 4th chart, Requested Device Amount Distribution; I wrote that comment about a different chart and swapped them out without removing the comment!. Also updated FastMath to 2.2.1, as I released a few fixes used while publishing, and a few wording improvements.
+
 # Crunching the Numbers
 
 I focused on requests targeting devices, financial identifiers and account info. There are other types of requests reported, but the formats of the CSVs are different, so I stuck to these for simplicity's sake. They're also the main ones used on Apple's website for detailed country reports. 
 
-For each request type, I'm interested in the number of requests received from each country, the amounts of items requested and the amount of requests honored by Apple. Apple reports those last two as ratios and percentages, respectively; I converted requested item ratios to absolute units to show how many devices or accounts are being sought, and while I use percentage of honored requests as a proxy for request quality, I also convert those to absolute units for side-by-side comparison in each chart showing amounts of requests.
+For each request type, I'm interested in the number of requests received from each country, the amounts of items requested and the amount of requests honored by Apple. Apple reports those last two as ratios and percentages, respectively. I converted requested item ratios to absolute units to show how many devices or accounts are being sought, and while I use percentage of honored requests as a proxy for request quality, I also convert those to absolute units for side-by-side comparison in each chart showing amounts of requests.
 
 I'm most interested in the number of items requested, as that is the true _impact_ on Apple's users–and the world's citizens. I see the number of requests–and hence the ratio of items per request–as the _efficiency_ of the requesting country. Finally, the percentage of fulfilled requests I use as a proxy for the _quality_ of the requests submitted.
 
@@ -34,13 +36,13 @@ Here's how the amount of devices those countries request has trended over time:
 
 {% include blog-post-image.html source="atr-2018h1/requested-devices-over-time.png" narrow="true" mobile_fullwidth="true" alt="Poland requested over half a million devices in H2 of 2014! I had to go back and double check the original reports just to make sure. And, they only submitted 30 requests that period." %}
 
-Whenever I have sets of numbers like this, I like to know the shape of the data. To me, this means the [histogram](https://en.wikipedia.org/wiki/Histogram) of the sample values' bucketed [z-scores](https://en.wikipedia.org/wiki/Standard_score), showing the [kurtosis](https://en.wikipedia.org/wiki/Kurtosis) of a population. At a glance, questions about even very large populations can be easily answered, helping inform strategies for further investigation: is it tightly grouped around the mean, uniformly random, or on a bell curve? Is there a long tail worth considering?
+To digest big datasets, I like to look at the [histogram](https://en.wikipedia.org/wiki/Histogram) of the sample values' [z-scores](https://en.wikipedia.org/wiki/Standard_score). This shows the [kurtosis](https://en.wikipedia.org/wiki/Kurtosis) of a population, the "shape" of the data. At a glance, questions about very large populations can be easily answered. Then you can strategize for next steps: is it tightly grouped around the mean, uniformly random, or on a bell curve? Is there a long tail worth considering?
 
-This is the distribution of _all_ countries' requested device amounts, not just the top 10 countries. That extreme outlier to the right is Germany; almost all other countries are less than one standard deviation from average:
+This is the distribution of _all_ countries' requested device amounts, not just the top 10 countries:
 
 {% include blog-post-image.html source="atr-2018h1/requested-device-amount-distribution.png" narrow="true" mobile_fullwidth="true" alt="Mean: ~3.3K devices; standard deviation: ~8.1K devices. Most of the request distributions look like this, meaning most of the countries behave similarly in terms of their requests, with some extreme outliers. Normalizing for other demographic information like GDP or population might change this picture significantly." %}
 
-Again for those top 10 countries by number of devices requested, let's look at the percentage of requests that Apple honored. The _amount_ of requests is shown earlier, in the second chart, but the _percentage_ better demonstrates of the quality of a country's requests. Because this is percentage of _requests_, and we don't know details about how many devices were in a given honored or rejected request, it's not possible to deduce how many _devices_ were ultimately uncovered from these numbers. Note that the Y axis starts at 75%, not 0%:
+Again for those top 10 countries by number of devices requested, let's look at the percentage of requests that Apple honored. The _amount_ of requests is shown earlier, in the second chart, but the _percentage_ better demonstrates the quality of a country's requests. Because this is percentage of _requests_, and we don't know details about how many devices were in a given honored or rejected request, it's not possible to deduce how many _devices_ were ultimately uncovered from these numbers. Note that the Y axis starts at 75%, not 0%:
 
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-device-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
@@ -68,15 +70,27 @@ Whew, you made it through the first section! I'll provide the same first several
 
 {% include blog-post-image.html source="atr-2018h1/requested-financial-ids-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">***</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/financial-id-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
+
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/requested-financial-ids-over-time.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">***</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/requested-financial-id-amount-distribution.png" narrow="true" mobile_fullwidth="true" alt="Mean: 817.2 financial IDs; standard deviation: 2447.7 financial IDs." %}
+
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-financial-id-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">***</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-financial-id-requests-over-time.png" narrow="true" mobile_fullwidth="true" %}
+
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/honored-financial-id-request-percentage-distribution.png" narrow="true" mobile_fullwidth="true" alt="Mean: 77.2%; standard deviation: 26.5%." %}
 
@@ -84,9 +98,15 @@ Whew, you made it through the first section! I'll provide the same first several
 
 {% include blog-post-image.html source="atr-2018h1/requested-accounts-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">*</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/account-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">*</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/requested-accounts-over-time.png" narrow="true" mobile_fullwidth="true" %}
+
+<center><font size="80pt">*</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/requested-account-amount-distribution.png" narrow="true" mobile_fullwidth="true" alt="923.7 accounts; standard deviation: 3786.6 accounts." %}
 
@@ -94,13 +114,17 @@ Whew, you made it through the first section! I'll provide the same first several
 
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-account-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">*</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-account-requests-over-time.png" narrow="true" mobile_fullwidth="true" %}
+
+<center><font size="80pt">*</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/honored-account-request-percentage-distribution.png" narrow="true" mobile_fullwidth="true" alt="Mean: 64.1%; standard deviation: 34.5%." %}
 
 # Colophon
 <a name="colophone" />
-To compile these numbers from the CSV, I used my [FastMath](https://github.com/tworingsoft/fastmath) and [Pippin](https://github.com/tworingsoft/pippin) Swift libraries, adding some new functions along the way (they're now at versions 2.2.0 and 12.1.0, respectively). The [code specific to working with Apple's CSVs](https://github.com/TwoRingSoft/blog-projects) lives in an Xcode test suite. (I discovered the excellent [cocoapods-playgrounds](https://github.com/asmallteapot/cocoapods-playgrounds) and used it to set up an Xcode Playground initially, but wound up moving to a test suite to get better IDE supports working on the code.)
+To compile these numbers from the CSV, I used my [FastMath](https://github.com/tworingsoft/fastmath) and [Pippin](https://github.com/tworingsoft/pippin) Swift libraries, adding some new functions along the way (they're now at versions 2.2.1 and 12.1.0, respectively). The [code specific to working with Apple's CSVs](https://github.com/TwoRingSoft/blog-projects) lives in an Xcode test suite. (I discovered the excellent [cocoapods-playgrounds](https://github.com/asmallteapot/cocoapods-playgrounds) and used it to set up an Xcode Playground initially, but wound up moving to a test suite to get better IDE supports working on the code.)
 
 I used Numbers.app to create the final charts from my program's output. I could not find a Swift drop-in graphing library that worked flawlessly for my needs; I evaluated [Charts](https://github.com/danielgindi/Charts), [SwiftCharts](https://github.com/i-schuetz/SwiftCharts) and [core-plot](https://github.com/core-plot/core-plot) (I also found [PNChart](https://github.com/kevinzhow/PNChart) after writing, which looks quite nice).
 

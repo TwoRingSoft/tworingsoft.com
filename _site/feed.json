@@ -14,11 +14,15 @@
         "url": "https://tworingsoft.com/blog/2019/01/23/interpreting-apples-transparency-report.html",
         "content_html": "<p>Earlier this month Apple released their <a href="https://www.apple.com/legal/transparency/">transparency report</a> for January 1 to June 30 of 2018, detailing requests for various types of information from governments and private third parties. They publish the information in a nice web app presentation, PDFs and CSVs… perfect for some number crunching.</p>
 
+<blockquote>
+  <p>Update: removed a comment about Germany being an outlier in the 4th chart, Requested Device Amount Distribution; I wrote that comment about a different chart and swapped them out without removing the comment!. Also updated FastMath to 2.2.1, as I released a few fixes used while publishing, and a few wording improvements.</p>
+</blockquote>
+
 <h1 id="crunching-the-numbers">Crunching the Numbers</h1>
 
 <p>I focused on requests targeting devices, financial identifiers and account info. There are other types of requests reported, but the formats of the CSVs are different, so I stuck to these for simplicity’s sake. They’re also the main ones used on Apple’s website for detailed country reports.</p>
 
-<p>For each request type, I’m interested in the number of requests received from each country, the amounts of items requested and the amount of requests honored by Apple. Apple reports those last two as ratios and percentages, respectively; I converted requested item ratios to absolute units to show how many devices or accounts are being sought, and while I use percentage of honored requests as a proxy for request quality, I also convert those to absolute units for side-by-side comparison in each chart showing amounts of requests.</p>
+<p>For each request type, I’m interested in the number of requests received from each country, the amounts of items requested and the amount of requests honored by Apple. Apple reports those last two as ratios and percentages, respectively. I converted requested item ratios to absolute units to show how many devices or accounts are being sought, and while I use percentage of honored requests as a proxy for request quality, I also convert those to absolute units for side-by-side comparison in each chart showing amounts of requests.</p>
 
 <p>I’m most interested in the number of items requested, as that is the true <em>impact</em> on Apple’s users–and the world’s citizens. I see the number of requests–and hence the ratio of items per request–as the <em>efficiency</em> of the requesting country. Finally, the percentage of fulfilled requests I use as a proxy for the <em>quality</em> of the requests submitted.</p>
 
@@ -112,9 +116,9 @@
 	<span class="caption">Poland requested over half a million devices in H2 of 2014! I had to go back and double check the original reports just to make sure. And, they only submitted 30 requests that period.</span>
 </center>
 
-<p>Whenever I have sets of numbers like this, I like to know the shape of the data. To me, this means the <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a> of the sample values’ bucketed <a href="https://en.wikipedia.org/wiki/Standard_score">z-scores</a>, showing the <a href="https://en.wikipedia.org/wiki/Kurtosis">kurtosis</a> of a population. At a glance, questions about even very large populations can be easily answered, helping inform strategies for further investigation: is it tightly grouped around the mean, uniformly random, or on a bell curve? Is there a long tail worth considering?</p>
+<p>To digest big datasets, I like to look at the <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a> of the sample values’ <a href="https://en.wikipedia.org/wiki/Standard_score">z-scores</a>. This shows the <a href="https://en.wikipedia.org/wiki/Kurtosis">kurtosis</a> of a population, the “shape” of the data. At a glance, questions about very large populations can be easily answered. Then you can strategize for next steps: is it tightly grouped around the mean, uniformly random, or on a bell curve? Is there a long tail worth considering?</p>
 
-<p>This is the distribution of <em>all</em> countries’ requested device amounts, not just the top 10 countries. That extreme outlier to the right is Germany; almost all other countries are less than one standard deviation from average:</p>
+<p>This is the distribution of <em>all</em> countries’ requested device amounts, not just the top 10 countries:</p>
 
 <center>
 	<style scoped="">
@@ -142,7 +146,7 @@
 	<span class="caption">Mean: ~3.3K devices; standard deviation: ~8.1K devices. Most of the request distributions look like this, meaning most of the countries behave similarly in terms of their requests, with some extreme outliers. Normalizing for other demographic information like GDP or population might change this picture significantly.</span>
 </center>
 
-<p>Again for those top 10 countries by number of devices requested, let’s look at the percentage of requests that Apple honored. The <em>amount</em> of requests is shown earlier, in the second chart, but the <em>percentage</em> better demonstrates of the quality of a country’s requests. Because this is percentage of <em>requests</em>, and we don’t know details about how many devices were in a given honored or rejected request, it’s not possible to deduce how many <em>devices</em> were ultimately uncovered from these numbers. Note that the Y axis starts at 75%, not 0%:</p>
+<p>Again for those top 10 countries by number of devices requested, let’s look at the percentage of requests that Apple honored. The <em>amount</em> of requests is shown earlier, in the second chart, but the <em>percentage</em> better demonstrates the quality of a country’s requests. Because this is percentage of <em>requests</em>, and we don’t know details about how many devices were in a given honored or rejected request, it’s not possible to deduce how many <em>devices</em> were ultimately uncovered from these numbers. Note that the Y axis starts at 75%, not 0%:</p>
 
 <center>
 	<style scoped="">
@@ -338,6 +342,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">***</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -363,6 +369,8 @@
 	<br />
 	<span class="caption"></span>
 </center>
+
+<center><font size="80pt">***</font></center>
 
 <center>
 	<style scoped="">
@@ -390,6 +398,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">***</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -415,6 +425,8 @@
 	<br />
 	<span class="caption">Mean: 817.2 financial IDs; standard deviation: 2447.7 financial IDs.</span>
 </center>
+
+<center><font size="80pt">***</font></center>
 
 <center>
 	<style scoped="">
@@ -442,6 +454,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">***</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -467,6 +481,8 @@
 	<br />
 	<span class="caption"></span>
 </center>
+
+<center><font size="80pt">***</font></center>
 
 <center>
 	<style scoped="">
@@ -522,6 +538,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">*</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -548,6 +566,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">*</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -573,6 +593,8 @@
 	<br />
 	<span class="caption"></span>
 </center>
+
+<center><font size="80pt">*</font></center>
 
 <center>
 	<style scoped="">
@@ -630,6 +652,8 @@
 	<span class="caption"></span>
 </center>
 
+<center><font size="80pt">*</font></center>
+
 <center>
 	<style scoped="">
 		
@@ -655,6 +679,8 @@
 	<br />
 	<span class="caption"></span>
 </center>
+
+<center><font size="80pt">*</font></center>
 
 <center>
 	<style scoped="">
@@ -684,7 +710,7 @@
 
 <h1 id="colophon">Colophon</h1>
 <p><a name="colophone"></a>
-To compile these numbers from the CSV, I used my <a href="https://github.com/tworingsoft/fastmath">FastMath</a> and <a href="https://github.com/tworingsoft/pippin">Pippin</a> Swift libraries, adding some new functions along the way (they’re now at versions 2.2.0 and 12.1.0, respectively). The <a href="https://github.com/TwoRingSoft/blog-projects">code specific to working with Apple’s CSVs</a> lives in an Xcode test suite. (I discovered the excellent <a href="https://github.com/asmallteapot/cocoapods-playgrounds">cocoapods-playgrounds</a> and used it to set up an Xcode Playground initially, but wound up moving to a test suite to get better IDE supports working on the code.)</p>
+To compile these numbers from the CSV, I used my <a href="https://github.com/tworingsoft/fastmath">FastMath</a> and <a href="https://github.com/tworingsoft/pippin">Pippin</a> Swift libraries, adding some new functions along the way (they’re now at versions 2.2.1 and 12.1.0, respectively). The <a href="https://github.com/TwoRingSoft/blog-projects">code specific to working with Apple’s CSVs</a> lives in an Xcode test suite. (I discovered the excellent <a href="https://github.com/asmallteapot/cocoapods-playgrounds">cocoapods-playgrounds</a> and used it to set up an Xcode Playground initially, but wound up moving to a test suite to get better IDE supports working on the code.)</p>
 
 <p>I used Numbers.app to create the final charts from my program’s output. I could not find a Swift drop-in graphing library that worked flawlessly for my needs; I evaluated <a href="https://github.com/danielgindi/Charts">Charts</a>, <a href="https://github.com/i-schuetz/SwiftCharts">SwiftCharts</a> and <a href="https://github.com/core-plot/core-plot">core-plot</a> (I also found <a href="https://github.com/kevinzhow/PNChart">PNChart</a> after writing, which looks quite nice).</p>
 
