@@ -7,6 +7,697 @@
 	"items": [
 		
 			{
+				"title": "Interpreting Apple's Transparency Report",
+				"summary": "Apple recently released their transparency report for government and private party information requests for January through June of 2018, in an updated format including broken out CSVs.",
+				"date_published": "2019-01-23T00:00:00-09:00",
+        "id": "https://tworingsoft.com/blog/2019/01/23/interpreting-apples-transparency-report.html",
+        "url": "https://tworingsoft.com/blog/2019/01/23/interpreting-apples-transparency-report.html",
+        "content_html": "<p>Earlier this month Apple released their <a href="https://www.apple.com/legal/transparency/">transparency report</a> for January 1 to June 30 of 2018, detailing requests for various types of information from governments and private third parties. They publish the information in a nice web app presentation, PDFs and CSVs… perfect for some number crunching.</p>
+
+<h1 id="crunching-the-numbers">Crunching the Numbers</h1>
+
+<p>I focused on requests targeting devices, financial identifiers and account info. There are other types of requests reported, but the formats of the CSVs are different, so I stuck to these for simplicity’s sake. They’re also the main ones used on Apple’s website for detailed country reports.</p>
+
+<p>For each request type, I’m interested in the number of requests received from each country, the amounts of items requested and the amount of requests honored by Apple. Apple reports those last two as ratios and percentages, respectively; I converted requested item ratios to absolute units to show how many devices or accounts are being sought, and while I use percentage of honored requests as a proxy for request quality, I also convert those to absolute units for side-by-side comparison in each chart showing amounts of requests.</p>
+
+<p>I’m most interested in the number of items requested, as that is the true <em>impact</em> on Apple’s users–and the world’s citizens. I see the number of requests–and hence the ratio of items per request–as the <em>efficiency</em> of the requesting country. Finally, the percentage of fulfilled requests I use as a proxy for the <em>quality</em> of the requests submitted.</p>
+
+<h2 id="device-requests">Device Requests</h2>
+
+<p>Here are the top 10 countries, by number of devices across all requests:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-devices-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-devices-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-devices-top-10" src="/blog/img/atr-2018h1/requested-devices-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>For the same 10 countries, here’s the breakdown of the amount of requests made, along with the amount of requests that Apple honored:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-device-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-device-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-device-requests-top-10" src="/blog/img/atr-2018h1/device-requests-top-10.png" alt="Poland and South Korea submitted a very small amount of device requests, each with a large batch of target devices. Very efficient!" />
+	
+	<br />
+	<span class="caption">Poland and South Korea submitted a very small amount of device requests, each with a large batch of target devices. Very efficient!</span>
+</center>
+
+<blockquote>
+  <p>The number of requests includes updates or resubmissions of earlier requests either rejected or withdrawn. Only a subset of the difference between the number of requests submitted and those honored by Apple may represent some set of devices that were never disclosed.</p>
+</blockquote>
+
+<p>Here’s how the amount of devices those countries request has trended over time:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-devices-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-devices-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-devices-over-time" src="/blog/img/atr-2018h1/requested-devices-over-time.png" alt="Poland requested over half a million devices in H2 of 2014! I had to go back and double check the original reports just to make sure. And, they only submitted 30 requests that period." />
+	
+	<br />
+	<span class="caption">Poland requested over half a million devices in H2 of 2014! I had to go back and double check the original reports just to make sure. And, they only submitted 30 requests that period.</span>
+</center>
+
+<p>Whenever I have sets of numbers like this, I like to know the shape of the data. To me, this means the <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a> of the sample values’ bucketed <a href="https://en.wikipedia.org/wiki/Standard_score">z-scores</a>, showing the <a href="https://en.wikipedia.org/wiki/Kurtosis">kurtosis</a> of a population. At a glance, questions about even very large populations can be easily answered, helping inform strategies for further investigation: is it tightly grouped around the mean, uniformly random, or on a bell curve? Is there a long tail worth considering?</p>
+
+<p>This is the distribution of <em>all</em> countries’ requested device amounts, not just the top 10 countries. That extreme outlier to the right is Germany; almost all other countries are less than one standard deviation from average:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-device-amount-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-device-amount-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-device-amount-distribution" src="/blog/img/atr-2018h1/requested-device-amount-distribution.png" alt="Mean: ~3.3K devices; standard deviation: ~8.1K devices. Most of the request distributions look like this, meaning most of the countries behave similarly in terms of their requests, with some extreme outliers. Normalizing for other demographic information like GDP or population might change this picture significantly." />
+	
+	<br />
+	<span class="caption">Mean: ~3.3K devices; standard deviation: ~8.1K devices. Most of the request distributions look like this, meaning most of the countries behave similarly in terms of their requests, with some extreme outliers. Normalizing for other demographic information like GDP or population might change this picture significantly.</span>
+</center>
+
+<p>Again for those top 10 countries by number of devices requested, let’s look at the percentage of requests that Apple honored. The <em>amount</em> of requests is shown earlier, in the second chart, but the <em>percentage</em> better demonstrates of the quality of a country’s requests. Because this is percentage of <em>requests</em>, and we don’t know details about how many devices were in a given honored or rejected request, it’s not possible to deduce how many <em>devices</em> were ultimately uncovered from these numbers. Note that the Y axis starts at 75%, not 0%:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-device-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-device-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-device-requests-top-10" src="/blog/img/atr-2018h1/percentage-honored-device-requests-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>Here’s how the quality of those countries’ requests have trended over time:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-device-requests-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-device-requests-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-device-requests-over-time" src="/blog/img/atr-2018h1/percentage-honored-device-requests-over-time.png" alt="The countries generating the majority of the device requests are tending towards higher quality." />
+	
+	<br />
+	<span class="caption">The countries generating the majority of the device requests are tending towards higher quality.</span>
+</center>
+
+<p>Finally, here’s how all the countries break down in terms of request quality:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-honored-device-request-percentage-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-honored-device-request-percentage-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-honored-device-request-percentage-distribution" src="/blog/img/atr-2018h1/honored-device-request-percentage-distribution.png" alt="Mean: 72.8%; standard deviation: 20%." />
+	
+	<br />
+	<span class="caption">Mean: 72.8%; standard deviation: 20%.</span>
+</center>
+
+<p>I got curious about the outliers on that chart: the two countries at -3 standard deviations are Serbia (who requested 1 device in their only request, which was denied) and Mexico (3 devices in 2 requests, both denied). OK, those are pretty non-impactful numbers… let’s look at the lowest acceptance rates of device requests:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-device-requests-bottom-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-device-requests-bottom-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-device-requests-bottom-10" src="/blog/img/atr-2018h1/percentage-honored-device-requests-bottom-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>And to get an idea of the impact and efficiency of these countries:</p>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-devices-bottom-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-devices-bottom-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-devices-bottom-10" src="/blog/img/atr-2018h1/requested-devices-bottom-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-device-requests-bottom-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-device-requests-bottom-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-device-requests-bottom-10" src="/blog/img/atr-2018h1/device-requests-bottom-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<p>Whew, you made it through the first section! I’ll provide the same first several charts for the other types of requests considered–financial IDs and accounts–with no more commentary. If you’d prefer, you may <a href="#colophon">skip to the end, where I talk about how I crunched the numbers</a>.</p>
+
+<h2 id="financial-identifier-requests">Financial Identifier Requests</h2>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-financial-ids-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-financial-ids-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-financial-ids-top-10" src="/blog/img/atr-2018h1/requested-financial-ids-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-financial-id-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-financial-id-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-financial-id-requests-top-10" src="/blog/img/atr-2018h1/financial-id-requests-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-financial-ids-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-financial-ids-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-financial-ids-over-time" src="/blog/img/atr-2018h1/requested-financial-ids-over-time.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-financial-id-amount-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-financial-id-amount-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-financial-id-amount-distribution" src="/blog/img/atr-2018h1/requested-financial-id-amount-distribution.png" alt="Mean: 817.2 financial IDs; standard deviation: 2447.7 financial IDs." />
+	
+	<br />
+	<span class="caption">Mean: 817.2 financial IDs; standard deviation: 2447.7 financial IDs.</span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-financial-id-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-financial-id-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-financial-id-requests-top-10" src="/blog/img/atr-2018h1/percentage-honored-financial-id-requests-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-financial-id-requests-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-financial-id-requests-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-financial-id-requests-over-time" src="/blog/img/atr-2018h1/percentage-honored-financial-id-requests-over-time.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-honored-financial-id-request-percentage-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-honored-financial-id-request-percentage-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-honored-financial-id-request-percentage-distribution" src="/blog/img/atr-2018h1/honored-financial-id-request-percentage-distribution.png" alt="Mean: 77.2%; standard deviation: 26.5%." />
+	
+	<br />
+	<span class="caption">Mean: 77.2%; standard deviation: 26.5%.</span>
+</center>
+
+<h2 id="account-requests">Account Requests</h2>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-accounts-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-accounts-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-accounts-top-10" src="/blog/img/atr-2018h1/requested-accounts-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-account-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-account-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-account-requests-top-10" src="/blog/img/atr-2018h1/account-requests-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-accounts-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-accounts-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-accounts-over-time" src="/blog/img/atr-2018h1/requested-accounts-over-time.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-requested-account-amount-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-requested-account-amount-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-requested-account-amount-distribution" src="/blog/img/atr-2018h1/requested-account-amount-distribution.png" alt="923.7 accounts; standard deviation: 3786.6 accounts." />
+	
+	<br />
+	<span class="caption">923.7 accounts; standard deviation: 3786.6 accounts.</span>
+</center>
+
+<blockquote>
+  <p>Need a break from the charts? How about this interesting TIL I found while writing this post: <a href="https://en.wikipedia.org/wiki/68–95–99.7_rule">the 68-95-99.7 rule (aka empirical rule)</a>, a mnemonic to remember the percentages of a normally distributed population within 1, 2 and 3 standard deviations from the mean, respectively.</p>
+</blockquote>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-account-requests-top-10 {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-account-requests-top-10 { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-account-requests-top-10" src="/blog/img/atr-2018h1/percentage-honored-account-requests-top-10.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-percentage-honored-account-requests-over-time {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-percentage-honored-account-requests-over-time { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-percentage-honored-account-requests-over-time" src="/blog/img/atr-2018h1/percentage-honored-account-requests-over-time.png" alt="" />
+	
+	<br />
+	<span class="caption"></span>
+</center>
+
+<center>
+	<style scoped="">
+		
+		#reader-adaptable-image-honored-account-request-percentage-distribution {
+		
+				width: 600px;
+		
+		}
+		@media only screen and (max-width: 500px) {
+			#reader-adaptable-image-honored-account-request-percentage-distribution { /* div containing everything after the header */
+				
+					
+						width: 105%;
+						margin-left: -10px;
+					
+				
+			}	
+		}
+	</style>
+	
+	<img id="reader-adaptable-image-honored-account-request-percentage-distribution" src="/blog/img/atr-2018h1/honored-account-request-percentage-distribution.png" alt="Mean: 64.1%; standard deviation: 34.5%." />
+	
+	<br />
+	<span class="caption">Mean: 64.1%; standard deviation: 34.5%.</span>
+</center>
+
+<h1 id="colophon">Colophon</h1>
+<p><a name="colophone"></a>
+To compile these numbers from the CSV, I used my <a href="https://github.com/tworingsoft/fastmath">FastMath</a> and <a href="https://github.com/tworingsoft/pippin">Pippin</a> Swift libraries, adding some new functions along the way (they’re now at versions 2.2.0 and 12.1.0, respectively). The <a href="https://github.com/TwoRingSoft/blog-projects">code specific to working with Apple’s CSVs</a> lives in an Xcode test suite. (I discovered the excellent <a href="https://github.com/asmallteapot/cocoapods-playgrounds">cocoapods-playgrounds</a> and used it to set up an Xcode Playground initially, but wound up moving to a test suite to get better IDE supports working on the code.)</p>
+
+<p>I used Numbers.app to create the final charts from my program’s output. I could not find a Swift drop-in graphing library that worked flawlessly for my needs; I evaluated <a href="https://github.com/danielgindi/Charts">Charts</a>, <a href="https://github.com/i-schuetz/SwiftCharts">SwiftCharts</a> and <a href="https://github.com/core-plot/core-plot">core-plot</a> (I also found <a href="https://github.com/kevinzhow/PNChart">PNChart</a> after writing, which looks quite nice).</p>
+
+<h1 id="coming-up-next">Coming Up Next</h1>
+
+<p>As part of researching for this post, I discovered a few new ways to visualize data I’d like to try, including <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> of <a href="https://en.wikipedia.org/wiki/Five-number_summary">5 number summaries</a> of various distributions, even plotted over time. I’d like to move it from an Xcode unit test suite to a command line application, linking FastMath and Pippin statically instead of the venerated <code class="highlighter-rouge">use_frameworks!</code> in my Podfile. It’d be nice to have a [web] app that dynamically renders all these charts, so I don’t have to use Pages.app any more! And finally, I’d like to see how these data correspond to others, like countries’ device sales, GDP, population, law enforcement and/or defense spending, or incarceration rate.</p>
+
+<p>Perhaps now that the groundwork is laid, I’ll get to some of that for the next Transparency report around June 😎</p>
+",
+				
+			},
+		
+			{
 				"title": "New Year, New Task Management",
 				"summary": "Describing the setup I've put in place towards a New Year's resolution to manage my time a little better, both for the day-to-day and longer-running goals.",
 				"date_published": "2019-01-07T00:00:00-09:00",
@@ -51,7 +742,7 @@
 		
 		#reader-adaptable-image-ipad-splitscreen-reminders-calendar-50-50 {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -69,7 +760,6 @@
 	<img id="reader-adaptable-image-ipad-splitscreen-reminders-calendar-50-50" src="/blog/img/ipad-splitscreen-reminders-calendar-50-50.png" alt="A setup I plan to use a lot: iPad split-screen multitasking with Reminders and Calendar showing two views of the same plan. Floating Safari or Trello over top forms a trifecta of task managemnt." />
 	
 	<br />
-	<br />
 	<span class="caption">A setup I plan to use a lot: iPad split-screen multitasking with Reminders and Calendar showing two views of the same plan. Floating Safari or Trello over top forms a trifecta of task managemnt.</span>
 </center>
 <center>
@@ -77,7 +767,7 @@
 		
 		#reader-adaptable-image-ipad-splitscreen-reminders-calendar-30-70 {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -94,7 +784,6 @@
 	
 	<img id="reader-adaptable-image-ipad-splitscreen-reminders-calendar-30-70" src="/blog/img/ipad-splitscreen-reminders-calendar-30-70.png" alt="Giving Calendar a little room to breath opens up options to view weekly, monthly and yearly views." />
 	
-	<br />
 	<br />
 	<span class="caption">Giving Calendar a little room to breath opens up options to view weekly, monthly and yearly views.</span>
 </center>
@@ -135,7 +824,7 @@
 		
 		#reader-adaptable-image-unicode-swift-letter-combinations {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -153,7 +842,6 @@
 	<img id="reader-adaptable-image-unicode-swift-letter-combinations" src="/blog/img/unicode-swift-letter-combinations.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -164,7 +852,7 @@
 		
 		#reader-adaptable-image-unicode-swift-operators {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -182,7 +870,6 @@
 	<img id="reader-adaptable-image-unicode-swift-operators" src="/blog/img/unicode-swift-operators.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -193,7 +880,7 @@
 		
 		#reader-adaptable-image-unicode-swift-roman-numerals {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -211,7 +898,6 @@
 	<img id="reader-adaptable-image-unicode-swift-roman-numerals" src="/blog/img/unicode-swift-roman-numerals.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -222,7 +908,7 @@
 		
 		#reader-adaptable-image-unicode-swift-greek-letters {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -240,7 +926,6 @@
 	<img id="reader-adaptable-image-unicode-swift-greek-letters" src="/blog/img/unicode-swift-greek-letters.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -251,7 +936,7 @@
 		
 		#reader-adaptable-image-unicode-swift-full-width {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -269,7 +954,6 @@
 	<img id="reader-adaptable-image-unicode-swift-full-width" src="/blog/img/unicode-swift-full-width.png" alt="Oh no he didn't use an empty catch block as an example!" />
 	
 	<br />
-	<br />
 	<span class="caption">Oh no he didn't use an empty catch block as an example!</span>
 </center>
 
@@ -280,7 +964,7 @@
 		
 		#reader-adaptable-image-unicode-swift-greek-question-mark {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -298,7 +982,6 @@
 	<img id="reader-adaptable-image-unicode-swift-greek-question-mark" src="/blog/img/unicode-swift-greek-question-mark.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -311,7 +994,7 @@
 		
 		#reader-adaptable-image-unicode-swift-invisible-spaces {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -329,7 +1012,6 @@
 	<img id="reader-adaptable-image-unicode-swift-invisible-spaces" src="/blog/img/unicode-swift-invisible-spaces.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -342,7 +1024,7 @@
 		
 		#reader-adaptable-image-unicode-swift-emoji {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -360,7 +1042,6 @@
 	<img id="reader-adaptable-image-unicode-swift-emoji" src="/blog/img/unicode-swift-emoji.png" alt="" />
 	
 	<br />
-	<br />
 	<span class="caption"></span>
 </center>
 
@@ -373,7 +1054,7 @@
 		
 		#reader-adaptable-image-unicode-swift-zalgo {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -390,7 +1071,6 @@
 	
 	<img id="reader-adaptable-image-unicode-swift-zalgo" src="/blog/img/unicode-swift-zalgo.png" alt="" />
 	
-	<br />
 	<br />
 	<span class="caption"></span>
 </center>
@@ -476,6 +1156,7 @@
   <li>finger</li>
   <li>fswatch</li>
   <li>stat/readlink</li>
+  <li>du/df</li>
   <li>kill</li>
   <li>killall</li>
   <li>fuser</li>
@@ -647,7 +1328,7 @@
 		
 		#reader-adaptable-image-standards {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -664,7 +1345,6 @@
 	<img id="reader-adaptable-image-standards" src="https://imgs.xkcd.com/comics/standards.png" alt="From &lt;a href='https://xkcd.com/927/'&gt;https://xkcd.com/927/&lt;/a&gt;" />
 	
 	<br />
-	<br />
 	<span class="caption">From <a href="https://xkcd.com/927/">https://xkcd.com/927/</a></span>
 </center>
 
@@ -675,7 +1355,7 @@
 		
 		#reader-adaptable-image-automation {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -691,7 +1371,6 @@
 	
 	<img id="reader-adaptable-image-automation" src="https://imgs.xkcd.com/comics/automation.png" alt="From &lt;a href='https://xkcd.com/1319/'&gt;https://xkcd.com/1319/&lt;/a&gt;" />
 	
-	<br />
 	<br />
 	<span class="caption">From <a href="https://xkcd.com/1319/">https://xkcd.com/1319/</a></span>
 </center>
@@ -1696,7 +2375,7 @@ photos/
 		#reader-adaptable-image-warp-and-weft {
 		
 			
-				width: 25%;
+				width: 300px;
 			
 		
 		}
@@ -1711,7 +2390,6 @@ photos/
 	
 	<img id="reader-adaptable-image-warp-and-weft" src="/blog/img/warp-and-weft.png" alt="The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)" />
 	
-	<br />
 	<br />
 	<span class="caption">The _warp_ (lengthwise) and _weft_ (breadthwise) threads of a basic weave. (Image by http://commons.wikimedia.org/wiki/User:Ryj - http://commons.wikimedia.org/wiki/File:Kette_und_Schu%C3%9F.jpg, CC BY-SA 3.0, https://en.wikipedia.org/w/index.php?curid=37702470)</span>
 </center>
@@ -1750,7 +2428,7 @@ photos/
 		#reader-adaptable-image-tartan {
 		
 			
-				width: 25%;
+				width: 300px;
 			
 		
 		}
@@ -1765,7 +2443,6 @@ photos/
 	
 	<img id="reader-adaptable-image-tartan" src="/blog/img/tartan.png" alt="A plaid pattern." />
 	
-	<br />
 	<br />
 	<span class="caption">A plaid pattern.</span>
 </center>
@@ -1876,7 +2553,7 @@ retq
 		#reader-adaptable-image-raspberry-pi {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -1891,7 +2568,6 @@ retq
 	
 	<img id="reader-adaptable-image-raspberry-pi" src="/blog/img/raspberry-pi.png" alt="A Raspberry Pi circuit board." />
 	
-	<br />
 	<br />
 	<span class="caption">A Raspberry Pi circuit board.</span>
 </center>
@@ -1933,7 +2609,7 @@ retq
 		#reader-adaptable-image-xcode-side-by-side {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -1948,7 +2624,6 @@ retq
 	
 	<img id="reader-adaptable-image-xcode-side-by-side" src="/blog/img/xcode-side-by-side.png" alt="The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom)." />
 	
-	<br />
 	<br />
 	<span class="caption">The Find and Replace panel in Xcode 8 (top) and Xcode 9 (bottom).</span>
 </center>
@@ -1965,7 +2640,7 @@ retq
 		#reader-adaptable-image-right-button-cluster {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -1980,7 +2655,6 @@ retq
 	
 	<img id="reader-adaptable-image-right-button-cluster" src="/blog/img/right-button-cluster.png" alt="The right button cluster from Xcode 8 (top) and Xcode 9 (bottom)." />
 	
-	<br />
 	<br />
 	<span class="caption">The right button cluster from Xcode 8 (top) and Xcode 9 (bottom).</span>
 </center>
@@ -2016,7 +2690,7 @@ retq
 		#reader-adaptable-image-prefix-and-suffix-search {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2032,7 +2706,6 @@ retq
 	<img id="reader-adaptable-image-prefix-and-suffix-search" src="/blog/img/prefix-and-suffix-search.png" alt="The prefix and suffix search options in the search option popover dropdown." />
 	
 	<br />
-	<br />
 	<span class="caption">The prefix and suffix search options in the search option popover dropdown.</span>
 </center>
 
@@ -2044,7 +2717,7 @@ retq
 		#reader-adaptable-image-insert-pattern {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2060,7 +2733,6 @@ retq
 	<img id="reader-adaptable-image-insert-pattern" src="/blog/img/insert-pattern.png" alt="The Insert Pattern option in Xcode 8 didn't make it to Xcode 9." />
 	
 	<br />
-	<br />
 	<span class="caption">The Insert Pattern option in Xcode 8 didn't make it to Xcode 9.</span>
 </center>
 
@@ -2074,7 +2746,7 @@ retq
 		#reader-adaptable-image-magnifying-glass-dropdowns {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2089,7 +2761,6 @@ retq
 	
 	<img id="reader-adaptable-image-magnifying-glass-dropdowns" src="/blog/img/magnifying-glass-dropdowns.png" alt="The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top)." />
 	
-	<br />
 	<br />
 	<span class="caption">The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top).</span>
 </center>
@@ -2106,7 +2777,7 @@ retq
 		#reader-adaptable-image-match-count-label {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2122,7 +2793,6 @@ retq
 	<img id="reader-adaptable-image-match-count-label" src="/blog/img/match-count-label.png" alt="The match count in Xcode 8 (top) versus Xcode 9 (bottom)." />
 	
 	<br />
-	<br />
 	<span class="caption">The match count in Xcode 8 (top) versus Xcode 9 (bottom).</span>
 </center>
 
@@ -2136,7 +2806,7 @@ retq
 		#reader-adaptable-image-all-in-selection {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2151,7 +2821,6 @@ retq
 	
 	<img id="reader-adaptable-image-all-in-selection" src="/blog/img/all-in-selection.png" alt="The All in Selection option for replacement." />
 	
-	<br />
 	<br />
 	<span class="caption">The All in Selection option for replacement.</span>
 </center>
@@ -2297,7 +2966,7 @@ retq
 		#reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2312,7 +2981,6 @@ retq
 	
 	<img id="reader-adaptable-image-bundle-identifier-suffixes-for-different-app-build-distributions" src="/blog/img/bundle-identifier-suffixes-for-different-app-build-distributions.png" alt="Adding suffixes to bundle identifiers prevents build variants overwriting each other on device." />
 	
-	<br />
 	<br />
 	<span class="caption">Adding suffixes to bundle identifiers prevents build variants overwriting each other on device.</span>
 </center>
@@ -2329,7 +2997,7 @@ retq
 		#reader-adaptable-image-xcode-icon-tag-build-phases {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2344,7 +3012,6 @@ retq
 	
 	<img id="reader-adaptable-image-xcode-icon-tag-build-phases" src="/blog/img/xcode-icon-tag-build-phases.png" alt="The Build Phases in Xcode to tag and restore app icons for build variants." />
 	
-	<br />
 	<br />
 	<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
 </center>
@@ -2364,7 +3031,7 @@ retq
 		
 		#reader-adaptable-image-app-icon-for-different-app-build-distributions {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -2380,7 +3047,6 @@ retq
 	
 	<img id="reader-adaptable-image-app-icon-for-different-app-build-distributions" src="/blog/img/app-icon-for-different-app-build-distributions.png" alt="Overlaying build variant information on app icons helps differentiate them on device." />
 	
-	<br />
 	<br />
 	<span class="caption">Overlaying build variant information on app icons helps differentiate them on device.</span>
 </center>
@@ -2530,7 +3196,7 @@ retq
 		#reader-adaptable-image-typedefblock-autocompletion {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2545,7 +3211,6 @@ retq
 	
 	<img id="reader-adaptable-image-typedefblock-autocompletion" src="/blog/img/typedefblock-autocompletion.png" alt="Autocompletion for typedefBlock." />
 	
-	<br />
 	<br />
 	<span class="caption">Autocompletion for typedefBlock.</span>
 </center>
@@ -2568,7 +3233,7 @@ retq
 		#reader-adaptable-image-block-placeholder-expansion-before {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2584,7 +3249,6 @@ retq
 	<img id="reader-adaptable-image-block-placeholder-expansion-before" src="/blog/img/block-placeholder-expansion-before.png" alt="The autocompletion for the method call contains a placeholder for the block parameter." />
 	
 	<br />
-	<br />
 	<span class="caption">The autocompletion for the method call contains a placeholder for the block parameter.</span>
 </center>
 
@@ -2598,7 +3262,7 @@ retq
 		#reader-adaptable-image-block-placeholder-expansion-after {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2614,7 +3278,6 @@ retq
 	<img id="reader-adaptable-image-block-placeholder-expansion-after" src="/blog/img/block-placeholder-expansion-after.png" alt="After tabbing to the block placeholder and expanding with the Return key." />
 	
 	<br />
-	<br />
 	<span class="caption">After tabbing to the block placeholder and expanding with the Return key.</span>
 </center>
 
@@ -2628,7 +3291,7 @@ retq
 		#reader-adaptable-image-inlineblock-example {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2643,7 +3306,6 @@ retq
 	
 	<img id="reader-adaptable-image-inlineblock-example" src="/blog/img/inlineblock-example.png" alt="The good and bad of Objective-C method calls with multiple block parameters." />
 	
-	<br />
 	<br />
 	<span class="caption">The good and bad of Objective-C method calls with multiple block parameters.</span>
 </center>
@@ -2705,7 +3367,7 @@ retq
 		
 		#reader-adaptable-image-build-setting-inheritance {
 		
-				width: 50%;
+				width: 600px;
 		
 		}
 		@media only screen and (max-width: 500px) {
@@ -2722,7 +3384,6 @@ retq
 	<img id="reader-adaptable-image-build-setting-inheritance" src="/blog/img/build-setting-inheritance.png" alt="The acyclic inheritance graph for build settings." />
 	
 	<br />
-	<br />
 	<span class="caption">The acyclic inheritance graph for build settings.</span>
 </center>
 
@@ -2734,7 +3395,7 @@ retq
 		#reader-adaptable-image-build-setting-inheritance-case-study {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2749,7 +3410,6 @@ retq
 	
 	<img id="reader-adaptable-image-build-setting-inheritance-case-study" src="/blog/img/build-setting-inheritance-case-study.png" alt="An example using inheritance." />
 	
-	<br />
 	<br />
 	<span class="caption">An example using inheritance.</span>
 </center>
@@ -2766,7 +3426,7 @@ retq
 		#reader-adaptable-image-build-setting-precedence {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2782,7 +3442,6 @@ retq
 	<img id="reader-adaptable-image-build-setting-precedence" src="/blog/img/build-setting-precedence.png" alt="The linear precedence progression for build settings." />
 	
 	<br />
-	<br />
 	<span class="caption">The linear precedence progression for build settings.</span>
 </center>
 
@@ -2794,7 +3453,7 @@ retq
 		#reader-adaptable-image-build-setting-precedence-case-study {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -2809,7 +3468,6 @@ retq
 	
 	<img id="reader-adaptable-image-build-setting-precedence-case-study" src="/blog/img/build-setting-precedence-case-study.png" alt="An example using precedence." />
 	
-	<br />
 	<br />
 	<span class="caption">An example using precedence.</span>
 </center>
@@ -3100,7 +3758,7 @@ $&gt; git pull --ff-only
 		#reader-adaptable-image-sass-vs-css-web-inspector-link {
 		
 			
-				width: 75%;
+				width: 1200px;
 			
 		
 		}
@@ -3115,7 +3773,6 @@ $&gt; git pull --ff-only
 	
 	<img id="reader-adaptable-image-sass-vs-css-web-inspector-link" src="/blog/img/sass-vs-css-web-inspector-link.png" alt="Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering." />
 	
-	<br />
 	<br />
 	<span class="caption">Safari's Web Inspector showing a link to the relevant SASS source (left) and the compiled CSS file (right) when ⌘-hovering.</span>
 </center>

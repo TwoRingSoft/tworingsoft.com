@@ -83,7 +83,7 @@ a {
 * other elements *
 *****************/
 .caption {
-  color: #828282;
+  color: #424242;
   font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
 
 .footnote {
@@ -157,7 +157,8 @@ blockquote p {
   font: 200 11pt "Verdana", "Helvetica", "Arial", sans-serif;
   font-style: italic;
   padding: 10px 20px 10px 20px;
-  border-left: 5px grey solid; }
+  border-left: 5px grey solid;
+  background-color: #EEE; }
 
 @media only screen and (max-width: 500px) {
   blockquote p {

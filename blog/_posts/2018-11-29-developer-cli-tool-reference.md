@@ -63,6 +63,7 @@ I figured it'd be helpful to publish it here–the goal is to have a living vers
   - finger
   - fswatch
   - stat/readlink
+  - du/df
   - kill
   - killall
   - fuser

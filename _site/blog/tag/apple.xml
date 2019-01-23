@@ -1,0 +1,22 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % apple</title>
+		<description>Two Ring Software's RSS Feed for updates on apple.</description>
+		<link>http://tworingsoft.com/blog/tag/apple.html</link>
+		
+			<item>
+				<title>Interpreting Apple's Transparency Report</title>
+				<description>Apple recently released their transparency report for government and private party information requests for January through June of 2018, in an updated format including broken out CSVs.</description>
+				<pubDate>Wed, 23 Jan 2019 00:00:00 -0900</pubDate>
+				<link>https://tworingsoft.com/blog/2019/01/23/interpreting-apples-transparency-report.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2019/01/23/interpreting-apples-transparency-report.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>
