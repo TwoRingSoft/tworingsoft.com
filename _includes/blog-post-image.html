@@ -4,12 +4,12 @@
 		#reader-adaptable-image-{{ id }} {
 		{% if include.narrow == undefined || include.small == undefined %}
 			{% if include.small == undefined %}
-				width: 75%;
+				width: 1200px;
 			{% else %}
-				width: 25%;
+				width: 300px;
 			{% endif %}
 		{% else %}
-				width: 50%;
+				width: 600px;
 		{% endif %}
 		}
 		@media only screen and (max-width: 500px) {
