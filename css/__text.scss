@@ -10,8 +10,6 @@ $tr-monospace-font: 'Courier New', monospace;
 
 /* colors */
 
-$tr-light-grey: #cacaca;
-$tr-grey: #828282;
 $tr-dark-grey: #424242;
 $tr-black: #000;
 
@@ -122,7 +120,7 @@ a {
 *****************/
 
 .caption {
-	color: $tr-grey; 
+	color: $tr-dark-grey; 
 	font: italic 10pt $tr-font;
 }
 
