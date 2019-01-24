@@ -62,6 +62,8 @@ And to get an idea of the impact and efficiency of these countries:
 
 {% include blog-post-image.html source="atr-2018h1/requested-devices-bottom-10.png" narrow="true" mobile_fullwidth="true" %}
 
+<center><font size="80pt">***</font></center>
+
 {% include blog-post-image.html source="atr-2018h1/device-requests-bottom-10.png" narrow="true" mobile_fullwidth="true" %}
 
 Whew, you made it through the first section! I'll provide the same first several charts for the other types of requests considered–financial IDs and accounts–with no more commentary. If you'd prefer, you may <a href="#colophon">skip to the end, where I talk about how I crunched the numbers</a>.
@@ -98,15 +100,15 @@ Whew, you made it through the first section! I'll provide the same first several
 
 {% include blog-post-image.html source="atr-2018h1/requested-accounts-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
-<center><font size="80pt">*</font></center>
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/account-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
-<center><font size="80pt">*</font></center>
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/requested-accounts-over-time.png" narrow="true" mobile_fullwidth="true" %}
 
-<center><font size="80pt">*</font></center>
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/requested-account-amount-distribution.png" narrow="true" mobile_fullwidth="true" alt="923.7 accounts; standard deviation: 3786.6 accounts." %}
 
@@ -114,11 +116,11 @@ Whew, you made it through the first section! I'll provide the same first several
 
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-account-requests-top-10.png" narrow="true" mobile_fullwidth="true" %}
 
-<center><font size="80pt">*</font></center>
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/percentage-honored-account-requests-over-time.png" narrow="true" mobile_fullwidth="true" %}
 
-<center><font size="80pt">*</font></center>
+<center><font size="80pt">***</font></center>
 
 {% include blog-post-image.html source="atr-2018h1/honored-account-request-percentage-distribution.png" narrow="true" mobile_fullwidth="true" alt="Mean: 64.1%; standard deviation: 34.5%." %}
 
