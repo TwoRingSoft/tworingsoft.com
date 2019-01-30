@@ -14,7 +14,7 @@ I mentioned in a [previous post](/blog/2019/01/07/new-year-new-task-management.h
 
 In Notes.app, I have many lists of notes, and I've grouped some of them into hierarchies depending on if they deal with business or clients, to name a few. Otherwise, I'd have a really long flat list of notes. The one quirk here is that a group not only holds subgroups and member lists, but itself is also a list of notes. I can't think of another example of this kind of grouping mechanism. It has pros and cons; I'm not sure if I fully like it or not, but I do make use of it.
 
-{% include blog-post-image.html source="notes-app-folders.png" narrow="true" mobile_fullwidth="true" alt="" %}
+{% include blog-post-image.html source="notes-app-folders.png" narrow="true" mobile_fullwidth="true" alt="Don't worry about the gray areas... wouldn't want to spoil any upcoming posts!" %}
 
 I also have lots of Reminders lists; I'd love a way to group them as I do with Notes. Same goes for my list of Calendars, accounts in Mail, lists of Contacts, and maybe even Messages.
 
