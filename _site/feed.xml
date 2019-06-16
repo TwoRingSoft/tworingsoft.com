@@ -7,6 +7,15 @@
 		<link>http://tworingsoft.com/</link>
 		
 			<item>
+				<title>My WWDC 2019 Session Watchlist</title>
+				<description>My scheduled programming for watching this year's WWDC session videos.</description>
+				<pubDate>Fri, 14 Jun 2019 00:00:00 -0800</pubDate>
+				<link>https://tworingsoft.com/blog/2019/06/14/wwdc-2019-watchlist.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2019/06/14/wwdc-2019-watchlist.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>Good Morning, iOS!</title>
 				<description>Brainstorming ways to combine Apple's productivity apps into a bird's-eye-view Today widget: Good Morning!</description>
 				<pubDate>Wed, 06 Mar 2019 00:00:00 -0900</pubDate>

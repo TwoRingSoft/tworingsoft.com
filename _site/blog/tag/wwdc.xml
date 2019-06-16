@@ -1,0 +1,22 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % wwdc</title>
+		<description>Two Ring Software's RSS Feed for updates on wwdc.</description>
+		<link>http://tworingsoft.com/blog/tag/wwdc.html</link>
+		
+			<item>
+				<title>My WWDC 2019 Session Watchlist</title>
+				<description>My scheduled programming for watching this year's WWDC session videos.</description>
+				<pubDate>Fri, 14 Jun 2019 00:00:00 -0800</pubDate>
+				<link>https://tworingsoft.com/blog/2019/06/14/wwdc-2019-watchlist.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2019/06/14/wwdc-2019-watchlist.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>
