@@ -62,6 +62,8 @@ The `mutating` keyword just doesn't drive the point home enough. You need to mak
 
 {% include blog-post-image.html source="unicode-swift-zalgo.png" narrow="true" mobile_fullwidth="true"%}
 
+> If you need to curse your own code, the [Zalgo Text Generator](https://zalgo.org) can help you find the right invocation!
+
 # Dark Ages of Code? 🌚
 
 This is all fun and games, but what if we were to [use Unicode in earnest](http://www.bbc.com/future/story/20151012-will-emoji-become-a-new-language) and then [things change](https://openspace.sfmoma.org/2018/07/the-absolute-denial-of-💩/), like [Apple changing a deadly revolver to a harmless and fun watergun](https://blog.emojipedia.org/apple-and-the-gun-emoji/)? Given enough time, could entire code sectors and execution paths become unreadable, their [intent lost](https://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/) along with the sensibilities of a previous programmer, design team, society, or civilization?
