@@ -46,7 +46,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-tagging
-  sass
 
 BUNDLED WITH
-   1.13.6
+   1.17.2
