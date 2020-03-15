@@ -18,8 +18,4 @@ endserve:
 	killall Python
 
 publish:
-ifdef subdir
-	aws s3 sync "_site/$(subdir)" "s3://tworingsoft.com/$(subdir)" --exclude .git/ --profile tworing --acl public-read"
-else
-	aws s3 sync "_site/" "s3://tworingsoft.com/" --exclude .git/ --profile tworing --acl public-read"	
-endif
+	./scripts/publish
