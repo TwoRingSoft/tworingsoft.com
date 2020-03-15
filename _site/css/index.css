@@ -10,61 +10,77 @@
 ****************/
 .hero, #front-name {
   color: #000;
-  font: 200 30pt "Palatino", "Garamond", serif; }
+  font: 200 30pt "Palatino", "Garamond", serif;
+}
 
 h1 {
   color: #000;
-  font: 200 27pt "Palatino", "Garamond", serif; }
+  font: 200 27pt "Palatino", "Garamond", serif;
+}
 
 h2 {
   color: #000;
-  font: 200 24pt "Palatino", "Garamond", serif; }
+  font: 200 24pt "Palatino", "Garamond", serif;
+}
 
 h3 {
   color: #000;
-  font: 100 21pt "Palatino", "Garamond", serif; }
+  font: 100 21pt "Palatino", "Garamond", serif;
+}
 
 h4 {
   color: #000;
   font: 100 18pt "Palatino", "Garamond", serif;
-  font-style: italic; }
+  font-style: italic;
+}
 
 h5 {
   color: #000;
   font: 100 15pt "Palatino", "Garamond", serif;
-  font-style: italic; }
+  font-style: italic;
+}
 
 .text, ul {
   color: #000;
-  font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; }
+  font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif;
+}
 
 @media only screen and (min-width: 500px) {
   .hero, #front-name {
-    font-size: 40pt; }
+    font-size: 40pt;
+  }
 
   h1 {
-    font: 200 34pt "Palatino", "Garamond", serif; }
+    font: 200 34pt "Palatino", "Garamond", serif;
+  }
 
   h2 {
-    font: 200 28pt "Palatino", "Garamond", serif; }
+    font: 200 28pt "Palatino", "Garamond", serif;
+  }
 
   h3 {
-    font-size: 23pt; }
+    font-size: 23pt;
+  }
 
   h4 {
-    font-size: 20pt; }
+    font-size: 20pt;
+  }
 
   h5 {
-    font-size: 17pt; }
+    font-size: 17pt;
+  }
 
   .text, ul {
-    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif; } }
+    font: lighter 13pt "Verdana", "Helvetica", "Arial", sans-serif;
+  }
+}
 /***************************
 * other top-level elements *
 ***************************/
 a {
   color: #000;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 /*
 * monospace and code snippets
@@ -73,21 +89,26 @@ a {
   color: #333;
   font: heavier 13pt "Courier New", monospace;
   background-color: #eee;
-  padding: 0px 3px 0px 3px; }
+  padding: 0px 3px 0px 3px;
+}
 
 @media only screen and (min-width: 500px) {
   .highlighter-rouge {
-    font: heavier 13pt "Courier New", monospace; } }
+    font: heavier 13pt "Courier New", monospace;
+  }
+}
 /*****************
 * other elements *
 *****************/
 .caption {
   color: #424242;
-  font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
+  font: italic 10pt "Verdana", "Helvetica", "Arial", sans-serif;
+}
 
 .footnote {
   color: #000;
-  font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif; }
+  font: 100 10pt "Verdana", "Helvetica", "Arial", sans-serif;
+}
 
 /*********
 * layout *
@@ -96,24 +117,36 @@ a {
   /* vvv hanging indentation css thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
   padding-left: 20px;
   text-indent: -20px;
-  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */ }
+  /* ^^^ thanks to https://www.thesitewizard.com/css/hanging-indents.shtml */
+}
 
 .bordered-table, .bordered-table th, .bordered-table td {
-  border: 1px solid #999; }
+  border: 1px solid #999;
+}
 
 .bordered-table {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+}
 
 .bordered-table th, .bordered-table td {
-  padding: 10px; }
+  padding: 10px;
+}
 
 .alternating-table tr:nth-child(even) {
-  background: #CCC; }
+  background: #CCC;
+}
 
 .alternating-table tr:nth-child(odd) {
-  background: #FFF; }
+  background: #FFF;
+}
 
 body {
-  font: 100 20pt "Palatino", "Garamond", serif; }
+  font: 100 20pt "Palatino", "Garamond", serif;
+}
+
+.privacy-policy-link {
+  color: #424242;
+  font-size: x-small;
+}
 
 /*# sourceMappingURL=index.css.map */
