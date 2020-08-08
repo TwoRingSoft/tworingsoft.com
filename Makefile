@@ -2,7 +2,7 @@ init:
 	brew bundle
 	rbenv install --skip-existing
 	rbenv exec gem install bundler
-	rbenv exec bundle
+	rbenv exec bundle update
 
 build:
 	sass --update css

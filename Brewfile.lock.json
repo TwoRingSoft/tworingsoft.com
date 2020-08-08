@@ -2,22 +2,22 @@
   "entries": {
     "brew": {
       "awscli": {
-        "version": "1.17.0",
+        "version": "2.0.18",
         "bottle": {
-          "cellar": ":any_skip_relocation",
+          "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-1.17.0.catalina.bottle.tar.gz",
-              "sha256": "196d04d62303c5f7219669bfb47a0fe71b67f3fb25b0cf025f3f5fffeedb6133"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.18.catalina.bottle.tar.gz",
+              "sha256": "6415387844b0a959a76f5cfc3eed20806739016f0bff6591aee5e0916f0a5a17"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-1.17.0.mojave.bottle.tar.gz",
-              "sha256": "3afb7070bd5b9f000d69a2e5864c3a8d71a3a3a956f1c3b60d24a8ff7454be32"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.18.mojave.bottle.tar.gz",
+              "sha256": "82e3736150d9e9d8b7427d0002f4fcf48fdb19215dbaa753b8060781760720d7"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-1.17.0.high_sierra.bottle.tar.gz",
-              "sha256": "113747d995f29e2658c551fc54cbc711029878dd4385b1c65ee0a38126d80fa7"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.18.high_sierra.bottle.tar.gz",
+              "sha256": "0f2dbd560b0b18716777af7626a00e153f3cd5940f720187a5ddf17675fa24cd"
             }
           }
         }
@@ -48,7 +48,7 @@
         }
       },
       "sass": {
-        "version": "1.25.0",
+        "version": "1.26.7",
         "bottle": false
       }
     }
@@ -56,12 +56,12 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.4",
+        "HOMEBREW_VERSION": "2.3.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1ff573fe3ffa9db3d7884cb53369201d44fbf8a2",
+        "Homebrew/homebrew-core": "c255727e1a8bb9738e8c4ba242e5acf7a23e6062",
         "CLT": "",
-        "Xcode": "11.2.1",
-        "macOS": "10.15.3"
+        "Xcode": "11.5",
+        "macOS": "10.15.6"
       }
     }
   }
