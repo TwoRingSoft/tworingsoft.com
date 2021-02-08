@@ -32,6 +32,8 @@ OK. This is a long list. I split these into small potatoes like simple bugs or o
 
 ## Small Potatoes
 
+- No split-screen multitasking on iPad.
+
 - The attempt at maintainingg matching pairs of parens has some bad outcomes: to get just an opening `(`, you have to type `(`, then space in between it and the auto-inserted closing `)`, then arrow past the `)` and backspace twice (once for the closing paren, the other for the space you inserted; if you type `(` which produced `()` with the cursor in the middle, then arrow past the `)` and backspace, both of them are removed.
 
 - Likewise, typing a double quote always puts a closing one even when not appropriate; like when closing a string literal you've already started.
@@ -44,7 +46,7 @@ OK. This is a long list. I split these into small potatoes like simple bugs or o
 
 - Doesn’t have the ⌘ `⌥` `[`/`]` shortcuts to swap lines up/down while maintaining scope indentation, like in Xcode.
 
-- No surrounding of selected text with `(`/`)`, `[`/`]` or `{`/`}`.
+- No surrounding of selected text with `(`/`)`, `[`/`]` or `{`/`}` by typing just the opening character.
 
 - No highlighting tokens in camelCased/snake_cased/etc symbol names with `^ ⇧ →`/`←`.
 
