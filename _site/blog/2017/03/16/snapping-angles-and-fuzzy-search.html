@@ -142,9 +142,9 @@
 
 <h1 id="second-attempt">Second attempt</h1>
 
-<p>I wound up finding a better solution while implementing the custom input view to select a snapping angle. For this iteration of the feature, I only allow a snapping angle that evenly divides 360, so I just hardcoded the array of all such angles in [0, 360]. The input mechanism is a UISlider, so I need to map its float value to a value in this array. I wound up writing <code class="highlighter-rouge">indexOfClosestSorted</code> as an extension on Array that produces the index of the element with the closest value, seen below.</p>
+<p>I wound up finding a better solution while implementing the custom input view to select a snapping angle. For this iteration of the feature, I only allow a snapping angle that evenly divides 360, so I just hardcoded the array of all such angles in [0, 360]. The input mechanism is a UISlider, so I need to map its float value to a value in this array. I wound up writing <code class="language-plaintext highlighter-rouge">indexOfClosestSorted</code> as an extension on Array that produces the index of the element with the closest value, seen below.</p>
 
-<p>It turns out that I can use the very same function to snap angles. Instead of the hardcoded array of possible snapping angles, I create an array, given a selected snapping angle, of all the multiples of that angle in [0, 360]. Then it’s just a matter of calling <code class="highlighter-rouge">indexOfClosestSorted</code>.</p>
+<p>It turns out that I can use the very same function to snap angles. Instead of the hardcoded array of possible snapping angles, I create an array, given a selected snapping angle, of all the multiples of that angle in [0, 360]. Then it’s just a matter of calling <code class="language-plaintext highlighter-rouge">indexOfClosestSorted</code>.</p>
 
 <table border="0">
 	<tr>
@@ -177,7 +177,7 @@
 
 <h1 id="bonus-points">Bonus points</h1>
 
-<p>This works just fine for the purposes of snapping integer angles on the unit circle, but <code class="highlighter-rouge">indexOfClosestSorted</code> is linear time. Also note that it expects the array it’s searching to be sorted. What’s another search algorithm that operates on sorted lists? <a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search">Binary search!</a> Normally, binary search returns either the location of the query in the array, or reports that it doesn’t exist. In our case, we aren’t searching for the exact value, just the <em>closest</em> one: a fuzzy binary search. The terminating and recursion conditions are slightly different, and we’re guaranteed to always get a result. Now we have a logtime search, giving us a (probably imperceptible, at Trgnmtry’s scale) performance boost for drawing. See if you can outrun it!</p>
+<p>This works just fine for the purposes of snapping integer angles on the unit circle, but <code class="language-plaintext highlighter-rouge">indexOfClosestSorted</code> is linear time. Also note that it expects the array it’s searching to be sorted. What’s another search algorithm that operates on sorted lists? <a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search">Binary search!</a> Normally, binary search returns either the location of the query in the array, or reports that it doesn’t exist. In our case, we aren’t searching for the exact value, just the <em>closest</em> one: a fuzzy binary search. The terminating and recursion conditions are slightly different, and we’re guaranteed to always get a result. Now we have a logtime search, giving us a (probably imperceptible, at Trgnmtry’s scale) performance boost for drawing. See if you can outrun it!</p>
 
 <script src="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e.js"></script>
 
@@ -185,17 +185,20 @@
 	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e">https://gist.github.com/armcknight/a9815424db01d37e51d76a823059db9e</a>. Enable javascript to see them embedded here.)</p>
 </noscript>
 
-<p><code class="highlighter-rouge">fuzzyBinarySearchRecursive</code> extends any <code class="highlighter-rouge">Array</code> containing <code class="highlighter-rouge">Strideable</code> elements, which includes both integer and floating point types. It has some nice defaults: much of the time you’ll probably want to search an entire array, which you can do with the invocation <code class="highlighter-rouge">myArray.fuzzyBinarySearchRecursive(query: 1000)</code>–no need to specify the search must take place between the indices <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">myArray.count - 1</code>. It’s under testing now at <a href="https://github.com/TwoRingSoft/shared-utils">https://github.com/TwoRingSoft/shared-utils</a>!</p>
+<p><code class="language-plaintext highlighter-rouge">fuzzyBinarySearchRecursive</code> extends any <code class="language-plaintext highlighter-rouge">Array</code> containing <code class="language-plaintext highlighter-rouge">Strideable</code> elements, which includes both integer and floating point types. It has some nice defaults: much of the time you’ll probably want to search an entire array, which you can do with the invocation <code class="language-plaintext highlighter-rouge">myArray.fuzzyBinarySearchRecursive(query: 1000)</code>–no need to specify the search must take place between the indices <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">myArray.count - 1</code>. It’s under testing now at <a href="https://github.com/TwoRingSoft/shared-utils">https://github.com/TwoRingSoft/shared-utils</a>!</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-03-16-snapping-angles-and-fuzzy-search.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-03-16-snapping-angles-and-fuzzy-search.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

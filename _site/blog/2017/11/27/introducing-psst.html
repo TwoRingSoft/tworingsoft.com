@@ -105,17 +105,17 @@
 
 <h1 id="kiss-committed-credentials-goodbye">KISS committed credentials goodbye</h1>
 
-<p>I write mainly for iOS, and I want something as lightweight and simple as possible to simply replace templated strings in my codebase with the appropriate values. I’ve used <a href="https://github.com/orta/cocoapods-keys"><code class="highlighter-rouge">cocoapods-keys</code></a> for some time, and it fulfills its use case very well, but it only works on secrets that are used in your application’s executable code. This means any sort of build environment tools (like Xcode Build Phase scripts) that require secrets, or <a href="https://fabric.io">things that want to use Plists</a>, won’t be able to use it.</p>
+<p>I write mainly for iOS, and I want something as lightweight and simple as possible to simply replace templated strings in my codebase with the appropriate values. I’ve used <a href="https://github.com/orta/cocoapods-keys"><code class="language-plaintext highlighter-rouge">cocoapods-keys</code></a> for some time, and it fulfills its use case very well, but it only works on secrets that are used in your application’s executable code. This means any sort of build environment tools (like Xcode Build Phase scripts) that require secrets, or <a href="https://fabric.io">things that want to use Plists</a>, won’t be able to use it.</p>
 
 <h1 id="sed-it-and-forget-it">SED it and forget it</h1>
 
-<p>I wrote a script to do a basic search-and-replace throughout a codebase and swap template values for actual credentials. The template values are enumerated in a file that you commit to your codebase, paired with another file that contains the actual secret values, in <code class="highlighter-rouge">.psst/keys</code> and <code class="highlighter-rouge">.psst/values</code> respectively. The separation makes gitignoring the secret values file easy. If no secret values file exists, the script will try to expand environment variables of the same name, a <a href="https://circleci.com/docs/1.0/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git">common workflow for CI setups</a>. (Optionally, a path to a keychain can be supplied, if you prefer to check in your secrets to the codebase in a securely encrypted file.) It will then iterate through the keys with secrets in hand and perform the replacements.</p>
+<p>I wrote a script to do a basic search-and-replace throughout a codebase and swap template values for actual credentials. The template values are enumerated in a file that you commit to your codebase, paired with another file that contains the actual secret values, in <code class="language-plaintext highlighter-rouge">.psst/keys</code> and <code class="language-plaintext highlighter-rouge">.psst/values</code> respectively. The separation makes gitignoring the secret values file easy. If no secret values file exists, the script will try to expand environment variables of the same name, a <a href="https://circleci.com/docs/1.0/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git">common workflow for CI setups</a>. (Optionally, a path to a keychain can be supplied, if you prefer to check in your secrets to the codebase in a securely encrypted file.) It will then iterate through the keys with secrets in hand and perform the replacements.</p>
 
 <p>Check out the <a href="https://github.com/TwoRingSoft/psst">source code</a> or get it on homebrew:</p>
 
-<p><code class="highlighter-rouge">brew tap tworingsoft &amp;&amp; brew install psst</code> (in fish, <code class="highlighter-rouge">brew tap tworingsoft; and brew install psst</code>)</p>
+<p><code class="language-plaintext highlighter-rouge">brew tap tworingsoft &amp;&amp; brew install psst</code> (in fish, <code class="language-plaintext highlighter-rouge">brew tap tworingsoft; and brew install psst</code>)</p>
 
-<h1 id="in-case-of-emergency-dont-break-continue">In case of emergency, don’t <code class="highlighter-rouge">break</code>, <code class="highlighter-rouge">continue</code></h1>
+<h1 id="in-case-of-emergency-dont-break-continue">In case of emergency, don’t <code class="language-plaintext highlighter-rouge">break</code>, <code class="language-plaintext highlighter-rouge">continue</code></h1>
 
 <p>OK, mistakes happen. This is a software tool, and it’s being used by humans. If you find you’ve still accidentally committed sensitive data to your codebase and pushed, it’s out there forever. Don’t bother trying to rewrite your git history–immediately rotate that credential!</p>
 
@@ -124,10 +124,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-11-27-introducing-psst.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-11-27-introducing-psst.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

@@ -1,0 +1,230 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" 
+      lang="en" 
+      data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" 
+      prefix="og: http://ogp.me/ns#">
+
+	<head>
+		<meta charset="utf-8"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<meta name="author" content="Andrew McKnight"/>
+		<meta name="copyright" content="Two Ring Software Copyright (c) 2018"/>
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@tworingsoft" />
+		<meta name="twitter:creator" content="@tworingsoft" />
+		
+		<meta name="og:site_name" content="Two Ring Software">
+		
+		<meta property="og:url" content="https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html" />
+		<meta name="twitter:url" content="https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html" />
+		
+		<title>Two Ring Software % Blog % Advent of Code 2020 on Swift Playgrounds for iPad % 5 February 2021</title>
+		<meta property="og:title" content="Two Ring Software % Blog % Advent of Code 2020 on Swift Playgrounds for iPad % 5 February 2021" />
+		<meta property="twitter:title" content="Two Ring Software % Blog % Advent of Code 2020 on Swift Playgrounds for iPad % 5 February 2021" />
+		
+		<meta name="description" content="I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor." />
+		<meta property="og:description" content="I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor." />
+		<meta property="twitter:description" content="I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor." />
+		
+		<link rel="alternate" type="application/rss+xml" title="Two Ring Software RSS" href="/feed.xml">
+		<link href='/css/blog-post.css' rel='stylesheet' type='text/css'>
+		
+		
+			
+			
+				
+				<meta name="og:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="twitter:image" content="/img/logo-small.jpg" />
+			
+				
+				<meta name="og:type" content="article" />
+			
+				
+				<meta name="article:tag" content="apple" />
+			
+				
+				<meta name="article:tag" content="ios" />
+			
+				
+				<meta name="article:tag" content="ipad" />
+			
+				
+				<meta name="article:tag" content="swift" />
+			
+				
+				<meta name="article:tag" content="playgrounds" />
+			
+				
+				<meta name="article:tag" content="devex" />
+			
+				
+				<meta name="article:tag" content="tools" />
+			
+				
+				<meta name="og:published_time" content="2021-02-05T00:00:00-09:00" />
+			
+				
+				<meta name="og:modified_time" content="2021-02-07T20:35:31-09:00" />
+			
+				
+				<meta name="twitter:label1" content="By:" />
+			
+				
+				<meta name="twitter:data1:Andrew McKnight" content="" />
+			
+				
+				<meta name="twitter:label2" content="Tags:" />
+			
+				
+				<meta name="twitter:data2" content="apple, ios, ipad, swift, playgrounds, devex, tools" />
+			
+		
+	</head>
+	<body>
+		<div id="page-content">
+			
+		
+		<h2>
+			<a href="/" style="text-decoration: none;">
+				<img src="/img/logo-small.png" height="25em" />
+			</a>
+			<a href="/blog/" style="text-decoration: none;">Blog</a>
+		</h2>
+		
+		<div class="title">Advent of Code 2020 on Swift Playgrounds for iPad</div>
+		<div class="byline">Andrew McKnight – 5 February 2021</div>
+		
+		<hr />
+					
+<div id="post-content">
+	<p>I tried Advent of Code for the first time this year. Very fun–scratched my itch for the odd programming challenge, comes with a storyline that got me personally, emotionally invested.</p>
+
+<p>I decided that I’d confine myself to using iPad Playgrounds to write my solutions in Swift. I’d used it a few times, a couple years ago now, and liked what I saw and believed it had great potential. My most memoriable session was riding a ski bus to the mountains: I worked out an algorithm for <a href="https://tworingsoft.com/blog/2017/03/16/snapping-angles-and-fuzzy-search.html">snapping angles to intervals around a unit circle</a>, and enjoyed the visualizations it offered, like graphs of variable values in loops. Those seemed like the perfect tool to attack code challenge problems.</p>
+
+<p>I used an iPad Pro 10.5” with  Smart Keyboard (my second one in as many years, by the way; and my down arrow key is already going in this one!).</p>
+
+<p>As I moved through problems, I started writing down annoyances I encountered. Eventually, I started to dread using the app and felt it was hurting my inaugural AoC experience, and ended the experiment after about 7 days. I don’t hate the app; I’ve previously covered <a href="https://tworingsoft.com/blog/2018/02/07/programming-20-years-in.html">some things I love about iPad Plagrounds and how it’s a glimpse of next-gen IDEs</a>. I just have high expectations of Apple and am a bit disappointed that it hasn’t really evolved at all in the intervening years.</p>
+
+<p>After moving to Xcode, I felt like I was moving at warp speed. I now have unit tests that run my solution code against expected answers, and even a command line application target to generate all the boilerplate for next year’s competition. I did not finish the competition, although I may continue to work on problems later. All the associated code lives in a <a href="https://github.com/armcknight/AdventOfCode">GitHub repository</a>.</p>
+
+<h1 id="pros">Pros</h1>
+
+<ul>
+  <li>
+    <p>Whole symbols are highlighted when touching them, making for quick replacement by touching and immediately typing or pasting.</p>
+  </li>
+  <li>
+    <p>It detects when your program runs too long. In one case, I had accidentally harcoded an infinite loop! I’d be interested to know the heuristics they use, even if it’s a simple timeout on max CPU. Still not perfect: all it says is “there’s a problem with your code.” OK, sure. But also, not always; other times it was just that I wrote terrible, awful, slow solutions (they got better).</p>
+  </li>
+</ul>
+
+<h1 id="cons">Cons</h1>
+
+<p>OK. This is a long list. I split these into small potatoes like simple bugs or oversights, and big fish: things that were probably considered but represent large efforts to complete and so have been put on the back burner.</p>
+
+<h2 id="small-potatoes">Small Potatoes</h2>
+
+<ul>
+  <li>
+    <p>The attempt at maintainingg matching pairs of parens has some bad outcomes: to get just an opening <code class="language-plaintext highlighter-rouge">(</code>, you have to type <code class="language-plaintext highlighter-rouge">(</code>, then space in between it and the auto-inserted closing <code class="language-plaintext highlighter-rouge">)</code>, then arrow past the <code class="language-plaintext highlighter-rouge">)</code> and backspace twice (once for the closing paren, the other for the space you inserted; if you type <code class="language-plaintext highlighter-rouge">(</code> which produced <code class="language-plaintext highlighter-rouge">()</code> with the cursor in the middle, then arrow past the <code class="language-plaintext highlighter-rouge">)</code> and backspace, both of them are removed.</p>
+  </li>
+  <li>
+    <p>Likewise, typing a double quote always puts a closing one even when not appropriate; like when closing a string literal you’ve already started.</p>
+  </li>
+  <li>
+    <p>When I tap on an empty line to type a multiline comment, once I type the <code class="language-plaintext highlighter-rouge">/</code>, it indents it by a tab width. I then type the <code class="language-plaintext highlighter-rouge">*</code> and newlines and close it with <code class="language-plaintext highlighter-rouge">*/</code>, then have to outdent the opening `/*</p>
+  </li>
+  <li>
+    <p>It’s really difficult to grab the scrollbar and proportionally scroll up and down the source document, oftentimes with the focus going towards placing the cursor wherever I touched. I would love even more for the scrollbar to become a source minimap after pressing and holding to get proportional scrolling as in the rest of iOS.</p>
+  </li>
+  <li>
+    <p>There’s no way to escape from documentation popups with an external keyboard. (Also, “Help” should be called “Docs”; it took be a few minutes to figure out how to find the docs for a symbol.) Usually <code class="language-plaintext highlighter-rouge">⌘ .</code> is the escape key equivalent for iOS.</p>
+  </li>
+  <li>
+    <p>Doesn’t have the ⌘ <code class="language-plaintext highlighter-rouge">⌥</code> <code class="language-plaintext highlighter-rouge">[</code>/<code class="language-plaintext highlighter-rouge">]</code> shortcuts to swap lines up/down while maintaining scope indentation, like in Xcode.</p>
+  </li>
+  <li>
+    <p>No surrounding of selected text with <code class="language-plaintext highlighter-rouge">(</code>/<code class="language-plaintext highlighter-rouge">)</code>, <code class="language-plaintext highlighter-rouge">[</code>/<code class="language-plaintext highlighter-rouge">]</code> or <code class="language-plaintext highlighter-rouge">{</code>/<code class="language-plaintext highlighter-rouge">}</code>.</p>
+  </li>
+  <li>
+    <p>No highlighting tokens in camelCased/snake_cased/etc symbol names with <code class="language-plaintext highlighter-rouge">^ ⇧ →</code>/<code class="language-plaintext highlighter-rouge">←</code>.</p>
+  </li>
+  <li>
+    <p>Each new playground starts with two lines, so tapping in the lower 80% of the screen puts you on the second line, thereby wasting the first line. I want to start on the first line!</p>
+  </li>
+  <li>
+    <p>If I leave the cursor and scroll up a bit, then move the cursor or type, the source will jump to center the cursor if it’s outside of the middle 30% of the screen. It’s jarring and happens way too often.</p>
+  </li>
+  <li>
+    <p>The editor window doesn’t remember its scroll position if you leave and come back. I was often jumping between solutions/days to copy something for a new problem.</p>
+  </li>
+  <li>
+    <p>No way to select large ranges of text by touching to place the cursor, then holding shift and touching at the other end of the desired span of text to select. Once I’d plopped the huge input strings into my source, that is where they stayed.</p>
+  </li>
+  <li>
+    <p>Can’t split between source editor and console any other ratio besides 1:1, even though it appears to have a draggable split bar (the same thing handle as the scrollbar and for the app switcher, or in iPad multitasking panes).</p>
+  </li>
+</ul>
+
+<h2 id="big-fish">Big Fish</h2>
+
+<ul>
+  <li>
+    <p>No code folding. Originally I was copying in the whole problem story in a comment at the top, then the full input as a string literal (before I discovered the “shared” source tab). This made for a reeeeaaeaeaelly long source file to scroll, which, by the way, the app doesn’t handle very well.</p>
+  </li>
+  <li>
+    <p>No way to tell the inferred type of a selected variable. In Xcode, I can hit <code class="language-plaintext highlighter-rouge">⎋</code> (escape) and whatever symbol is under the cursor will get an autocomplete popover showing the symbol’s type or signature. I had to do a lot of scrolling up to see the types of my variables. Also no way to see other usages of a highlighted symbol.</p>
+  </li>
+  <li>
+    <p>Autocomplete in the predictive text bar instead of directly under the cursor like in Xcode means my eyes have to travel far enough away that the code I’m typing is no longer in my fovea, thus breaking my focus.</p>
+  </li>
+  <li>
+    <p>No search/replace. This is huge, I use this constantly as a programmer.</p>
+  </li>
+  <li>
+    <p>No SPM support. This would be a huge feature to land in the app and would really open up its real-world use cases. There’s already UI for it in Xcode so sure some of that could be reused or easily rebuilt. Code sharing is very difficult/impossible in the app today.</p>
+  </li>
+  <li>
+    <p>No source control support. Same comments as for SPM.</p>
+  </li>
+</ul>
+
+<h1 id="you-must-be-this-tall-to-ride">You Must be This Tall to Ride</h1>
+
+<p>I’ve been checking in with Swift Playgrounds since its infancy. I’m hoping that soon we’ll see it grow up into a mature code editor, or even a new state-of-the-art IDE by being reincarnated as Xcode on the iPad–one can dream! Whether part of making that dream a reality, or just improving the Playgrounds app, I hope some of the things I listed here are on the roadmap, or find their way there, provided the right people see my feedback. It’s undoubtedly a good tool to teach a Swift to a new programmer. Could it become worthy of editing real-life production code? <em>Should</em> it?</p>
+
+</div>
+<p>
+	<hr />
+</p>
+<p>
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
+</p>
+<p>
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2021-02-05-advent-of-code-on-swift-playgrounds.md">Please submit a PR!</a>.
+</p>
+		</div>
+	</body>
+</html>

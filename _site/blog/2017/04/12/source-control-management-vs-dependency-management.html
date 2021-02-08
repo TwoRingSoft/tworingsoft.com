@@ -104,7 +104,7 @@
 		<hr />
 					
 <div id="post-content">
-	<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
+	<p>I’ve taken part many times in the debate on <a href="https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control">whether to track the <code class="language-plaintext highlighter-rouge">Pods/</code> directory in source control</a>. I believe the dependencies should be tracked, and I want to try to explain the philosophy behind why I think the way I do. I’ll do so by building from basic principles regarding tools developers use every day: compilers, source control managers and dependency managers. Bear with me for a moment, if you will:</p>
 
 <h2 id="what-is-a-compiler">What is a compiler?</h2>
 
@@ -126,19 +126,22 @@
 
 <h2 id="dependency-managers-today">Dependency managers today</h2>
 
-<p>I think we’ve heaped far too many responsibilities onto dependency managers today. If you don’t check in your <code class="highlighter-rouge">Pods/</code> directory, you are using it to reconstruct a fragmented source history whenever you need to recreate a previous release. CocoaPods can also be used as a way to package precompiled binaries for distribution as others’ dependencies. It makes assumptions about how your Xcode project should be structured, in terms of file locations, Xcode’s File Navigator structure, build settings, artifacts and project/workspace/scheme organization. Too much can go wrong with a simple Xcode update. It’s too many moving parts, period.</p>
+<p>I think we’ve heaped far too many responsibilities onto dependency managers today. If you don’t check in your <code class="language-plaintext highlighter-rouge">Pods/</code> directory, you are using it to reconstruct a fragmented source history whenever you need to recreate a previous release. CocoaPods can also be used as a way to package precompiled binaries for distribution as others’ dependencies. It makes assumptions about how your Xcode project should be structured, in terms of file locations, Xcode’s File Navigator structure, build settings, artifacts and project/workspace/scheme organization. Too much can go wrong with a simple Xcode update. It’s too many moving parts, period.</p>
 
-<p>The only thing I want to do with CocoaPods is to pull that lever and update what I want updated. Then I can look at the diffs, commit the changes (<a href="http://tworingsoft.github.io/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html">as its own commit!</a>), and I’ll be able to get everything I need with a single checkout next time. I’ll be able to traverse updates to my dependencies in the same way as updates to source code I manually type with my fingers, when I do my next <code class="highlighter-rouge">git bisect</code>. I won’t have to worry about GitHub outages or source locations changing or <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">being removed</a> the next time my CI build kicks off and tries to download the dependencies all over again.</p>
+<p>The only thing I want to do with CocoaPods is to pull that lever and update what I want updated. Then I can look at the diffs, commit the changes (<a href="http://tworingsoft.github.io/blog/2017/01/19/the-art-of-source-control-part-2-clean-git-history.html">as its own commit!</a>), and I’ll be able to get everything I need with a single checkout next time. I’ll be able to traverse updates to my dependencies in the same way as updates to source code I manually type with my fingers, when I do my next <code class="language-plaintext highlighter-rouge">git bisect</code>. I won’t have to worry about GitHub outages or source locations changing or <a href="http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm">being removed</a> the next time my CI build kicks off and tries to download the dependencies all over again.</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-04-12-source-control-management-vs-dependency-management.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-04-12-source-control-management-vs-dependency-management.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

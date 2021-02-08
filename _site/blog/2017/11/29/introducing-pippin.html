@@ -108,7 +108,7 @@
 
 <p>The biggest change is the organization of the code: a flat list of files became separate tools to scaffold an app or perform specialized flows for accessing video or location, or working with Core Data. (Yes, there are still a ton of “utility” type files, which I swept away under a euphemistic “Extensions” rug). The different collections are all available as separate CocoaPods subspecs (with some necessary dependencies–I use extensions on Foundation in my Core subspec, for instance). Here’s the top-level organization:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Pippin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pippin
     ├── Adapters
     │   ├── *PinpointKit
     │   └── *XCGLogger
@@ -124,8 +124,7 @@
         ├── *Foundation
         ├── *UIKit
         └── *WebKit
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Every directory with an asterisk has a subspec that can be pulled independently. Here are the dependencies:</p>
 
@@ -160,10 +159,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-11-29-introducing-pippin.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-11-29-introducing-pippin.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

@@ -100,7 +100,7 @@
 <div id="post-content">
 	<p>During my time at Fabric, Apple announced their <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2">Bitcode</a> concept at WWDC (more reading <a href="https://lowlevelbits.org/bitcode-demystified/">here</a> and <a href="https://www.infoq.com/articles/ios-9-bitcode">here</a>). This created new challenges to the way Crashlytics traditionally worked (and every other crash reporter available, for that matter). The usual flow went like this: when you compiled/archived your app for submission to the app store, you’d submit the corresponding dSYM binary to Crashlytics, which it uses to <a href="https://fabric.io/blog/2016/09/08/how-crashlytics-symbolicates-1000-crashes-every-second/">symbolicate</a> the stack frames in your crash report.</p>
 
-<p>In the Bitcode world, however, the LLVM-IR bytecode you submit could be recompiled by Apple before distribution in the app store, invalidating the dSYMs submitted alongside the bytecode. (I’m not sure it even makes sense to immediately generate dSYMs for Bitcode apps at all, but I digress.) Now, after your submitted app is recompiled, you must download the new dSYMs from Apple and submit them to your crash reporter so they get the new binary addresses for your app’s symbols. (Shout out to <a href="https://krausefx.com/blog/download-dsym-symbolication-files-from-itunes-connect-for-bitcode-ios-apps">Fastlane</a> for creating a tool that helps automate this process; if you prefer a little more control, I wrote a tool called <code class="highlighter-rouge">upload-symbols</code> that ships with Fabric.app and the Fabric CocoaPod you can use).</p>
+<p>In the Bitcode world, however, the LLVM-IR bytecode you submit could be recompiled by Apple before distribution in the app store, invalidating the dSYMs submitted alongside the bytecode. (I’m not sure it even makes sense to immediately generate dSYMs for Bitcode apps at all, but I digress.) Now, after your submitted app is recompiled, you must download the new dSYMs from Apple and submit them to your crash reporter so they get the new binary addresses for your app’s symbols. (Shout out to <a href="https://krausefx.com/blog/download-dsym-symbolication-files-from-itunes-connect-for-bitcode-ios-apps">Fastlane</a> for creating a tool that helps automate this process; if you prefer a little more control, I wrote a tool called <code class="language-plaintext highlighter-rouge">upload-symbols</code> that ships with Fabric.app and the Fabric CocoaPod you can use).</p>
 
 <p>We thought there would be some time before we started seeing recompilations, maybe when a new processor architecture came out, but there are other reasons Apple might want to recompile: new LLVM optimizations, or injecting code for security or DRM purposes. Indeed, we quickly found that it was happening immediately for all new apps, by testing one of my own personal apps in the store. This caused confusion for lots of our customers at the time, and to this day the process, because it requires some manual work, still trips up some developers.</p>
 
@@ -113,10 +113,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-03-26-validating-crash-reporting-in-live-ios-apps.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-03-26-validating-crash-reporting-in-live-ios-apps.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

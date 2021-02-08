@@ -107,13 +107,13 @@
 
 <h1 id="complex-configuration-compositions">Complex Configuration Compositions</h1>
 
-<p>Much of Xcode’s build system’s flexibility comes from composition–you can use both Xcconfigs and the Build Settings area, and <code class="highlighter-rouge">#include</code> Xcconfigs into others. Dynamic setting expansion and platform selectors enables automatic resolution of settings based on environment or target details. Settings can be <code class="highlighter-rouge">$(inherited)</code> from multiple levels of granularity and overridden by target precedence. Xcode projects have <em>Configurations</em> defining entirely parallel sets of settings.</p>
+<p>Much of Xcode’s build system’s flexibility comes from composition–you can use both Xcconfigs and the Build Settings area, and <code class="language-plaintext highlighter-rouge">#include</code> Xcconfigs into others. Dynamic setting expansion and platform selectors enables automatic resolution of settings based on environment or target details. Settings can be <code class="language-plaintext highlighter-rouge">$(inherited)</code> from multiple levels of granularity and overridden by target precedence. Xcode projects have <em>Configurations</em> defining entirely parallel sets of settings.</p>
 
 <p>Inheritance and precedence have their own rules in Xcode, and the complex relationships arising from all the composition methods make it tough to confidently change a setting without inadvertently propogating unwanted changes elsewhere. As a concrete example, Cocoapods will inject Xcconfigs into your project, which can be inadvertently overridden in the Target column of the Build Settings editor.</p>
 
 <h2 id="inheritance">Inheritance</h2>
 
-<p>The special selector <code class="highlighter-rouge">$(inherited)</code> brings in all settings resolved at the next highest level in the build setting graph. There are three main inheritance “trunks” to consider:</p>
+<p>The special selector <code class="language-plaintext highlighter-rouge">$(inherited)</code> brings in all settings resolved at the next highest level in the build setting graph. There are three main inheritance “trunks” to consider:</p>
 
 <ul>
   <li>Xcode defaults -&gt; Project -&gt; Target</li>
@@ -148,7 +148,7 @@
 	<span class="caption">The acyclic inheritance graph for build settings.</span>
 </center>
 
-<p>In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) XcPb</code>, and the Build Settings editor version of the Target-level iOS-specific setting is defined as <code class="highlighter-rouge">$(inherited) Tf</code>. When you look at the Resolved column, you can see how inheritance has propogated values down the line.</p>
+<p>In the below screenshot, you can see some build settings that have been defined in both the Build Settings editor and Xcconfig files, with settings defined at top-, configuration- and platform-levels. Each cell in the matrix defines just one value after inheriting. For instance, the Xcconfig version of the Project-level macOS-specific setting is defined as <code class="language-plaintext highlighter-rouge">$(inherited) XcPb</code>, and the Build Settings editor version of the Target-level iOS-specific setting is defined as <code class="language-plaintext highlighter-rouge">$(inherited) Tf</code>. When you look at the Resolved column, you can see how inheritance has propogated values down the line.</p>
 
 <center>
 	<style scoped="">
@@ -175,7 +175,7 @@
 	<span class="caption">An example using inheritance.</span>
 </center>
 
-<p><em>Note that in this example, I purposely left <code class="highlighter-rouge">$(inherited)</code> off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over.</em></p>
+<p><em>Note that in this example, I purposely left <code class="language-plaintext highlighter-rouge">$(inherited)</code> off of the Xcconfig version of the top-Project-level setting, so as not to bring a bunch of noise into the example of the architectures list repeating over and over.</em></p>
 
 <h2 id="precedence">Precedence</h2>
 
@@ -206,7 +206,7 @@
 	<span class="caption">The linear precedence progression for build settings.</span>
 </center>
 
-<p>The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there’s no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the <code class="highlighter-rouge">$(inherited)</code> selector removed. So, the same cells called out above now have the values <code class="highlighter-rouge">XcPb</code> and <code class="highlighter-rouge">Tf</code>, respectively. The leftmost values win out due to precedence rules.</p>
+<p>The screenshot below shows essentially the same setup as the one used to demostrate inheritance–the difference being that there’s no inheritance! Each cell has the same value as its counterpart in the inheritance-based version, with the <code class="language-plaintext highlighter-rouge">$(inherited)</code> selector removed. So, the same cells called out above now have the values <code class="language-plaintext highlighter-rouge">XcPb</code> and <code class="language-plaintext highlighter-rouge">Tf</code>, respectively. The leftmost values win out due to precedence rules.</p>
 
 <center>
 	<style scoped="">
@@ -242,10 +242,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-01-28-xcode-build-setting-inheritance-and-precedence.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-01-28-xcode-build-setting-inheritance-and-precedence.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

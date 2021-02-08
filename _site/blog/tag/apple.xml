@@ -10,6 +10,15 @@
 		<link>http://tworingsoft.com/blog/tag/apple.html</link>
 		
 			<item>
+				<title>Advent of Code 2020 on Swift Playgrounds for iPad</title>
+				<description>I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor.</description>
+				<pubDate>Fri, 05 Feb 2021 00:00:00 -0900</pubDate>
+				<link>https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html</guid>
+				
+			</item>
+		
+			<item>
 				<title>My WWDC 2019 Session Watchlist</title>
 				<description>My scheduled programming for watching this year's WWDC session videos.</description>
 				<pubDate>Fri, 14 Jun 2019 00:00:00 -0800</pubDate>

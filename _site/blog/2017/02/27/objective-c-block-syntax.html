@@ -113,7 +113,7 @@
 	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/58de74211062f1784b1cb3410f5a07b9">https://gist.github.com/armcknight/58de74211062f1784b1cb3410f5a07b9</a>. Enable javascript to see them embedded here.)</p>
 </noscript>
 
-<p>Instead, Xcode provides an autocompletion for the string <code class="highlighter-rouge">typedefBlock</code>; start typing that outside of an <code class="highlighter-rouge">@interface</code>/<code class="highlighter-rouge"><span class="k">@implementation</span></code> scope, and you can accept an automatic expansion to the following:</p>
+<p>Instead, Xcode provides an autocompletion for the string <code class="language-plaintext highlighter-rouge">typedefBlock</code>; start typing that outside of an <code class="language-plaintext highlighter-rouge">@interface</code>/<code class="language-plaintext highlighter-rouge">@implementation</code> scope, and you can accept an automatic expansion to the following:</p>
 
 <center>
 	<style scoped="">
@@ -146,11 +146,11 @@
 	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/26662cb58286db2d0c3e1f5aefe69b71">https://gist.github.com/armcknight/26662cb58286db2d0c3e1f5aefe69b71</a>. Enable javascript to see them embedded here.)</p>
 </noscript>
 
-<p>This adheres to DRY principles and makes the code more self-documentingly readable. So many times, I’ve seen method after method clumsily spell out the same block signature for passing networking completion blocks down the call stack with the familiar triad of <code class="highlighter-rouge">NSData</code>, <code class="highlighter-rouge">NSURLResponse</code> and <code class="highlighter-rouge">NSError</code>, when it should have been wrapped up in a <code class="highlighter-rouge">typedefBlock</code>. Removing the actual signature from 20 places to just one would have avoided many permutations of nullability specifiers, types and parameter names between all the instances of the completion signature. you can change it much easier in the future and even add documentation comments!</p>
+<p>This adheres to DRY principles and makes the code more self-documentingly readable. So many times, I’ve seen method after method clumsily spell out the same block signature for passing networking completion blocks down the call stack with the familiar triad of <code class="language-plaintext highlighter-rouge">NSData</code>, <code class="language-plaintext highlighter-rouge">NSURLResponse</code> and <code class="language-plaintext highlighter-rouge">NSError</code>, when it should have been wrapped up in a <code class="language-plaintext highlighter-rouge">typedefBlock</code>. Removing the actual signature from 20 places to just one would have avoided many permutations of nullability specifiers, types and parameter names between all the instances of the completion signature. you can change it much easier in the future and even add documentation comments!</p>
 
 <h1 id="placeholder-expansion">Placeholder expansion</h1>
 
-<p>OK, we’ve now <code class="highlighter-rouge">typedef</code>‘d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of <a href="http://goshdarnblocksyntax.com">gosh darn block syntax</a>.</p>
+<p>OK, we’ve now <code class="language-plaintext highlighter-rouge">typedef</code>‘d all of our block declarations, and now we want to call a method containing a completion block. If you have autocompleted a method call that accepts a block as a parameter, you can tab over to that placeholder and hit Return, expanding the full block syntax needed to satisfy the parameter. This really helps me to write blocks that have return values, because for some reason I can never remember that particular piece of <a href="http://goshdarnblocksyntax.com">gosh darn block syntax</a>.</p>
 
 <center>
 	<style scoped="">
@@ -208,7 +208,7 @@
 
 <h1 id="inline-blocks">Inline blocks</h1>
 
-<p>Xcode has one other helpful snippet to write Objective-C blocks: <code class="highlighter-rouge">inlineBlock</code>. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like <code class="highlighter-rouge">+[UIView animateWithDuration:animations:completion:]</code>, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you’re reading code or diffs in viewers that wrap text.</p>
+<p>Xcode has one other helpful snippet to write Objective-C blocks: <code class="language-plaintext highlighter-rouge">inlineBlock</code>. This helps you to declare a block and store it in a variable in local scope. This makes method calls that accept multiple blocks, like <code class="language-plaintext highlighter-rouge">+[UIView animateWithDuration:animations:completion:]</code>, more readable at the call site. I prefer this over chaining multiple blocks directly in the parameter positions, which ends up looking awkward in Objective-C syntax and even worse when you’re reading code or diffs in viewers that wrap text.</p>
 
 <center>
 	<style scoped="">
@@ -239,17 +239,20 @@
 
 <h2 id="what-about-swift">What about Swift?</h2>
 
-<p>Writing closures in Swift is much easier for me, but I’d still encourage you to <code class="highlighter-rouge">typealias</code> complicated closure types, and you can always visit <a href="http://fuckingswiftblocksyntax.com">fucking swift block syntax</a>, <a href="http://fuckingclosuresyntax.com">fucking closure syntax</a> and of course <a href="http://goshdarnclosuresyntax.com">gosh darn closure syntax</a>, for those of you who’ve already maxed out your cursing jar allowance for the month performing Swift 3 migrations.</p>
+<p>Writing closures in Swift is much easier for me, but I’d still encourage you to <code class="language-plaintext highlighter-rouge">typealias</code> complicated closure types, and you can always visit <a href="http://fuckingswiftblocksyntax.com">fucking swift block syntax</a>, <a href="http://fuckingclosuresyntax.com">fucking closure syntax</a> and of course <a href="http://goshdarnclosuresyntax.com">gosh darn closure syntax</a>, for those of you who’ve already maxed out your cursing jar allowance for the month performing Swift 3 migrations.</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-02-27-objective-c-block-syntax.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-02-27-objective-c-block-syntax.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

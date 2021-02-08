@@ -101,7 +101,7 @@
 		<hr />
 					
 <div id="post-content">
-	<p>In Xcode, I make heavy use of the Replace function, both in the source editor (<code class="highlighter-rouge">⌘⌥F</code>) and the Find navigator (<code class="highlighter-rouge">⇧⌘⌥F</code>), and much of that use includes regular expression capabilities. At this point I can fly through all the modifier popovers and dropdowns without leaving the home keys. To boot, I’ve had a lot of practice with it lately due to the complete lack of refactoring support for Swift.</p>
+	<p>In Xcode, I make heavy use of the Replace function, both in the source editor (<code class="language-plaintext highlighter-rouge">⌘⌥F</code>) and the Find navigator (<code class="language-plaintext highlighter-rouge">⇧⌘⌥F</code>), and much of that use includes regular expression capabilities. At this point I can fly through all the modifier popovers and dropdowns without leaving the home keys. To boot, I’ve had a lot of practice with it lately due to the complete lack of refactoring support for Swift.</p>
 
 <p>Xcode 9 has a brand new source editor implemented from scratch in Swift, and the Find/Replace panel I’ve come to know so well also received a makeover. After using it for a few days, I’ve found what I like about it, and what I’d like to see for the final release. Below is my critique of the UI and UX, in which I’ve done my best to leave no stone unturned.</p>
 
@@ -188,7 +188,7 @@
 	</video>
 </center>
 
-<p>The options to restrict results to strings “starting with” and “ending with” the query are gone in Xcode 9. Personally I am fine with this since you can write regular expressions for them, using <code class="highlighter-rouge">^</code> (start) and <code class="highlighter-rouge">$</code> (end) <a href="http://www.regular-expressions.info/anchors.html">anchors</a>.</p>
+<p>The options to restrict results to strings “starting with” and “ending with” the query are gone in Xcode 9. Personally I am fine with this since you can write regular expressions for them, using <code class="language-plaintext highlighter-rouge">^</code> (start) and <code class="language-plaintext highlighter-rouge">$</code> (end) <a href="http://www.regular-expressions.info/anchors.html">anchors</a>.</p>
 
 <center>
 	<style scoped="">
@@ -215,7 +215,7 @@
 	<span class="caption">The prefix and suffix search options in the search option popover dropdown.</span>
 </center>
 
-<p>One other thing removed in Xcode 9 is the “Insert Pattern” (<code class="highlighter-rouge">^⌥⌘P</code>). I personally never used this, but it appears to no longer be available even via the menu bar. If I had to guess, that was a system-wide option that was not carried over to a from-scratch rewrite (a very similar Find/Replace panel exists in TextEdit.app, with the “Insert Pattern” option–but no real regex support).</p>
+<p>One other thing removed in Xcode 9 is the “Insert Pattern” (<code class="language-plaintext highlighter-rouge">^⌥⌘P</code>). I personally never used this, but it appears to no longer be available even via the menu bar. If I had to guess, that was a system-wide option that was not carried over to a from-scratch rewrite (a very similar Find/Replace panel exists in TextEdit.app, with the “Insert Pattern” option–but no real regex support).</p>
 
 <center>
 	<style scoped="">
@@ -271,7 +271,7 @@
 	<span class="caption">The new magnifying glass dropdown saves space in Xcode 9 (bottom) compared to Xcode 8 (top).</span>
 </center>
 
-<p>The clear button to the right of the match count label in the Find field has disappeared, which may irk some developers who prefer to point and click in the GUI. To clear the text from the field, one must now double- or triple-click, or click and drag to highlight to select all the text, and press delete. Or, for the terminal lovers, <code class="highlighter-rouge">^A</code> and <code class="highlighter-rouge">^K</code> still work too.</p>
+<p>The clear button to the right of the match count label in the Find field has disappeared, which may irk some developers who prefer to point and click in the GUI. To clear the text from the field, one must now double- or triple-click, or click and drag to highlight to select all the text, and press delete. Or, for the terminal lovers, <code class="language-plaintext highlighter-rouge">^A</code> and <code class="language-plaintext highlighter-rouge">^K</code> still work too.</p>
 
 <h2 id="match-count-label">Match count label</h2>
 
@@ -304,7 +304,7 @@
 
 <h2 id="using-text-selections">Using text selections</h2>
 
-<p>Something I didn’t even notice until I started pulling apart the two UIs: in versions ≤ 8, holding <code class="highlighter-rouge">⌥</code> changes the “Replace” button to “All in Selection”. Fortunately, it still exists in the menu as “Use Selection for Replace” (<code class="highlighter-rouge">⇧⌘E</code>), along with it’s sibling “Use Selection for Find” (<code class="highlighter-rouge">⌘E</code>). I always love finding hidden little helpful details like this, so I’m waiting for the chance to use it. Hopefully I remember!</p>
+<p>Something I didn’t even notice until I started pulling apart the two UIs: in versions ≤ 8, holding <code class="language-plaintext highlighter-rouge">⌥</code> changes the “Replace” button to “All in Selection”. Fortunately, it still exists in the menu as “Use Selection for Replace” (<code class="language-plaintext highlighter-rouge">⇧⌘E</code>), along with it’s sibling “Use Selection for Find” (<code class="language-plaintext highlighter-rouge">⌘E</code>). I always love finding hidden little helpful details like this, so I’m waiting for the chance to use it. Hopefully I remember!</p>
 
 <center>
 	<style scoped="">
@@ -346,10 +346,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-06-19-xcode-9-new-search-and-replace-panel.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-06-19-xcode-9-new-search-and-replace-panel.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

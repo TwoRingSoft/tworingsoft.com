@@ -110,54 +110,57 @@
 <ol>
   <li>configure rbenv:
     <ul>
-      <li><code class="highlighter-rouge">rbenv install 2.5.1</code></li>
-      <li><code class="highlighter-rouge">rbenv rehash</code></li>
-      <li><code class="highlighter-rouge">rbenv local 2.5.1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">rbenv install 2.5.1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">rbenv rehash</code></li>
+      <li><code class="language-plaintext highlighter-rouge">rbenv local 2.5.1</code></li>
     </ul>
   </li>
   <li>install/configure bundler:
     <ul>
-      <li><code class="highlighter-rouge">rbenv exec gem install bundler</code></li>
-      <li><code class="highlighter-rouge">rbenv exec bundle config --global path vendor/bundle</code> # from <a href="https://gist.github.com/denvazh/9535921004d7208dd275">this GitHub Gist</a>; I like this model of keeping all dependencies in the project, instead of user/global directories, just like CocoaPods</li>
+      <li><code class="language-plaintext highlighter-rouge">rbenv exec gem install bundler</code></li>
+      <li><code class="language-plaintext highlighter-rouge">rbenv exec bundle config --global path vendor/bundle</code> # from <a href="https://gist.github.com/denvazh/9535921004d7208dd275">this GitHub Gist</a>; I like this model of keeping all dependencies in the project, instead of user/global directories, just like CocoaPods</li>
     </ul>
   </li>
   <li>suggested workarounds to install Nokogiri, from the macOS section of their guide <a href="http://www.nokogiri.org/tutorials/installing_nokogiri.html">“Installing Nokogiri”</a>:
     <ul>
-      <li><code class="highlighter-rouge">brew install libxml2 pkg-confif</code></li>
-      <li><code class="highlighter-rouge">brew uninstall --ignore-dependencies xz</code></li>
-      <li><code class="highlighter-rouge">xcode-select -switch</code> between my local versions of Xcode 10 and 9.4.1</li>
+      <li><code class="language-plaintext highlighter-rouge">brew install libxml2 pkg-confif</code></li>
+      <li><code class="language-plaintext highlighter-rouge">brew uninstall --ignore-dependencies xz</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xcode-select -switch</code> between my local versions of Xcode 10 and 9.4.1</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">env ARCHFLAGS="-arch x86_64" rbenv exec bundle</code> # ARCHFLAGS workaround for pg gem: https://stackoverflow.com/questions/6209797/cant-find-the-postgresql-client-library-libpq)</li>
-  <li><code class="highlighter-rouge">brew install xz</code> # don’t forget this if you uninstalled it earlier!</li>
+  <li><code class="language-plaintext highlighter-rouge">env ARCHFLAGS="-arch x86_64" rbenv exec bundle</code> # ARCHFLAGS workaround for pg gem: https://stackoverflow.com/questions/6209797/cant-find-the-postgresql-client-library-libpq)</li>
+  <li><code class="language-plaintext highlighter-rouge">brew install xz</code> # don’t forget this if you uninstalled it earlier!</li>
 </ol>
 
-<p>Steps 4 and 5 are where I hit trouble. When bundling, I got some error messages about undefined symbols for the i386 architecture when building nokogiri with native extensions. I couldn’t find anything on the web pointing out my exact problem, but many similar ones, so I chipped away by trying a few different things I found. (I must admit that I don’t know which one alone would have fixed it. I tried resetting my machine and retracing all these steps again, only to have it work perfectly without hitting the same nokogiri issues.) The linked SO post in step 4 is the exact problem I had and I was able to translate the top solution for my needs (by removing <code class="highlighter-rouge">sudo</code> usage and replacing it with <code class="highlighter-rouge">rbenv</code>).</p>
+<p>Steps 4 and 5 are where I hit trouble. When bundling, I got some error messages about undefined symbols for the i386 architecture when building nokogiri with native extensions. I couldn’t find anything on the web pointing out my exact problem, but many similar ones, so I chipped away by trying a few different things I found. (I must admit that I don’t know which one alone would have fixed it. I tried resetting my machine and retracing all these steps again, only to have it work perfectly without hitting the same nokogiri issues.) The linked SO post in step 4 is the exact problem I had and I was able to translate the top solution for my needs (by removing <code class="language-plaintext highlighter-rouge">sudo</code> usage and replacing it with <code class="language-plaintext highlighter-rouge">rbenv</code>).</p>
 
 <h1 id="one-more-thing">One more thing…</h1>
 
-<p>From here it wasn’t too much more to get to running the app in the cloud via Heroku. I had to fill in some steps of my own to get it working though–their guide did not have adequate coverage of local PostgreSQL usage. When I tried to run <code class="highlighter-rouge">rbenv exec bundle exec rails server</code> I got a fatal exception: <code class="highlighter-rouge">database "myapp_development" does not exist</code>. The <a href="https://gorails.com/setup/osx/10.13-high-sierra">GoRails guide</a> filled in the gap there, where I’d hadn’t yet run <code class="highlighter-rouge">rails db:create</code>. I also wound up needing to do the following for that to work:</p>
+<p>From here it wasn’t too much more to get to running the app in the cloud via Heroku. I had to fill in some steps of my own to get it working though–their guide did not have adequate coverage of local PostgreSQL usage. When I tried to run <code class="language-plaintext highlighter-rouge">rbenv exec bundle exec rails server</code> I got a fatal exception: <code class="language-plaintext highlighter-rouge">database "myapp_development" does not exist</code>. The <a href="https://gorails.com/setup/osx/10.13-high-sierra">GoRails guide</a> filled in the gap there, where I’d hadn’t yet run <code class="language-plaintext highlighter-rouge">rails db:create</code>. I also wound up needing to do the following for that to work:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">brew install postresql</code></li>
-  <li><code class="highlighter-rouge">createdb</code></li>
+  <li><code class="language-plaintext highlighter-rouge">brew install postresql</code></li>
+  <li><code class="language-plaintext highlighter-rouge">createdb</code></li>
 </ul>
 
 <p>Finally, rerunning the Rails server was able to get me to the Heroku tutorial’s welcome controller page. Whew… I have a working Rails app again! I committed it to <a href="https://github.com/armcknight/rails-app">a GitHub repo</a> for preservation.</p>
 
 <h1 id="postscript">Postscript</h1>
 
-<p>Funnily enough, I blew away some Ruby dependencies I use to compile this static site with Jekyll, Sass and a few plugins! I fixed it up, and it now uses the local <code class="highlighter-rouge">vendor/bundle</code> bundler path as well, and I even ran <code class="highlighter-rouge">bundle package</code> and checked <code class="highlighter-rouge">bundle/cache</code> into source control, while adding <code class="highlighter-rouge">bundle/vendor/**/*</code> to <code class="highlighter-rouge">.gitignore</code> (thanks to <a href="http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/">this guide to bundler dependencies</a>, which also enunciates dependency principles that resonate strongly with me; see also my previous writings <a href="http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html">on dependency isolation</a>).</p>
+<p>Funnily enough, I blew away some Ruby dependencies I use to compile this static site with Jekyll, Sass and a few plugins! I fixed it up, and it now uses the local <code class="language-plaintext highlighter-rouge">vendor/bundle</code> bundler path as well, and I even ran <code class="language-plaintext highlighter-rouge">bundle package</code> and checked <code class="language-plaintext highlighter-rouge">bundle/cache</code> into source control, while adding <code class="language-plaintext highlighter-rouge">bundle/vendor/**/*</code> to <code class="language-plaintext highlighter-rouge">.gitignore</code> (thanks to <a href="http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/">this guide to bundler dependencies</a>, which also enunciates dependency principles that resonate strongly with me; see also my previous writings <a href="http://tworingsoft.com/blog/2018/01/09/dependency-management-best-practices.html">on dependency isolation</a>).</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2018-09-25-my-holy-grail--a-simple-Rails-install.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2018-09-25-my-holy-grail--a-simple-Rails-install.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

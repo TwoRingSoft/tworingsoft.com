@@ -101,15 +101,15 @@
 		<hr />
 					
 <div id="post-content">
-	<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
+	<p>One of Swift’s most notable, fundamental and pervasive constructs is the Optional, to help deal with the <code class="language-plaintext highlighter-rouge">null</code> problem faced by any language with pointers. This is a great way to represent the absence of an object, and denote anything that is not required and can be absent as such. Then, you get some great ways to validate you have everything you need before working with variables to perform a task.</p>
 
-<p>Swift, like Objective-C and many other languages before it, also has a way to divert the normal flow of execution in exceptional circumstances. So, if your validation routine decides it has hit a situation where it can no longer proceed, it can <code class="highlighter-rouge">throw</code> an error and bail out early.</p>
+<p>Swift, like Objective-C and many other languages before it, also has a way to divert the normal flow of execution in exceptional circumstances. So, if your validation routine decides it has hit a situation where it can no longer proceed, it can <code class="language-plaintext highlighter-rouge">throw</code> an error and bail out early.</p>
 
 <p>As you shuttle data between disks, servers, and capture it from and present it to your users, you probably have many functions to perform specific transformations or I/O tasks. You have been writing more functional code since moving to Swift, haven’t you? Well, let’s talk about return types and describing function failures!</p>
 
 <h1 id="failure-mode-code">Failure mode code</h1>
 
-<p>Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It’s tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning <code class="highlighter-rouge">nil</code>.</p>
+<p>Consider how many C or Objective-C APIs work: return an integer or boolean result that represents the status, -1 often representing an error in the integer case. It’s tempting in Swift to use the return value of a function to signify something went wrong, by making it optional and returning <code class="language-plaintext highlighter-rouge">nil</code>.</p>
 
 <script src="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488.js"></script>
 
@@ -117,7 +117,7 @@
 	<p class="caption">(Code snippet hosted at <a href="https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488">https://gist.github.com/armcknight/73f54da770d415545e38e30961a49488</a>. Enable javascript to see them embedded here.)</p>
 </noscript>
 
-<p>In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of <code class="highlighter-rouge">do</code>/<code class="highlighter-rouge">try</code>/<code class="highlighter-rouge">catch</code> to divert execution using <code class="highlighter-rouge">throw</code>, where Objective-C discouraged using exceptions for all but actual programmer error.</p>
+<p>In Objective-C, the inout error parameter was the pattern to communicate errors, with a special return value to signal the error occurred. Swift  encourages the use of <code class="language-plaintext highlighter-rouge">do</code>/<code class="language-plaintext highlighter-rouge">try</code>/<code class="language-plaintext highlighter-rouge">catch</code> to divert execution using <code class="language-plaintext highlighter-rouge">throw</code>, where Objective-C discouraged using exceptions for all but actual programmer error.</p>
 
 <script src="https://gist.github.com/armcknight/81cc09a5185b35f2c52c2d3fa48b5ee8.js"></script>
 
@@ -133,7 +133,7 @@
   <li>and the statements at the bottom represents your presentation layer.</li>
 </ul>
 
-<p>I like several things about the second approach. It saves me from a clunky <code class="highlighter-rouge">guard</code> statement in the middle layer; using <code class="highlighter-rouge">try</code> clears away edge cases and the code more clearly describes intention. All error handling logic that involves user notification cohesively resides in the presentation layer, whereas in the first example there can be many places that could plausibly handle the error, forcing you to expend more cognitive process to make those decisions.</p>
+<p>I like several things about the second approach. It saves me from a clunky <code class="language-plaintext highlighter-rouge">guard</code> statement in the middle layer; using <code class="language-plaintext highlighter-rouge">try</code> clears away edge cases and the code more clearly describes intention. All error handling logic that involves user notification cohesively resides in the presentation layer, whereas in the first example there can be many places that could plausibly handle the error, forcing you to expend more cognitive process to make those decisions.</p>
 
 <h1 id="optional-requirements">Optional requirements</h1>
 
@@ -159,9 +159,9 @@
 
 <h1 id="if-it-walks-like-an-error">If it walks like an error…</h1>
 
-<p>Think about what you’ll need to do with an error. In truly exceptional scenarios, the app is not going to function the way the user expects, so you’re probably going to need to show them an alert. This is a great use case for <code class="highlighter-rouge">throw</code>ing errors. You can bubble up errors from any application layer all the way to the UI, even transforming errors at the boundaries between layers. (You may want to log an error received from your server, then repackage it with a user-friendly message and propogate it through your controller logic until it reaches the presentation layer.)</p>
+<p>Think about what you’ll need to do with an error. In truly exceptional scenarios, the app is not going to function the way the user expects, so you’re probably going to need to show them an alert. This is a great use case for <code class="language-plaintext highlighter-rouge">throw</code>ing errors. You can bubble up errors from any application layer all the way to the UI, even transforming errors at the boundaries between layers. (You may want to log an error received from your server, then repackage it with a user-friendly message and propogate it through your controller logic until it reaches the presentation layer.)</p>
 
-<p>All the intervening code paths that return things to other things might then not need to worry about optionals. That means many less <code class="highlighter-rouge">guards</code>, <code class="highlighter-rouge">if lets</code>, optional chaining and <code class="highlighter-rouge">nil</code> coalescing along the way. Instead, you can just prefix other function calls with <code class="highlighter-rouge">try</code> (and sometimes perhaps <code class="highlighter-rouge">try?</code>). Using these constructs to communicate errors is an abuse of the optional system and hides information about the errors that would help the compiler and other developers.</p>
+<p>All the intervening code paths that return things to other things might then not need to worry about optionals. That means many less <code class="language-plaintext highlighter-rouge">guards</code>, <code class="language-plaintext highlighter-rouge">if lets</code>, optional chaining and <code class="language-plaintext highlighter-rouge">nil</code> coalescing along the way. Instead, you can just prefix other function calls with <code class="language-plaintext highlighter-rouge">try</code> (and sometimes perhaps <code class="language-plaintext highlighter-rouge">try?</code>). Using these constructs to communicate errors is an abuse of the optional system and hides information about the errors that would help the compiler and other developers.</p>
 
 <p>Swift’s error type system has recently seen improvements and I’m sure as time goes on we’ll see more improvements to the overall propogation mechanisms. They provide a great way to describe the failure modes of your routines, so always consider if what you’re really trying to communicate is best handled with Swift’s errors. I default to the strategy described here, deviating only if the model really calls for it.</p>
 
@@ -170,10 +170,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-05-18-returning-optionals-versus-throwing-errors-in-swift.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-05-18-returning-optionals-versus-throwing-errors-in-swift.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

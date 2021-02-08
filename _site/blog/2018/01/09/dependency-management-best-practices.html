@@ -113,7 +113,7 @@
 
 <p>One thing I’ve been better about the past few years is to always fork dependencies. How you do you know it will be there the next time you need it? How do you know the maintainers will not rewrite history and remove a release you depended on?</p>
 
-<p>In  circles that use CocoaPods, this comes down to a dogmatic debate over whether or not to check in <code class="highlighter-rouge">Pods/</code>, <a href="http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html">which I do</a>. That way, the only thing that matters is whether you can access the project you own–if you can’t get to that, it doesn’t matter whether you can get your dependencies or not. You aren’t doing work.</p>
+<p>In  circles that use CocoaPods, this comes down to a dogmatic debate over whether or not to check in <code class="language-plaintext highlighter-rouge">Pods/</code>, <a href="http://tworingsoft.com/blog/2017/04/12/source-control-management-vs-dependency-management.html">which I do</a>. That way, the only thing that matters is whether you can access the project you own–if you can’t get to that, it doesn’t matter whether you can get your dependencies or not. You aren’t doing work.</p>
 
 <p>Forking allows you another layer of control on when you update your dependencies. You can view the code diff when you bring upstream commits into your fork. Then you can update consumers from your fork.</p>
 
@@ -121,7 +121,7 @@
 
 <p>Do you trust that just because you declare a dependency on SomePackage 1.2.3, that it will be there the next time your CI box performs a fresh clone and tries to build? Do you trust that the servers that deliver packages and metadata are up when you need them to be?</p>
 
-<p>Yet another thing CocoaPods allows is to use a <a href="http://guides.cocoapods.org/making/private-cocoapods.html">private podspec repo</a> to serve the dependencies. If you like control over your dependencies, then this decentralized approach is superior to relying on <code class="highlighter-rouge">trunk</code>. Admittedly, I have not taken this step yet with my own projects, but it’s worth noting for those who haven’t tried it. Another thing I have yet to dive deep into is <a href="https://github.com/Carthage/Carthage">Carthage</a>, which is always decentralized.</p>
+<p>Yet another thing CocoaPods allows is to use a <a href="http://guides.cocoapods.org/making/private-cocoapods.html">private podspec repo</a> to serve the dependencies. If you like control over your dependencies, then this decentralized approach is superior to relying on <code class="language-plaintext highlighter-rouge">trunk</code>. Admittedly, I have not taken this step yet with my own projects, but it’s worth noting for those who haven’t tried it. Another thing I have yet to dive deep into is <a href="https://github.com/Carthage/Carthage">Carthage</a>, which is always decentralized.</p>
 
 <h1 id="do-not-trust-ensure">Do not trust. Ensure.</h1>
 
@@ -132,10 +132,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2018-01-09-dependency-management-best-practices.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2018-01-09-dependency-management-best-practices.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

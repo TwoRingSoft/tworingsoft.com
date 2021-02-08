@@ -118,32 +118,35 @@
 <p>All of these things can be achieved using build configurations. The differences for these types of things can be expressed in the following build settings:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">GCC_PREPROCESSOR_DEFINITIONS</code> and <code class="highlighter-rouge">SWIFT_ACTIVE_COMPILATION_CONDITIONS</code> to conditionally compile code</li>
-  <li><code class="highlighter-rouge">INFOPLIST_FILE</code> if you want to store things like server endpoints in your plist instead of in code</li>
-  <li><code class="highlighter-rouge">OTHER_LDFLAGS</code> to conditionally link certain frameworks, like intrusive debugging tools, or touch visualizers</li>
-  <li><code class="highlighter-rouge">PRODUCT_BUNDLE_IDENTIFIER</code>: different ids means you can have all the different app variants alongside each other, and</li>
-  <li><code class="highlighter-rouge">ASSETCATALOG_COMPILER_APPICON_NAME</code> helps you differentiate those variants, especially if you don’t want to vary <code class="highlighter-rouge">PRODUCT_NAME</code></li>
+  <li><code class="language-plaintext highlighter-rouge">GCC_PREPROCESSOR_DEFINITIONS</code> and <code class="language-plaintext highlighter-rouge">SWIFT_ACTIVE_COMPILATION_CONDITIONS</code> to conditionally compile code</li>
+  <li><code class="language-plaintext highlighter-rouge">INFOPLIST_FILE</code> if you want to store things like server endpoints in your plist instead of in code</li>
+  <li><code class="language-plaintext highlighter-rouge">OTHER_LDFLAGS</code> to conditionally link certain frameworks, like intrusive debugging tools, or touch visualizers</li>
+  <li><code class="language-plaintext highlighter-rouge">PRODUCT_BUNDLE_IDENTIFIER</code>: different ids means you can have all the different app variants alongside each other, and</li>
+  <li><code class="language-plaintext highlighter-rouge">ASSETCATALOG_COMPILER_APPICON_NAME</code> helps you differentiate those variants, especially if you don’t want to vary <code class="language-plaintext highlighter-rouge">PRODUCT_NAME</code></li>
 </ul>
 
 <h1 id="-todos-and-donts">// TODO:s and Dont’s</h1>
 
 <p>Do not create a target, configuration, and maybe even scheme, for each app variant. For an app with 3 variants, this creates 27 possible combinations. That is 24 too many! Even though you only hook up the right combinations today, others might not get it right later, and might be afraid to delete the unnecessary stuff.</p>
 
-<p>You can’t compile different sets of source files between configurations, as those are defined in a target’s Compile Sources Build Phase. I’d argue that you should place [semi-]shared code into separate static libraries and link them in <code class="highlighter-rouge">OTHER_LDFLAGS</code>.</p>
+<p>You can’t compile different sets of source files between configurations, as those are defined in a target’s Compile Sources Build Phase. I’d argue that you should place [semi-]shared code into separate static libraries and link them in <code class="language-plaintext highlighter-rouge">OTHER_LDFLAGS</code>.</p>
 
-<p>Each build setting’s configuration specialization can be further broken down by iOS/macOS/etc SDK versions. This is very helpful to SDK developers who don’t want to create a new framework target for each platform, when the code is largely identical. This may be possible to do with apps by defining things like <code class="highlighter-rouge">WRAPPER_EXTENSION</code> (and probably many other settings), but it almost certainly would break Xcode’s General and Capabilities panels for that target. While I encourage this practice for frameworks/libraries to avoid the explosion of MyLib-iOS/MyLib-TV/MyLib-Watch/MyLib-macOS targets, I would discourage it for apps. They are different things, and to do it for frameworks requires less twiddling with obscure settings. It probably also breaks</p>
+<p>Each build setting’s configuration specialization can be further broken down by iOS/macOS/etc SDK versions. This is very helpful to SDK developers who don’t want to create a new framework target for each platform, when the code is largely identical. This may be possible to do with apps by defining things like <code class="language-plaintext highlighter-rouge">WRAPPER_EXTENSION</code> (and probably many other settings), but it almost certainly would break Xcode’s General and Capabilities panels for that target. While I encourage this practice for frameworks/libraries to avoid the explosion of MyLib-iOS/MyLib-TV/MyLib-Watch/MyLib-macOS targets, I would discourage it for apps. They are different things, and to do it for frameworks requires less twiddling with obscure settings. It probably also breaks</p>
 
-<p>If possible, use <a href="https://pewpewthespells.com/blog/xcconfig_guide.html">xcconfigs</a>. Even if you don’t move all of the build settings definitions out of the GUI and into them, just defining the important different I outlined above can help a lot. This allows you to invoke <code class="highlighter-rouge">xcodebuild</code> with the same scheme/target and a different xcconfig per app variant you want to build with the <code class="highlighter-rouge">-xcconfig</code> option.</p>
+<p>If possible, use <a href="https://pewpewthespells.com/blog/xcconfig_guide.html">xcconfigs</a>. Even if you don’t move all of the build settings definitions out of the GUI and into them, just defining the important different I outlined above can help a lot. This allows you to invoke <code class="language-plaintext highlighter-rouge">xcodebuild</code> with the same scheme/target and a different xcconfig per app variant you want to build with the <code class="language-plaintext highlighter-rouge">-xcconfig</code> option.</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2018-05-08-overusing-xcode-targets-misses-the-mark.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2018-05-08-overusing-xcode-targets-misses-the-mark.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

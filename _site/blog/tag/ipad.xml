@@ -1,0 +1,22 @@
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://tworingsoft.com/feed.xml" rel="self" type="application/rss+xml" />
+		<title>Two Ring Soft % ipad</title>
+		<description>Two Ring Software's RSS Feed for updates on ipad.</description>
+		<link>http://tworingsoft.com/blog/tag/ipad.html</link>
+		
+			<item>
+				<title>Advent of Code 2020 on Swift Playgrounds for iPad</title>
+				<description>I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor.</description>
+				<pubDate>Fri, 05 Feb 2021 00:00:00 -0900</pubDate>
+				<link>https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html</link>
+				<guid isPermaLink="true">https://tworingsoft.com/blog/2021/02/05/advent-of-code-on-swift-playgrounds.html</guid>
+				
+			</item>
+		
+	</channel>
+</rss>

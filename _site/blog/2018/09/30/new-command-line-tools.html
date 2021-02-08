@@ -101,7 +101,7 @@
 		<hr />
 					
 <div id="post-content">
-	<p>Over the last few weeks I’ve written two new tools for the command line: <code class="highlighter-rouge">rebuild-sims</code> and <code class="highlighter-rouge">sync-forks</code>. They join a small but growing family of tools to help with software development. Here’s a bit about the newcomers and how I see that collection growing and staying organized.</p>
+	<p>Over the last few weeks I’ve written two new tools for the command line: <code class="language-plaintext highlighter-rouge">rebuild-sims</code> and <code class="language-plaintext highlighter-rouge">sync-forks</code>. They join a small but growing family of tools to help with software development. Here’s a bit about the newcomers and how I see that collection growing and staying organized.</p>
 
 <h1 id="rebuild-sims">rebuild-sims</h1>
 
@@ -122,27 +122,30 @@
 
 <p>I currently have around 80 forks. I’ve tried keeping them up to date locally to maintain as much control as possible over my fate as a dependee, but that’s a lot of work. For a while I’ve wanted a way to automatically ensure I have a local copy of each fork.</p>
 
-<p><code class="highlighter-rouge">sync-forks</code> uses the GitHub API via the <a href="https://github.com/piotrmurach/github"><code class="highlighter-rouge">github_api</code></a> Gem to get a list of all your repositories and clone those that are forks. In each local repo, the git remote <code class="highlighter-rouge">origin</code> will point to your fork, and <code class="highlighter-rouge">sync-forks</code> will add a new remote named <code class="highlighter-rouge">upstream</code> that points to the original.</p>
+<p><code class="language-plaintext highlighter-rouge">sync-forks</code> uses the GitHub API via the <a href="https://github.com/piotrmurach/github"><code class="language-plaintext highlighter-rouge">github_api</code></a> Gem to get a list of all your repositories and clone those that are forks. In each local repo, the git remote <code class="language-plaintext highlighter-rouge">origin</code> will point to your fork, and <code class="language-plaintext highlighter-rouge">sync-forks</code> will add a new remote named <code class="language-plaintext highlighter-rouge">upstream</code> that points to the original.</p>
 
-<p>Eventually, I’d like a way to automatically fetch new commits from <code class="highlighter-rouge">upstream</code>s and apply them (using <code class="highlighter-rouge">--ff-only</code> for safety) to the local default branch, and then push to <code class="highlighter-rouge">origin</code>. Maybe later a more sophisticated approach using <code class="highlighter-rouge">git pull --rebase</code> and a stored <code class="highlighter-rouge">rerere</code> strategy could be used for customized forks.</p>
+<p>Eventually, I’d like a way to automatically fetch new commits from <code class="language-plaintext highlighter-rouge">upstream</code>s and apply them (using <code class="language-plaintext highlighter-rouge">--ff-only</code> for safety) to the local default branch, and then push to <code class="language-plaintext highlighter-rouge">origin</code>. Maybe later a more sophisticated approach using <code class="language-plaintext highlighter-rouge">git pull --rebase</code> and a stored <code class="language-plaintext highlighter-rouge">rerere</code> strategy could be used for customized forks.</p>
 
-<p>Here’s another pie-in-the-sky idea: automate <em>forking</em> for all your dependencies. I’m not perfect about going around and forking all the repos for dependencies I use in my apps, or even in these Gems. While it is true that package managers may leave caches or checkouts of dependencies in various places, it might be nice to archive them all on a personal server, perhaps. If <code class="highlighter-rouge">sync-forks</code> could crawl all of my Gem or CocoaPod dependencies, fork them on their respective platforms (if possible–GitHub would work, but a privately hosted Git repo probably won’t) and do the usual sync work, then you’d have a total mirror of all the software your apps need to work!</p>
+<p>Here’s another pie-in-the-sky idea: automate <em>forking</em> for all your dependencies. I’m not perfect about going around and forking all the repos for dependencies I use in my apps, or even in these Gems. While it is true that package managers may leave caches or checkouts of dependencies in various places, it might be nice to archive them all on a personal server, perhaps. If <code class="language-plaintext highlighter-rouge">sync-forks</code> could crawl all of my Gem or CocoaPod dependencies, fork them on their respective platforms (if possible–GitHub would work, but a privately hosted Git repo probably won’t) and do the usual sync work, then you’d have a total mirror of all the software your apps need to work!</p>
 
 <h1 id="tworingtools">tworingtools</h1>
 
-<p>These are distributed in a Ruby Gem named <code class="highlighter-rouge">tworingtools</code>, which provided a nice little learning opportunity to me, since this is the first Gem I’ve created. I also have a set of tools distibuted via <code class="highlighter-rouge">Homebrew</code> in <a href="https://github.com/TwoRingSoft/homebrew-formulae">tworingsoft/homebrew-formulae</a>, but I’ve found that approach tougher. Going forward, I’d like to merge these collections.</p>
+<p>These are distributed in a Ruby Gem named <code class="language-plaintext highlighter-rouge">tworingtools</code>, which provided a nice little learning opportunity to me, since this is the first Gem I’ve created. I also have a set of tools distibuted via <code class="language-plaintext highlighter-rouge">Homebrew</code> in <a href="https://github.com/TwoRingSoft/homebrew-formulae">tworingsoft/homebrew-formulae</a>, but I’ve found that approach tougher. Going forward, I’d like to merge these collections.</p>
 
-<p><a href="https://github.com/tworingsoft/tools"><code class="highlighter-rouge">tworingtools</code></a> is currently all housed in a single repository, including specs, which I like. I currently have the Homebrew specs stored in a separate repo from the tools, introducing more complexity. Ultimately I’d like to combine those source repositories into <code class="highlighter-rouge">tworingtools</code>, and add them appropriately to the gemspec. All the better if I can also host the Homebrew specs in that same repository, and target both package managers.</p>
+<p><a href="https://github.com/tworingsoft/tools"><code class="language-plaintext highlighter-rouge">tworingtools</code></a> is currently all housed in a single repository, including specs, which I like. I currently have the Homebrew specs stored in a separate repo from the tools, introducing more complexity. Ultimately I’d like to combine those source repositories into <code class="language-plaintext highlighter-rouge">tworingtools</code>, and add them appropriately to the gemspec. All the better if I can also host the Homebrew specs in that same repository, and target both package managers.</p>
 
 </div>
 <p>
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2018-09-30-new-command-line-tools.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2018-09-30-new-command-line-tools.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

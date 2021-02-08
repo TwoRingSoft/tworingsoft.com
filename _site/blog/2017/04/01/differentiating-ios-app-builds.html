@@ -134,9 +134,9 @@
 
 <h1 id="app-icons">App icons</h1>
 
-<p>Once you have multiple versions of your app on your device beside each other, you need a way to tell them apart. Inspired by <a href="https://github.com/krzysztofzablocki/KZBootstrap">Krzysztof Zabłocki’s KZBootstrap</a>, I wanted to overlay some information about each build onto the icons, depending on the build variant. While <code class="highlighter-rouge">KZBootstrap</code> seems like an amazing tool, I already had an Xcode project, and I wanted to insert a clean, minimal solution. I also didn’t want to bring any new dependencies in, like <code class="highlighter-rouge">imagemagick</code> and <code class="highlighter-rouge">ghostscript</code> as in <code class="highlighter-rouge">KZBootstrap</code> and a few other solutions I found online.</p>
+<p>Once you have multiple versions of your app on your device beside each other, you need a way to tell them apart. Inspired by <a href="https://github.com/krzysztofzablocki/KZBootstrap">Krzysztof Zabłocki’s KZBootstrap</a>, I wanted to overlay some information about each build onto the icons, depending on the build variant. While <code class="language-plaintext highlighter-rouge">KZBootstrap</code> seems like an amazing tool, I already had an Xcode project, and I wanted to insert a clean, minimal solution. I also didn’t want to bring any new dependencies in, like <code class="language-plaintext highlighter-rouge">imagemagick</code> and <code class="language-plaintext highlighter-rouge">ghostscript</code> as in <code class="language-plaintext highlighter-rouge">KZBootstrap</code> and a few other solutions I found online.</p>
 
-<p>After a little more searching, I found <a href="https://github.com/bejo/XcodeIconTagger"><code class="highlighter-rouge">XcodeIconTagger</code></a> which only uses macOS’ Automator with a Quartz filter. I modified it to get a little more flexibility out of it in <a href="https://github.com/TwoRingSoft/XcodeIconTagger">this fork</a>. Now, I can create <em>Run Script</em> Build Phases surrounding the <em>Copy Bundle Resources</em> Build Phase that first create the icon overlay, and then after copying the icons to the installation, reset the git index to discard the changes.</p>
+<p>After a little more searching, I found <a href="https://github.com/bejo/XcodeIconTagger"><code class="language-plaintext highlighter-rouge">XcodeIconTagger</code></a> which only uses macOS’ Automator with a Quartz filter. I modified it to get a little more flexibility out of it in <a href="https://github.com/TwoRingSoft/XcodeIconTagger">this fork</a>. Now, I can create <em>Run Script</em> Build Phases surrounding the <em>Copy Bundle Resources</em> Build Phase that first create the icon overlay, and then after copying the icons to the installation, reset the git index to discard the changes.</p>
 
 <center>
 	<style scoped="">
@@ -163,7 +163,7 @@
 	<span class="caption">The Build Phases in Xcode to tag and restore app icons for build variants.</span>
 </center>
 
-<p><code class="highlighter-rouge">tag-icons.sh</code> is a script that wraps some of the different types of overlays I’d like, depending on the build variant, into a convenient interface to which I can simply supply either <code class="highlighter-rouge">tag</code> or <code class="highlighter-rouge">cleanup</code> commands. (It can be found in <a href="https://github.com/TwoRingSoft/shared-utils">shared-utils</a>.) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:</p>
+<p><code class="language-plaintext highlighter-rouge">tag-icons.sh</code> is a script that wraps some of the different types of overlays I’d like, depending on the build variant, into a convenient interface to which I can simply supply either <code class="language-plaintext highlighter-rouge">tag</code> or <code class="language-plaintext highlighter-rouge">cleanup</code> commands. (It can be found in <a href="https://github.com/TwoRingSoft/shared-utils">shared-utils</a>.) The conditional logic that decides what to display, and invocation of the underlying tool itself, is handled inside:</p>
 
 <script src="https://gist.github.com/armcknight/63b8c731215402b52908dd5ad9f8f1a6.js"></script>
 
@@ -203,10 +203,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-04-01-differentiating-ios-app-builds.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-04-01-differentiating-ios-app-builds.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

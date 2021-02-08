@@ -101,13 +101,13 @@
 	<p>Much of git is mechanical and deterministic, simply tracking differences in text files. To me, this falls under the mathematical/engineering/scientific aspect of the concept. But, it is a tool used by humans, and each human will use it slightly (or vastly) differently. Finding the best practices and balancing the many powerful methods are the aspects I view as an art form. There’s no one right way to do anything, and you can make it as simple or as complicated as you like. Today I’m examining the decisions to make around how to even organize code.</p>
 
 <h1 id="location-location-location">Location, location, location</h1>
-<p>Let’s say I have an SDK called <code class="highlighter-rouge">PlugKit</code>. It’s a new way for business owners to market and advertise their products in iOS apps. Developers can integrate just the eponymous data/networking component to completely customize how “Plugs” are displayed to their users. We also offer some prefab views available by optionally bringing in <code class="highlighter-rouge">PlugKit-UI</code>, and there’s a demo project used as a reference implementation as well as inspiration.</p>
+<p>Let’s say I have an SDK called <code class="language-plaintext highlighter-rouge">PlugKit</code>. It’s a new way for business owners to market and advertise their products in iOS apps. Developers can integrate just the eponymous data/networking component to completely customize how “Plugs” are displayed to their users. We also offer some prefab views available by optionally bringing in <code class="language-plaintext highlighter-rouge">PlugKit-UI</code>, and there’s a demo project used as a reference implementation as well as inspiration.</p>
 
 <p>How should I organize the code for these products in Git? Should everything go in one repository? Should each of the three components get their own? <a href="http://gregoryszorc.com/blog/2014/09/09/on-monolithic-repositories/">You’ve</a> probably read <a href="http://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext">many</a> <a href="https://www.bitkeeper.org/BK_Nested_White_Paper.pdf">articles</a> <a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">already</a> <a href="http://lists.llvm.org/pipermail/llvm-dev/2016-July/102602.html">on</a> <a href="https://medium.com/@pejvan/monorepos-85e608d43b57#.tupnuwxqu">the</a> <a href="http://blog.shippable.com/our-journey-to-microservices-and-a-mono-repository">pros</a> and <a href="https://www.thoughtworks.com/insights/blog/architecting-continuous-delivery">cons</a> of <a href="http://danluu.com/monorepo/">monorepos</a>-it’s one of the great developer flame wars, up there with tabs versus spaces and functional versus OO programming. You probably already have your mind made up. What I want to do here is demonstrate some of the most basic processes I use most frequently for each possibility.</p>
 
-<p>I’ve constructed an example of each strategy, and placed them into the directories <code class="highlighter-rouge">PlugKit-iOS-A</code> and <code class="highlighter-rouge">-B</code>. One is a monorepo with a subdirectory containing the code for each component. The other is a directory containing each of the component repositories. Can you tell which is which?</p>
+<p>I’ve constructed an example of each strategy, and placed them into the directories <code class="language-plaintext highlighter-rouge">PlugKit-iOS-A</code> and <code class="language-plaintext highlighter-rouge">-B</code>. One is a monorepo with a subdirectory containing the code for each component. The other is a directory containing each of the component repositories. Can you tell which is which?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; tree
 .
 ├── PlugKit-iOS-A
 │   ├── PlugKit
@@ -117,8 +117,7 @@
     ├── PlugKit
     ├── PlugKit-UI
     └── PlugKitDemo
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It seems repository granularity has nothing to do with how your code is organized. Anything you can do in monorepos, you can do with multiple. To me, the big difference between the two is one of workflow.</p>
 
@@ -127,91 +126,83 @@
 
 <p><strong>Monorepo:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit-iOS
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit-iOS
+</code></pre></div></div>
 
 <p><strong>Manyrepos:</strong></p>
 
 <p>There are many ways you could organize the repos with respect to one another. You could have a flat structure like above, in which case you’d just do:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKit
 $&gt; git clone git@github.com:armcknight/PlugKit-UI
 $&gt; git clone git@github.com:armcknight/PlugKitDemo
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>or perhaps you have your demo app pull in the others as submodule dependencies (similarly for other dependency managers like Cocoapods or Carthage):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKitDemo
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; git clone git@github.com:armcknight/PlugKitDemo
 $&gt; cd PlugKitDemo
 $&gt; git submodule update --init
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>which could render</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; tree
 .
 ├── PlugKitDemoCode
 └── Vendor
     └── PlugKit
     └── PlugKit-UI
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>or how about</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; tree
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; tree
 .
 └──Vendor
     └── PlugKit
 	    └── Vendor
 		    └── PlugKit-UI
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Don’t forget that <code class="highlighter-rouge">--recursive</code> flag if you have submodules in your submodules!</p>
+<p>Don’t forget that <code class="language-plaintext highlighter-rouge">--recursive</code> flag if you have submodules in your submodules!</p>
 
 <h1 id="writing-code">Writing code</h1>
 <p>So I’m coding up a new feature that hits a new endpoint on the server, and because this is a totally new, paradigm-shifting type of data that’s coming down, we need a completely different type of UI to display it. And of course, we want to test a few “real world” scenarios and show how to implement this in our demo app.</p>
 
 <p><strong>Monorepo:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
 $&gt; git commit --all --message "I wrote and committed this all in one go, because I'm awesome"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Manyrepos:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ... coding/testing/cursing/fixing ...
 $&gt; cd PlugKit
 $&gt; git commit --all --message "commit PlugKit changes"
 $&gt; cd ../PlugKit-UI 
 $&gt; git commit --all --message "commit PlugKit-UI changes, taking up PlugKit changes"
 $&gt; cd ../PlugKitDemo
 $&gt; git commit --all --message "commit PlugKitDemo changes, taking up PlugKit and PlugKit-UI changes"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="merging-feature-branches">Merging feature branches</h1>
 <p>After some review and much pedantry, at long last we can merge our code! Woohoo! We use GitHub pull requests to merge the branches in, as well as GitHub issues to track the work we’re doing, so we’ll want to close those too.</p>
 
 <p><strong>Monorepo:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git push
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; git push
 # go to the PR, press the big green button
 # go to the issue, press the "Close Issue" button 
 $&gt; git pull --ff-only
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Heck, these days closing issues may <a href="https://github.com/blog/1506-closing-issues-via-pull-requests">already be done for you</a>!</p>
 
 <p><strong>Manyrepos:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$&gt; git push
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; git push
 # open PlugKit PR, press big green button
 $&gt; git pull --ff-only
 $&gt; cd ../PlugKit-UI
@@ -223,8 +214,7 @@ $&gt; git push
 # open PlugKitDemo PR, press big green button
 # go to the issue, press the "Close Issue" button
 $&gt; git pull --ff-only
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note that order may matter here. Reviewing the changes between three separate pull requests is also not great.</p>
 
@@ -239,10 +229,13 @@ $&gt; git pull --ff-only
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-01-14-art-of-source-control-part-1-organizing-codebases.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-01-14-art-of-source-control-part-1-organizing-codebases.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>

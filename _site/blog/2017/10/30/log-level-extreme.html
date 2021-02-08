@@ -98,18 +98,18 @@
 		<hr />
 					
 <div id="post-content">
-	<p>I recently updated my dependency on the excellent <a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a> and noticed that in the jump from major version 4 to 6, a new log level appeared: <code class="highlighter-rouge">SEVERE</code>. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, <em>separation of concerns</em>, lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.</p>
+	<p>I recently updated my dependency on the excellent <a href="https://github.com/DaveWoodCom/XCGLogger">XCGLogger</a> and noticed that in the jump from major version 4 to 6, a new log level appeared: <code class="language-plaintext highlighter-rouge">SEVERE</code>. Now, I already had a hard time when deciding between certain log levels for certain situations. The first rule in SOLID, <em>separation of concerns</em>, lends a helping hand by contextualizing our logs instead of overloading the spectrum of priority.</p>
 
 <h1 id="its-log">It’s Log™!</h1>
 
 <p>XCGLogger, and <a href="https://github.com/CocoaLumberjack/CocoaLumberjack">CocoaLumberjack</a> before it, had 5 levels: verbose, debug, info, warn and error. Here are some loose rules I have for how to choose which level to use:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">VERBOSE</code>: outputting the values of variables and large data structures.</li>
-  <li><code class="highlighter-rouge">DEBUG</code>: function invocations to trace execution, additional context in hairy routines, maybe outputting values.</li>
-  <li><code class="highlighter-rouge">INFO</code>: general events describing usage, e.g. “navigated to such and such screen” or “pressed such and such button”.</li>
-  <li><code class="highlighter-rouge">WARN</code>: execution has left the happy path, but code exists to recover gracefully so that the app can proceed in a previous good state with minimal UX detour (e.g. showing the user a dialog).</li>
-  <li><code class="highlighter-rouge">ERROR</code>: a problem that will cause data loss, UX breakage, or otherwise require user intervention up to a forced relaunch of the application. I like to know about these early and aggregate them, so I use Fabric’s <a href="https://docs.fabric.io/apple/crashlytics/logged-errors.html">nonfatal error reporting</a> as part of logging at this level.</li>
+  <li><code class="language-plaintext highlighter-rouge">VERBOSE</code>: outputting the values of variables and large data structures.</li>
+  <li><code class="language-plaintext highlighter-rouge">DEBUG</code>: function invocations to trace execution, additional context in hairy routines, maybe outputting values.</li>
+  <li><code class="language-plaintext highlighter-rouge">INFO</code>: general events describing usage, e.g. “navigated to such and such screen” or “pressed such and such button”.</li>
+  <li><code class="language-plaintext highlighter-rouge">WARN</code>: execution has left the happy path, but code exists to recover gracefully so that the app can proceed in a previous good state with minimal UX detour (e.g. showing the user a dialog).</li>
+  <li><code class="language-plaintext highlighter-rouge">ERROR</code>: a problem that will cause data loss, UX breakage, or otherwise require user intervention up to a forced relaunch of the application. I like to know about these early and aggregate them, so I use Fabric’s <a href="https://docs.fabric.io/apple/crashlytics/logged-errors.html">nonfatal error reporting</a> as part of logging at this level.</li>
 </ul>
 
 <p>That being said, I have found exceptions to every rule, and often have trouble deciding which level to use. Usually though, the best indicator is how fast you’re able to sift through your own logs–or more painfully, what you’re missing.</p>
@@ -121,8 +121,8 @@
 <p>As if it were bad enough trying to choose a log level, not all logging frameworks have the same amount of levels, or call equivalent levels by the same name:</p>
 
 <ul>
-  <li><a href="https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/Level.html">Log4J</a> has <code class="highlighter-rouge">ALL</code> instead of <code class="highlighter-rouge">VERBOSE</code> and an extra level in between that and <code class="highlighter-rouge">DEBUG</code> called <code class="highlighter-rouge">TRACE</code>. <code class="highlighter-rouge">ALL</code> seems redundant in a system where log levels are ranked and you could just choose the most permissive level, so I like <code class="highlighter-rouge">VERBOSE</code> more here. I do like the idea of <code class="highlighter-rouge">TRACE</code>, but having to stick it in a rank between <code class="highlighter-rouge">DEBUG</code> and <code class="highlighter-rouge">VERBOSE</code> doesn’t seem like an easy fit.</li>
-  <li><a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.0.0/com.ibm.websphere.nd.doc/info/ae/ae/utrb_loglevel.html">IBM’s WebSphere Application Server</a> has a table correlating different sets of log levels from different versions of its API. It has an astounding 10 log levels (not including <code class="highlighter-rouge">OFF</code> and <code class="highlighter-rouge">ALL</code>), including <code class="highlighter-rouge">FINE</code>, <code class="highlighter-rouge">FINER</code> and <code class="highlighter-rouge">FINEST</code>, and developers can add custom levels. I would YAGNI a few of these into oblivion if I had my way, and instead of custom levels I prefer having individual contexts that can each have its own log level or on/off switch.</li>
+  <li><a href="https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/Level.html">Log4J</a> has <code class="language-plaintext highlighter-rouge">ALL</code> instead of <code class="language-plaintext highlighter-rouge">VERBOSE</code> and an extra level in between that and <code class="language-plaintext highlighter-rouge">DEBUG</code> called <code class="language-plaintext highlighter-rouge">TRACE</code>. <code class="language-plaintext highlighter-rouge">ALL</code> seems redundant in a system where log levels are ranked and you could just choose the most permissive level, so I like <code class="language-plaintext highlighter-rouge">VERBOSE</code> more here. I do like the idea of <code class="language-plaintext highlighter-rouge">TRACE</code>, but having to stick it in a rank between <code class="language-plaintext highlighter-rouge">DEBUG</code> and <code class="language-plaintext highlighter-rouge">VERBOSE</code> doesn’t seem like an easy fit.</li>
+  <li><a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.0.0/com.ibm.websphere.nd.doc/info/ae/ae/utrb_loglevel.html">IBM’s WebSphere Application Server</a> has a table correlating different sets of log levels from different versions of its API. It has an astounding 10 log levels (not including <code class="language-plaintext highlighter-rouge">OFF</code> and <code class="language-plaintext highlighter-rouge">ALL</code>), including <code class="language-plaintext highlighter-rouge">FINE</code>, <code class="language-plaintext highlighter-rouge">FINER</code> and <code class="language-plaintext highlighter-rouge">FINEST</code>, and developers can add custom levels. I would YAGNI a few of these into oblivion if I had my way, and instead of custom levels I prefer having individual contexts that can each have its own log level or on/off switch.</li>
 </ul>
 
 <h1 id="the-log-stands-alone">The log stands alone</h1>
@@ -140,10 +140,13 @@
 	<hr />
 </p>
 <p>
-	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup of coffee</a>! I am also available for <a href="/contracts">contracting</a>.
+	🙏🏻 Enjoy the post? Please help support more like it by <a href="https://www.paypal.me/armcknight">buying me a cup
+		of coffee</a>!.
 </p>
 <p>
-	💡 Suggestions, questions, comments? <a href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/2017-10-30-log-level-extreme.md">Please submit a PR!</a>.
+	💡 Suggestions, questions, comments? <a
+		href="https://github.com/TwoRingSoft/tworingsoft.com/edit/master/blog/_posts/
+		2017-10-30-log-level-extreme.md">Please submit a PR!</a>.
 </p>
 		</div>
 	</body>
