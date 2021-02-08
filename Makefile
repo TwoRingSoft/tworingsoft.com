@@ -19,3 +19,6 @@ endserve:
 
 publish:
 	./scripts/publish
+
+bust-cache:
+	aws --profile tworing cloudfront create-invalidation --distribution-id E1P1N1XTWQ3JLQ --paths "$(PATHS)"
