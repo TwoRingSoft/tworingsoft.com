@@ -1,6 +1,6 @@
 ---
 title: "Advent of Code 2020 on Swift Playgrounds for iPad"
-date: 2021-02-05
+date: 2021-02-07
 layout: post
 abstract: "I tried using the Swift Playgrounds app on my iPad while solving problems for Advent of Code 2020 this year. Here's my impression of the app as a code editor."
 author: Andrew McKnight
@@ -14,7 +14,7 @@ I decided that I'd confine myself to using iPad Playgrounds to write my solution
 
 I used an iPad Pro 10.5" with  Smart Keyboard (my second one in as many years, by the way; and my down arrow key is already going in this one!). I did not use a Magic Mouse, although I do from time to time on the iPad; just haven't made it a habit. It probably would have helped with a lot of the minor editing issues, although I wasn't always in a situation that'd allow it. In general, I do prefer key-based control over mousing and clicking, so I always appreciate a robust set of hot key combinations.
 
-As I moved through problems, I started writing down annoyances I encountered. Eventually, I started to dread using the app and felt it was hurting my inaugural AoC experience, and ended the experiment after about 7 days. I don't hate the app; I've previously covered [some things I love about iPad Plagrounds and how it's a glimpse of next-gen IDEs]({{ site.url }}/blog/2018/02/07/programming-20-years-in.html). I just have high expectations of Apple and am a disappointed that it hasn't evolved in the intervening years.
+As I moved through problems, I started writing down annoyances I encountered. Eventually, I started to dread using the app and felt it was hurting my inaugural AoC experience, and ended the experiment after about 7 days. I don't hate the app; I've previously covered [some things I love about iPad Plagrounds and how it's a glimpse of next-gen IDEs]({{ site.url }}/blog/2018/02/07/programming-20-years-in.html). I just have high expectations of Apple and am disappointed that it hasn't evolved in the intervening years.
 
 After moving to Xcode, I felt like I was moving at warp speed. I now have unit tests that run my solution code against expected answers, and even a command line application target to generate all the boilerplate for next year's competition.
 
@@ -42,7 +42,7 @@ OK. This is a long list. I split these into small potatoes like simple bugs or o
 
 - It's really difficult to grab the scrollbar and proportionally scroll up and down the source document, oftentimes with the focus going towards placing the cursor wherever I touched. I would love even more for the scrollbar to become a source minimap after pressing and holding to get proportional scrolling as in the rest of iOS.
 
-- There’s no way to escape from documentation popups with an external keyboard. (Also, “Help” should be called “Docs”; it took be a few minutes to figure out how to find the docs for a symbol.) Usually `⌘ .` is the escape key equivalent for iOS.
+- There’s no way to escape from documentation popups with an external keyboard. (Also, “Help” should be called “Docs”; it took me a few minutes to figure out how to find the docs for a symbol.) Usually `⌘ .` is the escape key equivalent for iOS.
 
 - Doesn’t have the ⌘ `⌥` `[`/`]` shortcuts to swap lines up/down while maintaining scope indentation, like in Xcode.
 
